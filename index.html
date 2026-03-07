@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oh Golly, Britta!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+  <style>
+    /* ── CRITICAL NAV OVERRIDES — inline so cache can never break it ── */
+    a.nav-brand { text-decoration: none !important; color: #2C1A0E !important; }
+    a.nav-brand:hover { color: #2C1A0E !important; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 38px; height: 38px;
+      background: none; border: none; cursor: pointer; padding: 7px;
+      border-radius: 8px; flex-shrink: 0; z-index: 10;
+    }
+    .nav-hamburger span {
+      display: block; width: 100%; height: 2px;
+      background: #2C1A0E; border-radius: 2px; transform-origin: center;
+      transition: transform .25s, opacity .18s, width .2s;
+    }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; }
+    @media (max-width: 860px) {
+      nav { flex-wrap: wrap !important; padding: 12px 20px !important; }
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      .nav-mobile-menu {
+        width: 100%; order: 99;
+        border-top: 1px solid rgba(168,82,58,.15);
+        margin: 8px -20px -12px; padding: 0 20px;
+        background: #F5EDE4;
+      }
+      .nav-mobile-menu.is-open { display: block !important; }
+      .nav-mobile-menu ul { list-style: none; padding: 6px 0 10px; }
+      .nav-mobile-menu ul li a {
+        display: block; padding: 13px 4px;
+        font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+        color: #2C1A0E; text-decoration: none;
+        border-bottom: 1px solid rgba(168,82,58,.1);
+        transition: color .2s, padding-left .2s;
+      }
+      .nav-mobile-menu ul li:last-child a { border-bottom: none; }
+      .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://github.com/ohgollybritta" title="GitHub" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.twitch.tv/ohgollybritta" title="Twitch" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+    <a href="https://app.hackthebox.com/users/3168721?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs" title="HackTheBox" target="_blank">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+        <polygon points="16,8.5 22,12 16,15.5 10,12"/>
+        <polyline points="10,12 10,19.5 16,23 16,15.5"/>
+        <polyline points="22,12 22,19.5 16,23"/>
+      </svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="bento">
+
+  <!-- 1. HERO -->
+  <div class="card card-hero">
+    <img class="bg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80" alt="Design work">
+    <div class="hero-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+      Graphic Design
+    </div>
+    <div class="dot-row"><span class="on"></span><span></span><span></span></div>
+    <div class="hero-content">
+      <h1>Design<br>with <em>purpose.</em></h1>
+      <p>Brand identities, visual systems, and the occasional rabbit hole. Currently: also learning to break things (ethically).</p>
+    </div>
+  </div>
+
+  <!-- 2. AVATAR -->
+  <div class="card card-avatar">
+    <div class="avatar-flip">
+      <img class="avatar-pixel" src="/img/avatar-pixel.png" alt="Britta pixel art">
+      <img class="avatar-real"  src="/img/avatar-real.jpg" alt="Britta">
+    </div>
+    <div class="avatar-name" style="margin-bottom:-10px;">Britta Davis</div>
+    <div class="avatar-location" style="font-size:0.75em;"><em>Fairfax, VA</em></div>
+    <div class="avatar-pills">
+      <span class="pill pill-terra">Designer</span>
+      <span class="pill pill-teal">Investigator</span>
+      <span class="pill pill-ink">Explorer</span>
+    </div>
+  </div>
+
+  <!-- 3. SPOTIFY -->
+  <div class="card card-spotify">
+    <div class="widget-label">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Recently Played
+    </div>
+    <div class="spotify-body">
+      <div class="track-name" id="sp-track">Hot Blooded</div>
+      <div class="track-artist" id="sp-artist">New Constellations</div>
+      <div class="track-ago" id="sp-ago">2 hours ago</div>
+    </div>
+    <div class="eq-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- 4. IG CTA -->
+  <a class="card card-ig" href="https://instagram.com/ohgollybritta" target="_blank">
+    <div class="widget-label">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </div>
+    <div class="ig-cta-text">Come see what<br>I've been <em>exploring.</em></div>
+    <div>
+      <div class="ig-handle">@ohgollybritta</div>
+      <div style="height:8px"></div>
+      <div class="ig-follow-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        Follow
+      </div>
+    </div>
+  </a>
+
+  <!-- 5. TWITTER -->
+  <a class="card card-twitter" href="https://www.x.com/ohgollybritta" target="_blank" style="text-decoration:none;color:inherit;">
+    <div class="widget-label x-widget-label">
+      <div class="x-logo-box">𝕏</div>
+      X / Twitter
+    </div>
+    <div class="x-handle">@ohgollybritta</div>
+    <div class="tw-post">Cybersecurity, digital forensics, and OSINT. Documenting the learning curve — tools, techniques, and the threads worth pulling.</div>
+  </a>
+
+  <!-- 6. HACKTHEBOX -->
+  <div class="card card-htb">
+    <div class="htb-header">
+      <div class="htb-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#9FEF00" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M12 2v18M3 7l9 5 9-5" stroke="#9FEF00" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="htb-title">HackTheBox</div>
+    </div>
+    <div>
+      <div class="htb-rank">Noob</div>
+      <div class="htb-rank-sub">Rank · actively grinding</div>
+    </div>
+    <div>
+      <div class="htb-bar-label">Progress to next rank</div>
+      <div class="htb-bar-track"><div class="htb-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- 7. INSTAGRAM PHOTO -->
+  <a class="card card-photo" href="https://www.instagram.com/p/DUUdxQMjo1s/?img_index=1" target="_blank" style="text-decoration:none;color:inherit;">
+    <img src="/img/instagram-photo.jpg" alt="Recent Instagram photo" style="filter: sepia(25%) saturate(90%) brightness(97%) contrast(95%);">
+    <div class="photo-overlay"></div>
+    
+    <div class="photo-meta">
+      <div class="photo-loc">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Mordecai Village, Raleigh
+      </div>
+      <div class="photo-cap">Birthplace of Andrew Johnson, 17th President. Still standing. Still iconic. ✨</div>
+      <div class="photo-stats"><span>♡ 3</span><span>💬 0</span></div>
+    </div>
+  </a>
+
+  <!-- 8. CERTS IN PROGRESS -->
+  <div class="card card-certs">
+    <div class="certs-title">Certs in Progress</div>
+    <div class="cert-item">
+      <div class="cert-dot active"></div>
+      <div class="cert-name">CompTIA Security+</div>
+      <div class="cert-status in-progress">Studying</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot pending"></div>
+      <div class="cert-name">CompTIA Network+</div>
+      <div class="cert-status queued">Queued</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot pending"></div>
+      <div class="cert-name">CEH</div>
+      <div class="cert-status queued">Queued</div>
+    </div>
+  </div>
+
+  <!-- 9. HISTORIC PHOTOGRAPHY -->
+  <div class="card card-history">
+    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80" alt="Historic architecture">
+    <div class="history-overlay"></div>
+    <div class="history-content">
+      <div class="history-eyebrow">Currently Exploring</div>
+      <div class="history-title">Historic Preservation<br>& <em>Place Memory</em></div>
+      <div class="history-sub">Documenting forgotten architecture, buried histories, and the places that shaped us.</div>
+    </div>
+  </div>
+
+  <!-- 10. ABOUT -->
+  <div class="card card-about">
+    <p>
+      Designer, <strong>pattern recognizer</strong>, recovering police recruit, and reluctant (but enthusiastic) hacker-in-training. I find threads in things — in brand systems, in <em>old buildings</em>, in criminal networks. Currently weaving it all into something that might actually help people.
+    </p>
+    <div class="about-sig">— britta</div>
+  </div>
+
+  <!-- 11. WORK -->
+  <div class="card card-work">
+    <div class="work-header">
+      <div class="work-eyebrow">Featured Work</div>
+      <img class="work-avatar" src="/img/work-avatar.png" alt="">
+    </div>
+    <div class="work-heading">Brands built with<br>intention & a little mischief.</div>
+    <div class="work-tags" style="margin-top: 14px;">
+      <span class="work-tag t-terra">Brand Identity</span>
+      <span class="work-tag t-teal">Print & Collateral</span>
+      <span class="work-tag t-ink">Typography</span>
+      <span class="work-tag t-terra">Web Design</span>
+    </div>
+    <a href="#" class="work-cta" style="margin-top: 14px;">View portfolio →</a>
+  </div>
+
+  <!-- 12. TWITCH -->
+  <a class="card card-twitch" href="https://www.twitch.tv/ohgollybritta" target="_blank" style="text-decoration:none;">
+    <div class="live-badge" id="twitch-badge"><span class="live-dot"></span><span id="twitch-status">Offline</span></div>
+    <div class="tw-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </div>
+    <div class="tw-divider"></div>
+    <div class="tw-info">
+      <div class="tw-game-label">Channel</div>
+      <div class="tw-game">ohgollybritta</div>
+      <div class="tw-desc">Design streams, creative chaos, and probably a detour into something historical. Come hang. 👾</div>
+    </div>
+  </a>
+
+</main>
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta & a healthy suspicion of default settings</footer>
+
+<script>
+(function() {
+  var btn  = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    menu.classList.toggle('is-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

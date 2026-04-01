@@ -343,7 +343,7 @@
     }
   }
 
-  fetch('/spotify-proxy.php')
+  fetch('https://spotify-proxy-lyart.vercel.app/api/spotify')
     .then(function(r){ return r.json(); })
     .then(function(data){ console.log('[Spotify proxy]', data); updateWidget(data); })
     .catch(function(){

@@ -86,7 +86,7 @@
   position: relative; z-index: 1;
 }
 .intro-heading {
-  font-family: 'Fraunces', serif; font-size: 28px; font-weight: 800;
+  font-family: 'Fraunces', serif; font-size: 42px; font-weight: 800;
   color: var(--cream); line-height: 1.1; margin-bottom: 10px;
   position: relative; z-index: 1;
 }
@@ -237,8 +237,8 @@
 }
 .card-work-item:hover img { transform: scale(1.05); filter: saturate(1.1); }
 
-.card-work-item.tall { min-height: 460px; }
-.card-work-item.med  { min-height: 220px; }
+.card-work-item.tall { height: 460px; }
+.card-work-item.med  { height: 460px; }
 
 .work-overlay {
   position: absolute; inset: 0;
@@ -387,9 +387,67 @@
 }
 
 /* ── RESPONSIVE ── */
+
+/* ── TABLET (max 1024px) — relax the tightest column spans ── */
+@media (max-width: 1024px) {
+  .card-intro  { grid-column: 1 / 7 !important; }
+  .card-stats  { grid-column: 7 / 13 !important; }
+}
+
+/* ── MOBILE (max 860px) — everything stacks full-width ── */
 @media (max-width: 860px) {
-  .page-header { padding: 20px 16px 12px; }
-  .card-skills { grid-column: span 2; }
-  .card-work-item, .card-service, .card-avail { grid-column: span 2 !important; }
-  .card-cta-footer { flex-direction: column; align-items: flex-start; }
+
+  /* PAGE HEADER */
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px 14px;
+    gap: 16px;
+  }
+  .page-title { font-size: clamp(32px, 10vw, 48px); }
+  .page-header-right {
+    width: 100%;
+    gap: 6px;
+  }
+  .filter-btn {
+    font-size: 10px;
+    padding: 6px 13px;
+  }
+
+  /* FORCE ALL BENTO CARDS FULL-WIDTH
+     — overrides every inline style="grid-column:X/Y" on the HTML elements */
+  .bento > .card,
+  .bento > .section-label {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+  /* INTRO / STATS */
+  .card-intro  { padding: 24px 20px; }
+  .card-stats  { padding: 22px 20px; }
+  .stats-grid  { grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+
+  /* SKILLS */
+  .card-skills { padding: 20px; min-height: unset; }
+  .skill-bar-track { width: 64px; }
+
+  /* WORK ITEMS */
+  .card-work-item.tall { height: 300px; }
+  .card-work-item.med  { height: 300px; }
+  .work-item-title     { font-size: 18px; }
+
+  /* SERVICES */
+  .card-service        { padding: 22px 20px; min-height: unset; }
+
+  /* AVAILABILITY */
+  .card-avail          { padding: 24px 20px; }
+
+  /* CTA FOOTER */
+  .card-cta-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+  }
+  .cta-footer-heading  { font-size: 24px; }
+  .cta-footer-btn      { width: 100%; justify-content: center; }
 }

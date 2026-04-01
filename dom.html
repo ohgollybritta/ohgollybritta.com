@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3Domensional — oh golly britta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/dom.css">
+  <style>
+    a.nav-brand { text-decoration: none !important; color: #2C1A0E !important; }
+    a.nav-brand:hover { color: #2C1A0E !important; }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      width: 38px; height: 38px; background: none; border: none;
+      cursor: pointer; padding: 7px; border-radius: 8px; flex-shrink: 0; z-index: 10;
+    }
+    .nav-hamburger span {
+      display: block; width: 100%; height: 2px;
+      background: #2C1A0E; border-radius: 2px; transform-origin: center;
+      transition: transform .25s, opacity .18s, width .2s;
+    }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; }
+    @media (max-width: 860px) {
+      nav { flex-wrap: wrap !important; padding: 12px 20px !important; }
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      .nav-mobile-menu {
+        width: 100%; order: 99;
+        border-top: 1px solid rgba(168,82,58,.15);
+        margin: 8px -20px -12px; padding: 0 20px;
+        background: #F5EDE4;
+      }
+      .nav-mobile-menu.is-open { display: block !important; }
+      .nav-mobile-menu ul { list-style: none; padding: 6px 0 10px; }
+      .nav-mobile-menu ul li a {
+        display: block; padding: 13px 4px;
+        font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+        color: #2C1A0E; text-decoration: none;
+        border-bottom: 1px solid rgba(168,82,58,.1);
+        transition: color .2s, padding-left .2s;
+      }
+      .nav-mobile-menu ul li:last-child a { border-bottom: none; }
+      .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" title="GitHub" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="#" title="Twitch" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+        <polygon points="16,8.5 22,12 16,15.5 10,12"/>
+        <polyline points="10,12 10,19.5 16,23 16,15.5"/>
+        <polyline points="22,12 22,19.5 16,23"/>
+      </svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="project-hero">
+  <img class="project-hero-img" src="/img/dom-hero.jpg" alt="3Domensional studio — Prusa 3D printers with branded wall decal">
+  <div class="hero-gradient"></div>
+  <div class="project-hero-content">
+    <a href="/work.html" class="project-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Back to Work
+    </a>
+    <div class="project-eyebrow">
+      <span class="project-cat">Brand Identity · Logo Design · Print</span>
+      <span class="project-eyebrow-dot"></span>
+      <span class="project-year">2020</span>
+    </div>
+    <h1 class="project-hero-title">3Dom<em>ensional</em></h1>
+    <div class="project-hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Client</span>
+        <span class="hero-meta-value">3Domensional — Rio Rancho, NM</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Nature</span>
+        <span class="hero-meta-value">Startup Business</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Scope</span>
+        <span class="hero-meta-value">Logo · Animation · Brand Assets · Packaging</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY BODY ── -->
+<div class="case-study">
+
+  <!-- OVERVIEW STRIP -->
+  <div class="cs-overview">
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Founded</div>
+      <div class="cs-overview-value">During<em> COVID-19</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Mission</div>
+      <div class="cs-overview-value">PPE<em> for Hospitals</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Logo Concepts</div>
+      <div class="cs-overview-value">60+<em> Explorations</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Reveal</div>
+      <div class="cs-overview-value">Animated<em> GIF</em></div>
+    </div>
+  </div>
+
+  <!-- ── SECTION: THE BRIEF ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Brief</span></div>
+    <div class="cs-two-col wide-right">
+      <div class="cs-image-block">
+        <img src="/img/dom-ppe.jpg" alt="3D-printed PPE components — face shield frames and filter adapters in multiple colors">
+        <div class="cs-image-caption">PPE produced for Albuquerque hospitals during the COVID-19 shortage</div>
+      </div>
+      <div>
+        <h2 class="cs-section-heading">A startup born<br>out of <em>necessity.</em></h2>
+        <p class="cs-body">
+          3Domensional was founded in the early months of the COVID-19 pandemic by an Air Force veteran in Rio Rancho, New Mexico. With local hospitals facing a critical shortage of personal protective equipment, she turned her 3D printers into a production line — manufacturing PPE and donating it directly to healthcare facilities in Albuquerque.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          As the business grew beyond the pandemic response into a full-service 3D printing, additive manufacturing, and rapid prototyping operation, it needed a brand to match. The brief: build a crisp, approachable identity that balanced professionalism with timelessness — visually communicating the character and intention of the company.
+        </p>
+        <div class="cs-deliverable-list">
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Logo system</strong> — primary mark, horizontal lockup, icon variant across web, print, and Facebook formats</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Animated logo reveal</strong> — 640×360 GIF for social media and digital use; 5-second chroma key video bump</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Vector files</strong> — 4 EPS variations (knockout, white on black, black on white, full color)</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Brand pattern</strong> — repeating logo tile in brand colors for packaging and surface application</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Branded packaging tape</strong> + <strong>3D-printed logo sticker</strong> — produced on the company's own Prusa machines</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: LOGO DEVELOPMENT ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Logo Development</span></div>
+    <h2 class="cs-section-heading">60 explorations.<br><em>One mark.</em></h2>
+    <p class="cs-body">
+      The development process was thorough — 60 concepts across five rounds, working through dimensional letterforms, isometric printer icons, geometric mark systems, and typographic containers before arriving at the final direction. The name itself became the design opportunity: <em>3D</em> as a bold dimensional mark, <em>om</em> as a typographic bridge, <em>ENSIONAL</em> anchoring it with industrial confidence.
+    </p>
+    <div class="cs-pull">
+      <div class="cs-pull-text">"To create a crisp and approachable face for 3Domensional — a brand that balances professionalism, timelessness, and <em>visually communicates the character and intention of the company.</em>"</div>
+    </div>
+
+    <div class="cs-image-block cs-image-wide">
+      <img src="/img/dom-logo-dev.jpg" alt="3Domensional logo development overview — all 9 presentation slides">
+      <div class="cs-image-caption">Brand/Identity: Phase One presentation — April 13, 2020</div>
+    </div>
+
+    <div class="cs-dev-sheets">
+      <div class="cs-image-block">
+        <img src="/img/dom-logo-dev-1.jpg" alt="Logo development sheet 1 of 5 — concepts 1–15">
+      </div>
+      <div class="cs-image-block">
+        <img src="/img/dom-logo-dev-2.jpg" alt="Logo development sheet 2 of 5 — concepts 16–27">
+      </div>
+      <div class="cs-image-block">
+        <img src="/img/dom-logo-dev-3.jpg" alt="Logo development sheet 3 of 5 — concepts 28–39">
+      </div>
+      <div class="cs-image-block">
+        <img src="/img/dom-logo-dev-5.jpg" alt="Logo development sheet 5 of 5 — concepts 52–60">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── SECTION: LOGO REVEAL ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Logo Reveal</span></div>
+    <div class="cs-two-col wide-right">
+      <div>
+        <h2 class="cs-section-heading">Revealed via<br><em>animated GIF.</em></h2>
+        <p class="cs-body">
+          The final logo was delivered to the client as a 640×360 animated GIF — sent over Facebook Messenger on April 13, 2020. The animation built the mark element by element: the dimensional printer icon assembling, the logotype sliding into place, the color filling in last. A logo reveal as a piece of craft in its own right.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The full deliverable package included 15 web-ready PNGs across four colorways, 12 print-ready files, 4 Facebook cover variations, 4 lossless vector EPS files, and a 5-second chroma key logo bump — everything the business needed to launch from day one.
+        </p>
+      </div>
+
+      <div class="cs-gif-block cs-image-block" style="background:#000;">
+        <img src="/img/3Domensional-animated-640x360.gif" alt="3Domensional animated logo reveal GIF — 640×360">
+        <div class="cs-image-caption">Animated logo reveal — delivered via Facebook Messenger, April 13, 2020</div>
+      </div>
+
+    </div>
+  </section>
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Color System</span></div>
+    <div>
+        <h2 class="cs-section-heading">Two teals,<br>one red. <em>Precisely specified.</em></h2>
+        <p class="cs-body">
+          The brand palette was defined with full precision — two Pantone-matched teals and a bold production red, each specified across CMYK, RGB, LAB, and HSB. Every color was built to survive every medium: 3D-printed stickers, branded packaging tape, Facebook covers, and everything in between.
+        </p>
+        <div class="cs-color-chips">
+          <div class="cs-color-chip">
+            <div class="cs-chip-swatch" style="background:#4AC1BA;"></div>
+            <div>
+              <div class="cs-chip-label">Awareness Teal</div>
+              <div class="cs-chip-value">Pantone 3262 C · #4AC1BA</div>
+            </div>
+          </div>
+          <div class="cs-color-chip">
+            <div class="cs-chip-swatch" style="background:#16A299;"></div>
+            <div>
+              <div class="cs-chip-label">Supporting Cyan</div>
+              <div class="cs-chip-value">Pantone 3258 C · #16A299</div>
+            </div>
+          </div>
+          <div class="cs-color-chip red-chip">
+            <div class="cs-chip-swatch" style="background:#DA291C;"></div>
+            <div>
+              <div class="cs-chip-label">Brand Red</div>
+              <div class="cs-chip-value">Pantone 485 C · #DA291C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- ── SECTION: BRAND IN USE ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Brand in Use</span></div>
+    <div class="cs-two-col wide-left">
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="cs-image-block">
+          <img src="/img/dom-card.jpg" alt="3Domensional branded packaging tape — red colorway on cardboard box, Stickermule production run">
+          <div class="cs-image-caption">Sealed in Red — custom-printed Stickermule tape, production run</div>
+        </div>
+        <div class="cs-image-block">
+          <img src="/img/dom-tape-real.jpg" alt="3Domensional branded tape roll and die-cut logo sticker printed on Prusa">
+          <div class="cs-image-caption">Die-cut logo sticker — produced in-house on the company's Prusa machines</div>
+        </div>
+
+      </div>
+      <div>
+        <h2 class="cs-section-heading">From screen<br>to <em>production.</em></h2>
+        <p class="cs-body">
+          The brand went into production quickly. Custom packaging tape in both brand colorways — teal and red — kept every shipped order on-brand, from PPE donations to paid client fulfillment. The repeating logo pattern wrapped around rolls of tape and across shipping boxes, turning every outgoing package into a brand touchpoint.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          A die-cut logo sticker, printed in-house on the company's own Prusa machines, put the brand identity to work as a product in itself — a calling card that demonstrated the company's capability and reinforced the brand at every customer interaction.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The wall decal in the studio — large-format, bold, anchoring the workspace — made the brand visible and real from day one. A startup that looked like it had been around for years.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: THE ROLE ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Role</span></div>
+    <h2 class="cs-section-heading">Brand identity from<br><em>zero.</em></h2>
+    <p class="cs-body">Responsible for transforming the company's branding concepts into reality and developing the full suite of supplementary assets to support the launch of the business — from the first sketch to printed tape on a shipping box.</p>
+
+    <div class="messaging-grid">
+      <div class="messaging-card">
+        <div class="messaging-card-label">Logo System</div>
+        <div class="messaging-card-text">60+ concepts across five development rounds, producing a final mark that balanced professionalism and approachability — built around the dimensional character of the name, with two Pantone-specified brand colors and a comprehensive file package across web, print, and vector formats.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Motion & Animation</div>
+        <div class="messaging-card-text">Designed and produced the animated logo reveal — a 640×360 GIF that built the mark element by element, plus a 5-second chroma key .mov logo bump for video. Delivered to the client via Facebook Messenger on April 13, 2020.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Brand Assets</div>
+        <div class="messaging-card-text">Developed the full suite of supporting assets: repeating logo pattern, brand color system with full Pantone specifications, wall decal art, and the 3D-printed die-cut logo sticker — produced on the client's own Prusa machines.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Packaging</div>
+        <div class="messaging-card-text">Designed custom-printed packaging tape in both brand colorways — teal and red — wrapping every outgoing shipment in the brand identity and turning every fulfilled order into a marketing moment.</div>
+      </div>
+      <div class="slogan-block">
+        <div>
+          <div class="slogan-item-label">Founded</div>
+          <div class="slogan-item-text">COVID-19 pandemic — PPE for Albuquerque hospitals</div>
+        </div>
+        <div>
+          <div class="slogan-item-label">Delivered</div>
+          <div class="slogan-item-text">Full brand identity from zero — concept to production, April 2020</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT NAV FOOTER -->
+  <div class="project-nav-footer">
+    <a href="/work.html" class="proj-nav-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      All Work
+    </a>
+    <a href="/contact.html" class="proj-nav-cta">
+      Start a project like this
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div><!-- /case-study -->
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta & a healthy suspicion of default settings</footer>
+
+<script>
+  (function() {
+    var hbtn = document.querySelector('.nav-hamburger');
+    var menu = document.getElementById('nav-mobile-menu');
+    if (!hbtn || !menu) return;
+    hbtn.addEventListener('click', function() {
+      var open = hbtn.getAttribute('aria-expanded') === 'true';
+      hbtn.setAttribute('aria-expanded', String(!open));
+      hbtn.classList.toggle('is-open', !open);
+      menu.classList.toggle('is-open', !open);
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hbtn.setAttribute('aria-expanded', 'false');
+        hbtn.classList.remove('is-open');
+        menu.classList.remove('is-open');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

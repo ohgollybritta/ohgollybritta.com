@@ -42,16 +42,26 @@
       }
       .nav-mobile-menu.is-open { display: block !important; }
       .nav-mobile-menu ul { list-style: none; padding: 6px 0 10px; }
-      .nav-mobile-menu ul li a {
-        display: block; padding: 13px 4px;
-        font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
-        color: #2C1A0E; text-decoration: none;
-        border-bottom: 1px solid rgba(168,82,58,.1);
-        transition: color .2s, padding-left .2s;
-      }
       .nav-mobile-menu ul li:last-child a { border-bottom: none; }
       .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
     }
+    .history-content {
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 22px 24px !important;
+    }
+    /* ── HERO CAROUSEL TRANSITIONS ── */
+    .hero-tag          { transition: opacity .55s ease, background .2s, border-color .2s !important; }
+    .hero-content h1   { transition: opacity .55s ease, letter-spacing .3s ease !important; }
+    .hero-content p    { transition: opacity .55s ease !important; }
+    .dot-row span      { cursor: pointer; transition: background .3s, width .3s; }
+
+    /* ── Smaller Spotify album art ── */
+    .sp-album-art { width: 88px !important; height: 88px !important; border-radius: 4px !important; }
+  
   </style>
 </head>
 <body>
@@ -97,7 +107,7 @@
 
   <!-- 1. HERO -->
   <div class="card card-hero">
-    <img class="bg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80" alt="Design work">
+    <img class="bg" src="/img/about_hero.png" alt="Design work">
     <div class="hero-tag">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
       Graphic Design
@@ -105,7 +115,7 @@
     <div class="dot-row"><span class="on"></span><span></span><span></span></div>
     <div class="hero-content">
       <h1>Design<br>with <em>purpose.</em></h1>
-      <p>Brand identities, visual systems, and the occasional rabbit hole. Currently: also learning to break things (ethically).</p>
+      <p>Brand identities, visual systems, and the occasional rabbit hole.</p>
     </div>
   </div>
 
@@ -118,6 +128,7 @@
     <div class="avatar-name" style="margin-bottom:-10px;">Britta Davis</div>
     <div class="avatar-location" style="font-size:0.75em;"><em>Fairfax, VA</em></div>
     <div class="avatar-pills">
+      <span class="pill pill-teal">Technologist</span>
       <span class="pill pill-terra">Designer</span>
       <span class="pill pill-teal">Investigator</span>
       <span class="pill pill-ink">Explorer</span>
@@ -130,12 +141,15 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
       Recently Played
     </div>
-    <div class="spotify-body">
-      <div class="track-name" id="sp-track">Hot Blooded</div>
-      <div class="track-artist" id="sp-artist">New Constellations</div>
-      <div class="track-ago" id="sp-ago">2 hours ago</div>
+    <div class="spotify-body" style="display:flex;align-items:center;gap:12px;position:relative;z-index:1;">
+      <img id="sp-art" class="sp-album-art" src="" alt="" aria-hidden="true">
+      <div class="sp-track-info">
+        <div class="track-name" id="sp-track">—</div>
+        <div class="track-artist" id="sp-artist"></div>
+        <div class="track-ago" id="sp-ago"></div>
+      </div>
     </div>
-    <div class="eq-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="eq-bars" id="sp-eq"><span></span><span></span><span></span><span></span><span></span><span></span></div>
   </div>
 
   <!-- 4. IG CTA -->
@@ -174,15 +188,15 @@
           <path d="M12 2v18M3 7l9 5 9-5" stroke="#9FEF00" stroke-width="1.5" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div class="htb-title">HackTheBox</div>
+      <div class="htb-title">HTB Academy</div>
     </div>
     <div>
-      <div class="htb-rank">Noob</div>
-      <div class="htb-rank-sub">Rank · actively grinding</div>
+      <div class="htb-rank" style="font-size:0.78em;">Junior Cybersecurity Analyst</div>
+      <div class="htb-rank-sub">Networking · actively grinding</div>
     </div>
     <div>
-      <div class="htb-bar-label">Progress to next rank</div>
-      <div class="htb-bar-track"><div class="htb-bar-fill"></div></div>
+      <div class="htb-bar-label">Progress to next rank <span style="float:right;">47%</span></div>
+      <div class="htb-bar-track"><div class="htb-bar-fill" style="width:47%"></div></div>
     </div>
   </div>
 
@@ -197,7 +211,7 @@
         Mordecai Village, Raleigh
       </div>
       <div class="photo-cap">Birthplace of Andrew Johnson, 17th President. Still standing. Still iconic. ✨</div>
-      <div class="photo-stats"><span>♡ 3</span><span>💬 0</span></div>
+      <div class="photo-stats"><span>♡ 4</span><span>💬 0</span></div>
     </div>
   </a>
 
@@ -221,16 +235,22 @@
     </div>
   </div>
 
-  <!-- 9. HISTORIC PHOTOGRAPHY -->
-  <div class="card card-history">
-    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80" alt="Historic architecture">
+  <!-- 9. RECENT PROJECT -->
+  <a class="card card-history" href="/recent-project.html" style="text-decoration:none;color:inherit;">
+    <img src="/img/eviza-lydia-howell.png" alt="Eviza Lydia Howell, descendant of Jemima Boone Callaway" style="object-position: center 20%;">
     <div class="history-overlay"></div>
     <div class="history-content">
-      <div class="history-eyebrow">Currently Exploring</div>
-      <div class="history-title">Historic Preservation<br>& <em>Place Memory</em></div>
-      <div class="history-sub">Documenting forgotten architecture, buried histories, and the places that shaped us.</div>
+      <div class="widget-label" style="color:rgba(245,237,228,.75);">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Recent Projects
+      </div>
+      <div>
+        <div class="history-eyebrow">America 250 Commemoration</div>
+        <div class="history-title">Female Patriots<br>of the <em>Revolution</em></div>
+        <div class="history-sub">Celebrating female revolutionary patriots.</div>
+      </div>
     </div>
-  </div>
+  </a>
 
   <!-- 10. ABOUT -->
   <div class="card card-about">
@@ -253,7 +273,7 @@
       <span class="work-tag t-ink">Typography</span>
       <span class="work-tag t-terra">Web Design</span>
     </div>
-    <a href="#" class="work-cta" style="margin-top: 14px;">View portfolio →</a>
+    <a href="/work.html" class="work-cta" style="margin-top: 14px;">View portfolio →</a>
   </div>
 
   <!-- 12. TWITCH -->
@@ -273,6 +293,189 @@
 </main>
 
 <footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta & a healthy suspicion of default settings</footer>
+
+<script>
+// ── SPOTIFY LIVE WIDGET ──
+(function() {
+  function timeAgo(isoString) {
+    var diff = Math.floor((Date.now() - new Date(isoString)) / 1000);
+    if (diff < 60)  return 'just now';
+    if (diff < 3600) { var m = Math.floor(diff/60);  return m + ' minute'  + (m===1?'':' s') + ' ago'; }
+    if (diff < 86400){ var h = Math.floor(diff/3600); return h + ' hour'   + (h===1?'':' s') + ' ago'; }
+    var d = Math.floor(diff/86400); return d + ' day' + (d===1?'':' s') + ' ago';
+  }
+
+  function updateWidget(data) {
+    var track  = document.getElementById('sp-track');
+    var artist = document.getElementById('sp-artist');
+    var ago    = document.getElementById('sp-ago');
+    var eq     = document.getElementById('sp-eq');
+    var art    = document.getElementById('sp-art');
+    if (!track) return;
+
+    track.textContent  = data.track  || '—';
+    artist.textContent = data.artist || '';
+    ago.textContent    = data.played_at ? timeAgo(data.played_at) : (data.ago || '');
+
+    // Album art — make clickable if we have a URL
+    if (art && data.art) {
+      art.src = data.art;
+      art.alt = data.track || '';
+      art.onload = function() { art.style.opacity = '1'; };
+
+      var artLink = data.url || data.track_url || data.spotify_url
+        || (data.track ? 'https://open.spotify.com/search/' + encodeURIComponent((data.track || '') + ' ' + (data.artist || '')) : null);
+
+      if (artLink) {
+        art.style.cursor = 'pointer';
+        art.title = 'Open on Spotify';
+        art.onclick = function(e) { e.stopPropagation(); window.open(artLink, '_blank'); };
+      }
+    }
+
+    // Animate EQ bars only when currently playing
+    if (eq) {
+      if (data.is_playing) {
+        eq.querySelectorAll('span').forEach(function(s){ s.style.animationPlayState = 'running'; });
+      } else {
+        eq.querySelectorAll('span').forEach(function(s){ s.style.animationPlayState = 'paused'; });
+      }
+    }
+  }
+
+  fetch('/spotify-proxy.php')
+    .then(function(r){ return r.json(); })
+    .then(function(data){ console.log('[Spotify proxy]', data); updateWidget(data); })
+    .catch(function(){
+      var t = document.getElementById('sp-track');
+      if (t) t.textContent = 'nothing playing';
+    });
+})();
+</script>
+
+<script>
+// ── HERO CAROUSEL ──
+(function() {
+  var INTERVAL = 22000;
+
+  var slides = [
+    {
+      img:     '/img/about_hero.png',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>',
+      tagText: 'Graphic Design',
+      h1:      'Designing<br>with <em>purpose.</em>',
+      p:       'Brand identities, visual systems, and curiosity that doesn\'t quit.',
+      link:    '/work.html',
+    },
+    {
+      img:     '/img/curious-img.jpg',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
+      tagText: 'Explorations',
+      h1:      'Curious<br>by <em>nature.</em>',
+      p:       'Adventuring historic homes, re-telling forgotten stories, and sharing places that still have something to say.',
+      link:    'https://instagram.com/ohgollybritta',
+    },
+    {
+      img:     '/img/develop-img.jpg',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+      tagText: 'Research & Investigations',
+      h1:      'Building good tools<br>for <em>good work.</em>',
+      p:       'Developing OSINT tools to assist in recovery and disruption.',
+      link:    '/recent-project.html',
+    },
+  ];
+
+  var card = document.querySelector('.card-hero');
+  if (!card) return;
+
+  var bg   = card.querySelector('img.bg');
+  var tag  = card.querySelector('.hero-tag');
+  var h1   = card.querySelector('.hero-content h1');
+  var p    = card.querySelector('.hero-content p');
+  var dots = card.querySelectorAll('.dot-row span');
+
+  var current = 0;
+  var timer   = null;
+  var fading  = false;
+
+  // Preload all images
+  slides.forEach(function(s) { var img = new Image(); img.src = s.img; });
+
+  function setSlideInstant(idx) {
+    var s = slides[idx];
+    bg.src        = s.img;
+    bg.style.opacity  = '.45';
+    tag.innerHTML = s.tagSvg + s.tagText;
+    tag.style.opacity = '1';
+    h1.innerHTML  = s.h1;
+    h1.style.opacity  = '1';
+    p.textContent = s.p;
+    p.style.opacity   = '1';
+    card.style.cursor = s.link ? 'pointer' : 'default';
+    dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+  }
+
+  function goTo(idx) {
+    if (fading) return;
+    fading = true;
+    current = idx;
+
+    dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+    card.style.cursor = slides[idx].link ? 'pointer' : 'default';
+
+    bg.style.opacity  = '0';
+    tag.style.opacity = '0';
+    h1.style.opacity  = '0';
+    p.style.opacity   = '0';
+
+    setTimeout(function() {
+      var s = slides[idx];
+      bg.src        = s.img;
+      tag.innerHTML = s.tagSvg + s.tagText;
+      h1.innerHTML  = s.h1;
+      p.textContent = s.p;
+
+      setTimeout(function() {
+        bg.style.opacity  = '.45';
+        tag.style.opacity = '1';
+        h1.style.opacity  = '1';
+        p.style.opacity   = '1';
+        fading = false;
+      }, 50);
+    }, 500);
+  }
+
+  function next()       { goTo((current + 1) % slides.length); }
+  function startTimer() { if (!timer) timer = setInterval(next, INTERVAL); }
+  function stopTimer()  { clearInterval(timer); timer = null; }
+
+  // Dot clicks
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function(e) {
+      e.stopPropagation();
+      stopTimer();
+      goTo(i);
+      startTimer();
+    });
+  });
+
+  // Card click → navigate
+  card.addEventListener('click', function() {
+    var link = slides[current].link;
+    if (!link) return;
+    if (link.startsWith('http')) {
+      window.open(link, '_blank');
+    } else {
+      window.location.href = link;
+    }
+  });
+
+  // Init — set slide 0 immediately, then start timer
+  setSlideInstant(0);
+  startTimer();
+
+})();
+</script>
 
 <script>
 (function() {

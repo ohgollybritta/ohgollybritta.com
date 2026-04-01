@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daytona International Speedway — oh golly britta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/dis.css">
+  <style>
+    a.nav-brand { text-decoration: none !important; color: #2C1A0E !important; }
+    a.nav-brand:hover { color: #2C1A0E !important; }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      width: 38px; height: 38px; background: none; border: none;
+      cursor: pointer; padding: 7px; border-radius: 8px; flex-shrink: 0; z-index: 10;
+    }
+    .nav-hamburger span {
+      display: block; width: 100%; height: 2px;
+      background: #2C1A0E; border-radius: 2px; transform-origin: center;
+      transition: transform .25s, opacity .18s, width .2s;
+    }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; }
+    @media (max-width: 860px) {
+      nav { flex-wrap: wrap !important; padding: 12px 20px !important; }
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      .nav-mobile-menu {
+        width: 100%; order: 99;
+        border-top: 1px solid rgba(168,82,58,.15);
+        margin: 8px -20px -12px; padding: 0 20px;
+        background: #F5EDE4;
+      }
+      .nav-mobile-menu.is-open { display: block !important; }
+      .nav-mobile-menu ul { list-style: none; padding: 6px 0 10px; }
+      .nav-mobile-menu ul li a {
+        display: block; padding: 13px 4px;
+        font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+        color: #2C1A0E; text-decoration: none;
+        border-bottom: 1px solid rgba(168,82,58,.1);
+        transition: color .2s, padding-left .2s;
+      }
+      .nav-mobile-menu ul li:last-child a { border-bottom: none; }
+      .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand" style="text-decoration:none;">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" title="GitHub" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="#" title="Twitch" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+        <polygon points="16,8.5 22,12 16,15.5 10,12"/>
+        <polyline points="10,12 10,19.5 16,23 16,15.5"/>
+        <polyline points="22,12 22,19.5 16,23"/>
+      </svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="project-hero">
+  <img class="project-hero-img" src="img/dis-hero.jpg" alt="60th Daytona 500 — The Great American Race, 2018 FOX broadcast graphic" style="object-position: center center;">
+  <div class="hero-gradient"></div>
+  <div class="project-hero-content">
+    <a href="/work.html" class="project-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Back to Work
+    </a>
+    <div class="project-eyebrow">
+      <span class="project-cat">Event Design · Print · Social Media</span>
+      <span class="project-eyebrow-dot"></span>
+      <span class="project-year">2017–2018</span>
+    </div>
+    <h1 class="project-hero-title">Daytona<br>International<br><em>Speedway</em></h1>
+    <div class="project-hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Client</span>
+        <span class="hero-meta-value">Daytona International Speedway / NASCAR / ISC</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Role</span>
+        <span class="hero-meta-value">Lead Designer</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Scope</span>
+        <span class="hero-meta-value">Print · Social · Email · Photo Composites · Signage</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY BODY ── -->
+<div class="case-study">
+
+  <!-- OVERVIEW STRIP -->
+  <div class="cs-overview">
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Venue</div>
+      <div class="cs-overview-value">Crown<em> Jewel</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Renovation</div>
+      <div class="cs-overview-value">$400<em>M Stadium</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Milestone</div>
+      <div class="cs-overview-value">60th<em> Daytona 500</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Highlight</div>
+      <div class="cs-overview-value" style="font-size:17px;">D500<em> Logo Signatory</em></div>
+    </div>
+  </div>
+
+  <!-- ── SECTION: THE BRIEF ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Brief</span></div>
+    <div class="cs-two-col wide-right">
+      <div>
+        <h2 class="cs-section-heading">The crown jewel<br>of <em>NASCAR.</em></h2>
+        <p class="cs-body">
+          Daytona International Speedway isn't just a racetrack — it's an American institution. As lead designer for the track, the job was to honor 60 years of history while pushing the brand into a new era. A $400 million stadium renovation had transformed the facility; the visual identity needed to match.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The work spanned every platform and format: social media graphics, email campaigns, large-format print, event brochures, photo composites, vehicle wraps, billboards, tickets, and credential passes — all produced under strict sponsorship guidelines and race-week deadlines where there's no second chance.
+        </p>
+        <div class="cs-deliverable-list">
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Social media graphics</strong> — pre-race show announcements, honorary positions, race-day countdowns, fan engagement posts</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Email campaigns</strong> — Speedweeks event announcements, post-event thank-you sends</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Print collateral</strong> — rack cards, brochures, ticket packages, event flyers, credential passes</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Photo composites</strong> — Destination Daytona Beach magazine cover (Coke Zero Sugar 400, Summer 2018)</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>60th Daytona 500 logo</strong> — final signatory on the official anniversary mark</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-image-block">
+        <img src="img/dis-magazine.jpg" alt="Destination Daytona Beach — Summer 2018 cover, Coke Zero Sugar 400 Under the Lights">
+        <div class="cs-image-caption">Destination Daytona Beach — Summer 2018 cover. Photo composite for the Coke Zero Sugar 400 Under the Lights feature</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: SOCIAL MEDIA ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Social Media</span></div>
+    <h2 class="cs-section-heading">Race-day graphics at<br><em>racing speed.</em></h2>
+    <p class="cs-body">
+      The 60th Daytona 500 brought marquee names into every honorary role — Grand Marshal, Honorary Starter, Honorary Pace Car Driver, Pre-Race Show performers. Each announcement was a high-visibility social moment requiring a graphic that was on-brand, sponsor-compliant, and ready to post before the news cycle moved on.
+    </p>
+    <div class="cs-pull">
+      <div class="cs-pull-text">"Collaborating with multiple teams to develop graphic collateral for various public events and platforms — carefully considering <em>the track's iconic history and prestige.</em>"</div>
+    </div>
+    <div class="cs-three-col">
+      <div class="cs-image-block">
+        <img src="img/dis-social-dale.jpg" alt="Dale Earnhardt Jr. — Grand Marshal, 60th Daytona 500">
+        <div class="cs-image-caption">Dale Earnhardt Jr. — Grand Marshal, 60th Daytona 500</div>
+      </div>
+      <div class="cs-image-block">
+        <img src="img/dis-social-chipper.jpg" alt="Chipper Jones — Pre-Race Show, 60th Daytona 500">
+        <div class="cs-image-caption">Chipper Jones — Pre-Race Show announcement</div>
+      </div>
+      <div class="cs-image-block">
+        <img src="img/dis-pacer.jpg" alt="Pacer Experience — Your pace or mine?">
+        <div class="cs-image-caption">"Your pace or mine?" — The Pacer Experience campaign</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: SPEEDWEEKS ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Speedweeks</span></div>
+    <div class="cs-two-col wide-left">
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="cs-image-block">
+          <img src="img/dis-rackcard.jpg" alt="Speedweeks 2018 rack card — front and back">
+          <div class="cs-image-caption">Speedweeks 2018 rack card — front: "When it comes to unforgettable, there is no greater." Back: full 10-event schedule</div>
+        </div>
+        <div class="cs-image-block">
+          <img src="img/dis-brochure.jpg" alt="The Inside Track — Speedweeks 2018 camping brochure, open spread">
+          <div class="cs-image-caption">The Inside Track — Speedweeks 2018 camping brochure, open spread with full event schedule and parking guide</div>
+        </div>
+      </div>
+      <div>
+        <h2 class="cs-section-heading">Ten events.<br><em>Three weeks.</em></h2>
+        <p class="cs-body">
+          Speedweeks is the annual buildup to the Daytona 500 — a three-week, ten-event program covering everything from the Rolex 24 to the ARCA Racing Series to the Great American Race itself. Every event needed its own materials, all consistent with the parent brand, all sponsor-compliant, all ready on time.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The Speedweeks rack card carried the full schedule on the back and a single, driving image on the front — the packed stands at night, "When it comes to unforgettable, there is no greater." The Inside Track camping brochure went deeper: a full open-spread event schedule and parking guide for fans making the trip. Clear, confident, built to live in hotel lobbies and visitors' centers across Daytona Beach.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: EMAIL + EVENT ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Email & Event Campaigns</span></div>
+    <div class="cs-two-col wide-right">
+      <div>
+        <h2 class="cs-section-heading">From inbox to<br><em>the infield.</em></h2>
+        <p class="cs-body">
+          The Sunday Doubleheader campaign announced a historic moment: for the first time in 34 years, the Advance Auto Parts Clash and Daytona 500 Qualifying would run on the same day. The campaign needed to communicate the significance of that — fast, loud, and clearly — across both the event flyer and the email send.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          Post-event thank-you emails kept the brand relationship alive after race day — a high-flying Supercross thank-you sent to attendees of the Monster Energy Supercross round at Daytona, complete with champion highlights and sponsor lockups.
+        </p>
+      </div>
+      <div class="cs-image-block">
+          <img src="img/dis-email.jpg" alt="Sunday Doubleheader email — Speedweeks 2018">
+          <div class="cs-image-caption">Sunday Doubleheader email — Speedweeks 2018, deployed to the DIS subscriber list</div>
+        </div>
+    </div>
+  </section>
+
+  <!-- FULL BLEED — doubleheader flyer -->
+  <div class="cs-full-image">
+    <img src="img/dis-doubleheader.jpg" alt="Return of the Sunday Doubleheader — full event flyer">
+  </div>
+
+  <!-- ── SECTION: PRINT ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Print & Collateral</span></div>
+    <div class="cs-two-col wide-left">
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="cs-image-block">
+          <img src="img/dis-ticket.jpg" alt="$5 Daytona Dollars — concession voucher">
+          <div class="cs-image-caption">$5 Daytona Dollars — concession voucher for Monster Energy Supercross, designed to sponsor spec</div>
+        </div>
+        <div class="cs-image-block">
+          <img src="img/dis-stencil.jpg" alt="Daytona pumpkin carving stencils — Tri-oval and Firebird">
+          <div class="cs-image-caption">Daytona pumpkin carving stencils — Tri-oval wordmark and Firebird logo, seasonal fan engagement asset</div>
+        </div>
+      </div>
+      <div>
+        <h2 class="cs-section-heading">Every surface,<br><em>every deadline.</em></h2>
+        <p class="cs-body">
+          The scale of DIS print work demanded consistency under pressure. Sponsor lockups had to be exact — every logo in the correct tier, every size relationship correct, no exceptions. A concession voucher, a credential pass, and a pumpkin carving stencil all required the same level of brand precision.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The seasonal stencils — a Tri-oval wordmark and the classic Firebird logo — were a fan engagement giveaway distributed digitally for Halloween. Small in scope, high in brand affection. The kind of piece that reminds fans why they love the track in the off-season.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          Every piece, regardless of size or occasion, was produced under the same sponsorship compliance review — every logo tier verified, every partner represented at the correct prominence. At a facility with the sponsorship footprint of DIS, that isn't a minor concern.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: THE ROLE ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Role</span></div>
+    <h2 class="cs-section-heading">Lead designer for<br><em>The Great American Race.</em></h2>
+    <p class="cs-body">This was high-volume, high-stakes production design at one of the most recognized venues in American sports — working with multiple internal teams, tight race-week windows, and a brand whose history demanded respect at every turn.</p>
+
+    <div class="messaging-grid">
+      <div class="messaging-card">
+        <div class="messaging-card-label">Brand Refresh</div>
+        <div class="messaging-card-text">Played a key role in refreshing the visual identity of DIS social media platforms in conjunction with a $400 million stadium renovation — a brand initiative aimed at engaging a younger audience while honoring the track's iconic prestige.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Event Design</div>
+        <div class="messaging-card-text">Produced event brochures, large-scale posters, rack cards, and promotional flyers for the full Speedweeks calendar — ten events across three weeks, each with its own visual requirements and sponsor obligations.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Social & Digital</div>
+        <div class="messaging-card-text">Designed and deployed social graphics for marquee announcements — honorary positions, pre-race show performers, fan engagement campaigns — and produced the email campaigns that reached the DIS subscriber base throughout Speedweeks.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Photo Composites</div>
+        <div class="messaging-card-text">Created photo composites featured on the cover of Destination Daytona Beach magazine, promoting the Coke Zero Sugar 400 in Summer 2018 — and served as final signatory on the official 60th Daytona 500 anniversary logo.</div>
+      </div>
+      <div class="slogan-block">
+        <div>
+          <div class="slogan-item-label">Career milestone</div>
+          <div class="slogan-item-text">Final signatory — 60th Daytona 500 logo</div>
+        </div>
+        <div>
+          <div class="slogan-item-label">Published work</div>
+          <div class="slogan-item-text">Destination Daytona Beach — Summer 2018 cover</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT NAV FOOTER -->
+  <div class="project-nav-footer">
+    <a href="/work.html" class="proj-nav-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      All Work
+    </a>
+    <a href="/contact.html" class="proj-nav-cta">
+      Start a project like this
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div><!-- /case-study -->
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta & a healthy suspicion of default settings</footer>
+
+<script>
+  (function() {
+    var hbtn = document.querySelector('.nav-hamburger');
+    var menu = document.getElementById('nav-mobile-menu');
+    if (!hbtn || !menu) return;
+    hbtn.addEventListener('click', function() {
+      var open = hbtn.getAttribute('aria-expanded') === 'true';
+      hbtn.setAttribute('aria-expanded', String(!open));
+      hbtn.classList.toggle('is-open', !open);
+      menu.classList.toggle('is-open', !open);
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hbtn.setAttribute('aria-expanded', 'false');
+        hbtn.classList.remove('is-open');
+        menu.classList.remove('is-open');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

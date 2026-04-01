@@ -140,8 +140,8 @@
 
         <div class="form-step active" id="step1">
           <div class="step-heading">
-            <h2>First, who are you?</h2>
-            <p>I don't do anonymous — all fields are required. Promise I won't cold-call you.</p>
+            <h2>Nice to meet you!<br>Let's start with the basics.</h2>
+            <p>Fill in the fields below and I'll take it from there — no spam, ever.</p>
           </div>
 
           <div class="field-row cols-2">
@@ -164,7 +164,7 @@
               <span class="field-error" id="err-jobTitle"></span>
             </div>
             <div class="field">
-              <label for="company">Company / Organisation <span class="req">*</span></label>
+              <label for="company">Company / Organisation</label>
               <input type="text" id="company" name="company" placeholder="Acme Inc." autocomplete="organization" />
               <span class="field-error" id="err-company"></span>
             </div>
@@ -185,7 +185,7 @@
 
           <div class="field-row">
             <div class="field">
-              <label for="website">Company Website <span class="req">*</span></label>
+              <label for="website">Company Website</label>
               <input type="url" id="website" name="website" placeholder="https://acme.com" autocomplete="url" />
               <span class="field-error" id="err-website"></span>
             </div>
@@ -323,7 +323,7 @@
           <div class="consent-row">
             <input type="checkbox" id="consent" name="consent" />
             <label for="consent">
-              I confirm that the information I've provided is accurate and that I'm reaching out on behalf of myself or the stated organisation. I agree to be contacted at the email and phone number provided. <a href="#" onclick="return false;">Privacy Policy</a>
+              I confirm that the information I've provided is accurate and that I'm reaching out on behalf of myself or the stated organisation. I agree to be contacted at the email and phone number provided. <a href="/privacy.html">Privacy Policy</a>
             </label>
           </div>
           <span class="field-error" id="err-consent" style="margin-bottom: 16px; display:block;"></span>
@@ -348,7 +348,7 @@
       <div class="success-panel" id="successPanel">
         <div class="success-icon">✓</div>
         <h2>You're in the queue.</h2>
-        <p>Got it — I'll dig into your project details and follow up within <strong>one business day</strong>. Try not to start any other rabbit holes in the meantime.</p>
+        <p>Got it — I'll dig into your project details and follow up within <strong>one business day</strong>.</p>
       </div>
 
     </div><!-- /.form-body -->
@@ -496,7 +496,6 @@
             { id: 'firstName', label: 'First name' },
             { id: 'lastName',  label: 'Last name' },
             { id: 'jobTitle',  label: 'Job title' },
-            { id: 'company',   label: 'Company name' },
           ];
 
           fields.forEach(({ id, label }) => {
@@ -524,9 +523,7 @@
           } else { clearError('phone'); }
 
           const website = document.getElementById('website').value;
-          if (isEmpty(website)) {
-            setError('website', 'Company website is required.'); valid = false;
-          } else if (!isURL(website)) {
+          if (!isEmpty(website) && !isURL(website)) {
             setError('website', 'Please enter a valid URL (include https://).'); valid = false;
           } else { clearError('website'); }
         }
@@ -616,7 +613,7 @@
         // 2. Create a new form → copy the form ID (e.g. "xpwzgkra")
         // 3. Replace YOUR_FORM_ID below with that ID
         // ─────────────────────────────────────────────────────────
-        const FORMSPREE_ID = 'YOUR_FORM_ID';
+        const FORMSPREE_ID = 'xeerzlld';
 
         try {
           const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {

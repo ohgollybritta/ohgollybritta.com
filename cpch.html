@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Center for Post-Capitalist History — oh golly britta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/cpch.css">
+  <style>
+    a.nav-brand { text-decoration: none !important; color: #2C1A0E !important; }
+    a.nav-brand:hover { color: #2C1A0E !important; }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      width: 38px; height: 38px; background: none; border: none;
+      cursor: pointer; padding: 7px; border-radius: 8px; flex-shrink: 0; z-index: 10;
+    }
+    .nav-hamburger span {
+      display: block; width: 100%; height: 2px;
+      background: #2C1A0E; border-radius: 2px; transform-origin: center;
+      transition: transform .25s, opacity .18s, width .2s;
+    }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; }
+    @media (max-width: 860px) {
+      nav { flex-wrap: wrap !important; padding: 12px 20px !important; }
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      .nav-mobile-menu {
+        width: 100%; order: 99;
+        border-top: 1px solid rgba(168,82,58,.15);
+        margin: 8px -20px -12px; padding: 0 20px;
+        background: #F5EDE4;
+      }
+      .nav-mobile-menu.is-open { display: block !important; }
+      .nav-mobile-menu ul { list-style: none; padding: 6px 0 10px; }
+      .nav-mobile-menu ul li a {
+        display: block; padding: 13px 4px;
+        font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+        color: #2C1A0E; text-decoration: none;
+        border-bottom: 1px solid rgba(168,82,58,.1);
+        transition: color .2s, padding-left .2s;
+      }
+      .nav-mobile-menu ul li:last-child a { border-bottom: none; }
+      .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand" style="text-decoration:none;">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" title="GitHub" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="#" title="Twitch" target="_blank">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+        <polygon points="16,8.5 22,12 16,15.5 10,12"/>
+        <polyline points="10,12 10,19.5 16,23 16,15.5"/>
+        <polyline points="22,12 22,19.5 16,23"/>
+      </svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="project-hero">
+  <img class="project-hero-img" src="img/cpch-hero.jpg" alt="Center for Post-Capitalist History — installation view" style="object-position: center center;">
+  <div class="hero-gradient"></div>
+  <div class="project-hero-content">
+    <a href="/work.html" class="project-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Back to Work
+    </a>
+    <div class="project-eyebrow">
+      <span class="project-cat">Brand Identity · Print · Exhibition</span>
+      <span class="project-eyebrow-dot"></span>
+      <span class="project-year">2017</span>
+    </div>
+    <h1 class="project-hero-title">Center for<br>Post-Capitalist<br><em>History</em></h1>
+    <div class="project-hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Client</span>
+        <span class="hero-meta-value">Center for Post-Capitalist History</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Publisher</span>
+        <span class="hero-meta-value">Burrow Press</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Scope</span>
+        <span class="hero-meta-value">Logo · Identity · Brochure · Field Guide · Exhibition</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY BODY ── -->
+<div class="case-study">
+
+  <!-- OVERVIEW STRIP -->
+  <div class="cs-overview">
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Nature</div>
+      <div class="cs-overview-value">Para-<em>fictional</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Aesthetic</div>
+      <div class="cs-overview-value">Wartime<em> × Swiss</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Deliverables</div>
+      <div class="cs-overview-value">Brand<em> + Print + Book</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Published by</div>
+      <div class="cs-overview-value" style="font-size:18px; line-height:1.25;">Burrow<em> Press</em></div>
+    </div>
+  </div>
+
+  <!-- ── SECTION: THE BRIEF ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Brief</span></div>
+    <div class="cs-two-col wide-right">
+      <div>
+        <h2 class="cs-section-heading">A fictitious agency.<br><em>A real brand.</em></h2>
+        <p class="cs-body">
+          The Center for Post-Capitalist History is a para-fictional research institute — a governmental relief agency that exists only within the world of an art exhibition exploring the effects of capitalism on the human body. As the brand designer, the challenge was to make that fiction feel completely, uncomfortably real.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The approach combined wartime government aesthetics — think emergency services, institutional authority — with Swiss International typographic principles: clean, systematic, unflinching. The result is a brand that feels like it was always there. Like you should have received a pamphlet already.
+        </p>
+        <div class="cs-deliverable-list" style="margin-top:28px;">
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Logo system</strong> — full identity with multiple lockups across red, black, and white colorways</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Die-cut brochure</strong> — accordion-fold, briefcase-shaped, kraft + bristol construction</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Field guide layout</strong> — full book design for <em>A Field Guide to Embodied Archiving</em>, published by Burrow Press</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Exhibition design</strong> — flag, signage, shelving, and environmental identity across multiple venues</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-image-block">
+        <img src="img/cpch-storefront.jpg" alt="CPCH storefront window installation — poster, flag, monitor">
+        <div class="cs-image-caption">Storefront window installation — CPCH poster, flag, and monitor display at night</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: THE IDENTITY ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Brand Identity</span></div>
+
+    <h2 class="cs-section-heading">Built to feel<br><em>already official.</em></h2>
+    <p class="cs-body">The logo mark — an hourglass intersected by a railroad perspective grid, with a fist at its center — synthesizes time, labor, infrastructure, and resistance into a single emblem. The system was designed to work hard across every surface: red on white, white on red, black on kraft, stamped on a flag. It had to read as institutional from across a room and hold up under close inspection.</p>
+
+    <div class="cs-pull">
+      <div class="cs-pull-text">"Wartime aesthetics combined with Swiss International design principles — to reflect the mission of a <em>fictitious governmental relief agency.</em>"</div>
+    </div>
+
+    <div class="cs-image-block" style="margin-top: 8px;">
+      <img src="img/cpch-logo.jpg" alt="CPCH logo system — full lockup variations">
+      <div class="cs-image-caption">Full logo system — primary lockup, condensed marks, CPCH abbreviation variants, red and black colorways</div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: THE BROCHURE ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Print & Collateral</span></div>
+    <div class="cs-two-col wide-left">
+      <div>
+        <h2 class="cs-section-heading">A tool kit, not<br><em>a pamphlet.</em></h2>
+        <p class="cs-body">
+          The brief called for a brochure. What came out was something closer to an artifact. Rather than a standard tri-fold, the brochure was designed as a die-cut briefcase — latched, accordion-folded, and built from recycled kraft paper with a bristol interior. Picking it up felt like opening a filing cabinet. Like you had just been issued something important.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The curves of the die-cut gave novelty and tactility that a folded sheet never could. The kraft paper carried the logo in a tone-on-tone deboss finish — resourceful and deliberately tattered, as if the organization had been operating under conditions of scarcity for some time.
+        </p>
+      </div>
+      <div class="cs-image-block">
+        <img src="img/cpch-brochure.jpg" alt="CPCH die-cut briefcase brochure — kraft cover">
+        <div class="cs-image-caption">Die-cut accordion brochure — briefcase form, recycled kraft cover with tone-on-tone logo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: FIELD GUIDE ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Field Guide</span></div>
+
+    <h2 class="cs-section-heading">The body as<br><em>archive.</em></h2>
+    <p class="cs-body">
+      <em>A Field Guide to Embodied Archiving</em>, published by Burrow Press, is the CPCH's primary document — a comprehensive guide to the body as a site of institutional record-keeping. The layout needed to carry the same institutional authority as the brand while making room for the writing's dark conceptual wit. Red and white. Tight grids. Anatomical diagrams repurposed as data.
+    </p>
+
+    <div class="cs-image-block" style="margin-top: 32px;">
+      <img src="img/cpch-spread-foil.jpg" alt="Field Guide — Embodied archive interpretation, training, and methodology">
+      <div class="cs-image-caption">Chapter opener — "Embodied archive interpretation, training, and methodology"</div>
+    </div>
+
+    <div class="cs-image-block" style="margin-top: 20px;">
+      <img src="img/cpch-spread-body2.jpg" alt="Field Guide spread — The Body Archive, p.17">
+      <div class="cs-image-caption">Interior spread — "The Body Archive" p.17: pineal gland preservation programs, immune system and memory loss mitigation</div>
+    </div>
+
+    <div class="cs-image-block" style="margin-top: 20px;">
+      <img src="img/cpch-spread-body.jpg" alt="Field Guide spread — The Body Archive">
+      <div class="cs-image-caption">Interior spread — "The Body Archive": hunger acquisitions, repetitive stress as inscription, labor under Late Capitalism</div>
+    </div>
+
+    <div class="cs-image-block" style="margin-top: 20px;">
+      <img src="img/cpch-spread-futures.jpg" alt="Field Guide spread — Post-Capitalist Futures">
+      <div class="cs-image-caption">Interior spread — "Post-Capitalist Futures": Franco 'Bifo' Berardi quote, CPCH manifesto text</div>
+    </div>
+  </section>
+
+  <!-- FULL BLEED — brochure close-up -->
+  <div class="cs-full-image">
+    <img src="img/cpch-brochure-dark.jpg" alt="CPCH die-cut briefcase brochure — dark close-up with accordion pages">
+  </div>
+
+  <!-- ── SECTION: EXHIBITION ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Exhibition</span></div>
+    <div class="cs-two-col wide-right">
+      <div>
+        <h2 class="cs-section-heading">Identity at<br><em>gallery scale.</em></h2>
+        <p class="cs-body">
+          The CPCH brand traveled across multiple exhibition venues — including the Black Mountain College Museum + Arts Center — and had to hold up at every scale from a flag mounted on a gallery wall to a business card propped on a rock. The identity was designed from the start to function as environmental design, not just print.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The red-painted room installation brought the brand fully into the space — wall-mounted monitor playing the exhibition video, corner shelving units in CPCH red displaying the field guide and collateral, the hourglass logo printed large and flat. Total immersion into a world that doesn't exist.
+        </p>
+      </div>
+      <div class="cs-image-block">
+        <img src="img/cpch-hero.jpg" alt="CPCH red room — TV and shelving installation">
+        <div class="cs-image-caption">Red room installation — CPCH-painted walls, wall-mounted monitor, branded corner shelving with field guide and collateral</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ROLE CARDS ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Role</span></div>
+    <h2 class="cs-section-heading">Brand design for a world<br><em>that shouldn't exist.</em></h2>
+    <p class="cs-body">The fiction only works if the design is completely committed. Every decision — the choice of kraft over coated stock, the institutional weight of the typeface, the severity of the red — was in service of making the CPCH feel like an organization you'd be nervous to receive mail from.</p>
+
+    <div class="messaging-grid">
+      <div class="messaging-card">
+        <div class="messaging-card-label">Brand Design</div>
+        <div class="messaging-card-text">Developed the full CPCH logo system from concept — mark, wordmark, multiple lockups — combining wartime iconography with Swiss International grid principles to establish institutional credibility for a para-fictional entity.</div>
+      </div>
+      <div class="messaging-card">
+        <div class="messaging-card-label">Print Production</div>
+        <div class="messaging-card-text">Designed and produced the die-cut accordion brochure and full book layout for the Burrow Press field guide — materials chosen deliberately to feel like artifacts from a world operating under resource constraints.</div>
+      </div>
+      <div class="slogan-block">
+        <div>
+          <div class="slogan-item-label">Exhibition venues</div>
+          <div class="slogan-item-text">Black Mountain College Museum + Arts Center and traveling</div>
+        </div>
+        <div>
+          <div class="slogan-item-label">Published field guide</div>
+          <div class="slogan-item-text">"A Field Guide to Embodied Archiving" — Burrow Press</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: EXHIBITIONS ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Exhibition History</span></div>
+    <div class="cs-two-col wide-left">
+      <div>
+        <h2 class="cs-section-heading">Where CPCH<br><em>has traveled.</em></h2>
+        <p class="cs-body">The Center for Post-Capitalist History exhibited across the US from 2017 through 2022 — galleries, project spaces, film screenings, and biennials. The brand went everywhere the work did.</p>
+        <p class="cs-body" style="margin-top:16px;">The field guide, <em>A Field Guide to Embodied Archiving</em>, was published by Burrow Press in July 2021.</p>
+      </div>
+      <div class="cpch-exhibitions">
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Laundromat Art Space — Solo Exhibition, CPCH Staging Area</div>
+          <div class="cpch-ex-meta">Miami, FL — 2022</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Killer Dentist Presents: CPCH Shorts</div>
+          <div class="cpch-ex-meta">Spectacle, New York, NY — 2022</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Undercurrents: The Flood</div>
+          <div class="cpch-ex-meta">Crisp Ellert Art Museum, St. Augustine, FL — 2022</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Interstice, The Residency Project / MOTOR</div>
+          <div class="cpch-ex-meta">Los Angeles, CA — 2021</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Staging Area (Solo Exhibition)</div>
+          <div class="cpch-ex-meta">Pancake House, Minneapolis, MN — 2021</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">LKTV, LinkoKino</div>
+          <div class="cpch-ex-meta">Philadelphia, PA — 2021</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Under Pressure, Co-Opt Research + Projects</div>
+          <div class="cpch-ex-meta">Lubbock, TX — 2021</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">2020 Florida Biennial</div>
+          <div class="cpch-ex-meta">Culture &amp; Arts Center, Hollywood, FL — Nov 2020–Feb 2021</div>
+        </div>
+        <div class="cpch-ex-item">
+          <div class="cpch-ex-venue">Zosima Gallery — Vexillology</div>
+          <div class="cpch-ex-meta">Arlington, TX — Apr–May 2018</div>
+        </div>
+        <div class="cpch-ex-item" style="border-bottom:none;">
+          <div class="cpch-ex-venue">Icebox Project Space</div>
+          <div class="cpch-ex-meta">Philadelphia, PA — Dec 2017</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT NAV FOOTER -->
+  <div class="project-nav-footer">
+    <a href="/work.html" class="proj-nav-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      All Work
+    </a>
+    <a href="/contact.html" class="proj-nav-cta">
+      Start a project like this
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div><!-- /case-study -->
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta & a healthy suspicion of default settings</footer>
+
+<script>
+  (function() {
+    var hbtn = document.querySelector('.nav-hamburger');
+    var menu = document.getElementById('nav-mobile-menu');
+    if (!hbtn || !menu) return;
+    hbtn.addEventListener('click', function() {
+      var open = hbtn.getAttribute('aria-expanded') === 'true';
+      hbtn.setAttribute('aria-expanded', String(!open));
+      hbtn.classList.toggle('is-open', !open);
+      menu.classList.toggle('is-open', !open);
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hbtn.setAttribute('aria-expanded', 'false');
+        hbtn.classList.remove('is-open');
+        menu.classList.remove('is-open');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

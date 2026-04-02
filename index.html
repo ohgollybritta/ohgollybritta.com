@@ -195,8 +195,8 @@
       <div class="htb-rank-sub">Networking · actively grinding</div>
     </div>
     <div>
-      <div class="htb-bar-label">Progress to next rank</div>
-      <div class="htb-bar-track"><div class="htb-bar-fill" style="width:15%"></div></div>
+      <div class="htb-bar-label">Progress to next rank <span style="float:right;">47%</span></div>
+      <div class="htb-bar-track"><div class="htb-bar-fill" style="width:47%"></div></div>
     </div>
   </div>
 
@@ -343,7 +343,7 @@
     }
   }
 
-  fetch('/spotify-proxy.php')
+  fetch('https://spotify-proxy-lyart.vercel.app/api/spotify')
     .then(function(r){ return r.json(); })
     .then(function(data){ console.log('[Spotify proxy]', data); updateWidget(data); })
     .catch(function(){

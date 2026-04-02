@@ -103,9 +103,8 @@
 .a-col-3  { grid-column: span 3; }
 
 /* Bio + right wrapper: explicit placement so auto-flow never misplaces them */
-.pivot-card       { grid-column: 1 / -1; grid-row: 1; }
-.bio-card         { grid-column: 1 / 8;  grid-row: 2; }
-.right-col-wrap   { grid-column: 8 / 13; grid-row: 2; }
+.bio-card        { grid-column: 1 / 8;  grid-row: 1; }
+.right-col-wrap  { grid-column: 8 / 13; grid-row: 1; }
 
 /* ── CARD FLAVORS ── */
 .card-cream { background: var(--cream);      padding: 28px 30px; }
@@ -156,6 +155,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-self: start;
+  min-height: 320px;
 }
 .pivot-card::before {
   content: '';
@@ -416,7 +416,6 @@
   }
 
   /* Explicit resets for positioned wrappers */
-  .pivot-card     { grid-column: 1 / -1 !important; grid-row: auto !important; }
   .bio-card       { grid-column: 1 / -1 !important; grid-row: auto !important; }
   .right-col-wrap { grid-column: 1 / -1 !important; grid-row: auto !important; }
 

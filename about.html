@@ -57,6 +57,23 @@
     .page-header .avatar-flip:hover { transform: rotate(-3deg) scale(1.08); box-shadow: 6px 6px 0 var(--terra-dark); }
     .page-header .avatar-flip:hover .avatar-pixel { opacity: 0; }
     .page-header .avatar-flip:hover .avatar-real  { opacity: 1; }
+
+    /* Bio read more */
+    .bio-expanded { display: none; }
+    .bio-expanded.is-open { display: block; }
+    .bio-read-more {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal);
+      cursor: pointer;
+      padding: 8px 0;
+      letter-spacing: .03em;
+      transition: color .2s;
+    }
+    .bio-read-more:hover { color: var(--terra); }
   </style>
 </head>
 <body>
@@ -105,7 +122,7 @@
         <img class="avatar-pixel" src="/img/avatar-pixel.png" alt="Britta pixel art">
         <img class="avatar-real"  src="/img/avatar-real.jpg" alt="Britta">
       </div>
-      <h1 class="page-title">Britta <em>Davis.</em></h1>
+      <h1 class="page-title"><em>Britta</em> Davis.</h1>
     </div>
     <div class="name-pills">
       <span class="pill pill-terra">Designer</span>
@@ -123,16 +140,21 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
         Bio
       </div>
-      <p style="font-family:'Fraunces',serif; font-size:clamp(16px,1.6vw,19px); font-weight:800; font-style:italic; line-height:1.45; color:var(--ink); border-left:3px solid var(--teal); padding-left:14px; margin-bottom:18px;">The answer is already there. <span style="color:var(--teal);">Britta finds it — by looking closer than the brief requires.</span></p>
-      <p>Her method showed up early. At nine, she got her first computer and a stack of programming books. By twelve, she was building websites — including a celebrity fan site that caught the attention of MTV Europe. Design became a constant: from production roles at <a href="https://en.wikipedia.org/wiki/WWE" target="_blank">WWE</a> and track designer at <a href="https://en.wikipedia.org/wiki/Daytona_International_Speedway" target="_blank">Daytona Intl. Speedway</a>, to lifecasting on her own Justin.tv channel, and years of design work for small businesses and organizations. The throughline was always the same: look closer than expected, build something worth noticing.</p>
-      <p>At 19, she lost her vision. When your whole identity depends on seeing — and then you can't — you face a specific kind of choice. She learned to look differently. She stopped relying on the first glance and started requiring the closer one.</p>
-      <p>At 28, an autosomal DNA test revealed her as an <a href="https://www.npenetwork.org/whats-an-npe" target="_blank">NPE</a> — a discovery that could have been an ending. Instead, she investigated. Tracing her lineage uncovered several Revolutionary War patriot ancestors, including notable women whose service had never been formally documented. <em>They were already there.</em> She just had to look long enough to find them. That research earned her entry into the Daughters of the American Revolution, where she rose to the role of Chapter Regent within five years.</p>
-      <p>Some changes arrive slowly. Others don't. With her children beside her, Britta narrowly escaped an attempted abduction in broad daylight. That moment changed everything. She set her sights on law enforcement as the most direct path to addressing human trafficking. Physical setbacks during academy training redirected her course — but closed doors don't end the mission. They redirect the method.</p>
-      <p>She pivoted to cybersecurity, OSINT, and digital forensics — and realized the way she traces a family line, the way she walks through a building everyone else has declared empty of meaning, is exactly the way you find the people who exploit children in digital spaces. Same tool. A problem finally worthy of everything the method had been building toward. The purpose is fixed. The path is still being written.</p>
+      <p style="font-family:'Fraunces',serif; font-size:clamp(16px,1.6vw,19px); font-weight:800; font-style:italic; line-height:1.45; color:var(--ink); border-left:3px solid var(--teal); padding-left:14px; margin-bottom:18px;">The answer is already there. <span style="color:var(--teal);">Britta finds it by looking closer.</span></p>
+      <p>Her instincts showed up early, when her dad handed her a computer and a stack of programming books. She taught herself to build websites, and by middle school one of them, a celebrity fan site, was featured on MTV Europe. It had gained traction and notoriety for serving up rare remixes, pictures, and video footage through a mIRC channel. That curiosity never slowed down. A few years later, she became one of the original ten lifecasters on Justin.tv (covered in a <a href="https://www.thehour.com/entertainment/article/Lifecasting-can-make-anyone-a-reality-star-8256223.php" target="_blank">nationally syndicated article</a> that ran in over 30 papers).</p>
+      <p>Then, at 19, an illness took most of her vision. Like most people with their senses, she had taken it for granted. Losing it taught her she had something worth losing. The recovery was rare and unexpected, and essentially changed how she approached everything that followed. While living in San Francisco, she took the leap and began her design education at Academy of Art University, then continued at Full Sail University in Orlando. From there, she worked live broadcast environments at <a href="https://en.wikipedia.org/wiki/WWE" target="_blank">WWE</a> as a Decko operator and vignette truss builder. That led to a role as lead track graphic artist at <a href="https://en.wikipedia.org/wiki/Daytona_International_Speedway" target="_blank">Daytona Intl. Speedway</a>.</p>
+      <button class="bio-read-more" id="bioReadMore" aria-expanded="false">Read more</button>
+      <div class="bio-expanded" id="bioExpanded">
+      <p>Then, came the moment that redirected everything: In the late stages of her pregnancy, with a small child in tow, Britta was stalked and nearly abducted in broad daylight. She noticed him before anyone else did. She calculated how many steps behind them he was, formulated a plan, and got them out. It was her training in <a href="https://en.wikipedia.org/wiki/Krav_Maga" target="_blank">Krav Maga</a> and her own situational awareness that kept them alive.</p>
+      <p>In the aftermath, she did what she has always done. She investigated by pulling the thread: seeking to gain dimension on what made them a target. What she found was a market: what children sell for, what a pregnant woman is worth. The curiosity and marketing experience that had once built fan sites and designed collateral for racetracks was now pointed at something more.</p>
+      <p>Around the same time, an autosomal DNA test revealed her as an <a href="https://www.npenetwork.org/whats-an-npe" target="_blank">NPE</a>, which cued her to take a deeper look at her entire family history, because the truth was what she was after. Tracing her lineage uncovered connections to several well-documented Revolutionary War patriots whose records were on file, but whose link to her had never been established. She found it and proved it. That research earned her entry into the Daughters of the American Revolution, where she rose to Chapter Regent within her first five years, a pace almost unheard of in the organization.</p>
+      <p>She spent years developing brands for small businesses and organizations, but the abduction had already set a different course. She became an OSINT analyst for a notable non-profit focused on combating human trafficking, and began pursuing a master's degree in Criminal Justice. Wanting a more direct path, she entered law enforcement training. Physical setbacks during the academy redirected the course, but not the mission, and not the skill set she had already built.</p>
+      <p style="font-family:'Fraunces',serif; font-size:clamp(16px,1.6vw,19px); font-weight:800; font-style:italic; line-height:1.45; color:var(--ink); border-left:3px solid var(--terra); padding-left:14px; margin-top:24px;">Investigating, digging, exploring, analyzing: every thread of her life has required the same thing. The way she traces a family line, the way she walks through a building everyone else has declared empty of meaning, is exactly the way you find the people who exploit children in digital spaces. Most people can see. Britta knows how to look. The purpose is fixed. The path is still being written.</p>
+      </div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-num">20+</div>
-          <div class="stat-label">Years designing</div>
+          <div class="stat-label">Years creating</div>
         </div>
         <div class="stat">
           <div class="stat-num">5+</div>
@@ -269,7 +291,7 @@
       <div class="exp-item">
         <div class="exp-role">Academy Recruit</div>
         <div class="exp-org teal-org">Fairfax County Government</div>
-        <div class="exp-meta">Mar 2025 – Jan 2026 · Full-time · Chantilly, VA</div>
+        <div class="exp-meta">Nov 2025 – Jan 2026 · Full-time · Chantilly, VA</div>
         <div class="sub-role-title">Police Recruit</div>
         <div class="sub-role-meta">Nov 2025 – Jan 2026 · Full-time</div>
         <div class="exp-desc">Attended FCCJA for Session 91. Served as Recruit Squad Leader for Squad #10, managing peer accountability across high-demand academic, physical, and tactical training.</div>
@@ -370,6 +392,14 @@
           <div class="cert-name-text">Anti-Trafficking Open Source Intelligence</div>
           <div class="cert-issuer-text">Guardian Group · Jul 2025</div>
           <div class="cert-skill-tags"><span class="cert-skill-tag teal">OSINT</span><span class="cert-skill-tag teal">Data Reporting</span></div>
+        </div>
+      </div>
+      <div class="about-cert-item">
+        <div class="cert-dot-col"><div class="about-cert-dot teal"></div></div>
+        <div class="cert-info">
+          <div class="cert-name-text">OpSec</div>
+          <div class="cert-issuer-text">Guardian Group</div>
+          <div class="cert-skill-tags"><span class="cert-skill-tag teal">Operations Security</span></div>
         </div>
       </div>
       <div class="about-cert-item">
@@ -495,6 +525,19 @@
       btn.classList.remove('is-open');
       menu.classList.remove('is-open');
     });
+  });
+})();
+</script>
+<script>
+(function() {
+  var btn = document.getElementById('bioReadMore');
+  var content = document.getElementById('bioExpanded');
+  if (!btn || !content) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    content.classList.toggle('is-open', !open);
+    btn.textContent = !open ? 'Read less' : 'Read more';
   });
 })();
 </script>

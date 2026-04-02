@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operation US-One — Oh Golly, Britta!  |  ohgollybritta.com</title>
+  <title>Operation i1 — Oh Golly, Britta!  |  ohgollybritta.com</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
       .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
     }
 
-    /* ── IMAGE HERO ── */
+    /* ── NO-IMAGE HERO ── */
     .project-hero {
       position: relative;
       min-height: 72vh;
@@ -60,21 +60,23 @@
       overflow: hidden;
       background: var(--ink);
     }
-    .project-hero-bg {
+    /* Subtle grid */
+    .project-hero::before {
+      content: '';
       position: absolute; inset: 0;
-      background-image: url('/img/us1-route-map.jpg');
-      background-size: cover;
-      background-position: center 35%;
-      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(91,184,168,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,184,168,.05) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
     }
-    /* Dark gradient overlay */
+    /* Radial glow bottom-left */
     .hero-glow {
       position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(44,26,14,.55) 0%,
-        rgba(44,26,14,.2) 40%,
-        rgba(44,26,14,.85) 100%
+      background: radial-gradient(
+        ellipse 65% 50% at 10% 100%,
+        rgba(61,154,139,.2) 0%,
+        transparent 65%
       );
       pointer-events: none;
     }
@@ -217,7 +219,6 @@
 
 <!-- ── HERO ── -->
 <div class="project-hero">
-  <div class="project-hero-bg"></div>
   <div class="hero-glow"></div>
   <div class="project-hero-content">
     <a href="/recent-project.html" class="project-back">
@@ -234,7 +235,7 @@
       <div class="project-eyebrow-dot"></div>
       <span class="project-year">2025–Present</span>
     </div>
-    <h1 class="project-hero-title">Operation<br><em>US-One</em></h1>
+    <h1 class="project-hero-title">Operation<br><em>i1</em></h1>
     <div class="project-hero-meta">
       <div class="hero-meta-item">
         <div class="hero-meta-label">Type</div>
@@ -289,10 +290,10 @@
       <div>
         <h2 class="cs-section-heading">Code written with<br><em>purpose behind it.</em></h2>
         <p class="cs-body">
-          Operation US-One is a deep web scraping tool built in Linux to streamline and automate intelligence-gathering in support of anti-human trafficking efforts. It targets publicly accessible platforms — forums, classified ad sites, and other corners of the open and deep web where trafficking activity is known to surface — and extracts structured data that would otherwise require hours of manual review.
+          Operation i1 is a deep web scraping tool built in Linux to streamline and automate intelligence-gathering in support of anti-human trafficking efforts. It targets publicly accessible platforms — forums, classified ad sites, and other corners of the open and deep web where trafficking activity is known to surface — and extracts structured data that would otherwise require hours of manual review.
         </p>
         <p class="cs-body" style="margin-top:16px;">
-          The goal isn't surveillance for its own sake. It's efficiency — getting useful, organized information into the hands of people who can act on it faster than any manual process allows.
+          The goal isn't surveillance for its own sake. It's the same method applied to the hardest problem: look closer at systems most people assume someone else is watching, find what's hidden inside them, and build tools that make acting on it possible.
         </p>
         <div class="cs-pull">
           <div class="cs-pull-text">"The most dangerous part of trafficking is how <em>invisible it is.</em> This project is about removing that advantage."</div>
@@ -331,7 +332,7 @@
           Anti-trafficking investigators and advocates face a signal-to-noise problem. The web is vast, the platforms shift constantly, and the volume of content that needs to be reviewed to surface a single actionable lead is enormous. Manual searching is exhausting, inconsistent, and doesn't keep pace with the way these networks operate.
         </p>
         <p class="cs-body" style="margin-top:16px;">
-          Existing tools are often expensive, inaccessible to independent advocates, or designed for law enforcement environments that most community-level organizations can't access. Operation US-One exists in that gap — lightweight, open, and purpose-built for the problem.
+          Existing tools are often expensive, inaccessible to independent advocates, or designed for law enforcement environments that most community-level organizations can't access. Operation i1 exists in that gap — lightweight, open, and purpose-built for the problem.
         </p>
       </div>
       <div>
@@ -360,7 +361,7 @@
   <section class="cs-section">
     <div class="cs-section-label"><span>How It Works</span></div>
     <h2 class="cs-section-heading">A pipeline from<br><em>collection to output.</em></h2>
-    <p class="cs-body">Operation US-One runs as a set of modular scripts executed from the Linux command line. Each stage of the pipeline is designed to be inspectable, adjustable, and re-runnable — so the tool improves over time without requiring a full rebuild.</p>
+    <p class="cs-body">Operation i1 runs as a set of modular scripts executed from the Linux command line. Each stage of the pipeline is designed to be inspectable, adjustable, and re-runnable — so the tool improves over time without requiring a full rebuild.</p>
     <div class="pipeline">
       <div class="pipeline-step">
         <div class="pipeline-num">01</div>
@@ -478,7 +479,7 @@
 
 </div><!-- /case-study -->
 
-<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; look closer · build bolder &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
 
 <script>
 (function() {

@@ -143,11 +143,11 @@
       <div class="project-eyebrow-dot"></div>
       <span class="project-year">2026 – Present</span>
     </div>
-    <h1 class="project-hero-title">Sage, <em>the Kitch Assist</em></h1>
+    <h1 class="project-hero-title">Sage</h1>
     <div class="project-hero-meta">
       <div class="hero-meta-item">
         <div class="hero-meta-label">Platform</div>
-        <div class="hero-meta-value">Raspberry Pi 4</div>
+        <div class="hero-meta-value">Raspberry Pi</div>
       </div>
       <div class="hero-meta-divider"></div>
       <div class="hero-meta-item">
@@ -156,8 +156,13 @@
       </div>
       <div class="hero-meta-divider"></div>
       <div class="hero-meta-item">
-        <div class="hero-meta-label">Version</div>
-        <div class="hero-meta-value">🌿 v1.4.2</div>
+        <div class="hero-meta-label">Status</div>
+        <div class="hero-meta-value">Actively Building</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Audio to Cloud</div>
+        <div class="hero-meta-value">Never</div>
       </div>
     </div>
   </div>
@@ -169,20 +174,20 @@
   <!-- OVERVIEW STRIP -->
   <div class="cs-overview">
     <div class="cs-overview-item">
-      <div class="cs-overview-label">Voice Processing</div>
-      <div class="cs-overview-value"><em>100%</em> On-Device</div>
+      <div class="cs-overview-label">Hardware</div>
+      <div class="cs-overview-value">Raspberry <em>Pi</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Language</div>
+      <div class="cs-overview-value">Python</div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Cloud Audio</div>
+      <div class="cs-overview-value"><em>Zero</em> storage</div>
     </div>
     <div class="cs-overview-item">
       <div class="cs-overview-label">Source Code</div>
-      <div class="cs-overview-value">Open &amp; <em>Auditable</em></div>
-    </div>
-    <div class="cs-overview-item">
-      <div class="cs-overview-label">Subscription</div>
-      <div class="cs-overview-value"><em>None.</em> Ever.</div>
-    </div>
-    <div class="cs-overview-item">
-      <div class="cs-overview-label">Firewall</div>
-      <div class="cs-overview-value">On by <em>Default</em></div>
+      <div class="cs-overview-value">Coming to <em>GitHub</em></div>
     </div>
   </div>
 
@@ -191,12 +196,12 @@
     <div class="cs-section-label"><span>The Problem</span></div>
     <div class="cs-two-col wide-left">
       <div>
-        <h2 class="cs-section-heading">Convenience shouldn't cost<br><em>your privacy.</em></h2>
+        <h2 class="cs-section-heading">Always listening —<br><em>and always saving.</em></h2>
         <p class="cs-body">
           Commercial voice assistants have always sent audio to the cloud for processing — that was the known trade-off from day one. But for a while, some devices offered a middle ground: an opt-out setting that kept certain voice interactions local, never leaving the hardware. That option is gone now. In early 2025, it was quietly removed. The official reason was AI: newer generative features require more processing power than the device itself can provide, so everything goes to the cloud, without exception, and without a way to decline.
         </p>
         <p class="cs-body" style="margin-top:16px;">
-          The convenience was never the problem. A voice assistant is genuinely useful for the small, repetitive things — timers, music, reminders. But those tasks don't require a server farm. They never did. The cloud dependency isn't a technical necessity for a kitchen timer. It's a data strategy. "Always-on" and "always uploading" are two different things, and they don't have to come as a package.
+          The convenience was never the problem. A voice assistant is genuinely useful for the small, repetitive things — timers, music, reminders. But look closer: those tasks don't require a server farm. They never did. The cloud dependency isn't a technical necessity for a kitchen timer. It's a data strategy. "Always-on" and "always uploading" are two different things, and they don't have to come as a package.
         </p>
         <div class="cs-pull">
           <div class="cs-pull-text">"Always-on shouldn't mean<br><em>always uploading.</em>"</div>
@@ -207,13 +212,9 @@
           <div class="messaging-card-label">What Changed</div>
           <div class="messaging-card-text">In early 2025, the last remaining opt-out for local voice processing was removed from major commercial smart speakers. The stated reason was generative AI — new features need the cloud. The effect was that users lost the ability to keep any part of their voice data on-device, with no alternative offered.</div>
         </div>
-        <div class="messaging-card" style="margin-bottom:20px;">
-          <div class="messaging-card-label">The Gap</div>
-          <div class="messaging-card-text">No mainstream voice assistant gives you timers, reminders, weather, calendar, and an AI chat interface without a persistent cloud pipeline. Sage is built to close that gap — doing all of it locally, except the things that genuinely need the internet.</div>
-        </div>
         <div class="messaging-card">
-          <div class="messaging-card-label">The Security Layer</div>
-          <div class="messaging-card-text">A device that lives on your home network and listens for its name should also be able to defend itself. Sage ships with a firewall enabled, monitors for intrusion attempts, and tells you about them out loud.</div>
+          <div class="messaging-card-label">The Gap</div>
+          <div class="messaging-card-text">No mainstream voice assistant gives you the full feature set without the cloud dependency. Sage is built to close that gap — doing the everyday things well, without sending a single byte of your voice anywhere.</div>
         </div>
       </div>
     </div>
@@ -223,67 +224,37 @@
   <section class="cs-section">
     <div class="cs-section-label"><span>Features</span></div>
     <h2 class="cs-section-heading">The things you actually<br><em>use an assistant for.</em></h2>
-    <p class="cs-body">Sage is built around the tasks that make a voice assistant genuinely useful day-to-day — not a smart home hub, not a product catalog. Timers, weather, reminders, calendar, music, and an optional AI conversation mode. All of it processed locally except what has to leave the device by nature.</p>
+    <p class="cs-body">Sage is built around the tasks that make a voice assistant genuinely useful day-to-day — not an AI chatbot, not a smart home hub. Just the practical stuff, done reliably, without the surveillance footprint.</p>
     <div class="sage-feature-grid">
-      <div class="sage-feature">
-        <span class="sage-feature-icon">⏱</span>
-        <div class="sage-feature-name">Kitchen Timers</div>
-        <div class="sage-feature-desc">Set named or numbered timers by voice. Preset durations for pasta, rice, eggs. Ask what's running, check time remaining, cancel one or cancel all — hands-free while cooking.</div>
-      </div>
-      <div class="sage-feature">
-        <span class="sage-feature-icon">🔔</span>
-        <div class="sage-feature-name">Reminders</div>
-        <div class="sage-feature-desc">Schedule reminders by voice — "in 20 minutes" or "at 5:30 PM." Sage speaks them back at the right time and sends a push notification to your phone via ntfy, even when you're not in the kitchen.</div>
-      </div>
-      <div class="sage-feature">
-        <span class="sage-feature-icon">🌤</span>
-        <div class="sage-feature-name">Weather Reports</div>
-        <div class="sage-feature-desc">Current conditions, tomorrow's forecast, and outfit tips. Ask "What's the weather?" or "What's the weather tomorrow?" and get a spoken summary — no phone required.</div>
-      </div>
-      <div class="sage-feature">
-        <span class="sage-feature-icon">📅</span>
-        <div class="sage-feature-name">Calendar Briefings</div>
-        <div class="sage-feature-desc">Syncs with Google Calendar via iCal. Ask what's on today or request your full schedule. Good morning briefings include the day's events automatically.</div>
-      </div>
       <div class="sage-feature">
         <span class="sage-feature-icon">🎵</span>
         <div class="sage-feature-name">Spotify Playback</div>
-        <div class="sage-feature-desc">Voice-controlled music — ask for an artist, playlist, or album. Pause, skip, or stop by voice. The audio streams from Spotify; the request to start it stays on-device.</div>
+        <div class="sage-feature-desc">Voice-controlled music through Spotify. Ask for an artist, playlist, or album and Sage handles it — the audio plays locally, the request stays local.</div>
       </div>
       <div class="sage-feature">
-        <span class="sage-feature-icon">🤖</span>
-        <div class="sage-feature-name">Claude AI Chat</div>
-        <div class="sage-feature-desc">Say "Hey Claude" to open a full conversation powered by Claude Haiku — fast, lightweight, and built for back-and-forth voice use. Ask recipes, questions, anything. Claude hands timer and reminder requests back to Sage automatically. Completely optional; Sage works standalone without it.</div>
+        <span class="sage-feature-icon">⏱</span>
+        <div class="sage-feature-name">Kitchen Timers</div>
+        <div class="sage-feature-desc">Set timers by voice, hands-free, while cooking. Multiple timers, named or numbered, with verbal confirmation and alerts when they're up.</div>
       </div>
       <div class="sage-feature">
-        <span class="sage-feature-icon">🌙</span>
-        <div class="sage-feature-name">Bedtime Mode</div>
-        <div class="sage-feature-desc">Say "Goodnight" and Sage goes quiet — notifications silenced, LED off. "Good morning" wakes it with a weather and calendar briefing. Auto-sleep and auto-wake schedules adjust for weekdays vs. weekends, with updated logic for a cleaner transition in and out of sleep mode.</div>
+        <span class="sage-feature-icon">🔔</span>
+        <div class="sage-feature-name">Verbal Reminders</div>
+        <div class="sage-feature-desc">Schedule reminders by voice and Sage will speak them back to you at the right time. No app required, no phone to check.</div>
       </div>
       <div class="sage-feature">
-        <span class="sage-feature-icon">🛡</span>
-        <div class="sage-feature-name">Security Monitoring</div>
-        <div class="sage-feature-desc">UFW firewall runs on boot, SSH-only. Sage monitors auth logs for failed login attempts and sends an ntfy alert — and speaks one aloud — when brute force activity is detected. Ask "Is the firewall running?" or tell it to turn the firewall on or off by voice.</div>
+        <span class="sage-feature-icon">👂</span>
+        <div class="sage-feature-name">Wake Word Detection</div>
+        <div class="sage-feature-desc">Sage listens for its wake word and only activates on command. No continuous audio stream, no recording between activations.</div>
       </div>
       <div class="sage-feature">
-        <span class="sage-feature-icon">💡</span>
-        <div class="sage-feature-name">LED Status Ring</div>
-        <div class="sage-feature-desc">Optional WS2812B 24-LED ring gives visual feedback — green at idle, blue while listening and processing, orange pulse while a timer counts down, red flash when an alarm fires. Off in bedtime mode.</div>
+        <span class="sage-feature-icon">🔒</span>
+        <div class="sage-feature-name">No Cloud Audio</div>
+        <div class="sage-feature-desc">Voice is processed locally on the Raspberry Pi. Audio is never sent to an external server, never stored, never uploaded. What happens in the kitchen stays in the kitchen.</div>
       </div>
       <div class="sage-feature">
-        <span class="sage-feature-icon">🕐</span>
-        <div class="sage-feature-name">Time &amp; Date</div>
-        <div class="sage-feature-desc">Ask what time it is, what day it is, or today's date. Quick, local, no cloud required.</div>
-      </div>
-      <div class="sage-feature">
-        <span class="sage-feature-icon">📊</span>
-        <div class="sage-feature-name">System Status</div>
-        <div class="sage-feature-desc">Ask "System status" for a spoken report: uptime, CPU temperature, memory usage, disk space, and firewall state. Sage also checks for system and package updates every three days and notifies you when they're available.</div>
-      </div>
-      <div class="sage-feature">
-        <span class="sage-feature-icon">🎭</span>
-        <div class="sage-feature-name">Personality</div>
-        <div class="sage-feature-desc">Sage doesn't repeat the same phrase twice. Ask it to tell you a joke, ask who made it, or ask who's talking — it has a voice profile system that guesses the speaker. Easter eggs included.</div>
+        <span class="sage-feature-icon">🌐</span>
+        <div class="sage-feature-name">Internet Where It Counts</div>
+        <div class="sage-feature-desc">Sage uses internet connectivity only for services that genuinely need it — like streaming music from Spotify. The voice pipeline itself stays local.</div>
       </div>
     </div>
   </section>
@@ -293,121 +264,53 @@
     <div class="cs-section-label"><span>Under the Hood</span></div>
     <div class="cs-two-col">
       <div>
-        <h2 class="cs-section-heading">Python on a<br><em>Raspberry Pi 4.</em></h2>
+        <h2 class="cs-section-heading">Python on a<br><em>Raspberry Pi.</em></h2>
         <p class="cs-body">
-          Sage runs entirely on a Raspberry Pi 4 in Python. The goal was to build something that lives in the kitchen like a small appliance — always available, never demanding, and completely understandable by anyone who wants to read the code.
+          Sage runs entirely on a Raspberry Pi in Python. The goal was to build something that lives in the kitchen like a small appliance — always available, never demanding, and completely understandable by anyone who wants to look at the code.
         </p>
         <p class="cs-body" style="margin-top:16px;">
-          Python-only wasn't just a language preference — it's a constraint that keeps the project readable, accessible, and easy to fork. The entire stack, from wake word detection through command parsing, TTS response, and push notification, is written in one language with no compiled dependencies.
+          Keeping it Python-only wasn't just a language preference — it was a constraint that keeps the project readable, accessible, and easy to fork. The entire stack, from wake word detection through command parsing and response, is written in a single language.
         </p>
       </div>
       <div>
         <div class="cs-deliverable-list" style="margin-top:0;">
           <div class="cs-deliverable">
             <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Hardware</strong> — Raspberry Pi 4 (4GB), running headless as a dedicated assistant</div>
+            <div class="deliverable-text"><strong>Hardware</strong> — Raspberry Pi, running headless as a dedicated voice assistant</div>
           </div>
           <div class="cs-deliverable">
             <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Wake word</strong> — openWakeWord with custom-trained <code>hey_sage.onnx</code> and <code>hey_claude.onnx</code> models</div>
+            <div class="deliverable-text"><strong>Language</strong> — Python only, no secondary scripts or compiled dependencies</div>
           </div>
           <div class="cs-deliverable">
             <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Speech-to-text</strong> — Vosk for always-on listening; Whisper for command transcription — both run locally</div>
+            <div class="deliverable-text"><strong>Voice pipeline</strong> — local wake word detection, local speech processing; nothing routed through external APIs</div>
           </div>
           <div class="cs-deliverable">
             <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Text-to-speech</strong> — Piper TTS with en_US-lessac-medium voice model, processed on-device</div>
+            <div class="deliverable-text"><strong>Internet</strong> — used selectively, only for outbound service calls like Spotify that require it by nature</div>
           </div>
           <div class="cs-deliverable">
             <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Push notifications</strong> — ntfy (self-hostable) for phone alerts when you're not in the room</div>
-          </div>
-          <div class="cs-deliverable">
-            <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Internet</strong> — used selectively: Spotify streaming, weather API, calendar sync, and optional Claude AI chat</div>
-          </div>
-          <div class="cs-deliverable">
-            <div class="deliverable-dot"></div>
-            <div class="deliverable-text"><strong>Firewall</strong> — UFW enabled on boot, SSH only; Sage monitors auth logs and alerts on failed login attempts via voice and ntfy</div>
+            <div class="deliverable-text"><strong>Status</strong> — actively in development; core features being built and tested in 2026</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ── SECTION: HARDWARE ── -->
-  <section class="cs-section">
-    <div class="cs-section-label"><span>Hardware</span></div>
-    <h2 class="cs-section-heading">Everything you need<br><em>to build one.</em></h2>
-    <p class="cs-body">Sage runs on off-the-shelf hardware — nothing proprietary, nothing hard to source. Everything below is available on Amazon. Total cost varies, but you're looking at a one-time purchase with no subscriptions attached.</p>
-    <div class="cs-deliverable-list" style="margin-top:28px;">
-      <div class="cs-deliverable">
-        <div class="deliverable-dot"></div>
-        <div class="deliverable-text"><strong>Raspberry Pi 4 (4GB)</strong> — <a href="https://www.amazon.com/CanaKit-Raspberry-4GB-Basic-Kit/dp/B07TXKY4Z9/" target="_blank" rel="noopener noreferrer">CanaKit Basic Kit</a> includes the board, case, power supply, and SD card.</div>
-      </div>
-      <div class="cs-deliverable">
-        <div class="deliverable-dot"></div>
-        <div class="deliverable-text"><strong>USB Speaker</strong> — <a href="https://www.amazon.com/dp/B0FC3XV5DK" target="_blank" rel="noopener noreferrer">Jabra Speak 510 (2025 Edition)</a>. USB or Bluetooth, built-in mic array with echo cancellation — significantly improves wake word detection over music.</div>
-      </div>
-      <div class="cs-deliverable">
-        <div class="deliverable-dot"></div>
-        <div class="deliverable-text"><strong>LED Ring</strong> — <a href="https://www.amazon.com/dp/B0C7CC3267" target="_blank" rel="noopener noreferrer">5050 WS2812B Addressable LED Ring, DC5V</a>. Optional but adds visual status feedback. Connects to the Pi with three jumper wires, no soldering.</div>
-      </div>
-      <div class="cs-deliverable">
-        <div class="deliverable-dot"></div>
-        <div class="deliverable-text"><strong>Jumper Wires</strong> — <a href="https://www.amazon.com/dp/B01EV70C78" target="_blank" rel="noopener noreferrer">ELEGOO 120pc Dupont Wire Kit</a>. Three female-to-female wires are all you need for the LED ring. The rest of the pack will come in handy.</div>
-      </div>
-    </div>
-    <div class="messaging-card" style="margin-top:28px;">
-      <div class="messaging-card-label">Enclosure</div>
-      <div class="messaging-card-text">Mine lives in a repurposed candle holder canister — the right diameter for the LED ring, and it looks intentional on a kitchen counter. Any small cylindrical container works. No 3D printer required.</div>
     </div>
   </section>
 
   <!-- ── SECTION: OPEN SOURCE ── -->
   <section class="cs-section">
     <div class="cs-section-label"><span>Open Source</span></div>
-    <div class="cs-two-col wide-left">
-      <div>
-        <h2 class="cs-section-heading">Built in the open,<br><em>live on GitHub.</em></h2>
-        <p class="cs-body">The whole point of Sage is that you can see exactly what it does and doesn't do with your voice. Closed-source privacy claims are just claims. Open source is a receipt.</p>
-        <p class="cs-body" style="margin-top:16px;">The code is free to use, fork, and adapt for personal and non-commercial use under GPL v3. If you have a Raspberry Pi and a reason to distrust your current smart speaker, you can set it up yourself.</p>
-        <a href="https://github.com/ohgollybritta/sage-the-kitch-assist" target="_blank" rel="noopener noreferrer" class="sage-github-notice" style="margin-top:28px; text-decoration:none; cursor:pointer; transition: border-color .2s, background .2s;">
-          <div class="sage-github-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          </div>
-          <div class="sage-github-text">
-            <strong>ohgollybritta/sage-the-kitch-assist</strong> — v1.4.2 · GPL v3 · Python · actively in development.
-            <div style="margin-top:6px; font-size:12px; opacity:.6;">github.com/ohgollybritta/sage-the-kitch-assist &nbsp;↗</div>
-          </div>
-        </a>
+    <h2 class="cs-section-heading">Built in the open,<br><em>coming soon.</em></h2>
+    <p class="cs-body">The whole point of Sage is that you can see exactly what it does and doesn't do with your voice. Closed-source privacy claims are just claims. Open source is a receipt.</p>
+    <p class="cs-body" style="margin-top:16px;">The project will be released publicly on GitHub once it reaches a stable, usable state. The plan is to make it easy enough to run that anyone with a Raspberry Pi and a reason to distrust their smart speaker can set it up themselves.</p>
+    <div class="sage-github-notice">
+      <div class="sage-github-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
       </div>
-      <div>
-        <div style="
-          background: rgba(61,154,139,.06);
-          border: 1px solid rgba(61,154,139,.22);
-          border-radius: 4px;
-          padding: 36px 34px;
-          position: relative;
-          overflow: hidden;
-        ">
-          <div style="position:absolute; top:0; left:0; right:0; height:3px; background: var(--teal-light);"></div>
-          <div style="font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); opacity:.7; margin-bottom:18px;">Want one built?</div>
-          <p style="font-family:'Fraunces',serif; font-size:clamp(18px,2vw,24px); font-weight:800; color:var(--cream); line-height:1.2; margin-bottom:20px;">Don't want to build it yourself?<br><em style="color:var(--teal-light);">I'll build it for you.</em></p>
-          <p style="font-size:14px; color:rgba(245,237,228,.6); line-height:1.7; margin-bottom:28px;">For those who'd rather have a finished unit than a GitHub repository — hardware sourced, software configured, firewall on, ready to plug in. Available at cost.</p>
-          <a href="/contact.html" style="
-            display: inline-flex; align-items: center; gap: 10px;
-            background: var(--teal-light); color: var(--ink);
-            font-size: 12px; font-weight: 700; letter-spacing: .08em;
-            text-transform: uppercase; padding: 12px 24px;
-            border-radius: 100px; text-decoration: none;
-            transition: gap .2s, transform .2s;
-          " onmouseover="this.style.gap='14px';this.style.transform='scale(1.04)'" onmouseout="this.style.gap='10px';this.style.transform='scale(1)'">
-            Get in touch
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+      <div class="sage-github-text">
+        <strong>Coming soon to GitHub.</strong> Sage will be released as a public, open-source repository once the core feature set is stable. The code will be free to use, fork, and adapt.
       </div>
     </div>
   </section>
@@ -426,7 +329,7 @@
 
 </div><!-- /case-study -->
 
-<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; look closer · build bolder &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
 
 <script>
 (function() {

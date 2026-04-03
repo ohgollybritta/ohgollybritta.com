@@ -71,22 +71,13 @@ nav {
 .nav-links a:hover::after { width: 100%; }
 
 .nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   font-family: 'Fraunces', serif;
   font-size: 21px; font-weight: 800; font-style: italic;
   color: var(--ink);
   text-decoration: none;
 }
 .nav-brand:hover { color: var(--ink); }
-
-.nav-logo {
-  width: 80px;
-  height: 64px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
+.nav-logo { height: 62px; width: auto; }
 
 .nav-icons { display: flex; gap: 14px; align-items: center; }
 .nav-icons a {
@@ -753,15 +744,6 @@ a.nav-brand:hover { color: var(--ink); } /* no hover color change */
   nav {
     flex-wrap: wrap;
     padding: 12px 20px;
-  }
-
-  .nav-logo {
-    width: 50px;
-    height: 40px;
-  }
-  .nav-brand {
-    font-size: 17px;
-    gap: 6px;
   }
 
   /* Hide desktop links, show hamburger */

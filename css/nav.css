@@ -130,6 +130,8 @@ a.nav-brand:hover { color: var(--ink); }
     padding: 12px 20px;
   }
 
+  .nav-logo { height: 28px; }
+
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
 

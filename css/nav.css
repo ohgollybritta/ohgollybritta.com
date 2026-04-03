@@ -32,7 +32,7 @@ a.nav-brand {
 a.nav-brand:hover { color: var(--ink); }
 
 .nav-logo {
-  height: 62px;
+  height: 40px;
   width: auto;
 }
 

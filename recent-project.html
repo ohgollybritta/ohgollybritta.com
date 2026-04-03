@@ -10,52 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/work.css">
-  <style>
-    .card-work-item.tall, .card-work-item.med { height: 460px !important; max-height: 460px !important; min-height: unset !important; }
+    <style>
+.card-work-item.tall, .card-work-item.med { height: 460px !important; max-height: 460px !important; min-height: unset !important; }
     @media (max-width: 860px) { .card-work-item.tall, .card-work-item.med { height: 300px !important; } }
-    a.nav-brand { text-decoration: none !important; color: #2C1A0E !important; }
-    a.nav-brand:hover { color: #2C1A0E !important; }
-    .nav-hamburger {
-      display: none;
-      flex-direction: column; justify-content: center; gap: 5px;
-      width: 38px; height: 38px;
-      background: none; border: none; cursor: pointer; padding: 7px;
-      border-radius: 8px; flex-shrink: 0; z-index: 10;
-    }
-    .nav-hamburger span {
-      display: block; width: 100%; height: 2px;
-      background: #2C1A0E; border-radius: 2px; transform-origin: center;
-      transition: transform .25s, opacity .18s, width .2s;
-    }
-    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
-    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .nav-mobile-menu { display: none; }
-    @media (max-width: 860px) {
-      nav { flex-wrap: wrap !important; padding: 12px 20px !important; }
-      .nav-links { display: none !important; }
-      .nav-hamburger { display: flex !important; }
-      .nav-mobile-menu {
-        width: 100%; order: 99;
-        border-top: 1px solid rgba(168,82,58,.15);
-        margin: 8px -20px -12px; padding: 0 20px;
-        background: #F5EDE4;
-      }
-      .nav-mobile-menu.is-open { display: block !important; }
-      .nav-mobile-menu ul { list-style: none; padding: 6px 0 10px; }
-      .nav-mobile-menu ul li a {
-        display: block; padding: 13px 4px;
-        font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
-        color: #2C1A0E; text-decoration: none;
-        border-bottom: 1px solid rgba(168,82,58,.1);
-        transition: color .2s, padding-left .2s;
-      }
-      .nav-mobile-menu ul li:last-child a { border-bottom: none; }
-      .nav-mobile-menu ul li a:hover { color: #C1654A; padding-left: 8px; }
-    }
 
-    /* Coming-soon card variant */
+/* Coming-soon card variant */
     .card-coming-soon {
       background: var(--terra-dark);
       border: 1px solid rgba(245,237,228,.07);

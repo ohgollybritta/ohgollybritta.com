@@ -28,6 +28,16 @@
 
     /* ── Smaller Spotify album art ── */
     .sp-album-art { width: 88px !important; height: 88px !important; border-radius: 4px !important; }
+
+    /* ── Spotify mobile: card is half-width, scale everything down ── */
+    @media (max-width: 860px) {
+      .sp-album-art { width: 52px !important; height: 52px !important; }
+      .spotify-body { gap: 9px !important; }
+      .spotify-body .track-name { font-size: 15px !important; line-height: 1.15 !important; }
+      .spotify-body .track-artist { font-size: 11px !important; }
+      .spotify-body .track-ago    { font-size: 10px !important; }
+      .card-spotify { padding: 16px 14px !important; }
+    }
   </style>
 </head>
 <body>
@@ -213,7 +223,7 @@
       <div>
         <div class="history-eyebrow">America 250 Commemoration</div>
         <div class="history-title">Female Patriots<br>of the <em>Revolution</em></div>
-        <div class="history-sub">The stories were already there. Nobody had looked long enough to find them.</div>
+        <div class="history-sub">Featuring pioneers Jemima and Rebecca Boone.</div>
       </div>
     </div>
   </a>

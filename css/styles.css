@@ -646,63 +646,6 @@ footer {
   font-weight: 600;
 }
 
-/* ── NAV (preserved so /css/nav.css isn't required) ── */
-nav {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 26px; gap: 20px;
-  max-width: 1440px; margin: 0 auto;
-  position: relative;
-}
-.nav-links { display: flex; gap: 22px; list-style: none; }
-.nav-links a {
-  font-size: 13px; font-weight: 600; letter-spacing: .04em;
-  color: var(--ink); text-decoration: none;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--terra); }
-.nav-brand {
-  display: flex; align-items: center; gap: 9px;
-  font-family: 'Fraunces', serif;
-  font-size: 17px; font-weight: 800;
-  color: var(--ink); text-decoration: none;
-  letter-spacing: -.005em;
-  position: absolute; left: 50%; transform: translateX(-50%);
-}
-.nav-logo { width: 28px; height: 22px; object-fit: contain; }
-.nav-icons { display: flex; gap: 14px; align-items: center; }
-.nav-icons a {
-  color: rgba(44,26,14,.55);
-  transition: color .2s, transform .2s;
-  display: inline-flex;
-}
-.nav-icons a:hover { color: var(--terra); transform: translateY(-1px); }
-
-.nav-hamburger { display: none; background: none; border: 0; cursor: pointer; width: 32px; height: 32px; padding: 6px; }
-.nav-hamburger span {
-  display: block; width: 20px; height: 2px;
-  background: var(--ink); margin: 3px auto;
-  transition: transform .2s, opacity .2s;
-}
-.nav-hamburger.is-open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-.nav-hamburger.is-open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.is-open span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
-
-.nav-mobile-menu {
-  position: absolute; top: 100%; left: 0; right: 0;
-  background: var(--cream);
-  border-top: 1px solid rgba(44,26,14,.1);
-  max-height: 0; overflow: hidden;
-  transition: max-height .3s ease;
-  z-index: 100;
-}
-.nav-mobile-menu.is-open { max-height: 300px; }
-.nav-mobile-menu ul { list-style: none; padding: 14px 26px 20px; }
-.nav-mobile-menu a {
-  display: block; padding: 10px 0;
-  font-size: 16px; font-weight: 600;
-  color: var(--ink); text-decoration: none;
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
   .card-hero { min-height: 420px; grid-column: 1/8; grid-row: 1/3; }

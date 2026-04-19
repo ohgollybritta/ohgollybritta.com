@@ -5,35 +5,167 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recent Projects - Oh Golly, Britta!  |  ohgollybritta.com</title>
+  <title>Recent Projects — Oh Golly, Britta!  |  ohgollybritta.com</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/work.css">
-    <style>
-.card-work-item.tall, .card-work-item.med { height: 460px !important; max-height: 460px !important; min-height: unset !important; }
-    @media (max-width: 860px) { .card-work-item.tall, .card-work-item.med { height: 300px !important; } }
 
-/* Coming-soon card variant */
+  <style>
+    /* ── project-page scoped, no !important needed ── */
+    .rp-hero-card { height: 460px; }
+    .rp-mid-card  { height: 220px; }
+
+    /* Visible in-card CTA that surfaces on hover/focus of the whole card link */
+    .rp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 14px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(245, 237, 228, .8);
+      background: rgba(245, 237, 228, .08);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: background .22s var(--ease-out), transform .22s var(--ease-out), color .22s var(--ease-out);
+    }
+    .rp-cta svg { transition: transform .22s var(--ease-out); }
+    .card-work-item:hover .rp-cta,
+    .card-work-item:focus-visible .rp-cta {
+      background: var(--cream);
+      color: var(--ink);
+    }
+    .card-work-item:hover .rp-cta svg,
+    .card-work-item:focus-visible .rp-cta svg {
+      transform: translateX(3px);
+    }
+
+    /* Sage — fix the squashed card: switch to a proper split layout, no cropped text */
+    .sage-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 0;
+      padding: 0;
+      overflow: hidden;
+      min-height: 260px;
+      height: auto;
+      position: relative;
+      background: var(--terra-dark);
+    }
+    .sage-card > img {
+      position: static;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .sage-card .work-overlay { display: none; }
+    .sage-card .sage-body {
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      color: var(--cream);
+    }
+    .sage-card .sage-cat {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245, 237, 228, .55);
+    }
+    .sage-card .sage-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      color: var(--cream);
+    }
+    .sage-card .sage-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(245, 237, 228, .72);
+      max-width: 52ch;
+    }
+    .sage-card .sage-tag {
+      display: inline-flex;
+      width: max-content;
+      margin-top: 6px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(91, 184, 168, .4);
+      color: var(--teal-light);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .sage-card .rp-cta {
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+
+    /* Coming-soon card — raised recessed text to meet contrast */
     .card-coming-soon {
       background: var(--terra-dark);
-      border: 1px solid rgba(245,237,228,.07);
+      border: 1px solid rgba(245, 237, 228, .07);
       padding: 28px 30px;
-      display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      border-radius: inherit;
     }
     .coming-soon-eyebrow {
-      font-size: 10px; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: rgba(245,237,228,.25);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245, 237, 228, .55);
     }
     .coming-soon-title {
-      font-family: 'Fraunces', serif; font-size: 22px; font-weight: 800;
-      color: rgba(245,237,228,.4); line-height: 1.15;
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--cream);
+      line-height: 1.15;
     }
-    .coming-soon-title em { font-style: italic; color: rgba(245,237,228,.3); }
+    .coming-soon-title em { font-style: italic; color: rgba(245, 237, 228, .7); }
     .coming-soon-desc {
-      font-size: 13px; color: rgba(245,237,228,.25); line-height: 1.65;
+      font-size: 13px;
+      color: rgba(245, 237, 228, .65);
+      line-height: 1.65;
+    }
+
+    /* Focus states for all project cards */
+    .card-work-item:focus-visible,
+    .card-coming-soon:focus-visible,
+    .avail-cta:focus-visible {
+      outline: 2px solid var(--teal-light);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 860px) {
+      .rp-hero-card { height: 340px; }
+      .rp-mid-card  { height: auto; min-height: 280px; }
+      .sage-card {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+      .sage-card > img { height: 200px; }
     }
   </style>
 </head>
@@ -47,17 +179,17 @@
   </ul>
   <a href="/index.html" class="nav-brand" style="text-decoration:none;"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
   <div class="nav-icons">
-    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
     </a>
-    <a href="#" title="GitHub" target="_blank">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    <a href="#" title="GitHub" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
     </a>
-    <a href="#" title="Twitch" target="_blank">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    <a href="#" title="Twitch" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
     </a>
-    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank">
-      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true">
         <polygon points="16,8.5 22,12 16,15.5 10,12"/>
         <polyline points="10,12 10,19.5 16,23 16,15.5"/>
         <polyline points="22,12 22,19.5 16,23"/>
@@ -93,42 +225,53 @@
   </div>
 
   <!-- Female Patriots — hero card -->
-  <a href="/female-patriots.html" class="card card-work-item tall" style="height:460px; max-height:460px; grid-column:1/7; text-decoration:none;">
-    <img src="/img/siege-of-fort-boonesborough.jpg" alt="Siege of Fort Boonesborough" style="object-position: center center;">
+  <a href="/female-patriots.html" class="card card-work-item tall rp-hero-card" style="grid-column:1/7; text-decoration:none;">
+    <img src="/img/siege-of-fort-boonesborough.jpg" alt="" style="object-position: center center;">
     <div class="work-overlay"></div>
     <div class="work-item-content">
       <div class="work-item-cat">Heritage &amp; Research · America 250 · March 2026</div>
       <div class="work-item-title">Female Patriots of the Revolution</div>
       <div class="work-item-desc">Genealogical research tracing the documented patriot service of Rebecca Bryan Boone and Jemima Boone Callaway — independently, not borrowed from the notable men nearby. Presented to a local DAR chapter; featured in <em>Compass Magazine</em>.</div>
       <span class="work-item-tag">Genealogy · NSDAR · Boone Society</span>
+      <span class="rp-cta" aria-hidden="true">
+        Read the brief
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
     </div>
   </a>
 
   <!-- Operation Interstate One card -->
-  <a href="/operation-i1.html" class="card card-work-item tall" style="grid-column:7/13; height:460px; max-height:460px; text-decoration:none;">
-    <img src="/img/osint-map.jpg" alt="Operation Interstate One" style="object-position: center center;">
+  <a href="/operation-i1.html" class="card card-work-item tall rp-hero-card" style="grid-column:7/13; text-decoration:none;">
+    <img src="/img/osint-map.jpg" alt="" style="object-position: center center;">
     <div class="work-overlay"></div>
     <div class="work-item-content">
       <div class="work-item-cat">Linux · Python · Web Scraping · 2025–Present</div>
       <div class="work-item-title">Operation Interstate One</div>
       <div class="work-item-desc">Deep web scraping tools built in Linux to streamline and automate anti-trafficking intelligence gathering. Structured data collection, parsing, and output — purpose-built for the people who need it.</div>
       <span class="work-item-tag">Anti-Trafficking · Python · Automation</span>
+      <span class="rp-cta" aria-hidden="true">
+        Read the brief
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
     </div>
   </a>
 
-  <!-- Sage card -->
-  <a href="/sage.html" class="card card-work-item" style="grid-column:1/7; height:220px; min-height:unset; max-height:220px; text-decoration:none; overflow:hidden; position:relative;">
-    <img src="/img/sage-card.jpg" alt="Sage" style="object-position: center center;">
-    <div class="work-overlay"></div>
-    <div class="work-item-content">
-      <div class="work-item-cat">Python · Open Source · Privacy · 2026–Present</div>
-      <div class="work-item-title">Sage</div>
-      <div class="work-item-desc">A privacy-first voice assistant that runs entirely locally — no audio ever sent to a cloud service. An open-source workaround to Alexa: plays Spotify, keeps kitchen timers, and delivers verbal reminders on schedule.</div>
-      <span class="work-item-tag">Voice AI · Python · No Cloud</span>
+  <!-- Sage card — redesigned as a split-layout full-width cell -->
+  <a href="/sage.html" class="card card-work-item sage-card" style="grid-column:1/13;">
+    <img src="/img/sage-card.jpg" alt="">
+    <div class="sage-body">
+      <div class="sage-cat">Python · Open Source · Privacy · 2026–Present</div>
+      <div class="sage-title">Sage</div>
+      <div class="sage-desc">A privacy-first voice assistant that runs entirely locally — no audio ever sent to a cloud service. An open-source workaround to Alexa: plays Spotify, keeps kitchen timers, and delivers verbal reminders on schedule.</div>
+      <span class="sage-tag">Voice AI · Python · No Cloud</span>
+      <span class="rp-cta" aria-hidden="true">
+        Read the brief
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
     </div>
   </a>
 
-  <!-- SECTION: In Progress -->
+  <!-- SECTION: Past Projects -->
   <div class="section-label" style="animation-delay:.5s">
     <span>Past Projects</span>
   </div>
@@ -141,7 +284,7 @@
   </a>
 
   <!-- Human Trafficking Paper -->
-  <a href="https://www.researchgate.net/publication/402710534_UNMASKING_HUMAN_TRAFFICKING_A_CRIMINOLOGICAL_AND_HISTORICAL_ANALYSIS?utm_source=twitter&rgutm_meta1=eHNsLXdaYUV2L2RaUituYTZOTlo4d1ZzQWhlUEpLQlNJenFMODdIUVFqK0pMdjllNUhlVFhmYTRZdXd3a1NnTGR4Y21Uak44dlZxb2xUNTNQZFBLNVkwaTZZbz0%3D" target="_blank" rel="noopener noreferrer" class="card card-coming-soon" style="grid-column:5/9; text-decoration:none;">
+  <a href="https://www.researchgate.net/publication/402710534_UNMASKING_HUMAN_TRAFFICKING_A_CRIMINOLOGICAL_AND_HISTORICAL_ANALYSIS" target="_blank" rel="noopener noreferrer" class="card card-coming-soon" style="grid-column:5/9; text-decoration:none;">
     <div class="coming-soon-eyebrow">Research</div>
     <div class="coming-soon-title">Human Trafficking<br>Research Paper</div>
     <div class="coming-soon-desc">Authored a research paper on human trafficking — the same subject that would later drive the development of Operation Interstate One.</div>
@@ -165,7 +308,7 @@
     </div>
     <a href="/contact.html" class="avail-cta">
       Get in touch
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 

@@ -8,10 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/about.css">
-    <style>
-/* Avatar flip on about page */
+  <link rel="stylesheet" href="/css/about-v2.css">
+  <style>
+    /* Avatar flip on about page */
     .page-header .avatar-flip { cursor: pointer; }
     .page-header .avatar-flip:hover { transform: rotate(-3deg) scale(1.08); box-shadow: 6px 6px 0 var(--terra-dark); }
     .page-header .avatar-flip:hover .avatar-pixel { opacity: 0; }
@@ -32,7 +33,9 @@
       letter-spacing: .03em;
       transition: color .2s;
     }
-    .bio-read-more:hover { color: var(--terra); }
+    .bio-read-more:hover,
+    .bio-read-more:focus-visible { color: var(--terra); outline: none; }
+    .bio-read-more:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
   </style>
 </head>
 <body>
@@ -46,17 +49,17 @@
   </ul>
   <a href="/index.html" class="nav-brand"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
   <div class="nav-icons">
-    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
     </a>
-    <a href="https://github.com/ohgollybritta" title="GitHub" target="_blank">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    <a href="https://github.com/ohgollybritta" title="GitHub" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
     </a>
-    <a href="https://www.twitch.tv/ohgollybritta" title="Twitch" target="_blank">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    <a href="https://www.twitch.tv/ohgollybritta" title="Twitch" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
     </a>
-    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank">
-      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"><polygon points="16,8.5 22,12 16,15.5 10,12"/><polyline points="10,12 10,19.5 16,23 16,15.5"/><polyline points="22,12 22,19.5 16,23"/></svg>
+    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="16,8.5 22,12 16,15.5 10,12"/><polyline points="10,12 10,19.5 16,23 16,15.5"/><polyline points="22,12 22,19.5 16,23"/></svg>
     </a>
   </div>
   <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
@@ -81,7 +84,7 @@
         <img class="avatar-pixel" src="/img/avatar-pixel.png" alt="Britta pixel art">
         <img class="avatar-real"  src="/img/avatar-real.jpg" alt="Britta">
       </div>
-      <h1 class="page-title"><em>Britta</em> Davis.</h1>
+      <h1 class="page-title name-title">Britta <em class="name-last">Davis.</em></h1>
     </div>
     <div class="name-pills">
       <span class="pill pill-terra">Designer</span>
@@ -96,18 +99,18 @@
     <!-- BIO -->
     <div class="card card-cream bio-card a-col-7">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
         Bio
       </div>
       <p style="font-family:'Fraunces',serif; font-size:clamp(20px,2.4vw,28px); font-weight:800; font-style:italic; line-height:1.4; color:var(--ink); border-left:3px solid var(--teal); padding-left:14px; margin-bottom:18px;">The answer is already there. <span style="color:var(--teal);">Britta finds it by looking closer.</span></p>
-      <p>Her instincts showed up early, when her dad handed her a computer and a stack of programming books. She taught herself to build websites and by the time she was in middle school, her celebrity fan site had gained enough of a following  and reputation as the go to destination for rare remixes and photos to be featured on MTV Europe. That curiosity never slowed down. A few years later, she became one of the original ten lifecasters on Justin.tv (covered in a <a href="https://www.thehour.com/entertainment/article/Lifecasting-can-make-anyone-a-reality-star-8256223.php" target="_blank">nationally syndicated article</a> that ran in over 30 papers).</p>
-      <p>Then, at 19, an illness took most of her vision. Like most people with their senses, she had taken it for granted. Losing it taught her she had something worth losing. The recovery was rare and unexpected, and essentially changed how she approached everything that followed. While living in San Francisco, she took the leap and began her design education at <a href="https://www.academyart.edu/" target="_blank">Academy of Art University</a>, then continued at <a href="https://www.fullsail.edu/" target="_blank">Full Sail University</a> in Orlando. From there, she worked live broadcast environments at <a href="https://en.wikipedia.org/wiki/WWE" target="_blank">WWE</a> as a Decko operator and vignette truss builder. That led to a role as lead track graphic artist at <a href="https://en.wikipedia.org/wiki/Daytona_International_Speedway" target="_blank">Daytona Intl. Speedway</a>.</p>
+      <p>Her instincts showed up early, when her dad handed her a computer and a stack of programming books. She taught herself to build websites and by the time she was in middle school, her celebrity fan site had gained enough of a following  and reputation as the go to destination for rare remixes and photos to be featured on MTV Europe. That curiosity never slowed down. A few years later, she became one of the original ten lifecasters on Justin.tv (covered in a <a href="https://www.thehour.com/entertainment/article/Lifecasting-can-make-anyone-a-reality-star-8256223.php" target="_blank" rel="noopener">nationally syndicated article</a> that ran in over 30 papers).</p>
+      <p>Then, at 19, an illness took most of her vision. Like most people with their senses, she had taken it for granted. Losing it taught her she had something worth losing. The recovery was rare and unexpected, and essentially changed how she approached everything that followed. While living in San Francisco, she took the leap and began her design education at <a href="https://www.academyart.edu/" target="_blank" rel="noopener">Academy of Art University</a>, then continued at <a href="https://www.fullsail.edu/" target="_blank" rel="noopener">Full Sail University</a> in Orlando. From there, she worked live broadcast environments at <a href="https://en.wikipedia.org/wiki/WWE" target="_blank" rel="noopener">WWE</a> as a Decko operator and vignette truss builder. That led to a role as lead track graphic artist at <a href="https://en.wikipedia.org/wiki/Daytona_International_Speedway" target="_blank" rel="noopener">Daytona Intl. Speedway</a>.</p>
       <p>Then, came the moment that redirected everything: In the late stages of her pregnancy, small child in tow, Britta was stalked and nearly abducted in broad daylight.</p>
-      <button class="bio-read-more" id="bioReadMore" aria-expanded="false">Read more</button>
+      <button class="bio-read-more" id="bioReadMore" aria-expanded="false" aria-controls="bioExpanded">Read more</button>
       <div class="bio-expanded" id="bioExpanded">
-      <p>She noticed him before anyone else did. She calculated how many steps behind them he was, formulated a plan, and escaped with no seconds left to spare. It was her training in <a href="https://en.wikipedia.org/wiki/Krav_Maga" target="_blank">Krav Maga</a> and her own situational awareness that kept them alive.</p>
+      <p>She noticed him before anyone else did. She calculated how many steps behind them he was, formulated a plan, and escaped with no seconds left to spare. It was her training in <a href="https://en.wikipedia.org/wiki/Krav_Maga" target="_blank" rel="noopener">Krav Maga</a> and her own situational awareness that kept them alive.</p>
       <p>In the aftermath, she did what she has always done. She investigated by pulling the thread: seeking to gain dimension on what made them a target. What she found was a market: what children sell for, what a pregnant woman is worth. The curiosity and marketing experience that had once built fan sites and designed collateral for racetracks was now pointed something much deeper and much more sinister.</p>
-      <p>Around the same time, an autosomal DNA test revealed her as an <a href="https://www.npenetwork.org/whats-an-npe" target="_blank">NPE</a>, which cued her to take a deeper look at her entire family history, because the truth was what she was after. Tracing her lineage uncovered connections to several well-documented Revolutionary War patriots whose records were on file, but whose link to her had never been established. She found it and proved it. That research earned her entry into the Daughters of the American Revolution, where she rose to Chapter Regent within her first five years, a pace almost unheard of in the organization.</p>
+      <p>Around the same time, an autosomal DNA test revealed her as an <a href="https://www.npenetwork.org/whats-an-npe" target="_blank" rel="noopener">NPE</a>, which cued her to take a deeper look at her entire family history, because the truth was what she was after. Tracing her lineage uncovered connections to several well-documented Revolutionary War patriots whose records were on file, but whose link to her had never been established. She found it and proved it. That research earned her entry into the Daughters of the American Revolution, where she rose to Chapter Regent within her first five years, a pace almost unheard of in the organization.</p>
       <p>She spent years developing brands for small businesses and organizations, but the abduction had already set a different course. She became an OSINT analyst for a notable non-profit focused on combating human trafficking, and began pursuing a master's degree in Criminal Justice. Wanting a more direct path, she entered law enforcement training. Physical setbacks during the academy redirected the course, but not the mission, and not the skill set she had already built.</p>
       <p style="font-family:'Fraunces',serif; font-size:clamp(16px,1.6vw,19px); font-weight:800; font-style:italic; line-height:1.45; color:var(--ink); border-left:3px solid var(--teal); padding-left:14px; margin-top:24px;">Investigating, digging, exploring, analyzing: every thread of her life has required the same thing. The way she traces a family line, the way she walks through a building everyone else has declared empty of meaning, is exactly the way you find the people who exploit children in digital spaces. Most people can see. Britta knows how to look. The purpose is fixed. The path is still being written.</p>
       </div>
@@ -141,7 +144,7 @@
       <!-- CURRENT FOCUS -->
       <div class="card card-teal pivot-card" style="padding: 32px 36px;">
         <div class="card-label">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           Current Focus
         </div>
         <div class="pivot-text" style="font-size:clamp(24px, 3vw, 36px); line-height:1.25;">An investigative technologist<br>driven to find, expose,<br><span>and disrupt human trafficking.</span></div>
@@ -150,20 +153,20 @@
       <!-- CURRENTLY READING -->
       <div class="card card-mid">
         <div class="card-label">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           Currently Reading
         </div>
         <div style="display:flex; gap:14px; align-items:flex-start;">
           <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1704857327l/205126467._SX98_.jpg"
-               alt="Eradicating Human Trafficking book cover"
+               alt=""
                style="width:52px; border-radius:4px; flex-shrink:0; box-shadow:3px 3px 10px rgba(0,0,0,.4);">
           <div>
             <div style="font-size:13.5px; font-weight:700; color:var(--cream); margin-bottom:4px; line-height:1.3;">Eradicating Human Trafficking</div>
-            <div style="font-size:11.5px; color:rgba(245,237,228,.4); margin-bottom:10px;">A Transformative Approach through Collective Impact</div>
-            <div style="font-size:11.5px; color:rgba(245,237,228,.35);">Brittany C. Dunn</div>
+            <div style="font-size:11.5px; color:rgba(245,237,228,.55); margin-bottom:10px;">A Transformative Approach through Collective Impact</div>
+            <div style="font-size:11.5px; color:rgba(245,237,228,.5);">Brittany C. Dunn</div>
             <div style="margin-top:10px;">
-              <a href="https://www.goodreads.com/book/show/205126467-eradicating-human-trafficking" target="_blank"
-                 style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--terra-light); text-decoration:none; border:1.5px solid rgba(193,101,74,.35); padding:3px 10px; border-radius:100px;">
+              <a href="https://www.goodreads.com/book/show/205126467-eradicating-human-trafficking" target="_blank" rel="noopener"
+                 style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--terra-light); text-decoration:none; border:1.5px solid rgba(193,101,74,.55); padding:3px 10px; border-radius:100px;">
                 View on Goodreads
               </a>
             </div>
@@ -173,7 +176,7 @@
 
       <div class="card card-dark">
         <div class="card-label">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           Education
         </div>
         <div class="edu-item">
@@ -198,7 +201,7 @@
     <div class="card card-cream a-col-4">
       <div class="prog-header">
         <div class="prog-icon terra">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
         <span class="prog-title">Design</span>
       </div>
@@ -214,7 +217,7 @@
     <div class="card card-dark a-col-4">
       <div class="prog-header">
         <div class="prog-icon teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <span class="prog-title">Cybersecurity</span>
       </div>
@@ -229,7 +232,7 @@
     <div class="card card-mid a-col-4">
       <div class="prog-header">
         <div class="prog-icon htb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
         <span class="prog-title">Coding</span>
       </div>
@@ -246,7 +249,7 @@
     <!-- EXPERIENCE: Law Enforcement -->
     <div class="card card-dark" style="align-self:stretch">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
         Experience
       </div>
       <div class="exp-item">
@@ -274,22 +277,22 @@
     <!-- INTERESTS -->
     <div class="card card-teal" style="align-self:stretch">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
         Interests
       </div>
       <div style="display:flex; flex-direction:column; gap:18px">
         <div>
           <div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:6px">Martial Arts</div>
-          <div class="exp-meta" style="color:rgba(245,237,228,.35); font-size:11.5px; margin-bottom:4px">Brazilian Jiu Jitsu · Ground work, problem solving in real time</div>
-          <div class="exp-meta" style="color:rgba(245,237,228,.35); font-size:11.5px">Krav Maga · Practical. Efficient. No wasted movement</div>
+          <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px; margin-bottom:4px">Brazilian Jiu Jitsu · Ground work, problem solving in real time</div>
+          <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Krav Maga · Practical. Efficient. No wasted movement</div>
         </div>
         <div>
           <div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Chess</div>
-          <div class="exp-meta" style="color:rgba(245,237,228,.35); font-size:11.5px">Pattern recognition, patience, the long game</div>
+          <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Pattern recognition, patience, the long game</div>
         </div>
         <div>
           <div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Photography</div>
-          <div class="exp-meta" style="color:rgba(245,237,228,.35); font-size:11.5px">Living history and preservation captures · <a href="https://instagram.com/ohgollybritta" target="_blank" style="color:var(--teal-light); text-decoration:none;">@ohgollybritta</a></div>
+          <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Living history and preservation captures · <a href="https://instagram.com/ohgollybritta" target="_blank" rel="noopener" style="color:var(--teal-light); text-decoration:none;">@ohgollybritta</a></div>
         </div>
       </div>
     </div>
@@ -299,7 +302,7 @@
     <!-- EXPERIENCE: Design -->
     <div class="card card-cream a-col-6">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         Design Career
       </div>
       <div class="exp-item">
@@ -328,13 +331,13 @@
     <!-- CERTIFICATIONS -->
     <div class="card card-dark a-col-6">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
         Licenses &amp; Certifications
       </div>
       <div class="about-cert-item">
-        <div class="cert-dot-col"><div class="about-cert-dot teal" style="opacity:.45;"></div></div>
+        <div class="cert-dot-col"><div class="about-cert-dot teal" style="opacity:.65;"></div></div>
         <div class="cert-info">
-          <div class="cert-name-text">CompTIA Security+ <span style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-light); opacity:.7; margin-left:6px;">In Progress</span></div>
+          <div class="cert-name-text">CompTIA Security+ <span style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-light); margin-left:6px;">In Progress</span></div>
           <div class="cert-issuer-text">CompTIA</div>
           <div class="cert-skill-tags"><span class="cert-skill-tag teal">Cybersecurity</span><span class="cert-skill-tag teal">Network Security</span></div>
         </div>
@@ -371,13 +374,13 @@
           <div class="cert-skill-tags"><span class="cert-skill-tag terra">AED</span><span class="cert-skill-tag terra">CPR</span></div>
         </div>
       </div>
-      <div style="font-size:11.5px; font-weight:700; color:rgba(245,237,228,.3); margin-top:14px; letter-spacing:.06em;">+ more</div>
+      <div style="font-size:11.5px; font-weight:700; color:rgba(245,237,228,.55); margin-top:14px; letter-spacing:.06em;">+ more</div>
     </div>
 
     <!-- ORGANIZATIONS -->
     <div class="card card-dark a-col-6">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Organizations & Volunteering
       </div>
       <div class="org-item">
@@ -406,7 +409,7 @@
     <!-- EXHIBITIONS + PUBLICATIONS -->
     <div class="card card-cream a-col-12">
       <div class="card-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         Exhibition &amp; Media Highlights
       </div>
       <div class="hl-grid">
@@ -431,7 +434,7 @@
       <!-- Publications sub-section -->
       <div style="margin-top: 28px; padding-top: 24px; border-top: 1.5px solid rgba(44,26,14,.1);">
         <div class="card-label" style="margin-bottom: 16px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           Publications
         </div>
         <div class="hl-grid">
@@ -446,7 +449,7 @@
   </div><!-- /bento -->
 </div><!-- /about-wrap -->
 
-<footer>© 2026 oh golly britta &nbsp;·&nbsp; look closer · build bolder &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
 
 <script>
   const fills = document.querySelectorAll('.skill-fill');

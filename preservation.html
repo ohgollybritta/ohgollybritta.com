@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preservation Captures — Oh golly, Britta!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/bgp.css">
+  <style>
+    /* Feature cards — mirrors sage.html pattern */
+    .pres-feature-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 32px;
+    }
+    @media (max-width: 860px) { .pres-feature-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .pres-feature-grid { grid-template-columns: 1fr; } }
+    .pres-feature {
+      background: var(--terra-dark);
+      border: 1px solid rgba(245,237,228,.07);
+      border-radius: 4px; padding: 28px 26px; position: relative; overflow: hidden;
+    }
+    .pres-feature::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--teal-light);
+    }
+    .pres-feature-icon {
+      font-size: 22px; margin-bottom: 14px; display: block;
+    }
+    .pres-feature-name {
+      font-family: 'Fraunces', serif; font-size: 17px; font-weight: 800;
+      color: var(--cream); margin-bottom: 10px; line-height: 1.2;
+    }
+    .pres-feature-desc {
+      font-size: 13px; color: rgba(245,237,228,.6); line-height: 1.7;
+    }
+
+    /* Instagram / publication notice block */
+    .pres-ig-notice {
+      display: flex; align-items: center; gap: 18px;
+      background: rgba(61,154,139,.1);
+      border: 1px solid rgba(61,154,139,.3);
+      border-radius: 4px; padding: 22px 28px; margin-top: 32px;
+    }
+    .pres-ig-icon { flex-shrink: 0; color: var(--teal-light); }
+    .pres-ig-text { font-size: 14px; color: rgba(245,237,228,.65); line-height: 1.65; flex: 1; }
+    .pres-ig-text strong { color: rgba(245,237,228,.85); font-weight: 600; }
+    .pres-ig-btn-row { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .pres-ig-btn-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--teal-light); color: var(--ink);
+      font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+      padding: 9px 18px; border-radius: 3px;
+    }
+    .pres-ig-btn-ghost {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: transparent; color: var(--teal-light);
+      border: 1px solid rgba(61,154,139,.4);
+      font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+      padding: 9px 18px; border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://instagram.com/ohgollybritta" title="Instagram" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://github.com/ohgollybritta" title="GitHub" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.twitch.tv/ohgollybritta" title="Twitch" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+    <a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="16,8.5 22,12 16,15.5 10,12"/><polyline points="10,12 10,19.5 16,23 16,15.5"/><polyline points="22,12 22,19.5 16,23"/></svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="project-hero">
+  <img class="project-hero-img" src="/img/preservation-card.jpg" alt="Preservation Captures" style="object-position: center center;">
+  <div class="hero-gradient"></div>
+  <div class="project-hero-content">
+    <a href="/recent-project.html" class="project-back">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      &nbsp;Back
+    </a>
+    <div class="project-eyebrow">
+      <span class="project-cat">Heritage · Photography</span>
+      <div class="project-eyebrow-dot"></div>
+      <span class="project-year">Ongoing</span>
+    </div>
+    <h1 class="project-hero-title">Preservation Captures</h1>
+    <div class="project-hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Medium</div>
+        <div class="hero-meta-value">Photography</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Subject</div>
+        <div class="hero-meta-value">Historic Places</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Published</div>
+        <div class="hero-meta-value">@ohgollybritta</div>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Featured</div>
+        <div class="hero-meta-value">Compass Magazine</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CASE STUDY BODY ── -->
+<div class="case-study">
+
+  <!-- OVERVIEW STRIP -->
+  <div class="cs-overview">
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Medium</div>
+      <div class="cs-overview-value">Documentary <em>photography</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Subjects</div>
+      <div class="cs-overview-value">Historic <em>architecture</em></div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Scope</div>
+      <div class="cs-overview-value">Homes, <em>landmarks</em>, landscapes</div>
+    </div>
+    <div class="cs-overview-item">
+      <div class="cs-overview-label">Home</div>
+      <div class="cs-overview-value">Instagram <em>&amp; press</em></div>
+    </div>
+  </div>
+
+  <!-- ── SECTION: THE PROBLEM ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>The Problem</span></div>
+    <div class="cs-two-col wide-left">
+      <div>
+        <h2 class="cs-section-heading">Historic places disappear<br><em>quietly, then all at once.</em></h2>
+        <p class="cs-body">
+          Most historic buildings don't get torn down in a single dramatic moment. They get lost slowly — a roof that finally gives in, a family who can't afford the repair, a developer who offers just enough money on a tired afternoon. By the time anyone notices, the record is gone. There is no committee, no headline, no formal goodbye. The place is simply not there the next time you drive past.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          The structures that survive aren't always the most important — they're the ones that happened to have someone watching. A photograph is often the last thing a building has going for it. Not a beauty shot. A record: what the trim looked like, where the original windows were, which way the porch faced the sun. The details nobody thinks to save until they can't be recovered.
+        </p>
+        <div class="cs-pull">
+          <div class="cs-pull-text">"A photograph is often<br>the last thing a building has<br><em>going for it.</em>"</div>
+        </div>
+      </div>
+      <div>
+        <div class="messaging-card" style="margin-bottom:20px;">
+          <div class="messaging-card-label">Why It Matters</div>
+          <div class="messaging-card-text">A National Register listing, a grant application, a restoration project decades from now — all of these start with documentation that already exists. Photographs taken today become the primary source material for the researcher, architect, or descendant who shows up tomorrow looking for what used to be here.</div>
+        </div>
+        <div class="messaging-card">
+          <div class="messaging-card-label">The Gap</div>
+          <div class="messaging-card-text">Most historic photography focuses on the marquee sites — the ones already on lists, already protected, already famous. The buildings most at risk are the ones nobody has photographed yet, the ones whose significance hasn't been written down. That's the gap this project exists to close.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: WHAT IT DOCUMENTS ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>What It Documents</span></div>
+    <h2 class="cs-section-heading">The whole building —<br><em>and the story around it.</em></h2>
+    <p class="cs-body">Every site gets the same treatment: the grand view and the small one. Buildings don't exist in isolation, and neither do their records. The goal is a visual archive complete enough that someone who never stood in the same room can understand what was there, where it sat, and what made it matter.</p>
+    <div class="pres-feature-grid">
+      <div class="pres-feature">
+        <span class="pres-feature-icon">🏛</span>
+        <div class="pres-feature-name">Exteriors &amp; Facades</div>
+        <div class="pres-feature-desc">Elevations from every side in consistent light. The record a future restoration would actually use: rooflines, fenestration, trim profiles, material transitions.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">🪟</span>
+        <div class="pres-feature-name">Interior Rooms</div>
+        <div class="pres-feature-desc">Original millwork, mantels, flooring, plaster, and hardware — photographed where access allows. The things replacements can't recreate because no one remembers them.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">🔍</span>
+        <div class="pres-feature-name">Architectural Details</div>
+        <div class="pres-feature-desc">Close work on brackets, muntins, masonry joints, decorative iron, makers' marks. The details that date a building and identify its maker when written records are missing.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">🌾</span>
+        <div class="pres-feature-name">Landscape &amp; Context</div>
+        <div class="pres-feature-desc">Approach roads, outbuildings, fencelines, treelines, and the working landscape a building belongs to. A house out of its setting is half a record.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">⚠️</span>
+        <div class="pres-feature-name">Threatened Sites</div>
+        <div class="pres-feature-desc">Properties facing demolition, neglect, or major alteration get documented on a priority basis — sometimes the only existing photographic record is the one made before the work starts.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">🪖</span>
+        <div class="pres-feature-name">Living History</div>
+        <div class="pres-feature-desc">Reenactments, craftspeople, and heritage events in situ — the people keeping the buildings warm. A historic place used is a historic place more likely to survive.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">🌳</span>
+        <div class="pres-feature-name">Genealogy Sites</div>
+        <div class="pres-feature-desc">Cemeteries, ancestral homes, and documented family landmarks. Photographed as record rather than ornament, and tagged with the research that connects them to the people buried there.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">⏳</span>
+        <div class="pres-feature-name">Before &amp; After</div>
+        <div class="pres-feature-desc">Where the same site is revisited across years, the change gets recorded. Some projects are a before-photo nobody knew they'd need until the after-photo was already inevitable.</div>
+      </div>
+      <div class="pres-feature">
+        <span class="pres-feature-icon">📂</span>
+        <div class="pres-feature-name">Public Archive</div>
+        <div class="pres-feature-desc">Captions include what's known, what's uncertain, and where to find the rest. The goal isn't a moody photo feed — it's a record a future researcher can actually work with.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: HOW IT'S MADE ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>How It's Made</span></div>
+    <div class="cs-two-col">
+      <div>
+        <h2 class="cs-section-heading">Research first,<br><em>shutter second.</em></h2>
+        <p class="cs-body">
+          Every capture starts with a name, an owner, a date, a story. The photographs are better when the research is better — you frame a porch differently when you know a treaty was signed on it, document a kitchen differently when you know three generations of the same family cooked in it.
+        </p>
+        <p class="cs-body" style="margin-top:16px;">
+          Access is handled through property owners, local historical societies, heritage organizations, and chapter networks. Nothing goes up without permission, and sensitive locations — active archaeology, family cemeteries, private interiors — stay off the public grid unless the stewards specifically want them shared.
+        </p>
+      </div>
+      <div>
+        <div class="cs-deliverable-list" style="margin-top:0;">
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Research</strong> — deed records, oral histories, chapter archives, and genealogical context established before the shoot</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Access</strong> — coordinated with property owners, historical societies, and heritage organizations; no trespass</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Capture</strong> — consistent elevations, natural light where possible, detail passes on original material and maker's marks</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Caption</strong> — site name, location, documented history, and citations where applicable</div>
+          </div>
+          <div class="cs-deliverable">
+            <div class="deliverable-dot"></div>
+            <div class="deliverable-text"><strong>Publish</strong> — shared on Instagram as <a href="https://instagram.com/ohgollybritta" target="_blank" rel="noopener">@ohgollybritta</a>, submitted to heritage publications, and archived for chapter use</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION: WHERE TO SEE IT ── -->
+  <section class="cs-section">
+    <div class="cs-section-label"><span>Where to See It</span></div>
+    <h2 class="cs-section-heading">On Instagram.<br><em>In Compass Magazine.</em></h2>
+    <p class="cs-body">The working archive lives on Instagram, updated as sites are visited and documented. Selected work has been featured in <em>Compass Magazine</em> and published through Daughters of the American Revolution and Boone Society chapter materials.</p>
+    <p class="cs-body" style="margin-top:16px;">Come take a closer look.</p>
+    <div class="pres-ig-notice">
+      <div class="pres-ig-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <div class="pres-ig-text">
+        <strong>The working archive lives here.</strong> Historic homes, forgotten landmarks, threatened sites, and the living history happening in and around them — updated as locations are documented. Research captions included.
+        <div class="pres-ig-btn-row">
+          <a href="https://instagram.com/ohgollybritta" target="_blank" rel="noopener" class="pres-ig-btn-primary">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+            Follow @ohgollybritta
+          </a>
+          <a href="/contact.html" class="pres-ig-btn-ghost">
+            Commission a Capture
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT NAV FOOTER -->
+  <div class="project-nav-footer">
+    <a href="/recent-project.html" class="proj-nav-back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Back to Projects
+    </a>
+    <a href="/contact.html" class="proj-nav-cta">
+      Get in touch
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div><!-- /case-study -->
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
+
+<script>
+(function() {
+  var btn  = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    menu.classList.toggle('is-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

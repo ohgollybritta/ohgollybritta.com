@@ -288,28 +288,29 @@
       img:     '/img/curious-img.jpg',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
       tagText: 'Preservation Captures',
-      h1:      'The answer is<br>already there.',
+      h1:      'The <em>answer</em> is<br>already there.',
       p:       'Sharing historic homes, forgotten stories, and the past that still has something to say.',
       primary: { label: 'Follow on Instagram', href: 'https://instagram.com/ohgollybritta' },
-      secondary: { label: 'Read the project', href: '/recent-project.html' },
+      secondary: { label: 'Read the brief', href: '/preservation.html' },
     },
     {
       img:     '/img/develop-img.jpg',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
       tagText: 'Research &amp; Investigations',
-      h1:      'Building tools for<br>causes that matter.',
+      h1:      'Building tools for<br>causes that <em>matter.</em>',
       p:       'OSINT and digital forensic tools purpose-built for optimal recovery and disruption.',
       primary: { label: 'See the work', href: '/work.html' },
-      secondary: { label: "Let's talk", href: '/contact.html' },
+      secondary: { label: 'Read the brief', href: '/recent-project.html' },
     },
     /* NEW — slide 4: Female Patriots / America 250 (formerly card 9) */
     {
       img:     '/img/eviza-lydia-howell.png',
+      bgPosition: 'center 30%',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
       tagText: 'America 250 Commemoration',
       h1:      'Female Patriots<br>of the <em>Revolution.</em>',
       p:       'Featuring pioneers Jemima and Rebecca Boone. A deep-archive project built on looking closer.',
-      primary: { label: 'Read the project', href: '/recent-project.html' },
+      primary: { label: 'Read the brief', href: '/recent-project.html' },
       secondary: { label: 'More work', href: '/work.html' },
     },
   ];
@@ -358,6 +359,7 @@
     setTimeout(function() {
       var s = slides[idx];
       bg.src        = s.img;
+      bg.style.objectPosition = s.bgPosition || 'center center';
       tag.innerHTML = s.tagSvg + ' <span class="hero-tag-text">' + s.tagText + '</span>';
       h1.innerHTML  = s.h1;
       p.innerHTML   = s.p;

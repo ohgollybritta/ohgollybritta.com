@@ -439,7 +439,7 @@
 }
 .page-header .name-title .name-last {
   font-style: italic;
-  color: var(--cream);
+  color: rgba(193,101,74,.45);
 }
 
 /* ── PILLS — solid, matching index.html avatar card ── */

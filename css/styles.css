@@ -274,6 +274,7 @@ body::after {
 .avatar-stack .work-tag {
   font-size: 10px;
   padding: 5px 11px;
+}
 
 /* ── 3. SPOTIFY (re-skinned to brand palette) ── */
 .card-spotify {
@@ -668,12 +669,13 @@ body::after {
 
 /* ── FOOTER ── */
 footer {
-  text-align: center; padding: 28px 22px;
-  font-size: 11px;
+  text-align: center; padding: 36px 22px 28px;
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 500;
   color: rgba(44,26,14,.55);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  font-weight: 600;
+  letter-spacing: .005em;
 }
 
 /* ── RESPONSIVE ── */

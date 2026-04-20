@@ -253,7 +253,7 @@
 }
 .work-item-cat {
   font-size: 10px; font-weight: 700; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--terra-light); margin-bottom: 4px;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 4px;
 }
 .work-item-title {
   font-family: 'Fraunces', serif; font-size: 20px; font-weight: 800;

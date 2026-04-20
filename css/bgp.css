@@ -59,7 +59,7 @@
 }
 .project-cat {
   font-size: 11px; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--terra-light);
+  text-transform: uppercase; color: var(--terra);
 }
 .project-year {
   font-size: 11px; font-weight: 600; color: rgba(245,237,228,.3);
@@ -244,7 +244,7 @@
 }
 .messaging-card-label {
   font-size: 10px; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--terra-light);
+  text-transform: uppercase; color: var(--terra);
   margin-bottom: 12px;
 }
 .messaging-card-text {

@@ -36,18 +36,9 @@
     .bio-read-more:focus-visible { color: var(--terra); outline: none; }
     .bio-read-more:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
-    /* Certifications — expand behavior */
-    .cert-expanded {
-      overflow: hidden;
-      max-height: 0;
-      opacity: 0;
-      transition: max-height .45s var(--ease-out), opacity .35s ease, margin .35s ease;
-    }
-    .cert-expanded.is-open {
-      max-height: 2400px;
-      opacity: 1;
-      margin-top: 4px;
-    }
+    /* Certifications — expand behavior (matches bio Read more) */
+    .cert-expanded { display: none; }
+    .cert-expanded.is-open { display: block; }
     .cert-section-label {
       font-size: 10.5px;
       font-weight: 700;
@@ -58,7 +49,6 @@
       padding-top: 14px;
       border-top: 1px dashed rgba(91,184,168,.22);
     }
-    .cert-expanded .about-cert-item:first-of-type { padding-top: 8px; }
     .about-cert-dot.pending {
       background: rgba(245,237,228,.18);
       box-shadow: none;
@@ -88,28 +78,19 @@
     .cert-more-toggle {
       background: none;
       border: none;
-      padding: 14px 0 0;
-      margin-top: 6px;
       font-family: 'DM Sans', sans-serif;
-      font-size: 11.5px;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: .08em;
-      color: rgba(245,237,228,.6);
+      color: var(--teal-light);
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      padding: 8px 0;
+      margin-top: 6px;
+      letter-spacing: .03em;
       transition: color .2s;
     }
     .cert-more-toggle:hover,
-    .cert-more-toggle:focus-visible {
-      color: var(--teal-light);
-      outline: none;
-    }
-    .cert-more-toggle:focus-visible .cert-more-label {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+    .cert-more-toggle:focus-visible { color: var(--terra-light); outline: none; }
+    .cert-more-toggle:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
   </style>
 </head>
 <body>
@@ -498,7 +479,7 @@
       </div>
 
       <button class="cert-more-toggle" id="certMoreBtn" aria-expanded="false" aria-controls="certExpanded">
-        <span class="cert-more-label">+ 4 more <span style="opacity:.55; font-weight:600;">(in progress &amp; queued)</span></span>
+        <span class="cert-more-label">+ 4 more</span>
       </button>
     </div>
 
@@ -620,6 +601,20 @@
     btn.setAttribute('aria-expanded', String(!open));
     content.classList.toggle('is-open', !open);
     btn.textContent = !open ? 'Read less' : 'Read more';
+  });
+})();
+</script>
+<script>
+(function() {
+  var btn = document.getElementById('certMoreBtn');
+  var content = document.getElementById('certExpanded');
+  var label = btn && btn.querySelector('.cert-more-label');
+  if (!btn || !content || !label) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    content.classList.toggle('is-open', !open);
+    label.textContent = !open ? '– show less' : '+ 4 more';
   });
 })();
 </script>

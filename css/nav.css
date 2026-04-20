@@ -133,7 +133,11 @@ a.nav-brand:hover { color: var(--ink); }
   .nav-logo { height: 28px; }
 
   .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
+
+  /* Mobile order: hamburger → brand → socials */
+  .nav-hamburger { display: flex; order: 1; }
+  .nav-brand     { order: 2; margin-left: 12px; }
+  .nav-icons     { order: 3; margin-left: auto; gap: 12px; }
 
   .nav-mobile-menu {
     display: none;

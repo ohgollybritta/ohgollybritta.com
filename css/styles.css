@@ -257,49 +257,23 @@ body::after {
   font-size: 12px; color: rgba(44,26,14,.55);
   margin-top: -4px;
 }
-.avatar-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 10px; font-weight: 600;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(44,26,14,.5);
-  margin-top: 10px;
-  margin-bottom: -4px;
-}
 .avatar-role {
   font-family: var(--mono, 'DM Sans');
   font-size: 11px; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
   color: var(--terra);
-  margin-top: 8px;
-  padding-bottom: 8px;
-  position: relative;
-}
-.avatar-role::after {
-  content: '';
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 28px; height: 1px;
-  background: rgba(44,26,14,.22);
+  margin-top: 10px;
+  line-height: 1.5;
+  text-align: center;
 }
 .avatar-stack {
   display: flex; flex-wrap: wrap;
-  align-items: center; gap: 6px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11.5px; font-weight: 500;
-  color: rgba(44,26,14,.72);
-  margin-top: 8px;
-  line-height: 1.35;
+  gap: 6px;
+  margin-top: 12px;
 }
-.avatar-stack i {
-  color: var(--terra);
-  font-style: normal;
-  font-weight: 700;
-  opacity: .7;
-}
-.avatar-stack-break {
-  flex-basis: 100%;
-  height: 0;
-}
+.avatar-stack .work-tag {
+  font-size: 10px;
+  padding: 5px 11px;
 
 /* ── 3. SPOTIFY (re-skinned to brand palette) ── */
 .card-spotify {
@@ -455,10 +429,25 @@ body::after {
   text-transform: uppercase; color: rgba(91,184,168,.7);
 }
 .currently-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  position: relative;
 }
+.currently-grid::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 4px; bottom: 4px;
+  width: 1px;
+  background: rgba(91,184,168,.18);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.currently-col:first-child { padding-right: 14px; }
+.currently-col:last-child  { padding-left: 14px; }
 @media (max-width: 620px) {
   .currently-grid { grid-template-columns: 1fr; gap: 18px; }
+  .currently-grid::before { display: none; }
+  .currently-col:first-child,
+  .currently-col:last-child { padding: 0; }
 }
 .currently-col {
   display: flex; flex-direction: column; gap: 10px;
@@ -585,6 +574,11 @@ body::after {
 .card-work:hover .t-terra { background: var(--terra); color: var(--cream); }
 .card-work:hover .t-teal  { background: var(--teal-dark); color: var(--cream); }
 .card-work:hover .t-ink   { background: rgba(44,26,14,.55); color: var(--cream); }
+
+/* Always-solid variant (used on avatar card disciplines) */
+.work-tag.is-solid.t-terra { background: var(--terra); color: var(--cream); }
+.work-tag.is-solid.t-teal  { background: var(--teal-dark); color: var(--cream); }
+.work-tag.is-solid.t-ink   { background: rgba(44,26,14,.55); color: var(--cream); }
 
 .work-cta {
   display: inline-flex; align-items: center; gap: 7px;

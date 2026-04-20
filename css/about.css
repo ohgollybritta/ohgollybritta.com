@@ -38,7 +38,7 @@
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(245,237,228,.55);
+  color: var(--terra-light);
   margin-bottom: 10px;
 }
 
@@ -53,7 +53,7 @@
 }
 .page-title em {
   font-style: italic;
-  color: rgba(245,237,228,.5);
+  color: rgba(245,237,228,.72);
 }
 
 .name-pills {
@@ -442,21 +442,21 @@
   color: var(--cream);
 }
 
-/* ── PILLS — brighter, matching index.html v2 ── */
+/* ── PILLS — solid, matching index.html avatar card ── */
 .name-pills .pill-terra {
-  background: rgba(193, 101, 74, .35);
+  background: var(--terra);
   color: var(--cream);
-  border-color: rgba(193, 101, 74, .7);
+  border-color: var(--terra);
 }
 .name-pills .pill-teal {
-  background: rgba(91, 184, 168, .32);
+  background: var(--teal-dark);
   color: var(--cream);
-  border-color: rgba(91, 184, 168, .6);
+  border-color: var(--teal-dark);
 }
 .name-pills .pill-ink {
-  background: rgba(44, 26, 14, .45);
+  background: rgba(44, 26, 14, .55);
   color: var(--cream);
-  border-color: rgba(245, 237, 228, .28);
+  border-color: rgba(44, 26, 14, .55);
 }
 
 /* Tag-row pills at the bottom of the bio card — match the brighter system */

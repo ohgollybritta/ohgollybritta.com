@@ -514,6 +514,12 @@ body::after {
 }
 .card-about:hover::before { color: rgba(245,237,228,.11); }
 
+.card-about .widget-label {
+  color: rgba(245,237,228,.65);
+  position: relative; z-index: 1;
+  margin-bottom: 14px;
+}
+
 .card-about p {
   font-size: 16px; color: var(--cream); line-height: 1.65;
   position: relative; z-index: 1; max-width: 560px;
@@ -546,7 +552,8 @@ body::after {
 }
 .work-avatar {
   width: 48px; height: 48px; border-radius: var(--r-sm);
-  image-rendering: pixelated;
+  object-fit: contain;
+  padding: 4px;
   border: 2px solid var(--terra);
   box-shadow: 3px 3px 0 var(--terra-dark); flex-shrink: 0;
   transition: transform .3s var(--ease-spring), box-shadow .3s ease;
@@ -575,6 +582,11 @@ body::after {
 .card-work:hover .t-terra { background: var(--terra); color: var(--cream); }
 .card-work:hover .t-teal  { background: var(--teal-dark); color: var(--cream); }
 .card-work:hover .t-ink   { background: rgba(44,26,14,.55); color: var(--cream); }
+
+/* Avatar card pills share the Design Work hover behavior */
+.card-avatar:hover .t-terra { background: var(--terra); color: var(--cream); }
+.card-avatar:hover .t-teal  { background: var(--teal-dark); color: var(--cream); }
+.card-avatar:hover .t-ink   { background: rgba(44,26,14,.55); color: var(--cream); }
 
 /* Always-solid variant (used on avatar card disciplines) */
 .work-tag.is-solid.t-terra { background: var(--terra); color: var(--cream); }
@@ -669,13 +681,12 @@ body::after {
 
 /* ── FOOTER ── */
 footer {
-  text-align: center; padding: 36px 22px 28px;
-  font-family: 'Fraunces', serif;
-  font-size: 13px;
-  font-style: italic;
-  font-weight: 500;
+  text-align: center; padding: 28px 22px;
+  font-size: 11px;
   color: rgba(44,26,14,.55);
-  letter-spacing: .005em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 /* ── RESPONSIVE ── */

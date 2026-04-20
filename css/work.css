@@ -12,7 +12,7 @@
 
 .page-eyebrow {
   font-size: 11px; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: rgba(245,237,228,.45);
+  text-transform: uppercase; color: var(--terra);
   margin-bottom: 10px;
 }
 
@@ -26,7 +26,7 @@
 .page-title em { color: var(--teal-light); font-style: italic; }
 
 .page-desc {
-  font-size: 15px; color: rgba(245,237,228,.55);
+  font-size: 15px; color: rgba(44,26,14,.75);
   max-width: 420px; line-height: 1.6;
 }
 
@@ -61,11 +61,11 @@
 }
 .section-label span {
   font-size: 11px; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: rgba(245,237,228,.3);
+  text-transform: uppercase; color: var(--terra);
 }
 .section-label::after {
   content: ''; flex: 1; height: 1px;
-  background: rgba(245,237,228,.1);
+  background: rgba(44,26,14,.12);
 }
 
 /* ── INTRO ── */

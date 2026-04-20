@@ -240,10 +240,10 @@
   box-shadow: 0 4px 20px rgba(0,0,0,.3);
 }
 .swatch-name {
-  font-size: 12px; font-weight: 700; color: var(--cream);
+  font-size: 12px; font-weight: 700; color: var(--ink);
 }
 .swatch-detail {
-  font-size: 10px; color: rgba(245,237,228,.35);
+  font-size: 10px; color: rgba(44,26,14,.55);
   letter-spacing: .04em;
 }
 

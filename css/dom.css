@@ -180,8 +180,8 @@
   flex-shrink: 0; border: 1px solid rgba(245,237,228,.1);
 }
 .cs-color-chip.red-chip .cs-chip-swatch { border-color: rgba(218,41,28,.25); }
-.cs-chip-label { font-size: 13px; font-weight: 700; color: var(--cream); margin-bottom: 3px; }
-.cs-chip-value { font-size: 11px; color: rgba(245,237,228,.4); letter-spacing: .06em; font-family: 'DM Sans', sans-serif; }
+.cs-chip-label { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.cs-chip-value { font-size: 11px; color: rgba(44,26,14,.55); letter-spacing: .06em; font-family: 'DM Sans', sans-serif; }
 
 /* ── FULL-BLEED IMAGE ── */
 .cs-full-image { margin: 52px -48px 0; overflow: hidden; max-height: 680px; }

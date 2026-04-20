@@ -50,32 +50,31 @@
       transform: translateX(3px);
     }
 
-    /* Sage — fix the squashed card: switch to a proper split layout, no cropped text */
+    /* Sage — top-card hero with full-width image ABOVE the body */
     .sage-card {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      display: flex;
+      flex-direction: column;
       gap: 0;
       padding: 0;
       overflow: hidden;
-      min-height: 260px;
       height: auto;
       position: relative;
       background: var(--terra-dark);
+      border-radius: var(--radius);
     }
     .sage-card > img {
       position: static;
       width: 100%;
-      height: 100%;
+      height: 360px;
       object-fit: cover;
-      object-position: center center;
+      object-position: center 40%;
       display: block;
     }
     .sage-card .work-overlay { display: none; }
     .sage-card .sage-body {
-      padding: 32px 36px;
+      padding: 32px 40px 36px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 10px;
       color: var(--cream);
     }
@@ -118,17 +117,19 @@
       margin-top: 10px;
     }
 
-    /* Coming-soon card — raised recessed text to meet contrast */
+    /* Coming-soon card — rounded, raised recessed text to meet contrast */
     .card-coming-soon {
       background: var(--terra-dark);
       border: 1px solid rgba(245, 237, 228, .07);
       padding: 28px 30px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 14px;
-      border-radius: inherit;
+      border-radius: var(--radius);
     }
+    .card-coming-soon .coming-soon-desc { flex: 1; }
+    .card-coming-soon .rp-cta { align-self: flex-start; margin-top: auto; }
     .coming-soon-eyebrow {
       font-size: 10px;
       font-weight: 700;
@@ -161,11 +162,7 @@
     @media (max-width: 860px) {
       .rp-hero-card { height: 340px; }
       .rp-mid-card  { height: auto; min-height: 280px; }
-      .sage-card {
-        grid-template-columns: 1fr;
-        min-height: 0;
-      }
-      .sage-card > img { height: 200px; }
+      .sage-card > img { height: 220px; }
     }
   </style>
 </head>
@@ -224,6 +221,21 @@
     <span>Recent Projects</span>
   </div>
 
+  <!-- Sage — TOP CARD: full-width hero with image above body -->
+  <a href="/sage.html" class="card card-work-item sage-card" style="grid-column:1/13;">
+    <img src="/img/sage-card.jpg" alt="">
+    <div class="sage-body">
+      <div class="sage-cat">Python · Open Source · Privacy · 2026–Present</div>
+      <div class="sage-title">Sage</div>
+      <div class="sage-desc">A privacy-first voice assistant that runs entirely locally — no audio ever sent to a cloud service. An open-source workaround to Alexa: plays Spotify, keeps kitchen timers, and delivers verbal reminders on schedule.</div>
+      <span class="sage-tag">Voice AI · Python · No Cloud</span>
+      <span class="rp-cta" aria-hidden="true">
+        Read the brief
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
+
   <!-- Female Patriots — hero card -->
   <a href="/female-patriots.html" class="card card-work-item tall rp-hero-card" style="grid-column:1/7; text-decoration:none;">
     <img src="/img/siege-of-fort-boonesborough.jpg" alt="" style="object-position: center center;">
@@ -256,21 +268,6 @@
     </div>
   </a>
 
-  <!-- Sage card — redesigned as a split-layout full-width cell -->
-  <a href="/sage.html" class="card card-work-item sage-card" style="grid-column:1/13;">
-    <img src="/img/sage-card.jpg" alt="">
-    <div class="sage-body">
-      <div class="sage-cat">Python · Open Source · Privacy · 2026–Present</div>
-      <div class="sage-title">Sage</div>
-      <div class="sage-desc">A privacy-first voice assistant that runs entirely locally — no audio ever sent to a cloud service. An open-source workaround to Alexa: plays Spotify, keeps kitchen timers, and delivers verbal reminders on schedule.</div>
-      <span class="sage-tag">Voice AI · Python · No Cloud</span>
-      <span class="rp-cta" aria-hidden="true">
-        Read the brief
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </span>
-    </div>
-  </a>
-
   <!-- Preservation Captures — split-layout full-width cell -->
   <a href="/preservation.html" class="card card-work-item sage-card" style="grid-column:1/13;">
     <img src="/img/preservation-card.jpg" alt="">
@@ -296,6 +293,10 @@
     <div class="coming-soon-eyebrow">Archiving</div>
     <div class="coming-soon-title">JFK Declassified<br>Transcription</div>
     <div class="coming-soon-desc">Transcribed declassified files for the National Archives related to the Kennedy assassination — converting primary source documents into searchable, accessible records for the historical archive.</div>
+    <span class="rp-cta" aria-hidden="true">
+      View at archives.gov
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </span>
   </a>
 
   <!-- Human Trafficking Paper -->
@@ -303,6 +304,10 @@
     <div class="coming-soon-eyebrow">Research</div>
     <div class="coming-soon-title">Human Trafficking<br>Research Paper</div>
     <div class="coming-soon-desc">Authored a research paper on human trafficking — the same subject that would later drive the development of Operation Interstate One.</div>
+    <span class="rp-cta" aria-hidden="true">
+      Read on ResearchGate
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </span>
   </a>
 
   <!-- Constitution Week -->
@@ -310,6 +315,10 @@
     <div class="coming-soon-eyebrow">Leadership</div>
     <div class="coming-soon-title">Constitution<br>Week</div>
     <div class="coming-soon-desc">Co-hosted a week-long series of Constitution Week events as Vice-Regent — programming, coordination, and public engagement from start to finish.</div>
+    <span class="rp-cta" aria-hidden="true">
+      Learn about the initiative
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </span>
   </a>
 
   <!-- CTA -->

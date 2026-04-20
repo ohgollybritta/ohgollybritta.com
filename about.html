@@ -342,16 +342,18 @@ Experience
 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
 Interests
 </div>
-<div style="display:flex; flex-direction:column; gap:18px">
+<div style="display:flex; flex-direction:column">
 <div>
 <div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:6px">Martial Arts</div>
 <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px; margin-bottom:4px">Brazilian Jiu Jitsu · Ground work, problem solving in real time</div>
 <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Krav Maga · Practical. Efficient. No wasted movement</div>
 </div>
+<div class="sub-divider"></div>
 <div>
 <div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Chess</div>
 <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Pattern recognition, patience, the long game</div>
 </div>
+<div class="sub-divider"></div>
 <div>
 <div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Photography</div>
 <div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Living history and preservation captures · <a href="https://instagram.com/ohgollybritta" target="_blank" rel="noopener" style="color:var(--teal-light); text-decoration:none;">@ohgollybritta</a></div>
@@ -402,7 +404,7 @@ Licenses &amp; Certifications
 <div class="cert-dot-col"><div class="about-cert-dot htb"></div></div>
 <div class="cert-info">
 <div class="cert-name-text">Claude Code in Action</div>
-<div class="cert-issuer-text">Anthropic · Apr 2026 · <span style="opacity:.7">Credential ID jmxi3c8k2z5c</span></div>
+<div class="cert-issuer-text">Anthropic · Apr 2026</div>
 <div class="cert-skill-tags"><span class="cert-skill-tag htb">Development Workflows</span></div>
 </div>
 </div>
@@ -411,7 +413,7 @@ Licenses &amp; Certifications
 <div class="cert-dot-col"><div class="about-cert-dot htb"></div></div>
 <div class="cert-info">
 <div class="cert-name-text">Claude 101</div>
-<div class="cert-issuer-text">Anthropic · Mar 2026 · <span style="opacity:.7">Credential ID xxsn3ciwg2qp</span></div>
+<div class="cert-issuer-text">Anthropic · Mar 2026</div>
 <div class="cert-skill-tags"><span class="cert-skill-tag htb">Generative AI</span><span class="cert-skill-tag htb">Large Language Models</span></div>
 </div>
 </div>
@@ -442,6 +444,9 @@ Licenses &amp; Certifications
 <div class="cert-skill-tags"><span class="cert-skill-tag terra">Pre-Escalation</span></div>
 </div>
 </div>
+
+<!-- EXPANDABLE: rest of earned + IN PROGRESS + QUEUED (hidden by default) -->
+<div class="cert-expanded" id="certExpanded">
 
 <div class="about-cert-item">
 <div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
@@ -478,9 +483,6 @@ Licenses &amp; Certifications
 <div class="cert-skill-tags"><span class="cert-skill-tag teal">Data Analysis</span><span class="cert-skill-tag teal">Evidence Handling</span><span class="cert-skill-tag teal">Chain of Custody</span></div>
 </div>
 </div>
-
-<!-- EXPANDABLE: IN PROGRESS + QUEUED (hidden by default) -->
-<div class="cert-expanded" id="certExpanded">
 
 <div class="cert-section-label">In Progress</div>
 
@@ -524,7 +526,7 @@ Licenses &amp; Certifications
 </div>
 
 <button class="cert-more-toggle" id="certMoreBtn" aria-expanded="false" aria-controls="certExpanded">
-<span class="cert-more-label">+ 4 more</span>
+<span class="cert-more-label">Show all →</span>
 </button>
 </div>
 
@@ -663,7 +665,7 @@ btn.addEventListener('click', function() {
 var open = btn.getAttribute('aria-expanded') === 'true';
 btn.setAttribute('aria-expanded', String(!open));
 content.classList.toggle('is-open', !open);
-label.textContent = !open ? '– show less' : '+ 4 more';
+label.textContent = !open ? 'Show less ↑' : 'Show all →';
 });
 })();
 </script>

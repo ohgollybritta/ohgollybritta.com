@@ -557,12 +557,18 @@ body::after {
   gap: 12px;
 }
 .work-avatar {
-  height: 144px; width: auto;
+  height: 120px; width: auto;
   flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
   transition: transform .3s var(--ease-spring);
 }
 .card-work:hover .work-avatar {
-  transform: rotate(5deg) scale(1.08);
+  animation: fox-shake .5s ease-in-out infinite;
+}
+@keyframes fox-shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-4px); }
+  75%      { transform: translateX(4px); }
 }
 .work-heading {
   font-family: 'Fraunces', serif;

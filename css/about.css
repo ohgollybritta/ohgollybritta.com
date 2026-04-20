@@ -3,6 +3,13 @@
    Builds on styles.css tokens & card base. Do not edit styles.css.
    ============================================================ */
 
+/* ── TOKEN OVERRIDES ──
+   Brighten --htb-green to match the HackTheBox logo (#9FEF00).
+   Scoped to :root so it cascades through every var() reference below. */
+:root {
+  --htb-green: #9FEF00;
+}
+
 /* ── PAGE WRAPPER ── */
 .about-wrap {
   max-width: 1440px;
@@ -349,7 +356,7 @@
 }
 .cert-skill-tag.terra { background: rgba(193,101,74,.18); color: var(--terra-light); }
 .cert-skill-tag.teal  { background: rgba(61,154,139,.18); color: var(--teal-light); }
-.cert-skill-tag.htb   { background: rgba(159,239,0,.1);   color: var(--htb-green); }
+.cert-skill-tag.htb   { background: rgba(159,239,0,.14);  color: var(--htb-green); }
 
 /* ── ORGANIZATIONS ── */
 .org-item {

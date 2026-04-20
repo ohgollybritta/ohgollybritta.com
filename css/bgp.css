@@ -209,11 +209,11 @@
   margin-top: 7px;
 }
 .deliverable-text {
-  font-size: 14px; color: rgba(245,237,228,.65);
+  font-size: 14px; color: rgba(44,26,14,.78);
   line-height: 1.6;
 }
-.deliverable-text strong { color: rgba(245,237,228,.9); }
-.deliverable-text em { color: rgba(245,237,228,.8); font-style: italic; }
+.deliverable-text strong { color: var(--ink); }
+.deliverable-text em { color: var(--terra); font-style: italic; }
 
 /* ── PULL QUOTE ── */
 .cs-pull {
@@ -227,7 +227,7 @@
   font-family: 'Fraunces', serif;
   font-size: clamp(18px, 2.2vw, 26px);
   font-weight: 700; font-style: italic;
-  color: var(--cream); line-height: 1.35;
+  color: var(--terra); line-height: 1.35;
 }
 .cs-pull-text em { color: var(--teal-light); }
 

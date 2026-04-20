@@ -35,6 +35,81 @@
     .bio-read-more:hover,
     .bio-read-more:focus-visible { color: var(--terra); outline: none; }
     .bio-read-more:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* Certifications — expand behavior */
+    .cert-expanded {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .45s var(--ease-out), opacity .35s ease, margin .35s ease;
+    }
+    .cert-expanded.is-open {
+      max-height: 2400px;
+      opacity: 1;
+      margin-top: 4px;
+    }
+    .cert-section-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(91,184,168,.6);
+      margin: 18px 0 6px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(91,184,168,.22);
+    }
+    .cert-expanded .about-cert-item:first-of-type { padding-top: 8px; }
+    .about-cert-dot.pending {
+      background: rgba(245,237,228,.18);
+      box-shadow: none;
+      border: 1px solid rgba(245,237,228,.28);
+    }
+    .cert-status-inline {
+      display: inline-block;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 100px;
+      vertical-align: 2px;
+    }
+    .cert-status-inline.status-progress {
+      color: var(--teal-light);
+      background: rgba(91,184,168,.14);
+      border: 1px solid rgba(91,184,168,.3);
+    }
+    .cert-status-inline.status-queued {
+      color: rgba(245,237,228,.55);
+      background: rgba(245,237,228,.06);
+      border: 1px solid rgba(245,237,228,.14);
+    }
+    .cert-more-toggle {
+      background: none;
+      border: none;
+      padding: 14px 0 0;
+      margin-top: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: rgba(245,237,228,.6);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .cert-more-toggle:hover,
+    .cert-more-toggle:focus-visible {
+      color: var(--teal-light);
+      outline: none;
+    }
+    .cert-more-toggle:focus-visible .cert-more-label {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
   </style>
 </head>
 <body>
@@ -230,16 +305,16 @@
     <!-- CODE SKILLS -->
     <div class="card card-mid a-col-4">
       <div class="prog-header">
-        <div class="prog-icon terra">
+        <div class="prog-icon htb">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
         <span class="prog-title">Coding</span>
       </div>
-      <div class="skill-row"><span class="skill-name">HTML / CSS</span><div class="skill-track"><div class="skill-fill terra" data-pct="97"></div></div><span class="skill-pct terra">97%</span></div>
-      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-fill terra" data-pct="60"></div></div><span class="skill-pct terra">60%</span></div>
-      <div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-track"><div class="skill-fill terra" data-pct="90"></div></div><span class="skill-pct terra">90%</span></div>
-      <div class="skill-row"><span class="skill-name">Shell Scripting</span><div class="skill-track"><div class="skill-fill terra" data-pct="0"></div></div><span class="skill-pct terra">—</span></div>
-      <div class="skill-row"><span class="skill-name">Generative AI</span><div class="skill-track"><div class="skill-fill terra" data-pct="93"></div></div><span class="skill-pct terra">93%</span></div>
+      <div class="skill-row"><span class="skill-name">HTML / CSS</span><div class="skill-track"><div class="skill-fill htb" data-pct="97"></div></div><span class="skill-pct htb">97%</span></div>
+      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-fill htb" data-pct="60"></div></div><span class="skill-pct htb">60%</span></div>
+      <div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-track"><div class="skill-fill htb" data-pct="90"></div></div><span class="skill-pct htb">90%</span></div>
+      <div class="skill-row"><span class="skill-name">Shell Scripting</span><div class="skill-track"><div class="skill-fill htb" data-pct="50"></div></div><span class="skill-pct htb">—</span></div>
+      <div class="skill-row"><span class="skill-name">Generative AI</span><div class="skill-track"><div class="skill-fill htb" data-pct="93"></div></div><span class="skill-pct htb">93%</span></div>
     </div>
 
     <!-- LEFT COLUMN: Experience + Interests -->
@@ -333,20 +408,30 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
         Licenses &amp; Certifications
       </div>
+
+      <!-- COMPLETED / EARNED (always visible) -->
       <div class="about-cert-item">
-        <div class="cert-dot-col"><div class="about-cert-dot teal" style="opacity:.65;"></div></div>
+        <div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
         <div class="cert-info">
-          <div class="cert-name-text">CompTIA Security+ <span style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-light); margin-left:6px;">In Progress</span></div>
-          <div class="cert-issuer-text">CompTIA</div>
-          <div class="cert-skill-tags"><span class="cert-skill-tag teal">Cybersecurity</span><span class="cert-skill-tag teal">Network Security</span></div>
+          <div class="cert-name-text">Adult &amp; Pediatric First Aid / CPR / AED</div>
+          <div class="cert-issuer-text">HSI · Jan 2026 – Jan 2028</div>
+          <div class="cert-skill-tags"><span class="cert-skill-tag terra">AED</span><span class="cert-skill-tag terra">CPR</span></div>
         </div>
       </div>
       <div class="about-cert-item">
         <div class="cert-dot-col"><div class="about-cert-dot teal"></div></div>
         <div class="cert-info">
-          <div class="cert-name-text">Digital Forensics Essentials (DFE)</div>
-          <div class="cert-issuer-text">EC-Council · May 2025</div>
-          <div class="cert-skill-tags"><span class="cert-skill-tag teal">Data Analysis</span><span class="cert-skill-tag teal">Debian Linux</span></div>
+          <div class="cert-name-text">Claude Code in Action</div>
+          <div class="cert-issuer-text">Anthropic · Apr 2026 &nbsp;·&nbsp; <span style="opacity:.7">Credential ID jmxi3c8k2z5c</span></div>
+          <div class="cert-skill-tags"><span class="cert-skill-tag teal">Claude Development Workflows</span></div>
+        </div>
+      </div>
+      <div class="about-cert-item">
+        <div class="cert-dot-col"><div class="about-cert-dot teal"></div></div>
+        <div class="cert-info">
+          <div class="cert-name-text">Claude 101</div>
+          <div class="cert-issuer-text">Anthropic · Mar 2026 &nbsp;·&nbsp; <span style="opacity:.7">Credential ID xxsn3ciwg2qp</span></div>
+          <div class="cert-skill-tags"><span class="cert-skill-tag teal">Generative AI</span><span class="cert-skill-tag teal">Large Language Models</span></div>
         </div>
       </div>
       <div class="about-cert-item">
@@ -358,6 +443,14 @@
         </div>
       </div>
       <div class="about-cert-item">
+        <div class="cert-dot-col"><div class="about-cert-dot teal"></div></div>
+        <div class="cert-info">
+          <div class="cert-name-text">Digital Forensics Essentials (DFE)</div>
+          <div class="cert-issuer-text">EC-Council · May 2025</div>
+          <div class="cert-skill-tags"><span class="cert-skill-tag teal">Data Analysis</span><span class="cert-skill-tag teal">Debian Linux</span></div>
+        </div>
+      </div>
+      <div class="about-cert-item">
         <div class="cert-dot-col"><div class="about-cert-dot htb"></div></div>
         <div class="cert-info">
           <div class="cert-name-text">Linux Commands &amp; Shell Scripting</div>
@@ -365,15 +458,48 @@
           <div class="cert-skill-tags"><span class="cert-skill-tag htb">Debian Linux</span><span class="cert-skill-tag htb">Bash Scripting</span></div>
         </div>
       </div>
-      <div class="about-cert-item">
-        <div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
-        <div class="cert-info">
-          <div class="cert-name-text">Adult &amp; Pediatric First Aid / CPR / AED</div>
-          <div class="cert-issuer-text">HSI · Jan 2026 – Jan 2028</div>
-          <div class="cert-skill-tags"><span class="cert-skill-tag terra">AED</span><span class="cert-skill-tag terra">CPR</span></div>
+
+      <!-- EXPANDABLE: IN PROGRESS + QUEUED (hidden by default) -->
+      <div class="cert-expanded" id="certExpanded">
+        <div class="cert-section-label">In Progress</div>
+        <div class="about-cert-item">
+          <div class="cert-dot-col"><div class="about-cert-dot teal" style="box-shadow:0 0 6px var(--teal-light), 0 0 14px rgba(91,184,168,.5);"></div></div>
+          <div class="cert-info">
+            <div class="cert-name-text">CompTIA Security+ <span class="cert-status-inline status-progress">Studying</span></div>
+            <div class="cert-issuer-text">CompTIA</div>
+            <div class="cert-skill-tags"><span class="cert-skill-tag teal">Cybersecurity</span><span class="cert-skill-tag teal">Network Security</span></div>
+          </div>
+        </div>
+        <div class="about-cert-item">
+          <div class="cert-dot-col"><div class="about-cert-dot teal" style="box-shadow:0 0 6px var(--teal-light), 0 0 14px rgba(91,184,168,.5);"></div></div>
+          <div class="cert-info">
+            <div class="cert-name-text">McAfee CHFI <span class="cert-status-inline status-progress">Studying</span></div>
+            <div class="cert-issuer-text">McAfee Institute</div>
+            <div class="cert-skill-tags"><span class="cert-skill-tag teal">Digital Forensics</span></div>
+          </div>
+        </div>
+
+        <div class="cert-section-label">Queued</div>
+        <div class="about-cert-item">
+          <div class="cert-dot-col"><div class="about-cert-dot pending"></div></div>
+          <div class="cert-info">
+            <div class="cert-name-text">CompTIA Network+ <span class="cert-status-inline status-queued">Queued</span></div>
+            <div class="cert-issuer-text">CompTIA</div>
+          </div>
+        </div>
+        <div class="about-cert-item">
+          <div class="cert-dot-col"><div class="about-cert-dot pending"></div></div>
+          <div class="cert-info">
+            <div class="cert-name-text">McAfee C|OSINT <span class="cert-status-inline status-queued">Queued</span></div>
+            <div class="cert-issuer-text">McAfee Institute</div>
+            <div class="cert-skill-tags"><span class="cert-skill-tag teal">OSINT</span></div>
+          </div>
         </div>
       </div>
-      <div style="font-size:11.5px; font-weight:700; color:rgba(245,237,228,.55); margin-top:14px; letter-spacing:.06em;">+ more</div>
+
+      <button class="cert-more-toggle" id="certMoreBtn" aria-expanded="false" aria-controls="certExpanded">
+        <span class="cert-more-label">+ 4 more <span style="opacity:.55; font-weight:600;">(in progress &amp; queued)</span></span>
+      </button>
     </div>
 
     <!-- ORGANIZATIONS -->

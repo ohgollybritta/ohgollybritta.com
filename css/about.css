@@ -353,10 +353,11 @@
 .bento .a-col-6:has(.about-cert-item),
 .bento .a-col-6:has(.org-item) { align-self: stretch; }
 
-/* ── SKILL CARDS ROW (Design / Cybersecurity / Coding) — align bottoms ──
-   All three .a-col-4 cards contain a .prog-header, so `:has()` targets
-   exactly those three and stretches them to the row's natural height. */
-.bento .a-col-4:has(.prog-header) { align-self: stretch; }
+/* ── SKILL CARDS ROW (Design / Investigative Tech / Coding) — align bottoms ──
+   The only .a-col-4 elements on this page are these three skill cards,
+   so we can target them directly. Stretching them to the row's natural
+   height makes their bottom edges line up. */
+.bento .a-col-4 { align-self: stretch; }
 
 /* ── CERTIFICATIONS ── */
 .about-cert-item {

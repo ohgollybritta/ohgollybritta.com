@@ -106,6 +106,7 @@ body::after {
   font-size: 11px; font-weight: 700;
   letter-spacing: .12em; text-transform: uppercase;
   display: flex; align-items: center; gap: 6px;
+  margin-bottom: 14px;
 }
 
 /* ── 1. HERO (spans full top band, with CTA pair) ── */
@@ -439,8 +440,8 @@ body::after {
 .fk-cta {
   display: inline-flex; align-items: center; gap: 7px;
   align-self: flex-start;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .03em;
   color: var(--teal-light);
   text-decoration: none;
   padding: 6px 0;

@@ -271,6 +271,7 @@ body::after {
   display: flex; flex-wrap: wrap;
   gap: 6px;
   margin-top: 12px;
+  justify-content: center;
 }
 .avatar-stack .work-tag {
   font-size: 10px;
@@ -473,6 +474,7 @@ body::after {
   color: var(--cream); line-height: 1.05;
   position: relative; z-index: 1;
   letter-spacing: -.01em;
+  margin-top: 18px;
 }
 
 .elsewhere-list {

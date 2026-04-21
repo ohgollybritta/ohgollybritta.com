@@ -9,7 +9,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 32px;
+  padding: 16px max(22px, calc((100vw - 1440px) / 2 + 22px));
   background: var(--cream);
   border-bottom: 2px solid rgba(168, 82, 58, .2);
   position: sticky;
@@ -133,11 +133,7 @@ a.nav-brand:hover { color: var(--ink); }
   .nav-logo { height: 28px; }
 
   .nav-links { display: none; }
-
-  /* Mobile order: hamburger → brand → socials */
-  .nav-hamburger { display: flex; order: 1; }
-  .nav-brand     { order: 2; margin-left: 12px; }
-  .nav-icons     { order: 3; margin-left: auto; gap: 12px; }
+  .nav-hamburger { display: flex; }
 
   .nav-mobile-menu {
     display: none;

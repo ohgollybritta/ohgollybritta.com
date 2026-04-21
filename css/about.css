@@ -341,21 +341,23 @@
   margin-top: auto;
 }
 
-/* ── BIO ROW — independent heights ──
-   Bio and the right column size to their own content. When bio expands
-   via "Read more," bio grows downward past the right column; education's
-   size and position don't change. Tradeoff: collapsed bottoms won't
-   perfectly align, which we've accepted over education shifting on click. */
+/* ── BIO ROW — bottoms align ──
+   Bio and the right column both stretch to the row's natural height so
+   their bottom edges line up. Because the right column is a flex column
+   of three stacked cards, we push the last card (Education) to the
+   bottom with margin-top:auto so the visible bottom edge aligns with
+   the bio card. Tradeoff: when bio expands via "Read more," the right
+   column stretches too, and the gap above Education grows. */
 .bio-card,
-.right-col-wrap { align-self: start; }
+.right-col-wrap { align-self: stretch; }
+.right-col-wrap > :last-child { margin-top: auto; }
 
-/* ── CERT + ORG ROW — independent heights ──
-   The cert card expands via "Show all" button, so stretching the org card
-   to match would make it grow/shift every time certs expand or collapse.
-   Each card sizes to its own content; their bottoms won't line up but the
-   org card stays put when certs expand. */
+/* ── CERT + ORG ROW — bottoms align ──
+   Both cards stretch to the row's natural height so their bottom edges
+   line up. Tradeoff: when certs expand via "Show all," the org card
+   stretches too, and empty space will appear below the last org-item. */
 .bento .a-col-6:has(.about-cert-item),
-.bento .a-col-6:has(.org-item) { align-self: start; }
+.bento .a-col-6:has(.org-item) { align-self: stretch; }
 
 /* ── SKILL CARDS ROW (Design / Investigative Tech / Coding) — align bottoms ──
    The only .a-col-4 elements on this page are these three skill cards,

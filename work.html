@@ -20,6 +20,18 @@
 
   /* work.html: nudge the hero ~30px taller than index */
   .card-hero { min-height: 540px; }
+
+  /* terracotta variant for the secondary CTA (used on slide 1) */
+  .hero-btn.secondary.terra {
+    background: var(--terra);
+    color: var(--cream);
+    border-color: var(--terra);
+  }
+  .hero-btn.secondary.terra:hover {
+    background: var(--terra-dark);
+    border-color: var(--terra-dark);
+    color: var(--cream);
+  }
 </style>
 </head>
 <body>
@@ -76,26 +88,25 @@
   <!-- ── HERO CAROUSEL (identical to index.html; slide 1 = "The short version") ── -->
   <div class="card card-hero" role="region" aria-label="Featured thesis" style="grid-column: 1 / -1;">
     <img class="bg" src="/img/work-bg.png" alt="">
-    <div class="hero-tag">
+    <div class="hero-tag" style="display:none;">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
-      <span class="hero-tag-text">The short version</span>
+      <span class="hero-tag-text"></span>
     </div>
     <div class="hero-content">
       <h1>Look closer first.<br><em>Build bolder after.</em></h1>
       <p>20+ years across brand identity, editorial, live broadcast, and print. WWE's live air. NASCAR's race-day floor. Nonprofits where every dollar had to show. The throughline is always the same: the answer is already there. The work is finding it.</p>
       <div class="hero-cta-row">
-        <a href="/work.html" class="hero-btn primary">
-          See the work
+        <a href="#" class="hero-btn primary" style="display:none;">
+          &nbsp;
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="/contact.html" class="hero-btn secondary">Let's talk</a>
+        <a href="/contact.html" class="hero-btn secondary terra">Let's talk</a>
       </div>
     </div>
     <div class="dot-row" role="tablist" aria-label="Hero slides">
       <span class="on" role="tab" aria-label="Slide 1" tabindex="0"></span>
       <span role="tab" aria-label="Slide 2" tabindex="0"></span>
       <span role="tab" aria-label="Slide 3" tabindex="0"></span>
-      <span role="tab" aria-label="Slide 4" tabindex="0"></span>
     </div>
   </div>
 
@@ -292,12 +303,11 @@
   var slides = [
     {
       img:     '/img/work-bg.png',
-      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>',
-      tagText: 'The short version',
+      noTag:   true,
       h1:      'Look closer first.<br><em>Build bolder after.</em>',
       p:       "20+ years across brand identity, editorial, live broadcast, and print. WWE's live air. NASCAR's race-day floor. Nonprofits where every dollar had to show. The throughline is always the same: the answer is already there. The work is finding it.",
-      primary: { label: 'See the work', href: '/work.html' },
-      secondary: { label: "Let's talk",  href: '/contact.html' },
+      noPrimary: true,
+      secondary: { label: "Let's talk", href: '/contact.html', terra: true },
     },
     {
       img:     '/img/curious-img.jpg',
@@ -316,16 +326,6 @@
       p:       'OSINT, digital forensics, and the anti-trafficking tools built for recovery.',
       primary: { label: 'See the work', href: '/projects.html' },
       secondary: { label: 'Read the brief', href: '/operation-i1.html' },
-    },
-    {
-      img:     '/img/eviza-lydia-howell.png',
-      bgPosition: 'center 30%',
-      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
-      tagText: 'Recent Projects',
-      h1:      'Bringing <em>Revolutionary</em> women into focus.',
-      p:       "Highlighting Rebecca Bryan and Jemima Boone, female patriots who fiercely held their ground at the Siege of Fort Boonesborough, in honor of America's 250.",
-      primary: { label: 'Read the brief', href: '/female-patriots.html' },
-      secondary: { label: 'More work', href: '/projects.html' },
     },
   ];
 
@@ -347,12 +347,18 @@
 
   function writeButtons(s) {
     if (btnPrimary) {
-      btnPrimary.setAttribute('href', s.primary.href);
-      btnPrimary.firstChild.nodeValue = s.primary.label + ' ';
+      if (s.noPrimary) {
+        btnPrimary.style.display = 'none';
+      } else {
+        btnPrimary.style.display = '';
+        btnPrimary.setAttribute('href', s.primary.href);
+        btnPrimary.firstChild.nodeValue = s.primary.label + ' ';
+      }
     }
     if (btnSecondary) {
       btnSecondary.setAttribute('href', s.secondary.href);
       btnSecondary.textContent = s.secondary.label;
+      btnSecondary.classList.toggle('terra', !!(s.secondary && s.secondary.terra));
     }
   }
   function updateDots(idx) {
@@ -374,7 +380,12 @@
       var s = slides[idx];
       bg.src        = s.img;
       bg.style.objectPosition = s.bgPosition || 'center center';
-      tag.innerHTML = s.tagSvg + ' <span class="hero-tag-text">' + s.tagText + '</span>';
+      if (s.noTag) {
+        tag.style.display = 'none';
+      } else {
+        tag.style.display = '';
+        tag.innerHTML = s.tagSvg + ' <span class="hero-tag-text">' + s.tagText + '</span>';
+      }
       h1.innerHTML  = s.h1;
       p.innerHTML   = s.p;
       writeButtons(s);

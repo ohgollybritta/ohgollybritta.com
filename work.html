@@ -317,7 +317,7 @@
       h1:      'Before the logo, the <em>listening.</em>',
       p:       "Brand development starts with the backstory — stakeholder interviews, category audits, audience segmentation, and a careful read of the brand's existing equities. The strategy writes itself once the evidence is in.",
       primary: { label: 'See the work', href: '#selected-work' },
-      secondary: { label: "Let's talk", href: '/contact.html' },
+      noSecondary: true,
     },
     {
       img:     '/img/develop-img.jpg',
@@ -326,7 +326,7 @@
       h1:      'Built for every <em>touchpoint.</em>',
       p:       'Type, color, grid, motion, voice — codified into one connected system. Designed to scale from a six-second social cut to a fifty-page brand book without losing a beat.',
       primary: { label: 'See the work', href: '#selected-work' },
-      secondary: { label: "Let's talk", href: '/contact.html' },
+      noSecondary: true,
     },
   ];
 
@@ -357,9 +357,14 @@
       }
     }
     if (btnSecondary) {
-      btnSecondary.setAttribute('href', s.secondary.href);
-      btnSecondary.textContent = s.secondary.label;
-      btnSecondary.classList.toggle('terra', !!(s.secondary && s.secondary.terra));
+      if (s.noSecondary) {
+        btnSecondary.style.display = 'none';
+      } else {
+        btnSecondary.style.display = '';
+        btnSecondary.setAttribute('href', s.secondary.href);
+        btnSecondary.textContent = s.secondary.label;
+        btnSecondary.classList.toggle('terra', !!(s.secondary && s.secondary.terra));
+      }
     }
   }
   function updateDots(idx) {

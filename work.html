@@ -302,21 +302,22 @@
       </div>
     </div>
   </a>
-  <!-- RECENT PROJECTS (full-width strip, mirrors index.html's card-stream pattern) -->
-  <a class="card card-stream is-link" href="/projects.html" style="grid-column: 1 / -1; grid-row-start: 99;">
-    <div class="tw-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-    </div>
-    <div class="tw-divider" aria-hidden="true"></div>
-    <div class="tw-info">
-      <div class="tw-game-label">Elsewhere</div>
-      <div class="tw-game">Recent projects</div>
-      <div class="tw-desc">OSINT investigations, preservation photography, and the side work that lives outside the brand portfolio.</div>
-    </div>
-    <div class="live-badge"><span>Browse</span></div>
-  </a>
 
 </main>
+
+<!-- RECENT PROJECTS (full-width strip, between bento and footer) -->
+<a class="card card-stream is-link" href="/projects.html" style="display: flex; margin: 24px auto; max-width: 1440px; width: calc(100% - 64px); background: var(--terra); color: var(--cream); border-radius: 16px;">
+  <div class="tw-icon" style="background: rgba(245,237,228,.15); color: var(--cream);">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+  </div>
+  <div class="tw-divider" aria-hidden="true"></div>
+  <div class="tw-info">
+    <div class="tw-game-label" style="color: rgba(245,237,228,.7);">Elsewhere</div>
+    <div class="tw-game" style="color: var(--cream);">Recent projects</div>
+    <div class="tw-desc" style="color: rgba(245,237,228,.75);">OSINT investigations, preservation photography, and the side work that lives outside the brand portfolio.</div>
+  </div>
+  <div class="live-badge" style="background: rgba(245,237,228,.18); color: var(--cream);"><span>Browse</span></div>
+</a>
 
 <footer>© 2026 oh golly britta &nbsp;·&nbsp; look closer · build bolder &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
 
@@ -361,7 +362,7 @@
       tagText: 'The goal',
       h1:      'Branding that <em>lasts.</em>',
       p:       "The work that matters isn't the flashiest — it's the kind that lands. A brand people remember, return to, and hand on to someone else. That's the mark I'm aiming for, for you.",
-      primary: { label: 'See the work', href: '#selected-work' },
+      primary: { label: 'See the work', href: '/cpch.html' },
       noSecondary: true,
     },
   ];

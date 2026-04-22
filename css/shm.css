@@ -225,7 +225,19 @@
   text-transform: uppercase;
 }
 .logo-compare-box.old .logo-compare-label { color: rgba(44,26,14,.4); }
-.logo-compare-box.new .logo-compare-label { color: rgba(61,154,139,.5); }
+.logo-compare-box.new .logo-compare-label { color: rgba(91,184,168,.7); }
+
+/* "The Thinking" box — readable text on the dark-green background */
+.logo-compare-box.new .deliverable-text {
+  color: rgba(245,237,228,.78);
+}
+.logo-compare-box.new .deliverable-text strong {
+  color: var(--cream);
+  font-weight: 700;
+}
+.logo-compare-box.new .deliverable-dot {
+  background: var(--teal-light);
+}
 
 /* ── COLOR SWATCHES ── */
 .color-palette {

@@ -1,0 +1,207 @@
+/* ─────────────────────────────────────────────────────────
+   projects.css — scoped to projects.html
+   ───────────────────────────────────────────────────────── */
+
+/* ── Bento grid positioning utilities ── */
+.rp-col-full        { grid-column: 1 / 13; }
+.rp-col-full-bleed  { grid-column: 1 / -1; }
+.rp-col-left        { grid-column: 1 / 7; }
+.rp-col-right       { grid-column: 7 / 13; }
+.rp-col-3a          { grid-column: 1 / 5; }
+.rp-col-3b          { grid-column: 5 / 9; }
+.rp-col-3c          { grid-column: 9 / 13; }
+
+/* ── Image object-position utilities ── */
+.rp-img-center   { object-position: center center; }
+.rp-img-center40 { object-position: center 40%; }
+
+/* ── Card heights ── */
+.rp-hero-card { height: 460px; }
+.rp-mid-card  { height: 220px; }
+.rp-sage-hero { height: 520px; } /* slightly taller — it's THE hero */
+
+/* ── Section-label stagger on this page ── */
+.bento .section-label:nth-of-type(1) { animation-delay: .3s; }
+.bento .section-label:nth-of-type(2) { animation-delay: .5s; }
+
+/* ── Kill default underline on linked cards ── */
+.card-work-item,
+.card-coming-soon,
+.rp-ad-card { text-decoration: none; }
+
+/* ── In-card CTA pill that surfaces on hover/focus of the whole card ── */
+.rp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(245, 237, 228, .8);
+  background: rgba(245, 237, 228, .08);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition:
+    background .22s var(--ease-out),
+    transform .22s var(--ease-out),
+    color .22s var(--ease-out);
+}
+.rp-cta svg { transition: transform .22s var(--ease-out); }
+
+.card-work-item:hover   .rp-cta,
+.card-work-item:focus-visible   .rp-cta,
+.card-coming-soon:hover .rp-cta,
+.card-coming-soon:focus-visible .rp-cta,
+.rp-ad-card:hover       .rp-cta,
+.rp-ad-card:focus-visible       .rp-cta {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.card-work-item:hover   .rp-cta svg,
+.card-work-item:focus-visible   .rp-cta svg,
+.card-coming-soon:hover .rp-cta svg,
+.card-coming-soon:focus-visible .rp-cta svg,
+.rp-ad-card:hover       .rp-cta svg,
+.rp-ad-card:focus-visible       .rp-cta svg {
+  transform: translateX(3px);
+}
+
+/* ── Past-projects "coming-soon" card ── */
+.card-coming-soon {
+  background: var(--terra-dark);
+  border: 1px solid rgba(245, 237, 228, .07);
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 14px;
+  border-radius: var(--radius);
+}
+.card-coming-soon .coming-soon-desc { flex: 1; }
+.card-coming-soon .rp-cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+.coming-soon-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 228, .55);
+}
+.coming-soon-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--cream);
+  line-height: 1.15;
+}
+.coming-soon-title em {
+  font-style: italic;
+  color: rgba(245, 237, 228, .7);
+}
+.coming-soon-desc {
+  font-size: 13px;
+  color: rgba(245, 237, 228, .65);
+  line-height: 1.65;
+}
+
+/* ── Ad card — "got something you've been meaning to do?" ── */
+.rp-ad-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(91, 184, 168, .18), transparent 55%),
+    linear-gradient(135deg, var(--terra-dark) 0%, #2a1612 100%);
+  border: 1px dashed rgba(245, 237, 228, .22);
+  overflow: hidden;
+  transition:
+    border-color .25s var(--ease-out),
+    transform .25s var(--ease-out);
+}
+.rp-ad-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0 24px,
+    rgba(245, 237, 228, .03) 24px 25px
+  );
+  pointer-events: none;
+}
+.rp-ad-card:hover { border-color: rgba(91, 184, 168, .55); }
+
+.rp-ad-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--cream);
+}
+.rp-ad-eyebrow {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+}
+.rp-ad-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: var(--cream);
+  margin: 0;
+}
+.rp-ad-title em {
+  font-style: italic;
+  color: rgba(245, 237, 228, .65);
+}
+.rp-ad-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(245, 237, 228, .72);
+  max-width: 46ch;
+  margin: 0;
+}
+.rp-ad-card .rp-cta { align-self: flex-start; }
+
+/* ── Bottom "Available for work" row ── */
+.rp-avail {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.rp-avail .avail-heading { margin-top: 12px; }
+
+/* ── Focus states ── */
+.card-work-item:focus-visible,
+.card-coming-soon:focus-visible,
+.rp-ad-card:focus-visible,
+.avail-cta:focus-visible {
+  outline: 2px solid var(--teal-light);
+  outline-offset: 3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .rp-hero-card { height: 340px; }
+  .rp-sage-hero { height: 380px; }
+  .rp-mid-card  { height: auto; min-height: 280px; }
+}

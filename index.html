@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oh Golly, Britta!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/nav.css">
+<style>
+  /* hero carousel crossfade */
+  .hero-tag,
+  .hero-content h1,
+  .hero-content p { transition: opacity .55s ease, letter-spacing .3s ease, background .2s, border-color .2s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://www.instagram.com/ohbritta" aria-label="Instagram" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://github.com/ohgollybritta" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.twitch.tv/ohgollybritta" aria-label="Twitch" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+    <a href="https://app.hackthebox.com/users/3168721" aria-label="HackTheBox" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="16,8.5 22,12 16,15.5 10,12"/><polyline points="10,12 10,19.5 16,23 16,15.5"/><polyline points="22,12 22,19.5 16,23"/></svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="bento">
+
+  <!-- 1. HERO (carousel, auto-rotate kept, 4 slides incl. Female Patriots) -->
+  <div class="card card-hero" role="region" aria-label="Featured thesis">
+    <img class="bg" src="/img/about_hero.png" alt="">
+    <div class="hero-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+      <span class="hero-tag-text">Graphic Design</span>
+    </div>
+    <div class="hero-content">
+      <h1>Looking closer.<br>Building <em>bolder.</em></h1>
+      <p>Brand identities, visual systems, and the investigative process that drives riveting outcomes.</p>
+      <div class="hero-cta-row">
+        <a href="/work.html" class="hero-btn primary">
+          See the work
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/contact.html" class="hero-btn secondary">Let's talk</a>
+      </div>
+    </div>
+    <div class="dot-row" role="tablist" aria-label="Hero slides">
+      <span class="on" role="tab" aria-label="Slide 1" tabindex="0"></span>
+      <span role="tab" aria-label="Slide 2" tabindex="0"></span>
+      <span role="tab" aria-label="Slide 3" tabindex="0"></span>
+      <span role="tab" aria-label="Slide 4" tabindex="0"></span>
+    </div>
+  </div>
+
+  <!-- 2. AVATAR (tightened: one role line, no pill stack) -->
+  <div class="card card-avatar">
+    <div class="avatar-flip" aria-hidden="true">
+      <img class="avatar-pixel" src="/img/avatar-pixel.png" alt="">
+      <img class="avatar-real"  src="/img/avatar-real.jpg" alt="">
+    </div>
+    <div class="avatar-name">Britta Davis</div>
+    <div class="avatar-location">Fairfax, VA</div>
+    <div class="avatar-role">
+      Multi-Disciplinary<br>
+      Investigative Technologist
+    </div>
+    <div class="avatar-stack work-tags" aria-label="Disciplines">
+      <span class="work-tag t-teal">Intelligence Analyst</span>
+      <span class="work-tag t-ink">Cybersecurity</span>
+      <span class="work-tag t-terra">Brand Design</span>
+      <span class="work-tag t-terra">History Buff</span>
+    </div>
+  </div>
+
+  <!-- 3. SPOTIFY (re-skinned cream card; green kept only on icon + eq bars) -->
+  <div class="card card-spotify" aria-label="Recently played on Spotify">
+    <div class="widget-label">
+      <svg class="spotify-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Recently Played
+    </div>
+    <div class="spotify-body">
+      <img id="sp-art" class="sp-album-art" src="" alt="">
+      <div class="sp-track-info">
+        <div class="track-name" id="sp-track">—</div>
+        <div class="track-artist" id="sp-artist"></div>
+        <div class="track-ago" id="sp-ago"></div>
+      </div>
+    </div>
+    <div class="eq-bars" id="sp-eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- 4. CYBER INVESTIGATIONS (formerly Field Kit) -->
+  <div class="card card-fieldkit">
+    <div class="fk-top">
+      <div class="widget-label fk-eyebrow">
+        <span class="fk-live-dot" aria-hidden="true"></span>
+        Cyber Investigations
+      </div>
+    </div>
+
+    <blockquote class="fk-pull">
+      Building my toolkit and becoming a subject matter expert in human trafficking &mdash;<br>
+      <em>with the aim of recovering victims and protecting children.</em>
+    </blockquote>
+
+    <!-- Empirical research single-line callout -->
+    <a href="https://www.researchgate.net/publication/402710534_UNMASKING_HUMAN_TRAFFICKING_A_CRIMINOLOGICAL_AND_HISTORICAL_ANALYSIS" target="_blank" rel="noopener" style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;text-decoration:none;color:inherit;padding:14px 0 0;border-top:1px solid rgba(245,237,228,.08);">
+      <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,228,.42);flex-shrink:0;">Empirical Research →</span>
+      <span style="font-family:'Fraunces',serif;font-size:14px;font-weight:700;font-style:italic;color:var(--terra);line-height:1.3;">Unmasking Human Trafficking <span style="color:rgba(245,237,228,.5);font-weight:500;">· A criminological &amp; historical analysis</span></span>
+    </a>
+
+    <div class="fk-signals">
+      <div class="fk-sig">
+        <span class="fk-sig-label">Studying</span>
+        <span class="fk-sig-value">McAfee CHTI</span>
+      </div>
+      <div class="fk-sig">
+        <span class="fk-sig-label">Studying</span>
+        <span class="fk-sig-value">HTB CJCA</span>
+      </div>
+      <div class="fk-sig">
+        <span class="fk-sig-label">Current Role</span>
+        <span class="fk-sig-value">OSINT Analyst</span>
+      </div>
+    </div>
+
+    <a class="fk-cta" href="/operation-usone.html" style="color:rgba(245,237,228,.85);">
+      See Operation Interstate One
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- 5. ELSEWHERE (merged IG + X into one social strip) -->
+  <div class="card card-elsewhere">
+    <div class="widget-label">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3h7v7M21 3L10 14M21 14v7h-7M3 21l11-11M3 10V3h7"/></svg>
+      Follow Me
+    </div>
+    <div class="elsewhere-heading" style="white-space:nowrap;margin-bottom:18px;">Come take a closer look.</div>
+    <div class="elsewhere-list">
+      <a class="elsewhere-item is-link" href="https://www.instagram.com/ohbritta" target="_blank" rel="noopener">
+        <div class="el-left">
+          <span class="el-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="el-handle">@ohgollybritta</span>
+          <span style="opacity:.55;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Instagram</span>
+        </div>
+        <span class="el-arrow">→</span>
+      </a>
+      <a class="elsewhere-item is-link" href="https://www.x.com/ohgollybritta" target="_blank" rel="noopener">
+        <div class="el-left">
+          <span class="el-icon"><span style="font-weight:900;font-size:13px;">𝕏</span></span>
+          <span class="el-handle">@ohgollybritta</span>
+          <span style="opacity:.55;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">X / Twitter</span>
+        </div>
+        <span class="el-arrow">→</span>
+      </a>
+      <a class="elsewhere-item is-link" href="https://github.com/ohgollybritta" target="_blank" rel="noopener">
+        <div class="el-left">
+          <span class="el-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18A11.1 11.1 0 0112 6.8c.98.01 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56 4.56-1.52 7.85-5.83 7.85-10.91C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </span>
+          <span class="el-handle">ohgollybritta</span>
+          <span style="opacity:.55;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">GitHub</span>
+        </div>
+        <span class="el-arrow">→</span>
+      </a>
+      <a class="elsewhere-item is-link" href="https://www.instagram.com/butternutheritage" target="_blank" rel="noopener">
+        <div class="el-left">
+          <span class="el-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="el-handle">@butternutheritage</span>
+          <span style="opacity:.55;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Preservation · Instagram</span>
+        </div>
+        <span class="el-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 6. ABOUT -->
+  <div class="card card-about">
+    <div>
+      <div class="widget-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+        About Me
+      </div>
+      <p>
+        I'm an <strong>investigative technologist</strong>, brand designer, and history buff. Three practices that come from the same place: a habit of looking closer. In digital spaces few are willing to sit with, in brand systems, in old buildings.
+      </p>
+    </div>
+    <div class="about-sig">britta</div>
+  </div>
+
+  <!-- 7. WORK -->
+  <a class="card card-work is-link" href="/work.html">
+    <div class="work-header">
+      <div>
+        <div class="work-eyebrow">Design Work</div>
+        <div class="work-heading">Brands built by<br>looking closer first.</div>
+      </div>
+      <img class="work-avatar" src="/img/ogblogo100x80.png" alt="Britta's Critter" title="Britta's Critter">
+    </div>
+    <div>
+      <div class="work-tags">
+        <span class="work-tag t-terra">Brand Identity</span>
+        <span class="work-tag t-teal">Print &amp; Collateral</span>
+        <span class="work-tag t-ink">Typography</span>
+        <span class="work-tag t-terra">Web Design</span>
+      </div>
+      <span class="work-cta">View portfolio →</span>
+    </div>
+  </a>
+
+  <!-- 8. STREAM (Twitch re-skinned, small full-width strip) -->
+  <a class="card card-stream is-link" href="https://www.twitch.tv/ohgollybritta" target="_blank" rel="noopener">
+    <div class="tw-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </div>
+    <div class="tw-divider" aria-hidden="true"></div>
+    <div class="tw-info">
+      <div class="tw-game-label">Twitch</div>
+      <div class="tw-game">ohgollybritta</div>
+      <div class="tw-desc">Design streams, creative chaos, and the occasional detour into a chess match.</div>
+    </div>
+    <div class="live-badge" id="twitch-badge"><span class="live-dot" aria-hidden="true"></span><span id="twitch-status">Offline</span></div>
+  </a>
+
+</main>
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; look closer · build bolder &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
+
+<script>
+/* ── SPOTIFY LIVE WIDGET ── */
+(function() {
+  function timeAgo(isoString) {
+    var diff = Math.floor((Date.now() - new Date(isoString)) / 1000);
+    if (diff < 60)   return 'just now';
+    if (diff < 3600) { var m = Math.floor(diff/60);   return m + ' minute' + (m===1?'':'s') + ' ago'; }
+    if (diff < 86400){ var h = Math.floor(diff/3600); return h + ' hour'   + (h===1?'':'s') + ' ago'; }
+    var d = Math.floor(diff/86400); return d + ' day' + (d===1?'':'s') + ' ago';
+  }
+  function updateWidget(data) {
+    var track  = document.getElementById('sp-track');
+    var artist = document.getElementById('sp-artist');
+    var ago    = document.getElementById('sp-ago');
+    var eq     = document.getElementById('sp-eq');
+    var art    = document.getElementById('sp-art');
+    if (!track) return;
+    track.textContent  = data.track  || 'Nothing playing right now';
+    artist.textContent = data.artist || '';
+    ago.textContent    = data.played_at ? timeAgo(data.played_at) : (data.ago || '');
+    if (art && data.art) {
+      art.src = data.art;
+      art.alt = (data.track || '') + (data.artist ? ' — ' + data.artist : '');
+      var artLink = data.url || data.track_url || data.spotify_url
+        || (data.track ? 'https://open.spotify.com/search/' + encodeURIComponent((data.track || '') + ' ' + (data.artist || '')) : null);
+      if (artLink) {
+        art.style.cursor = 'pointer';
+        art.title = 'Open on Spotify';
+        art.onclick = function(e) { e.stopPropagation(); window.open(artLink, '_blank'); };
+      }
+    }
+    if (eq) {
+      var state = data.is_playing ? 'running' : 'paused';
+      eq.querySelectorAll('span').forEach(function(s){ s.style.animationPlayState = state; });
+    }
+  }
+  fetch('https://spotify-proxy-lyart.vercel.app/api/spotify')
+    .then(function(r){ return r.json(); })
+    .then(updateWidget)
+    .catch(function(){
+      var t = document.getElementById('sp-track');
+      if (t) t.textContent = 'Nothing playing right now';
+    });
+})();
+</script>
+
+<script>
+/* ── HERO CAROUSEL (auto-rotate KEPT; slide 4 = Female Patriots) ── */
+(function() {
+  var INTERVAL = 22000;
+  var slides = [
+    {
+      img:     '/img/about_hero.png',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>',
+      tagText: 'Graphic Design',
+      h1:      'Looking closer.<br>Building <em>bolder.</em>',
+      p:       'Brand identities, visual systems, and the investigative process that drives riveting outcomes.',
+      primary: { label: 'See the work', href: '/work.html' },
+      secondary: { label: "Let's talk",  href: '/contact.html' },
+    },
+    {
+      img:     '/img/curious-img.jpg',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+      tagText: 'Preservation Captures',
+      h1:      "Shining light<br>on what's<br><em>already</em> there.",
+      p:       'Revealing historic homes, forgotten stories, and the past that still has something to say through preservation photography.',
+      primary: { label: 'Follow on Instagram', href: 'https://www.instagram.com/butternutheritage' },
+      secondary: { label: 'Read the brief', href: '/preservation.html' },
+    },
+    {
+      img:     '/img/develop-img.jpg',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+      tagText: 'Recent Projects',
+      h1:      'Building tools<br>to find <em>them.</em>',
+      p:       'OSINT, digital forensics, and the anti-trafficking tools built for recovery.',
+      primary: { label: 'See the work', href: '/projects.html' },
+      secondary: { label: 'Read the brief', href: '/operation-usone.html' },
+    },
+    /* NEW — slide 4: Female Patriots / America 250 (formerly card 9) */
+    {
+      img:     '/img/eviza-lydia-howell.png',
+      bgPosition: 'center 30%',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+      tagText: 'Recent Projects',
+      h1:      'Bringing <em>Revolutionary</em> women into focus.',
+      p:       "Highlighting Rebecca Bryan and Jemima Boone, female patriots who fiercely held their ground at the Siege of Fort Boonesborough, in honor of America's 250.",
+      primary: { label: 'Read the brief', href: '/female-patriots.html' },
+      secondary: { label: 'More work', href: '/projects.html' },
+    },
+  ];
+
+  var card = document.querySelector('.card-hero');
+  if (!card) return;
+  var bg   = card.querySelector('img.bg');
+  var tag  = card.querySelector('.hero-tag');
+  var h1   = card.querySelector('.hero-content h1');
+  var p    = card.querySelector('.hero-content p');
+  var dots = card.querySelectorAll('.dot-row span');
+  var btnPrimary = card.querySelector('.hero-btn.primary');
+  var btnSecondary = card.querySelector('.hero-btn.secondary');
+
+  var current = 0;
+  var timer   = null;
+  var fading  = false;
+
+  slides.forEach(function(s) { var img = new Image(); img.src = s.img; });
+
+  function writeButtons(s) {
+    if (btnPrimary) {
+      btnPrimary.setAttribute('href', s.primary.href);
+      btnPrimary.firstChild.nodeValue = s.primary.label + ' ';
+    }
+    if (btnSecondary) {
+      btnSecondary.setAttribute('href', s.secondary.href);
+      btnSecondary.textContent = s.secondary.label;
+    }
+  }
+  function updateDots(idx) {
+    dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+  }
+
+  function goTo(idx) {
+    if (fading || idx === current) return;
+    fading = true;
+    current = idx;
+    updateDots(idx);
+
+    bg.style.opacity  = '0';
+    tag.style.opacity = '0';
+    h1.style.opacity  = '0';
+    p.style.opacity   = '0';
+
+    setTimeout(function() {
+      var s = slides[idx];
+      bg.src        = s.img;
+      bg.style.objectPosition = s.bgPosition || 'center center';
+      tag.innerHTML = s.tagSvg + ' <span class="hero-tag-text">' + s.tagText + '</span>';
+      h1.innerHTML  = s.h1;
+      p.innerHTML   = s.p;
+      writeButtons(s);
+      setTimeout(function() {
+        bg.style.opacity  = '.45';
+        tag.style.opacity = '1';
+        h1.style.opacity  = '1';
+        p.style.opacity   = '1';
+        fading = false;
+      }, 50);
+    }, 500);
+  }
+
+  function next()       { goTo((current + 1) % slides.length); }
+  function startTimer() { stopTimer(); timer = setInterval(next, INTERVAL); }
+  function stopTimer()  { if (timer) { clearInterval(timer); timer = null; } }
+
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function(e) { e.stopPropagation(); goTo(i); startTimer(); });
+    d.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(i); startTimer(); }
+    });
+  });
+
+  /* pause on hover/focus, resume on leave */
+  card.addEventListener('mouseenter', stopTimer);
+  card.addEventListener('mouseleave', startTimer);
+  card.addEventListener('focusin',  stopTimer);
+  card.addEventListener('focusout', startTimer);
+
+  /* respect reduced motion: don't auto-rotate */
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  writeButtons(slides[0]);
+  updateDots(0);
+  if (!prefersReduced) startTimer();
+})();
+</script>
+
+<script>
+/* ── MOBILE NAV ── */
+(function() {
+  var btn  = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    menu.classList.toggle('is-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

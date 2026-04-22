@@ -55,6 +55,13 @@
 }
 .rp-cta svg { transition: transform .22s var(--ease-out); }
 
+/* On hero cards, push the CTA onto its own line beneath the tag pill */
+.card-work-item .rp-cta {
+  display: flex;
+  width: max-content;
+  margin-top: 12px;
+}
+
 .card-work-item:hover   .rp-cta,
 .card-work-item:focus-visible   .rp-cta,
 .card-coming-soon:hover .rp-cta,

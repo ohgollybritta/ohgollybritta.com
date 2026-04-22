@@ -14,7 +14,7 @@
 .about-wrap {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 32px 22px 64px;
+  padding: 32px 22px 0;
 }
 
 /* ── PAGE HEADER ── */

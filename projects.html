@@ -12,160 +12,7 @@
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/work.css">
-
-  <style>
-    /* ── project-page scoped, no !important needed ── */
-    .rp-hero-card { height: 460px; }
-    .rp-mid-card  { height: 220px; }
-
-    /* Visible in-card CTA that surfaces on hover/focus of the whole card link */
-    .rp-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 14px;
-      padding: 8px 16px;
-      border-radius: 100px;
-      border: 1.5px solid rgba(245, 237, 228, .8);
-      background: rgba(245, 237, 228, .08);
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      transition: background .22s var(--ease-out), transform .22s var(--ease-out), color .22s var(--ease-out);
-    }
-    .rp-cta svg { transition: transform .22s var(--ease-out); }
-    .card-work-item:hover .rp-cta,
-    .card-work-item:focus-visible .rp-cta {
-      background: var(--cream);
-      color: var(--ink);
-    }
-    .card-work-item:hover .rp-cta svg,
-    .card-work-item:focus-visible .rp-cta svg {
-      transform: translateX(3px);
-    }
-
-    /* Sage — top-card hero with full-width image ABOVE the body */
-    .card.sage-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding: 0;
-      overflow: hidden;
-      height: auto;
-      position: relative;
-      background: var(--terra-dark);
-      border-radius: var(--radius);
-    }
-    .card.sage-card > img {
-      position: static !important;
-      inset: auto !important;
-      width: 100% !important;
-      height: 360px !important;
-      object-fit: cover;
-      object-position: center 40%;
-      display: block;
-    }
-    .sage-card .work-overlay { display: none; }
-    .sage-card .sage-body {
-      padding: 32px 40px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      color: var(--cream);
-    }
-    .sage-card .sage-cat {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(245, 237, 228, .55);
-    }
-    .sage-card .sage-title {
-      font-family: 'Fraunces', serif;
-      font-weight: 800;
-      font-size: clamp(28px, 3vw, 38px);
-      line-height: 1.05;
-      letter-spacing: -.02em;
-      color: var(--cream);
-    }
-    .sage-card .sage-desc {
-      font-size: 14px;
-      line-height: 1.65;
-      color: rgba(245, 237, 228, .72);
-      max-width: 52ch;
-    }
-    .sage-card .sage-tag {
-      display: inline-flex;
-      width: max-content;
-      margin-top: 6px;
-      padding: 4px 12px;
-      border-radius: 100px;
-      border: 1.5px solid rgba(91, 184, 168, .4);
-      color: var(--teal-light);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .sage-card .rp-cta {
-      align-self: flex-start;
-      margin-top: 10px;
-    }
-
-    /* Coming-soon card — rounded, raised recessed text to meet contrast */
-    .card-coming-soon {
-      background: var(--terra-dark);
-      border: 1px solid rgba(245, 237, 228, .07);
-      padding: 28px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 14px;
-      border-radius: var(--radius);
-    }
-    .card-coming-soon .coming-soon-desc { flex: 1; }
-    .card-coming-soon .rp-cta { align-self: flex-start; margin-top: auto; }
-    .coming-soon-eyebrow {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(245, 237, 228, .55);
-    }
-    .coming-soon-title {
-      font-family: 'Fraunces', serif;
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--cream);
-      line-height: 1.15;
-    }
-    .coming-soon-title em { font-style: italic; color: rgba(245, 237, 228, .7); }
-    .coming-soon-desc {
-      font-size: 13px;
-      color: rgba(245, 237, 228, .65);
-      line-height: 1.65;
-    }
-
-    /* Focus states for all project cards */
-    .card-work-item:focus-visible,
-    .card-coming-soon:focus-visible,
-    .avail-cta:focus-visible {
-      outline: 2px solid var(--teal-light);
-      outline-offset: 3px;
-    }
-
-    @media (max-width: 860px) {
-      .rp-hero-card { height: 340px; }
-      .rp-mid-card  { height: auto; min-height: 280px; }
-      .sage-card > img { height: 220px; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/projects.css">
 </head>
 <body>
 
@@ -218,18 +65,19 @@
 <main class="bento">
 
   <!-- SECTION: Featured -->
-  <div class="section-label" style="animation-delay:.3s">
+  <div class="section-label">
     <span>Recent Projects</span>
   </div>
 
-  <!-- Sage — TOP CARD: full-width hero with image above body -->
-  <a href="/sage.html" class="card card-work-item sage-card" style="grid-column:1/13;">
-    <img src="/img/sage-card.jpg" alt="">
-    <div class="sage-body">
-      <div class="sage-cat">Python · Open Source · Privacy · 2026–Present</div>
-      <div class="sage-title">Sage</div>
-      <div class="sage-desc">A privacy-first voice assistant that runs entirely locally — no audio ever sent to a cloud service. An open-source workaround to Alexa: plays Spotify, keeps kitchen timers, and delivers verbal reminders on schedule.</div>
-      <span class="sage-tag">Voice AI · Python · No Cloud</span>
+  <!-- Sage — full-width hero, full-bleed image -->
+  <a href="/sage.html" class="card card-work-item tall rp-sage-hero rp-col-full">
+    <img src="/img/sage-card.jpg" alt="" class="rp-img-center40">
+    <div class="work-overlay"></div>
+    <div class="work-item-content">
+      <div class="work-item-cat">Python · Open Source · Privacy · 2026–Present</div>
+      <div class="work-item-title">Sage</div>
+      <div class="work-item-desc">A privacy-first voice assistant that runs entirely locally — no audio ever sent to a cloud service. An open-source workaround to Alexa: plays Spotify, keeps kitchen timers, and delivers verbal reminders on schedule.</div>
+      <span class="work-item-tag">Voice AI · Python · No Cloud</span>
       <span class="rp-cta" aria-hidden="true">
         Read the brief
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -237,9 +85,9 @@
     </div>
   </a>
 
-  <!-- Female Patriots — hero card -->
-  <a href="/female-patriots.html" class="card card-work-item tall rp-hero-card" style="grid-column:1/7; text-decoration:none;">
-    <img src="/img/siege-of-fort-boonesborough.jpg" alt="" style="object-position: center center;">
+  <!-- Female Patriots -->
+  <a href="/female-patriots.html" class="card card-work-item tall rp-hero-card rp-col-left">
+    <img src="/img/siege-of-fort-boonesborough.jpg" alt="" class="rp-img-center">
     <div class="work-overlay"></div>
     <div class="work-item-content">
       <div class="work-item-cat">Heritage &amp; Research · America 250 · March 2026</div>
@@ -253,13 +101,13 @@
     </div>
   </a>
 
-  <!-- Operation USOne card -->
-  <a href="/operation-usone.html" class="card card-work-item tall rp-hero-card" style="grid-column:7/13; text-decoration:none;">
-    <img src="/img/osint-map.jpg" alt="" style="object-position: center center;">
+  <!-- Operation US-One -->
+  <a href="/operation-usone.html" class="card card-work-item tall rp-hero-card rp-col-right">
+    <img src="/img/osint-map.jpg" alt="" class="rp-img-center">
     <div class="work-overlay"></div>
     <div class="work-item-content">
       <div class="work-item-cat">Linux · Python · Web Scraping · 2025–Present</div>
-      <div class="work-item-title">Operation USOne</div>
+      <div class="work-item-title">Operation US-One</div>
       <div class="work-item-desc">Deep web scraping tools built in Linux to streamline and automate anti-trafficking intelligence gathering. Structured data collection, parsing, and output — purpose-built for the people who need it.</div>
       <span class="work-item-tag">Anti-Trafficking · Python · Automation</span>
       <span class="rp-cta" aria-hidden="true">
@@ -269,13 +117,13 @@
     </div>
   </a>
 
-  <!-- Preservation Captures — matches Operation USOne card style, full-width -->
-  <a href="/preservation.html" class="card card-work-item tall rp-hero-card" style="grid-column:1/13; text-decoration:none;">
-    <img src="/img/preservation-card.jpg" alt="" style="object-position: center 40%;">
+  <!-- Butternut Heritage — same size as Female Patriots / Operation US-One -->
+  <a href="/preservation.html" class="card card-work-item tall rp-hero-card rp-col-left">
+    <img src="/img/preservation-card.jpg" alt="" class="rp-img-center40">
     <div class="work-overlay"></div>
     <div class="work-item-content">
       <div class="work-item-cat">Photography · Heritage · Historic Places · Ongoing</div>
-      <div class="work-item-title">Preservation Captures</div>
+      <div class="work-item-title">Butternut Heritage</div>
       <div class="work-item-desc">An ongoing photographic record of historic homes, forgotten landmarks, and threatened sites — documenting the architecture, landscapes, and living history that most people walk past. Shared publicly on Instagram and featured in <em>Compass Magazine</em>.</div>
       <span class="work-item-tag">Photography · Documentation · @ohgollybritta</span>
       <span class="rp-cta" aria-hidden="true">
@@ -285,13 +133,26 @@
     </div>
   </a>
 
+  <!-- Ad card — pitch your own passion project -->
+  <a href="/contact.html" class="card rp-ad-card rp-hero-card rp-col-right">
+    <div class="rp-ad-content">
+      <div class="rp-ad-eyebrow">Your rabbit hole here</div>
+      <div class="rp-ad-title">Something you've been<br><em>meaning to do?</em></div>
+      <p class="rp-ad-desc">A family history question. A research thread left hanging. A passion project half-started and half-forgotten. If it needs a set of hands or eyes on it, I'm listening.</p>
+      <span class="rp-cta" aria-hidden="true">
+        Tell me about it
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
+
   <!-- SECTION: Past Projects -->
-  <div class="section-label" style="animation-delay:.5s">
+  <div class="section-label">
     <span>Past Projects</span>
   </div>
 
   <!-- Kennedy / National Archives -->
-  <a href="https://www.archives.gov/research/jfk/release-2025" target="_blank" rel="noopener noreferrer" class="card card-coming-soon" style="grid-column:1/5; text-decoration:none;">
+  <a href="https://www.archives.gov/research/jfk/release-2025" target="_blank" rel="noopener noreferrer" class="card card-coming-soon rp-col-3a">
     <div class="coming-soon-eyebrow">Archiving</div>
     <div class="coming-soon-title">JFK Declassified<br>Transcription</div>
     <div class="coming-soon-desc">Transcribed declassified files for the National Archives related to the Kennedy assassination — converting primary source documents into searchable, accessible records for the historical archive.</div>
@@ -302,10 +163,10 @@
   </a>
 
   <!-- Human Trafficking Paper -->
-  <a href="https://www.researchgate.net/publication/402710534_UNMASKING_HUMAN_TRAFFICKING_A_CRIMINOLOGICAL_AND_HISTORICAL_ANALYSIS" target="_blank" rel="noopener noreferrer" class="card card-coming-soon" style="grid-column:5/9; text-decoration:none;">
+  <a href="https://www.researchgate.net/publication/402710534_UNMASKING_HUMAN_TRAFFICKING_A_CRIMINOLOGICAL_AND_HISTORICAL_ANALYSIS" target="_blank" rel="noopener noreferrer" class="card card-coming-soon rp-col-3b">
     <div class="coming-soon-eyebrow">Research</div>
     <div class="coming-soon-title">Human Trafficking<br>Research Paper</div>
-    <div class="coming-soon-desc">Authored a research paper on human trafficking — the same subject that would later drive the development of Operation USOne.</div>
+    <div class="coming-soon-desc">Authored a research paper on human trafficking — the same subject that would later drive the development of Operation US-One.</div>
     <span class="rp-cta" aria-hidden="true">
       Read on ResearchGate
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -313,7 +174,7 @@
   </a>
 
   <!-- Constitution Week -->
-  <a href="https://www.dar.org/outreach/education/constitution-week" target="_blank" rel="noopener noreferrer" class="card card-coming-soon" style="grid-column:9/13; text-decoration:none;">
+  <a href="https://www.dar.org/outreach/education/constitution-week" target="_blank" rel="noopener noreferrer" class="card card-coming-soon rp-col-3c">
     <div class="coming-soon-eyebrow">Leadership</div>
     <div class="coming-soon-title">Constitution<br>Week</div>
     <div class="coming-soon-desc">Co-hosted a week-long series of Constitution Week events as Vice-Regent — programming, coordination, and public engagement from start to finish.</div>
@@ -324,13 +185,13 @@
   </a>
 
   <!-- CTA -->
-  <div class="card card-avail" style="grid-column:1/-1; flex-direction:row; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+  <div class="card card-avail rp-avail rp-col-full-bleed">
     <div>
       <div class="avail-dot-row">
         <div class="avail-dot"></div>
         <div class="avail-status">Available for work</div>
       </div>
-      <div class="avail-heading" style="margin-top:12px;">Got a project worth<br><em>digging into?</em></div>
+      <div class="avail-heading">Got a project worth<br><em>digging into?</em></div>
     </div>
     <a href="/contact.html" class="avail-cta">
       Get in touch

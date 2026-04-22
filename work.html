@@ -42,6 +42,26 @@
   .card-hero img.bg[src$="work-bg.png"] {
     filter: brightness(.65);
   }
+
+  /* Britta's Critter — wagging mascot on the availability card */
+  .avail-critter {
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    width: 64px;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    transform-origin: 50% 90%;
+    animation: critterWag 1.4s ease-in-out infinite;
+  }
+  @keyframes critterWag {
+    0%, 100% { transform: rotate(-7deg); }
+    50%      { transform: rotate( 7deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .avail-critter { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -255,6 +275,7 @@
       Get in touch
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+    <img src="/img/ogblogo100x80.png" alt="Britta's Critter" title="Britta's Critter" class="avail-critter">
   </div>
 
   <!-- CYBER SERVICES -->

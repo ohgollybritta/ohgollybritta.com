@@ -15,143 +15,7 @@
   <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/bgp.css">
-    <style>
-/* ── NO-IMAGE HERO ── */
-    .project-hero {
-      position: relative;
-      min-height: 72vh;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: var(--ink);
-    }
-    /* Subtle grid */
-    .project-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(91,184,168,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(91,184,168,.05) 1px, transparent 1px);
-      background-size: 52px 52px;
-      pointer-events: none;
-    }
-    /* Radial glow bottom-left */
-    .hero-glow {
-      position: absolute; inset: 0;
-      background: radial-gradient(
-        ellipse 65% 50% at 10% 100%,
-        rgba(61,154,139,.2) 0%,
-        transparent 65%
-      );
-      pointer-events: none;
-    }
-    /* Top fade */
-    .hero-glow::after {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 180px;
-      background: linear-gradient(to bottom, rgba(44,26,14,.7), transparent);
-    }
-
-    /* ── STATUS BADGE ROW ── */
-    .op-status-row {
-      display: flex; align-items: center; gap: 12px;
-      margin-bottom: 20px;
-    }
-    .op-badge {
-      font-size: 10px; font-weight: 800; letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: var(--teal-light);
-      padding: 3px 10px 2px;
-      border-radius: 2px;
-    }
-    .op-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--teal-light);
-      animation: op-pulse 2.4s ease-out infinite;
-      flex-shrink: 0;
-    }
-    @keyframes op-pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(91,184,168,.55); }
-      70%  { box-shadow: 0 0 0 8px rgba(91,184,168,0); }
-      100% { box-shadow: 0 0 0 0 rgba(91,184,168,0); }
-    }
-    .op-status-label {
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--teal-light);
-    }
-
-    /* hero title teal em override */
-    .project-hero-title em { color: var(--teal-light); }
-
-    /* ── TECH STACK CARDS ── */
-    .tech-grid {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
-      margin-top: 32px;
-    }
-    @media (max-width: 860px) { .tech-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 540px) { .tech-grid { grid-template-columns: 1fr; } }
-
-    .tech-card {
-      background: var(--terra-dark);
-      border: 1px solid rgba(245,237,228,.07);
-      border-radius: 4px;
-      padding: 24px 22px;
-      position: relative; overflow: hidden;
-    }
-    .tech-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; background: var(--teal-light);
-    }
-    .tech-card-label {
-      font-size: 10px; font-weight: 700; letter-spacing: .14em;
-      text-transform: uppercase; color: rgba(245,237,228,.3);
-      margin-bottom: 10px;
-    }
-    .tech-card-name {
-      font-family: 'Fraunces', serif; font-size: 18px; font-weight: 800;
-      color: var(--cream); margin-bottom: 8px; line-height: 1.1;
-    }
-    .tech-card-name em { color: var(--teal-light); font-style: normal; }
-    .tech-card-desc {
-      font-size: 13px; color: rgba(245,237,228,.55); line-height: 1.65;
-    }
-
-    /* ── PIPELINE STEPS ── */
-    .pipeline {
-      display: flex; flex-direction: column; gap: 0;
-      margin-top: 32px;
-      background: var(--ink);
-      border-radius: 12px;
-      padding: 16px 32px;
-    }
-    @media (max-width: 540px) {
-      .pipeline { padding: 8px 20px; }
-    }
-    .pipeline-step {
-      display: flex; align-items: flex-start; gap: 20px;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(245,237,228,.06);
-    }
-    .pipeline-step:last-child { border-bottom: none; }
-    .pipeline-num {
-      font-family: 'Fraunces', serif;
-      font-size: 36px; font-weight: 900; line-height: 1;
-      color: rgba(91,184,168,.2);
-      letter-spacing: -.04em;
-      flex-shrink: 0; width: 44px; text-align: right;
-      padding-top: 2px;
-    }
-    .pipeline-body {}
-    .pipeline-title {
-      font-size: 14px; font-weight: 700; color: var(--cream);
-      letter-spacing: .04em; margin-bottom: 6px;
-    }
-    .pipeline-desc {
-      font-size: 14px; color: rgba(245,237,228,.55); line-height: 1.65;
-    }
-    .pipeline-desc em { color: var(--teal-light); font-style: normal; }
-  </style>
+  <link rel="stylesheet" href="/css/op-usone.css">
 </head>
 <body>
 
@@ -190,6 +54,8 @@
 
 <!-- ── HERO ── -->
 <div class="project-hero">
+  <img class="hero-bg" src="/img/operation-usone-hero.jpg" alt="" onerror="this.style.display='none'">
+  <div class="hero-tint"></div>
   <div class="hero-glow"></div>
   <div class="project-hero-content">
     <a href="/recent-project.html" class="project-back">

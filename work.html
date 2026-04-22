@@ -37,6 +37,11 @@
   .card-hero img.bg[src$="pencil-box.jpg"] {
     filter: brightness(.55) saturate(.85);
   }
+
+  /* slide 1 background — pull the tone down */
+  .card-hero img.bg[src$="work-bg.png"] {
+    filter: brightness(.65);
+  }
 </style>
 </head>
 <body>
@@ -298,7 +303,7 @@
     </div>
   </a>
   <!-- RECENT PROJECTS (full-width strip, mirrors index.html's card-stream pattern) -->
-  <a class="card card-stream is-link" href="/projects.html">
+  <a class="card card-stream is-link" href="/projects.html" style="grid-column: 1 / -1; grid-row-start: 99;">
     <div class="tw-icon">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
     </div>
@@ -351,7 +356,7 @@
     },
     {
       img:     '/img/cpch-brochure-dark.jpg',
-      bgPosition: 'center 30%',
+      bgPosition: 'center 65%',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>',
       tagText: 'The goal',
       h1:      'Branding that <em>lasts.</em>',

@@ -55,15 +55,6 @@
 }
 .rp-cta svg { transition: transform .22s var(--ease-out); }
 
-/* On hero cards, push the CTA onto its own line beneath the tag pill */
-.card-work-item .rp-cta {
-  display: flex;
-  width: max-content;
-  margin-top: 12px;
-}
-
-.card-work-item:hover   .rp-cta,
-.card-work-item:focus-visible   .rp-cta,
 .card-coming-soon:hover .rp-cta,
 .card-coming-soon:focus-visible .rp-cta {
   background: var(--cream);
@@ -78,13 +69,26 @@
   border-color: var(--ink);
 }
 
-.card-work-item:hover   .rp-cta svg,
-.card-work-item:focus-visible   .rp-cta svg,
 .card-coming-soon:hover .rp-cta svg,
 .card-coming-soon:focus-visible .rp-cta svg,
 .rp-ad-card:hover       .rp-cta svg,
 .rp-ad-card:focus-visible       .rp-cta svg {
   transform: translateX(3px);
+}
+
+/* ── Stronger text-legibility overlay for project-page hero cards ──
+   Pushes the bottom of the card dark enough for cream text to read over
+   any underlying image (the US-One map, in particular, needed this). */
+.rp-hero-card .work-overlay,
+.rp-sage-hero .work-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(20, 15, 12, .92) 0%,
+    rgba(20, 15, 12, .78) 22%,
+    rgba(20, 15, 12, .48) 48%,
+    rgba(20, 15, 12, .18) 72%,
+    transparent 100%
+  );
 }
 
 /* ── Past-projects "coming-soon" card ── */

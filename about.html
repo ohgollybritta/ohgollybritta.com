@@ -440,18 +440,22 @@ Published Work
 <div class="edu-item">
 <div class="edu-school"><em>A Field Guide to Embodied Archiving</em></div>
 <div class="edu-detail">Burrow Press, DeLand, FL &mdash; Jul. 2021</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Logo Design</span><span class="cert-skill-tag terra">Book Design</span></div>
 </div>
 <div class="edu-item">
 <div class="edu-school"><em>Mapping Meaning Journal</em>, Issue No. 4</div>
 <div class="edu-detail">Summer 2020</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Brand Work</span><span class="cert-skill-tag terra">Featured</span></div>
 </div>
 <div class="edu-item">
 <div class="edu-school"><em>Neural Computation Journal</em></div>
 <div class="edu-detail">MIT Press, Cambridge, MA &mdash; Jul. 2017</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Scientific Illustration</span></div>
 </div>
 <div class="edu-item">
 <div class="edu-school"><em>Brush Up! World Photoshop Brush Collection</em></div>
 <div class="edu-detail">Ram Publications, Tokyo, JP &mdash; Jan. 2012</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Brush Design</span><span class="cert-skill-tag terra">Featured</span></div>
 </div>
 
 </div>
@@ -512,6 +516,13 @@ Licenses &amp; Certifications
 </div>
 </div>
 
+<button class="cert-more-toggle" id="certMoreBtn" aria-expanded="false" aria-controls="certExpanded">
+<span class="cert-more-label">Show all →</span>
+</button>
+
+<!-- EXPANDABLE: rest of earned + IN PROGRESS + QUEUED (hidden by default) -->
+<div class="cert-expanded" id="certExpanded">
+
 <div class="about-cert-item">
 <div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
 <div class="cert-info">
@@ -547,9 +558,6 @@ Licenses &amp; Certifications
 <div class="cert-skill-tags"><span class="cert-skill-tag teal">Data Analysis</span><span class="cert-skill-tag teal">Evidence Handling</span><span class="cert-skill-tag teal">Chain of Custody</span></div>
 </div>
 </div>
-
-<!-- EXPANDABLE: IN PROGRESS + QUEUED (hidden by default) -->
-<div class="cert-expanded" id="certExpanded">
 
 <div class="cert-section-label">In Progress</div>
 
@@ -591,10 +599,6 @@ Licenses &amp; Certifications
 </div>
 
 </div>
-
-<button class="cert-more-toggle" id="certMoreBtn" aria-expanded="false" aria-controls="certExpanded">
-<span class="cert-more-label">Show in progress &amp; queued →</span>
-</button>
 </div>
 
 <!-- ORGANIZATIONS -->
@@ -718,7 +722,7 @@ btn.addEventListener('click', function() {
 var open = btn.getAttribute('aria-expanded') === 'true';
 btn.setAttribute('aria-expanded', String(!open));
 content.classList.toggle('is-open', !open);
-label.textContent = !open ? 'Show less ↑' : 'Show in progress & queued →';
+label.textContent = !open ? 'Show less ↑' : 'Show all →';
 });
 })();
 </script>

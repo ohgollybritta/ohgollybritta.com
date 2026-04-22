@@ -121,6 +121,12 @@
     .pipeline {
       display: flex; flex-direction: column; gap: 0;
       margin-top: 32px;
+      background: var(--ink);
+      border-radius: 12px;
+      padding: 16px 32px;
+    }
+    @media (max-width: 540px) {
+      .pipeline { padding: 8px 20px; }
     }
     .pipeline-step {
       display: flex; align-items: flex-start; gap: 20px;

@@ -61,6 +61,12 @@
   @media (prefers-reduced-motion: reduce) {
     .avail-critter { animation: none; }
   }
+
+  /* availability card heading — much larger, fills the card */
+  .card-avail .avail-heading {
+    font-size: clamp(40px, 4vw, 58px);
+    line-height: 1.02;
+  }
 </style>
 </head>
 <body>
@@ -269,7 +275,7 @@
       <div class="avail-dot"></div>
       <div class="avail-status">Available for work</div>
     </div>
-    <div class="avail-heading">Let's build something<br><em>worth noticing.</em></div>
+    <div class="avail-heading">Let's build<br><em>bolder.</em></div>
     <a href="contact.html" class="avail-cta">
       Get in touch
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────────────────────
-   OPERATION INTERSTATE ONE — page-specific styles
+   OPERATION US-ONE — page-specific styles
    Extracted from inline <style> block; adds image-capable hero.
 ────────────────────────────────────────────────────────────── */
 
@@ -25,54 +25,24 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: .45;
+  opacity: .85;
   z-index: 0;
 }
 
-/* Dark gradient over image to keep text legible regardless
-   of the specific image used. */
+/* Dark gradient concentrated at the bottom where text sits.
+   Top of image stays visible; only the text zone darkens. */
 .project-hero .hero-tint {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(44,26,14,.35) 0%,
-    rgba(44,26,14,.75) 70%,
+    rgba(44,26,14,0) 0%,
+    rgba(44,26,14,.1) 45%,
+    rgba(44,26,14,.65) 78%,
     rgba(44,26,14,.92) 100%
   );
   pointer-events: none;
   z-index: 1;
-}
-
-/* Subtle teal grid overlay */
-.project-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(91,184,168,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(91,184,168,.05) 1px, transparent 1px);
-  background-size: 52px 52px;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Radial glow bottom-left */
-.hero-glow {
-  position: absolute; inset: 0;
-  background: radial-gradient(
-    ellipse 65% 50% at 10% 100%,
-    rgba(61,154,139,.2) 0%,
-    transparent 65%
-  );
-  pointer-events: none;
-  z-index: 3;
-}
-
-/* Top fade */
-.hero-glow::after {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 180px;
-  background: linear-gradient(to bottom, rgba(44,26,14,.7), transparent);
 }
 
 /* Content sits above all decorative layers */

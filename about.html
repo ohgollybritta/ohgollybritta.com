@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Oh Golly, Britta!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/about.css">
+<style>
+/* Avatar flip on about page */
+.page-header .avatar-flip { cursor: pointer; }
+.page-header .avatar-flip:hover { transform: rotate(-3deg) scale(1.08); box-shadow: 6px 6px 0 var(--terra-dark); }
+.page-header .avatar-flip:hover .avatar-pixel { opacity: 0; }
+.page-header .avatar-flip:hover .avatar-real { opacity: 1; }
+/* Bio read more */
+.bio-expanded { display: none; }
+.bio-expanded.is-open { display: block; }
+.bio-read-more {
+background: none;
+border: none;
+font-family: 'DM Sans', sans-serif;
+font-size: 13px;
+font-weight: 700;
+color: var(--teal);
+cursor: pointer;
+padding: 8px 0;
+letter-spacing: .03em;
+transition: color .2s;
+}
+.bio-read-more:hover,
+.bio-read-more:focus-visible { color: var(--terra); outline: none; }
+.bio-read-more:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+/* Certifications — expand behavior (matches bio Read more) */
+.cert-expanded { display: none; }
+.cert-expanded.is-open { display: block; }
+.cert-section-label {
+font-size: 10.5px;
+font-weight: 700;
+letter-spacing: .14em;
+text-transform: uppercase;
+color: rgba(245,237,228,.38);
+margin: 18px 0 6px;
+padding-top: 14px;
+border-top: 1px dashed rgba(245,237,228,.12);
+}
+.about-cert-dot.pending {
+background: rgba(245,237,228,.18);
+box-shadow: none;
+border: 1px solid rgba(245,237,228,.28);
+}
+.cert-status-inline {
+display: inline-block;
+font-size: 9.5px;
+font-weight: 700;
+letter-spacing: .1em;
+text-transform: uppercase;
+margin-left: 8px;
+padding: 2px 8px;
+border-radius: 100px;
+vertical-align: 2px;
+}
+.cert-status-inline.status-progress {
+color: var(--teal-light);
+background: rgba(91,184,168,.14);
+border: 1px solid rgba(91,184,168,.3);
+}
+.cert-status-inline.status-queued {
+color: rgba(245,237,228,.55);
+background: rgba(245,237,228,.06);
+border: 1px solid rgba(245,237,228,.14);
+}
+.cert-more-toggle {
+background: none;
+border: none;
+font-family: 'DM Sans', sans-serif;
+font-size: 13px;
+font-weight: 700;
+color: var(--teal-light);
+cursor: pointer;
+padding: 8px 0;
+margin-top: 6px;
+letter-spacing: .03em;
+transition: color .2s;
+}
+.cert-more-toggle:hover,
+.cert-more-toggle:focus-visible { color: var(--terra-light); outline: none; }
+.cert-more-toggle:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<ul class="nav-links">
+<li><a href="/work.html">Work</a></li>
+<li><a href="/about.html">About</a></li>
+<li><a href="/contact.html">Contact</a></li>
+</ul>
+<a href="/index.html" class="nav-brand"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
+<div class="nav-icons">
+<a href="https://www.instagram.com/ohbritta" title="Instagram" target="_blank" rel="noopener">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+</a>
+<a href="https://github.com/ohgollybritta" title="GitHub" target="_blank" rel="noopener">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+</a>
+<a href="https://www.twitch.tv/ohgollybritta" title="Twitch" target="_blank" rel="noopener">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+</a>
+<a href="https://app.hackthebox.com/users/3168721" title="HackTheBox" target="_blank" rel="noopener">
+<svg width="19" height="19" viewBox="8 8 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="16,8.5 22,12 16,15.5 10,12"/><polyline points="10,12 10,19.5 16,23 16,15.5"/><polyline points="22,12 22,19.5 16,23"/></svg>
+</a>
+</div>
+<button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+<ul>
+<li><a href="/work.html">Work</a></li>
+<li><a href="/about.html">About</a></li>
+<li><a href="/contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="about-wrap">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+<div class="page-eyebrow">About</div>
+<div class="page-title-row">
+<div class="avatar-flip">
+<img class="avatar-pixel" src="/img/avatar-pixel.png" alt="Britta pixel art">
+<img class="avatar-real" src="/img/avatar-real.jpg" alt="Britta">
+</div>
+<h1 class="page-title name-title">Britta <em class="name-last">Davis.</em></h1>
+</div>
+<div class="name-pills">
+<span class="pill pill-teal">Intelligence Analyst</span>
+<span class="pill pill-ink">Technologist</span>
+<span class="pill pill-terra">Designer</span>
+<span class="pill pill-terra">Genealogist</span>
+</div>
+</div>
+
+<!-- BENTO -->
+<div class="bento">
+
+<!-- BIO -->
+<div class="card card-cream bio-card a-col-7">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+Bio
+</div>
+<p style="font-family:'Fraunces',serif; font-size:clamp(20px,2.4vw,28px); font-weight:800; font-style:italic; line-height:1.4; color:rgba(44,26,14,.85); border-left:3px solid var(--teal); padding-left:14px; margin-bottom:18px;">The answer is already there. <span style="color:var(--teal);">Britta finds it by looking closer.</span></p>
+
+<p>Her instincts showed up early, when her dad handed her a computer and a stack of programming books. She taught herself to build websites and by the time she was in middle school, her celebrity fan site had gained enough of a following and reputation as the go to destination for rare remixes and photos to be featured on MTV Europe. That curiosity never slowed down. A few years later, she became one of the original ten lifecasters on Justin.tv (covered in a <a href="https://www.thehour.com/entertainment/article/Lifecasting-can-make-anyone-a-reality-star-8256223.php" target="_blank" rel="noopener">nationally syndicated article</a> that ran in over 30 papers).</p>
+
+<p>Then, at 19, an illness took most of her vision. Like most people with their senses, she had taken it for granted. Losing it taught her she had something worth losing. The recovery was rare and unexpected, and essentially changed how she approached everything that followed. While living in San Francisco, she took the leap and began her design education at <a href="https://www.academyart.edu/" target="_blank" rel="noopener">Academy of Art University</a>, then continued at <a href="https://www.fullsail.edu/" target="_blank" rel="noopener">Full Sail University</a> in Orlando. From there, she worked live broadcast environments at <a href="https://en.wikipedia.org/wiki/WWE" target="_blank" rel="noopener">WWE</a> as a Decko operator and vignette truss builder. That led to a role as lead track graphic artist at <a href="https://en.wikipedia.org/wiki/Daytona_International_Speedway" target="_blank" rel="noopener">Daytona Intl. Speedway</a>.</p>
+
+<p>Then, came the moment that redirected everything: In the late stages of her pregnancy, small child in tow, Britta was stalked and nearly abducted in broad daylight.</p>
+
+<button class="bio-read-more" id="bioReadMore" aria-expanded="false" aria-controls="bioExpanded">Read more</button>
+
+<div class="bio-expanded" id="bioExpanded">
+<p>She noticed him before anyone else did. She calculated how many steps behind them he was, formulated a plan, and escaped with no seconds left to spare. It was her training in <a href="https://en.wikipedia.org/wiki/Krav_Maga" target="_blank" rel="noopener">Krav Maga</a> and her own situational awareness that kept them safe.</p>
+
+<p>In the aftermath, she did what she has always done. She investigated by pulling the thread: seeking to gain dimension on what made them a target. What she found was a market: what children sell for, what a pregnant woman is worth. The curiosity and marketing experience that had once built fan sites and designed collateral for racetracks was now pointed something much deeper and much more sinister.</p>
+
+<p>Around the same time, an autosomal DNA test revealed her as an <a href="https://www.npenetwork.org/whats-an-npe" target="_blank" rel="noopener">NPE</a>, which cued her to take a deeper look at her entire family history, because the truth was what she was after. Tracing her lineage uncovered connections to several well-documented Revolutionary War patriots whose records were on file, but whose link to her had never been established. She found it and proved it. That research earned her entry into the Daughters of the American Revolution, where she rose to Chapter Regent within her first five years, a pace almost unheard of in the organization.</p>
+
+<p>She spent years developing brands for small businesses and organizations, but the near-abduction had already set a different course for her: she became an OSINT analyst for a notable non-profit focused on combating human trafficking, and began pursuing a master's degree in Criminal Justice. Wanting a more direct path, she entered law enforcement training. Physical setbacks during the academy redirected her course, but not the mission, and not the skill set she had begun to build.</p>
+
+<p style="font-family:'Fraunces',serif; font-size:clamp(16px,1.6vw,19px); font-weight:800; font-style:italic; line-height:1.45; color:rgba(44,26,14,.85); border-left:3px solid var(--teal); padding-left:14px; margin-top:24px;">Investigating, digging, exploring, analyzing: every thread of her life has required the same thing. The way she traces a family line, the way she walks through a building everyone else has declared empty of meaning, is exactly the way you find the people who exploit children in digital spaces. Most people can see. Britta knows how to look. The purpose is fixed. The work is underway.</p>
+</div>
+
+<div class="stat-row">
+<div class="stat">
+<div class="stat-num">20+</div>
+<div class="stat-label">Years creating</div>
+</div>
+<div class="stat">
+<div class="stat-num">5+</div>
+<div class="stat-label">Certs earned</div>
+</div>
+<div class="stat">
+<div class="stat-num">17+</div>
+<div class="stat-label">Exhibition credits</div>
+</div>
+</div>
+
+<div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; padding-top:18px; border-top:1.5px solid rgba(44,26,14,.1);">
+<span class="pill pill-ink">Investigative</span>
+<span class="pill pill-ink">Resilient</span>
+<span class="pill pill-terra">Purposeful</span>
+<span class="pill pill-ink">Methodical</span>
+<span class="pill pill-teal">Composed</span>
+<span class="pill pill-terra">Bold</span>
+<span class="pill pill-ink">Curious</span>
+<span class="pill pill-teal">Analytical</span>
+<span class="pill pill-ink">Protective</span>
+</div>
+</div>
+
+<!-- RIGHT COLUMN: Current Focus + Currently Reading + Education stacked in a flex wrapper -->
+<div class="a-col-5 right-col-wrap" style="display:flex; flex-direction:column; gap:14px;">
+
+<!-- CURRENT FOCUS -->
+<div class="card card-teal pivot-card" style="padding: 32px 36px;">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+Current Focus
+</div>
+<div class="pivot-text" style="font-size:clamp(24px, 3vw, 36px); line-height:1.25;">An investigative technologist<br>driven to find, expose,<br><span>and disrupt human trafficking.</span></div>
+</div>
+
+<!-- CURRENTLY READING -->
+<div class="card card-mid">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+Currently Reading
+</div>
+<div style="display:flex; gap:14px; align-items:flex-start;">
+<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1704857327l/205126467._SX98_.jpg"
+alt=""
+style="width:52px; border-radius:4px; flex-shrink:0; box-shadow:3px 3px 10px rgba(0,0,0,.4);">
+<div>
+<div style="font-size:13.5px; font-weight:700; color:var(--cream); margin-bottom:4px; line-height:1.3;">Eradicating Human Trafficking</div>
+<div style="font-size:11.5px; color:rgba(245,237,228,.55); margin-bottom:10px;">A Transformative Approach through Collective Impact</div>
+<div style="font-size:11.5px; color:rgba(245,237,228,.5);">Brittany C. Dunn</div>
+<div style="margin-top:10px;">
+<a href="https://www.goodreads.com/book/show/205126467-eradicating-human-trafficking" target="_blank" rel="noopener"
+style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--terra-light); text-decoration:none; border:1.5px solid rgba(193,101,74,.55); padding:3px 10px; border-radius:100px;">
+View on Goodreads
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card card-dark">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+Education
+</div>
+<div class="edu-item">
+<div class="edu-school">Southern New Hampshire University <span class="edu-detail" style="font-size:11px">· Manchester, New Hampshire</span></div>
+<div class="edu-detail" style="color:var(--teal-light)">Master of Science, Criminal Justice and Counter-Terrorism · In Progress</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag teal">Honors</span></div>
+</div>
+<div class="edu-item">
+<div class="edu-school">Full Sail University <span class="edu-detail" style="font-size:11px">· Winter Park, Florida</span></div>
+<div class="edu-detail" style="color:var(--teal-light)">Bachelor of Science, Digital Art &amp; Design · 3.8+ GPA</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag teal">Advanced Achievement Award</span><span class="cert-skill-tag teal">Alumni</span></div>
+</div>
+<div class="edu-item">
+<div class="edu-school">Academy of Art University <span class="edu-detail" style="font-size:11px">· San Francisco, California</span></div>
+<div class="edu-detail">Traditional Graphic Design</div>
+</div>
+</div>
+</div>
+
+<!-- DESIGN SKILLS -->
+<div class="card card-cream a-col-4">
+<div class="prog-header">
+<div class="prog-icon terra">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+</div>
+<span class="prog-title">Design</span>
+</div>
+<div class="skill-row"><span class="skill-name">Brand Development</span><div class="skill-track"><div class="skill-fill terra" data-pct="98"></div></div><span class="skill-pct terra">98%</span></div>
+<div class="skill-row"><span class="skill-name">Print Design</span><div class="skill-track"><div class="skill-fill terra" data-pct="95"></div></div><span class="skill-pct terra">95%</span></div>
+<div class="skill-row"><span class="skill-name">Editorial Layout</span><div class="skill-track"><div class="skill-fill terra" data-pct="90"></div></div><span class="skill-pct terra">90%</span></div>
+<div class="skill-row"><span class="skill-name">UI / Web Design</span><div class="skill-track"><div class="skill-fill terra" data-pct="97"></div></div><span class="skill-pct terra">97%</span></div>
+<div class="skill-row"><span class="skill-name">Photo Restoration</span><div class="skill-track"><div class="skill-fill terra" data-pct="85"></div></div><span class="skill-pct terra">85%</span></div>
+<div class="skill-row"><span class="skill-name">Motion Graphics</span><div class="skill-track"><div class="skill-fill terra" data-pct="80"></div></div><span class="skill-pct terra">80%</span></div>
+</div>
+
+<!-- CYBER SKILLS -->
+<div class="card card-dark a-col-4">
+<div class="prog-header">
+<div class="prog-icon teal">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+</div>
+<span class="prog-title">Investigative Tech</span>
+</div>
+<div class="skill-row"><span class="skill-name">OSINT / Intelligence</span><div class="skill-track"><div class="skill-fill teal" data-pct="91"></div></div><span class="skill-pct teal">91%</span></div>
+<div class="skill-row"><span class="skill-name">Digital Forensics</span><div class="skill-track"><div class="skill-fill teal" data-pct="42"></div></div><span class="skill-pct teal">42%</span></div>
+<div class="skill-row"><span class="skill-name">Data Analysis</span><div class="skill-track"><div class="skill-fill teal" data-pct="97"></div></div><span class="skill-pct teal">97%</span></div>
+<div class="skill-row"><span class="skill-name">Incident Response</span><div class="skill-track"><div class="skill-fill teal" data-pct="62"></div></div><span class="skill-pct teal">62%</span></div>
+<div class="skill-row"><span class="skill-name">Network Security</span><div class="skill-track"><div class="skill-fill teal" data-pct="72"></div></div><span class="skill-pct teal">72%</span></div>
+</div>
+
+<!-- CODE SKILLS -->
+<div class="card card-mid a-col-4">
+<div class="prog-header">
+<div class="prog-icon htb">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+</div>
+<span class="prog-title">Coding</span>
+</div>
+<div class="skill-row"><span class="skill-name">HTML / CSS</span><div class="skill-track"><div class="skill-fill htb" data-pct="97"></div></div><span class="skill-pct htb">97%</span></div>
+<div class="skill-row"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-fill htb" data-pct="60"></div></div><span class="skill-pct htb">60%</span></div>
+<div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-track"><div class="skill-fill htb" data-pct="90"></div></div><span class="skill-pct htb">90%</span></div>
+<div class="skill-row"><span class="skill-name">Shell Scripting</span><div class="skill-track"><div class="skill-fill htb" data-pct="50"></div></div><span class="skill-pct htb">—</span></div>
+<div class="skill-row"><span class="skill-name">Generative AI</span><div class="skill-track"><div class="skill-fill htb" data-pct="93"></div></div><span class="skill-pct htb">93%</span></div>
+</div>
+
+<!-- LEFT COLUMN: Experience + Interests -->
+<div class="a-col-6" style="display:flex; flex-direction:column; gap:var(--gap, 14px)">
+
+<!-- INVESTIGATIVE CAREER -->
+<div class="card card-dark" style="align-self:stretch">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+Investigative Career
+</div>
+<div class="exp-item">
+<div class="exp-role">OSINT Analyst</div>
+<div class="exp-org teal-org">Anti-Trafficking Nonprofit</div>
+<div class="exp-meta">Jul 2025 – Present · Remote</div>
+<div class="exp-desc">Open-source intelligence analysis in support of victim identification and case development for law enforcement handoff. Focus areas include online commercial escort advertisement analysis, pattern-of-life research, geographic and temporal correlation, and production of structured intelligence products from open sources.</div>
+<div style="margin-top:14px; padding:10px 0 10px 14px; border-left:3px solid var(--teal); display:flex; align-items:flex-start; gap:10px;">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+<div>
+<div style="font-size:9.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); margin-bottom:4px;">OpSec</div>
+<div style="font-size:12px; font-style:italic; color:rgba(245,237,228,.75); line-height:1.5;">Specific organization, methodologies, and casework withheld for operational security.</div>
+</div>
+</div>
+<div class="exp-tags">
+<span class="exp-tag teal">OSINT</span>
+<span class="exp-tag teal">Victim Identification</span>
+<span class="exp-tag teal">Intelligence Reporting</span>
+<span class="exp-tag teal">OpSec</span>
+</div>
+</div>
+<div class="exp-item">
+<div class="exp-role">Academy Recruit</div>
+<div class="exp-org teal-org">Fairfax County Government</div>
+<div class="exp-meta">Nov 2025 – Jan 2026 · Full-time · Chantilly, VA</div>
+<div class="sub-role-title">Police Recruit</div>
+<div class="sub-role-meta">Nov 2025 – Jan 2026 · Full-time</div>
+<div class="exp-desc">Attended the Fairfax County Criminal Justice Academy (FCCJA) for Session 91, one of the most rigorous academies in the region. Served as Recruit Squad Leader for Squad #10, responsible for peer accountability, daily coordination, and readiness across academic, physical, and tactical training blocks. Training spanned constitutional law, criminal procedure, contact and cover, control tactics, scenario response under live evaluation, and written reporting.</div>
+<div class="exp-tags">
+<span class="exp-tag teal">Squad Leadership</span>
+<span class="exp-tag teal">Contact/Cover</span>
+<span class="exp-tag teal">Control Tactics</span>
+<span class="exp-tag teal">Scenario Training</span>
+<span class="exp-tag teal">Report Writing</span>
+</div>
+<div class="sub-divider"></div>
+<div class="sub-role-title">Academy Candidate</div>
+<div class="sub-role-meta">Mar 2025 – Nov 2025</div>
+<div class="exp-desc">Completed the full pre-academy candidacy process for Fairfax County law enforcement: comprehensive background investigation, psychological evaluation, physical fitness assessment, and medical clearance. Cleared to attend Session 91 at FCCJA.</div>
+<div class="exp-tags">
+<span class="exp-tag teal">DOJ Background Cleared</span>
+</div>
+</div>
+</div>
+
+<!-- INTERESTS -->
+<div class="card card-teal">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
+Interests
+</div>
+<div style="display:flex; flex-direction:column; gap:14px">
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Learning</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Always curious. When you stop learning, you stop living &mdash; and there's far too much left to see for that.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Music</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">A work companion, a mood regulator, a time machine. The Spotify widget on the homepage will tell on me.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Martial Arts</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Brazilian Jiu Jitsu &middot; Krav Maga &mdash; ground control, pressure testing, no wasted movement.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Chess</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Pattern recognition, patience, the long game. Trains the same investigative muscle used everywhere else.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Making Things</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Builder by nature. If it doesn't exist yet and it should, that's a project.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Cooking &amp; Nutrition</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Feeding people is a love language; feeding them well is the goal.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Photography</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Living history and preservation captures of historic homes and overlooked places · <a href="https://www.instagram.com/butternutheritage" target="_blank" rel="noopener" style="color:var(--teal-light); text-decoration:none;">@butternutheritage</a></div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Road Trips &amp; Living History</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Historic sites, back roads, and the places most people drive past. The preservation lens in motion.</div>
+</div>
+<div>
+<div class="exp-role" style="font-size:13px; color:var(--cream); margin-bottom:3px">Genealogy &amp; Archival Research</div>
+<div class="exp-meta" style="color:rgba(245,237,228,.6); font-size:11.5px">Primary-source research into family lineage, land records, and the archives most people don't bother with.</div>
+</div>
+</div>
+</div>
+</div><!-- end left column -->
+
+<!-- RIGHT COLUMN: Design Career + Published Work stacked -->
+<div class="a-col-6" style="display:flex; flex-direction:column; gap:var(--gap, 14px)">
+
+<!-- EXPERIENCE: Design -->
+<div class="card card-cream">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+Design / Multimedia Career
+</div>
+<div class="exp-item">
+<div class="exp-role">Graphic Designer / Strategist</div>
+<div class="exp-org terra-org">Freelance · Self-Employed</div>
+<div class="exp-meta">Apr 2018 – Jun 2025 · Remote</div>
+<div class="exp-desc">Brand identities, visual systems, and marketing strategy for civic institutions, nonprofits, and cultural projects. Designed the full identity, print system, and book layout for the Center for Post-Capitalist History, which has traveled the continental U.S. since 2017 with the Burrow Press field guide still in circulation. Built the brand and social strategy for the Botanical Garden of the Piedmont in Charlottesville, a Parks and Recreation development. Tone, voice, and templates are still used in-house, and the system now anchors a corporate donor roster that includes Dominion Energy, Sentara, and Virginia National Bank. Graphics and videography for a documentary on the Orlando Serve Foundation's "He Got Up," a Central Florida homelessness outreach held at Camping World Stadium.</div>
+<div class="exp-tags"><span class="exp-tag terra">Brand Identity</span><span class="exp-tag terra">Visual Systems</span><span class="exp-tag terra">Strategy</span><span class="exp-tag terra">Editorial</span></div>
+</div>
+<div class="exp-item">
+<div class="exp-role">Graphic Artist</div>
+<div class="exp-org terra-org">NASCAR · Daytona International Speedway</div>
+<div class="exp-meta">Sep 2017 – Apr 2018 · On-site, Daytona Beach, FL</div>
+<div class="exp-desc">Brand steward and lead track designer for Bike Week, the Rolex 24, Coke Zero 400, and the Daytona 500. These events contribute over $1.6 billion in annual economic impact to the state of Florida. Managed a team of 12 race-season photographers, with the Director of Photography reporting directly, and produced 50+ brand-compliant assets per major event. Overhauled social media strategy and visual identity, establishing the system that carried across every feed during race weeks.</div>
+<div class="exp-tags"><span class="exp-tag terra">Brand Stewardship</span><span class="exp-tag terra">Team Leadership</span><span class="exp-tag terra">Social Strategy</span><span class="exp-tag terra">Live Event Production</span></div>
+</div>
+<div class="exp-item">
+<div class="exp-role">Graphics Operator &amp; Rigging Technician</div>
+<div class="exp-org terra-org">World Wrestling Entertainment</div>
+<div class="exp-meta">Sep 2015 – Mar 2017 · On-site, Orlando, FL</div>
+<div class="exp-desc">Designed and executed live broadcast graphics for WWE NXT, including name plates, lower thirds, and match graphics, cued in real time on the director's call for episodes reaching roughly 1 million viewers. Built truss and hung rigging for the live production set, and mastered Avid Decko, a specialized broadcast graphics system built for precision under pressure.</div>
+<div class="exp-tags"><span class="exp-tag terra">Avid Decko</span><span class="exp-tag terra">Live Broadcast</span><span class="exp-tag terra">Broadcast Design</span><span class="exp-tag terra">Truss Rigging</span></div>
+</div>
+</div>
+
+<!-- PUBLISHED WORK -->
+<div class="card card-dark">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+Published Work
+</div>
+
+<!-- Featured: current research -->
+<a href="https://www.researchgate.net/publication/402710534_UNMASKING_HUMAN_TRAFFICKING_A_CRIMINOLOGICAL_AND_HISTORICAL_ANALYSIS" target="_blank" rel="noopener" style="display:block; padding:16px; margin-bottom:20px; background:rgba(91,184,168,.07); border:1px solid rgba(91,184,168,.22); border-radius:6px; text-decoration:none; transition:border-color .2s, background .2s;" onmouseover="this.style.borderColor='rgba(91,184,168,.45)';this.style.background='rgba(91,184,168,.11)'" onmouseout="this.style.borderColor='rgba(91,184,168,.22)';this.style.background='rgba(91,184,168,.07)'">
+<div style="font-size:9.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); margin-bottom:6px;">Empirical Research &rarr;</div>
+<div style="font-family:'Fraunces',serif; font-size:16px; font-weight:700; font-style:italic; color:var(--terra-light); line-height:1.3; margin-bottom:4px;">Unmasking Human Trafficking</div>
+<div style="font-size:12px; color:rgba(245,237,228,.7); line-height:1.4; margin-bottom:8px;">A criminological &amp; historical analysis</div>
+<div style="font-size:10.5px; color:rgba(245,237,228,.45); letter-spacing:.02em;">ResearchGate &middot; 2025</div>
+</a>
+
+<!-- Earlier publications -->
+<div class="edu-item">
+<div class="edu-school"><em>A Field Guide to Embodied Archiving</em></div>
+<div class="edu-detail">Burrow Press, DeLand, FL &mdash; Jul. 2021</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Logo Design</span><span class="cert-skill-tag terra">Book Design</span></div>
+</div>
+<div class="edu-item">
+<div class="edu-school"><em>Mapping Meaning Journal</em>, Issue No. 4</div>
+<div class="edu-detail">Summer 2020</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Brand Work</span><span class="cert-skill-tag terra">Featured</span></div>
+</div>
+<div class="edu-item">
+<div class="edu-school"><em>Neural Computation Journal</em></div>
+<div class="edu-detail">MIT Press, Cambridge, MA &mdash; Jul. 2017</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Scientific Illustration</span></div>
+</div>
+<div class="edu-item">
+<div class="edu-school"><em>Brush Up! World Photoshop Brush Collection</em></div>
+<div class="edu-detail">Ram Publications, Tokyo, JP &mdash; Jan. 2012</div>
+<div class="cert-skill-tags" style="margin-top:8px"><span class="cert-skill-tag terra">Brush Design</span><span class="cert-skill-tag terra">Featured</span></div>
+</div>
+
+</div>
+
+</div><!-- end right column -->
+
+<!-- CERTIFICATIONS -->
+<div class="card card-dark a-col-6">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+Licenses &amp; Certifications
+</div>
+
+<!-- COMPLETED / EARNED (always visible, newest first) -->
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot htb"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Claude Code in Action</div>
+<div class="cert-issuer-text">Anthropic · Apr 2026</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag htb">Development Workflows</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot htb"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Claude 101</div>
+<div class="cert-issuer-text">Anthropic · Mar 2026</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag htb">Generative AI</span><span class="cert-skill-tag htb">Large Language Models</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Adult &amp; Pediatric First Aid / CPR / AED</div>
+<div class="cert-issuer-text">HSI · Jan 2026 – Jan 2028</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag terra">First Aid</span><span class="cert-skill-tag terra">Emergency Response</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Emergency Vehicle Operations Course (EVOC)</div>
+<div class="cert-issuer-text">Fairfax County Criminal Justice Academy · Jan 2026</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag terra">Precision Driving</span><span class="cert-skill-tag terra">Pursuit Tactics</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">BolaWrap Certification</div>
+<div class="cert-issuer-text">Fairfax County Criminal Justice Academy · Dec 2025</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag terra">Pre-Escalation</span></div>
+</div>
+</div>
+
+<button class="cert-more-toggle" id="certMoreBtn" aria-expanded="false" aria-controls="certExpanded">
+<span class="cert-more-label">Show all →</span>
+</button>
+
+<!-- EXPANDABLE: rest of earned + IN PROGRESS + QUEUED (hidden by default) -->
+<div class="cert-expanded" id="certExpanded">
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot terra"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Tactical Emergency Casualty Care (TECC)</div>
+<div class="cert-issuer-text">National Association of Emergency Medical Technicians · Dec 2025</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag terra">Trauma Care</span><span class="cert-skill-tag terra">Hemorrhage Control</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot teal"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Anti-Trafficking Open Source Intelligence</div>
+<div class="cert-issuer-text">Guardian Group · Jul 2025</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag teal">Data Reporting</span><span class="cert-skill-tag teal">OpSec</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot htb"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Linux Commands &amp; Shell Scripting</div>
+<div class="cert-issuer-text">IBM · Jul 2025</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag htb">Debian Linux</span><span class="cert-skill-tag htb">Command Line</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot teal"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Digital Forensics Essentials (DFE)</div>
+<div class="cert-issuer-text">EC-Council · May 2025</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag teal">Data Analysis</span><span class="cert-skill-tag teal">Evidence Handling</span><span class="cert-skill-tag teal">Chain of Custody</span></div>
+</div>
+</div>
+
+<div class="cert-section-label">In Progress</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot teal" style="box-shadow:0 0 6px var(--teal-light), 0 0 14px rgba(91,184,168,.5);"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Certified Hacking Forensic Investigator (CHFI) <span class="cert-status-inline status-progress">Studying</span></div>
+<div class="cert-issuer-text">McAfee Institute</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag teal">Incident Response</span><span class="cert-skill-tag teal">Evidence Handling</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot teal" style="box-shadow:0 0 6px var(--teal-light), 0 0 14px rgba(91,184,168,.5);"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">Certified Junior Cybersecurity Associate (CJCA) <span class="cert-status-inline status-progress">Studying</span></div>
+<div class="cert-issuer-text">HackTheBox</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag teal">Offensive &amp; Defensive</span><span class="cert-skill-tag teal">SIEM Monitoring</span></div>
+</div>
+</div>
+
+<div class="cert-section-label">Queued</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot pending"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">CompTIA Security+ <span class="cert-status-inline status-queued">Queued</span></div>
+<div class="cert-issuer-text">CompTIA</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag teal">Cybersecurity</span><span class="cert-skill-tag teal">Network Security</span></div>
+</div>
+</div>
+
+<div class="about-cert-item">
+<div class="cert-dot-col"><div class="about-cert-dot pending"></div></div>
+<div class="cert-info">
+<div class="cert-name-text">CompTIA Network+ <span class="cert-status-inline status-queued">Queued</span></div>
+<div class="cert-issuer-text">CompTIA</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ORGANIZATIONS -->
+<div class="card card-dark a-col-6">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+Organizations &amp; Volunteering
+</div>
+<div class="org-item">
+<div class="org-name">Daughters of the American Revolution</div>
+<div class="org-detail" style="margin-bottom:4px">2020 – Present</div>
+<div class="org-detail" style="margin-bottom:4px">Chapter Regent 2023–2025 · Vice-Regent · Financial Auditor · Native American Committee Chairperson</div>
+<div class="org-detail" style="margin-bottom:10px">Genealogy Education Program I &amp; II · Awarded for Dedication to Continued Learning</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag terra">Chapter Officer</span><span class="cert-skill-tag terra">Award Recipient</span><span class="cert-skill-tag terra">Genealogist</span></div>
+</div>
+<div class="org-item">
+<div class="org-name">Boone Society</div>
+<div class="org-detail" style="margin-bottom:10px">2020 – Present</div>
+<div class="org-detail" style="margin-bottom:10px">A historical and genealogical society dedicated to researching and preserving the legacy of frontiersman Daniel Boone, his family, and the broader pioneer era. Members contribute to scholarly archives, publications, and collaborative research on early American frontier history.</div>
+<div class="cert-skill-tags"><span class="cert-skill-tag terra">Contributing Author</span></div>
+</div>
+<div class="org-item">
+<div class="org-name">Full Sail Digital Arts &amp; Design Association</div>
+<div class="org-detail">2014 – Present</div>
+</div>
+<div class="org-item">
+<div class="org-name">Graphic Artists Guild</div>
+<div class="org-detail">2017–2018</div>
+</div>
+<div class="org-item">
+<div class="org-name">AIGA Member</div>
+<div class="org-detail">2013–2019</div>
+</div>
+</div>
+
+<!-- EXHIBITIONS + PUBLICATIONS -->
+<div class="card card-cream a-col-12">
+<div class="card-label">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+Exhibition &amp; Media Highlights
+</div>
+<div class="hl-grid">
+<div class="hl-item"><div class="hl-venue">Heavy Manners Zine Fair, Soft Systems</div><div class="hl-meta">Los Angeles, CA — 2026</div></div>
+<div class="hl-item"><div class="hl-venue">BookBound: The Art of Printmaking</div><div class="hl-meta">Art and Culture Center, Hollywood, FL — 2022</div></div>
+<div class="hl-item"><div class="hl-venue">Killer Dentist Presents: CPCH Shorts</div><div class="hl-meta">Spectacle, New York, NY — 2022</div></div>
+<div class="hl-item"><div class="hl-venue">Undercurrents: The Flood</div><div class="hl-meta">Crisp Ellert Art Museum, St. Augustine, FL — 2022</div></div>
+<div class="hl-item"><div class="hl-venue">Solo Exhibition, CPCH Staging Area</div><div class="hl-meta">Laundromat Art Space, Miami, FL — 2022</div></div>
+<div class="hl-item"><div class="hl-venue">2020 Florida Biennial, CPCH</div><div class="hl-meta">Culture &amp; Arts Center, Hollywood, FL — Nov 2020–Feb 2021</div></div>
+<div class="hl-item"><div class="hl-venue">Staging Area (Solo Exhibition)</div><div class="hl-meta">Pancake House, CPCH, Minneapolis, MN — 2021</div></div>
+<div class="hl-item"><div class="hl-venue">Interstice, The Residency Project/MOTOR</div><div class="hl-meta">CPCH, Los Angeles, CA — 2021</div></div>
+<div class="hl-item"><div class="hl-venue">LKTV, LinkoKino, CPCH</div><div class="hl-meta">Philadelphia, PA — 2021</div></div>
+<div class="hl-item"><div class="hl-venue">Under Pressure, Co-Opt Research + Projects</div><div class="hl-meta">CPCH, Lubbock, TX — 2021</div></div>
+<div class="hl-item"><div class="hl-venue">Orlando Weekly — Body of Evidence</div><div class="hl-meta">Orlando, FL — 2021</div></div>
+<div class="hl-item"><div class="hl-venue">Zosima Gallery, CPCH: Vexillology</div><div class="hl-meta">Arlington, TX — Apr–May 2018</div></div>
+<div class="hl-item"><div class="hl-venue">CityArts Factory — "We Too: Reclaiming the Feminine"</div><div class="hl-meta">Orlando, FL — Mar 2018</div></div>
+<div class="hl-item"><div class="hl-venue">Destination Daytona Beach Magazine</div><div class="hl-meta">"Daytona 500" — Summer 2018</div></div>
+<div class="hl-item"><div class="hl-venue">Icebox Project Space, CPCH</div><div class="hl-meta">Philadelphia, PA — Dec 2017</div></div>
+<div class="hl-item" style="border-bottom:none"><div class="hl-venue">IEEE Virtual Reality Conference — Guger Technology Intendix UI/UX</div><div class="hl-meta">Lake Buena Vista, FL — Mar 2013</div></div>
+</div>
+</div>
+
+</div><!-- /bento -->
+
+</div><!-- /about-wrap -->
+
+<footer>© 2026 oh golly britta &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
+
+<script>
+const fills = document.querySelectorAll('.skill-fill');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (!entry.isIntersecting) return;
+const fill = entry.target;
+const siblings = Array.from(fill.closest('.card').querySelectorAll('.skill-fill'));
+const idx = siblings.indexOf(fill);
+setTimeout(() => { fill.style.width = fill.dataset.pct + '%'; }, idx * 90);
+observer.unobserve(fill);
+});
+}, { threshold: 0.3 });
+fills.forEach(f => observer.observe(f));
+</script>
+
+<script>
+(function() {
+var btn = document.querySelector('.nav-hamburger');
+var menu = document.getElementById('nav-mobile-menu');
+if (!btn || !menu) return;
+btn.addEventListener('click', function() {
+var open = btn.getAttribute('aria-expanded') === 'true';
+btn.setAttribute('aria-expanded', String(!open));
+btn.classList.toggle('is-open', !open);
+menu.classList.toggle('is-open', !open);
+});
+menu.querySelectorAll('a').forEach(function(a) {
+a.addEventListener('click', function() {
+btn.setAttribute('aria-expanded', 'false');
+btn.classList.remove('is-open');
+menu.classList.remove('is-open');
+});
+});
+})();
+</script>
+
+<script>
+(function() {
+var btn = document.getElementById('bioReadMore');
+var content = document.getElementById('bioExpanded');
+if (!btn || !content) return;
+btn.addEventListener('click', function() {
+var open = btn.getAttribute('aria-expanded') === 'true';
+btn.setAttribute('aria-expanded', String(!open));
+content.classList.toggle('is-open', !open);
+btn.textContent = !open ? 'Read less' : 'Read more';
+});
+})();
+</script>
+
+<script>
+(function() {
+var btn = document.getElementById('certMoreBtn');
+var content = document.getElementById('certExpanded');
+var label = btn && btn.querySelector('.cert-more-label');
+if (!btn || !content || !label) return;
+btn.addEventListener('click', function() {
+var open = btn.getAttribute('aria-expanded') === 'true';
+btn.setAttribute('aria-expanded', String(!open));
+content.classList.toggle('is-open', !open);
+label.textContent = !open ? 'Show less ↑' : 'Show all →';
+});
+})();
+</script>
+
+</body>
+</html>

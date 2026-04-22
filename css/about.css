@@ -353,6 +353,18 @@
 .bento .a-col-6:has(.about-cert-item),
 .bento .a-col-6:has(.org-item) { align-self: stretch; }
 
+/* ── INTERESTS + DESIGN CAREER ROW — bottoms align ──
+   Left column is a flex-stacked wrapper (Experience + Interests).
+   Right column is a single card (Design/Multimedia Career). The right
+   card's natural height is taller, so we stretch both to the row's
+   natural height, then let the Interests card (last child of the left
+   stack) flex-grow to absorb the slack on the left side. */
+.bento .a-col-6[style*="flex-direction:column"],
+.bento .a-col-6.card-cream { align-self: stretch; }
+.bento .a-col-6[style*="flex-direction:column"] > .card:last-child {
+  flex: 1;
+}
+
 /* ── SKILL CARDS ROW (Design / Investigative Tech / Coding) — align bottoms ──
    The only .a-col-4 elements on this page are these three skill cards,
    so we can target them directly. Stretching them to the row's natural

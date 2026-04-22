@@ -32,6 +32,11 @@
     border-color: var(--terra-dark);
     color: var(--cream);
   }
+
+  /* slide 3 photo runs brighter than the others; darken to match */
+  .card-hero img.bg[src$="pencil-box.jpg"] {
+    filter: brightness(.55) saturate(.85);
+  }
 </style>
 </head>
 <body>
@@ -162,7 +167,7 @@
     </div>
   </a>
   <a href="/dom.html" class="card card-work-item med" style="height:460px; max-height:460px; grid-column:5/9; margin-top:0; text-decoration:none;">
-    <img src="img/3domensional.jpg" alt="3Domensional LLC — branded packaging tape on shipping box" style="object-position: center 30%;">
+    <img src="img/dom-card.jpg" alt="3Domensional LLC — branded packaging tape on shipping box" style="object-position: center 30%;">
     <div class="work-overlay"></div>
     <div class="work-item-content">
       <div class="work-item-cat">Brand Identity · Logo Design · Print</div>
@@ -312,7 +317,8 @@
       secondary: { label: "Let's talk", href: '/contact.html', terra: true },
     },
     {
-      img:     '/img/curious-img.jpg',
+      img:     '/img/britta-studio.jpg',
+      bgPosition: 'center 35%',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
       tagText: 'Discovery',
       h1:      'Taking a closer <em>look.</em>',
@@ -325,13 +331,13 @@
       bgPosition: 'center 45%',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>',
       tagText: 'Craft',
-      h1:      'Building with <em>care.</em>',
+      h1:      'Building with <em>values.</em>',
       p:       "Good brand work is built slowly. A color isn't just a color — it's a promise. A word isn't just a word — it's a posture. The care shows up in the details most people won't notice, but everyone will feel.",
       primary: { label: 'See the work', href: '#selected-work' },
       noSecondary: true,
     },
     {
-      img:     '/img/brand-outcome.jpg',
+      img:     '/img/cpch-brochure-dark.jpg',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>',
       tagText: 'The goal',
       h1:      'Brands that <em>last.</em>',

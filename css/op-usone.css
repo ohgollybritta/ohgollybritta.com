@@ -154,8 +154,8 @@
 .pipeline-desc em { color: var(--teal-light); font-style: normal; }
 
 
-/* ── SPINOFF REPO LINK ────────────────────────────────────── */
-.spinoff-repo-link {
+/* ── EXTENSION REPO LINK ────────────────────────────────────── */
+.extension-repo-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -170,9 +170,9 @@
   border-radius: 3px;
   transition: background .18s ease, border-color .18s ease, transform .18s ease;
 }
-.spinoff-repo-link:hover {
+.extension-repo-link:hover {
   background: rgba(91,184,168,.08);
   border-color: var(--teal-light);
   transform: translateX(2px);
 }
-.spinoff-repo-link svg { flex-shrink: 0; }
+.extension-repo-link svg { flex-shrink: 0; }

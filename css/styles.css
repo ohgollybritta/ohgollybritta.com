@@ -735,19 +735,22 @@ footer {
   .card-work, .card-stream {
     grid-column: span 2; grid-row: auto;
   }
-  .card-avatar, .card-spotify { grid-column: span 1; grid-row: auto; }
-  .card-spotify { padding: var(--pad-sm); }
-  .card-avatar { min-height: 200px; padding: 18px; }
-  .avatar-flip { width: 72px; height: 72px; }
-  .sp-album-art { width: 52px; height: 52px; }
-  .spotify-body .track-name { font-size: 15px; }
-  .spotify-body .track-artist { font-size: 11.5px; }
+  /* avatar + spotify go full-width and stack on mobile/tablet */
+  .card-avatar, .card-spotify { grid-column: span 2; grid-row: auto; }
+  .card-avatar { min-height: auto; padding: 22px; }
+  .card-spotify { padding: var(--pad-sm); min-height: 140px; }
+  .avatar-flip { width: 88px; height: 88px; }
+  .sp-album-art { width: 56px; height: 56px; }
+  .spotify-body .track-name { font-size: 16px; }
+  .spotify-body .track-artist { font-size: 12px; }
   .spotify-body .track-ago { font-size: 10px; }
   .hero-content h1 { font-size: clamp(36px, 9vw, 54px); }
   /* nav rules now live in nav.css (single source of truth) */
 }
 @media (max-width: 620px) {
   .bento { grid-template-columns: minmax(0, 1fr); }
+  .card-hero, .card-elsewhere, .card-fieldkit, .card-about,
+  .card-work, .card-stream,
   .card-avatar, .card-spotify { grid-column: span 1; }
   .card-hero { min-height: 420px; }
   .card-stream { flex-wrap: wrap; gap: 14px; }

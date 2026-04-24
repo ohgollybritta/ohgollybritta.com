@@ -66,7 +66,7 @@ body::after {
 /* ── BENTO GRID ── */
 .bento {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 14px;
   padding: 20px 22px 48px;
   max-width: 1440px; margin: 0 auto;
@@ -77,6 +77,7 @@ body::after {
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
+  min-width: 0;
   opacity: 0; transform: translateY(18px);
   animation: fadeUp .55s var(--ease-out) forwards;
   transition:
@@ -318,7 +319,7 @@ body::after {
 }
 .card-spotify:hover .sp-album-art { transform: scale(1.04); }
 
-.sp-track-info { min-width: 0; }
+.sp-track-info { flex: 1 1 0; min-width: 0; }
 .spotify-body .track-name {
   font-family: 'Fraunces', serif;
   font-size: 20px; font-weight: 700;
@@ -601,6 +602,7 @@ body::after {
   font-size: 10px; font-weight: 700; letter-spacing: .08em;
   text-transform: uppercase; padding: 4px 11px; border-radius: 100px;
   border: 1.5px solid currentColor;
+  white-space: nowrap;
   transition: background .2s, color .2s;
 }
 .t-terra { color: var(--terra); }
@@ -728,7 +730,7 @@ footer {
   .hero-content h1 { font-size: clamp(38px, 5.2vw, 58px); }
 }
 @media (max-width: 860px) {
-  .bento { grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px; }
+  .bento { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 14px; }
   .card-hero, .card-elsewhere, .card-fieldkit, .card-about,
   .card-work, .card-stream {
     grid-column: span 2; grid-row: auto;
@@ -742,13 +744,10 @@ footer {
   .spotify-body .track-artist { font-size: 11.5px; }
   .spotify-body .track-ago { font-size: 10px; }
   .hero-content h1 { font-size: clamp(36px, 9vw, 54px); }
-  nav { padding: 14px 18px; }
-  .nav-links, .nav-icons { display: none; }
-  .nav-hamburger { display: flex; flex-direction: column; justify-content: center; }
-  .nav-brand { position: static; transform: none; margin: 0 auto; }
+  /* nav rules now live in nav.css (single source of truth) */
 }
 @media (max-width: 620px) {
-  .bento { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: minmax(0, 1fr); }
   .card-avatar, .card-spotify { grid-column: span 1; }
   .card-hero { min-height: 420px; }
   .card-stream { flex-wrap: wrap; gap: 14px; }

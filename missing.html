@@ -341,6 +341,10 @@
 
   <div class="last-updated" id="last-updated"></div>
 
+  <div style="margin-top:48px; padding-top:24px; border-top:1px solid var(--terra-light); font-size:0.75rem; color:var(--ink); opacity:0.5; line-height:1.6; max-width:600px;">
+    This page is maintained as an OSINT analyst working resource. Data is sourced from the National Center for Missing & Exploited Children (NCMEC) public RSS feed and is displayed here for situational awareness and investigative reference purposes only. If you have information about a missing child, contact local law enforcement or call 1-800-THE-LOST (1-800-843-5678).
+  </div>
+
 </div>
 
 <script>
@@ -388,6 +392,10 @@ function parseItems(xml) {
       threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
       if (missingDate < threeYearsAgo) return;
     }
+
+    // Filter out anyone 17 or older
+    const ageCheck = desc.match(/Age Now:\s*(\d+)/);
+    if (ageCheck && parseInt(ageCheck[1]) >= 17) return;
 
     // Parse details
     const nameMatch = desc.match(/^(.+?),\s*Age Now:/);

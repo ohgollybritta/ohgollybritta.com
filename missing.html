@@ -351,8 +351,8 @@
 
   <!-- Priority corridor box -->
   <div class="sanford-box">
-    <div class="sanford-box-label">Priority &middot; Active Cases</div>
-    <div class="sanford-box-title">High-priority cases</div>
+    <div class="sanford-box-label">Corridor &middot; Active</div>
+    <div class="sanford-box-title">Flagged for Review</div>
     <div class="sanford-grid" id="sanford-cases">
       <div class="missing-loading">Loading cases...</div>
     </div>
@@ -421,9 +421,12 @@ function parseItems(xml) {
       if (missingDate < threeYearsAgo) return;
     }
 
-    // Filter out anyone 17 or older
+    // Filter out anyone 16 or older
     const ageCheck = desc.match(/Age Now:\s*(\d+)/);
-    if (ageCheck && parseInt(ageCheck[1]) >= 17) return;
+    if (ageCheck && parseInt(ageCheck[1]) >= 16) return;
+
+    // Filter out specific locations
+    if (desc.toUpperCase().includes('KEY BISCAYNE')) return;
 
     // Parse details
     const nameMatch = desc.match(/^(.+?),\s*Age Now:/);

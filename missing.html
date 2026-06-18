@@ -214,6 +214,24 @@
       box-shadow: 0 2px 12px rgba(44,26,14,0.08);
     }
 
+    .missing-card.flagged {
+      background: var(--terra-light);
+      border-left: 3px solid var(--terra);
+    }
+
+    .missing-card.flagged .missing-card-name {
+      color: var(--ink-2);
+    }
+
+    .missing-card.flagged .missing-card-detail {
+      color: var(--ink);
+      opacity: 0.75;
+    }
+
+    .missing-card.flagged a {
+      color: var(--terra-dark);
+    }
+
     .missing-card img {
       width: 64px;
       height: 80px;
@@ -420,7 +438,9 @@ function parseItems(xml) {
 }
 
 function renderCard(c, dark = false) {
-  const cls = dark ? 'sanford-card' : 'missing-card';
+  const age = parseInt(c.age);
+  const isFlagged = !dark && age >= 8 && age <= 14 && c.city.toUpperCase() !== 'MIAMI';
+  const cls = dark ? 'sanford-card' : (isFlagged ? 'missing-card flagged' : 'missing-card');
   const infoCls = dark ? 'sanford-card-info' : 'missing-card-info';
   const nameCls = dark ? 'sanford-card-name' : 'missing-card-name';
   const detCls = dark ? 'sanford-card-detail' : 'missing-card-detail';

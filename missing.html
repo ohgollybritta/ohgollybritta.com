@@ -388,6 +388,15 @@ function parseItems(xml) {
       return;
     }
 
+    // Filter out cases older than 3 years
+    const dateMatch0 = desc.match(/Missing:\s*([\d/]+)/);
+    if (dateMatch0) {
+      const missingDate = new Date(dateMatch0[1]);
+      const threeYearsAgo = new Date();
+      threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
+      if (missingDate < threeYearsAgo) return;
+    }
+
     // Parse details
     const nameMatch = desc.match(/^(.+?),\s*Age Now:/);
     const ageMatch = desc.match(/Age Now:\s*(\d+)/);

@@ -362,7 +362,7 @@
   <div class="missing-stats" id="stats-row"></div>
 
   <!-- All FL -->
-  <div class="section-label">All Active Cases &middot; Florida</div>
+  <div class="section-label">Filtered Cases &middot; Florida</div>
   <div class="missing-grid" id="all-cases">
     <div class="missing-loading">Loading Florida cases...</div>
   </div>
@@ -429,6 +429,7 @@ function parseItems(xml) {
     if (desc.toUpperCase().includes('KEY BISCAYNE')) return;
     if (desc.match(/Missing From\s+HOLLYWOOD/i)) return;
     if (desc.match(/Missing From\s+DAVIE/i)) return;
+    if (desc.match(/Missing From\s+SOUTH FLORIDA/i)) return;
 
     // Parse details
     const nameMatch = desc.match(/^(.+?),\s*Age Now:/);

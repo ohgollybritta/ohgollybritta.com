@@ -427,6 +427,8 @@ function parseItems(xml) {
 
     // Filter out specific locations
     if (desc.toUpperCase().includes('KEY BISCAYNE')) return;
+    if (desc.match(/Missing From\s+HOLLYWOOD/i)) return;
+    if (desc.match(/Missing From\s+DAVIE/i)) return;
 
     // Parse details
     const nameMatch = desc.match(/^(.+?),\s*Age Now:/);

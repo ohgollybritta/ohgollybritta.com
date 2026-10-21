@@ -451,3 +451,72 @@
   .cta-footer-heading  { font-size: 24px; }
   .cta-footer-btn      { width: 100%; justify-content: center; }
 }
+
+/* ── RECENT PROJECTS STRIP (restored; rules were dropped from styles.css) ── */
+.card-stream {
+  grid-column: 1/13; grid-row: 5/6;
+  background: var(--ink); padding: var(--pad-md) var(--pad-lg);
+  min-height: 120px;
+  display: flex; align-items: center; gap: 24px;
+  text-decoration: none; color: inherit;
+}
+.card-stream::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 260px; height: 260px; border-radius: 50%;
+  background: rgba(245,237,228,.08);
+  transition: transform .5s ease;
+}
+.card-stream:hover::before { transform: scale(1.25); }
+
+.tw-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative; z-index: 1;
+  transition: background .2s, transform .25s var(--ease-spring);
+}
+.card-stream:hover .tw-icon { transform: scale(1.08); }
+
+.tw-divider {
+  width: 1px; height: 50px;
+  flex-shrink: 0; position: relative; z-index: 1;
+}
+
+.tw-info { flex: 1; position: relative; z-index: 1; min-width: 0; }
+.tw-game-label {
+  font-size: 10px;
+  letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 4px;
+}
+.tw-game {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 800;
+  margin-bottom: 3px;
+  letter-spacing: -.005em;
+}
+.tw-desc {
+  font-size: 13px;
+  line-height: 1.5; max-width: 560px;
+}
+
+.live-badge {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid rgba(245,237,228,.2);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 100px;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+
+@media (max-width: 860px) {
+  .card-stream { grid-column: span 2; grid-row: auto; }
+}
+@media (max-width: 620px) {
+  .card-stream { grid-column: span 1; flex-wrap: wrap; gap: 14px; }
+  .tw-divider { display: none; }
+  .tw-info { flex-basis: calc(100% - 58px); }
+  .live-badge { margin-left: 58px; }
+}

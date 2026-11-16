@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css?v=6">
+<link rel="stylesheet" href="/css/styles.css?v=7">
 <link rel="stylesheet" href="/css/nav.css?v=3">
 <style>
   /* hero carousel crossfade */
@@ -52,22 +52,22 @@
 
 <main class="bento">
 
-  <!-- 1. HERO (carousel, auto-rotate kept, 4 slides incl. Mossbottom) -->
+  <!-- 1. HERO (carousel, auto-rotate kept, 5 slides; slide 1 = Public Awareness) -->
   <div class="card card-hero" role="region" aria-label="Featured thesis">
-    <img class="bg" src="/img/develop-img.jpg" alt="">
+    <img class="bg" src="/img/operation-usone-hero.jpg" alt="" style="object-position:center 40%">
     <div class="hero-tag">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <span class="hero-tag-text">Intelligence &amp; Investigations</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span class="hero-tag-text">Public Awareness</span>
     </div>
     <div class="hero-content">
-      <h1>Building tools<br>to find <em>them.</em></h1>
-      <p>Open-source intelligence and crypto tracing against human trafficking &mdash; and the tools built for recovery.</p>
+      <h1>50 million people.<br>Hidden in <em>plain sight.</em></h1>
+      <p>An estimated 50 million people live in modern slavery, including 3.3 million children in forced labor. Forced labor generates $236 billion in illegal profits every year. Learn the signs. Look closer.</p>
       <div class="hero-cta-row">
-        <a href="/operation-usone.html" class="hero-btn primary">
-          See the tools
+        <a href="https://www.dhs.gov/blue-campaign/indicators-human-trafficking" class="hero-btn primary">
+          Learn the signs
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="/contact.html" class="hero-btn secondary">Let's talk</a>
+        <a href="https://humantraffickinghotline.org/en" class="hero-btn secondary">Report a tip</a>
       </div>
     </div>
     <div class="dot-row" role="tablist" aria-label="Hero slides">
@@ -75,6 +75,7 @@
       <span role="tab" aria-label="Slide 2" tabindex="0"></span>
       <span role="tab" aria-label="Slide 3" tabindex="0"></span>
       <span role="tab" aria-label="Slide 4" tabindex="0"></span>
+      <span role="tab" aria-label="Slide 5" tabindex="0"></span>
     </div>
   </div>
 
@@ -112,83 +113,6 @@
       </p>
     </div>
   </div>
-
-  <!-- 3. ON MY RADAR (link-outs: things I'm paying attention to) -->
-  <!-- To add one: copy an <li class="radar-item">...</li> block, paste it at the top of the list, and change the link, title, source, date and tags. -->
-  <section class="card card-radar" aria-label="On My Radar">
-    <div class="widget-label">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-      On My Radar
-    </div>
-    <p class="radar-blurb">News stories I&rsquo;m paying attention to.</p>
-    <ul class="radar-list">
-
-      <li class="radar-item">
-        <a class="radar-link" href="https://www.wdbo.com/news/local/unidentified-blood-could-help-solve-ashley-olivers-21-year-old-murder/2B777UDQNZFTHO6ALOR3U6HQLQ/" target="_blank" rel="noopener">
-          <span class="radar-title">Unidentified blood could help solve Ashley Oliver&rsquo;s 21-year-old murder</span>
-          <span class="radar-meta">
-            <span class="radar-source">WDBO</span> &middot;
-            <time datetime="2026-11-14">Nov 14, 2026</time>
-          </span>
-          <span class="radar-url">wdbo.com/news/local/unidentified-blood-could-help-solve-ashley-olivers-21-year-old-murder</span>
-        </a>
-        <div class="work-tags radar-tags">
-          <span class="work-tag t-teal">DNA</span>
-          <span class="work-tag t-terra">Cold Case</span>
-          <span class="work-tag t-ink">Homicide</span>
-        </div>
-      </li>
-
-      <li class="radar-item">
-        <a class="radar-link" href="https://news.northeastern.edu/2026/11/13/faa-ground-stop-telecommunications-issue/" target="_blank" rel="noopener">
-          <span class="radar-title">Tech issue grounds all U.S. flights a day after global Microsoft outage</span>
-          <span class="radar-meta">
-            <span class="radar-source">Northeastern Global News</span> &middot;
-            <time datetime="2026-11-13">Nov 13, 2026</time>
-          </span>
-          <span class="radar-url">news.northeastern.edu/2026/11/13/faa-ground-stop-telecommunications-issue</span>
-        </a>
-        <div class="work-tags radar-tags">
-          <span class="work-tag t-teal">Outage</span>
-          <span class="work-tag t-terra">International</span>
-          <span class="work-tag t-ink">Global</span>
-        </div>
-      </li>
-
-      <li class="radar-item">
-        <a class="radar-link" href="https://www.coindesk.com/tech/2026/11/16/bitcoin-miners-were-hijacked-and-their-btc-rewards-redirected-to-an-attacker" target="_blank" rel="noopener">
-          <span class="radar-title">Bitcoin miners were hijacked and their BTC rewards redirected to an attacker</span>
-          <span class="radar-meta">
-            <span class="radar-source">CoinDesk</span> &middot;
-            <time datetime="2026-11-16">Nov 16, 2026</time>
-          </span>
-          <span class="radar-url">coindesk.com/tech/2026/11/16/bitcoin-miners-were-hijacked-and-their-btc-rewards-redirected-to-an-attacker</span>
-        </a>
-        <div class="work-tags radar-tags">
-          <span class="work-tag t-teal">Crypto</span>
-          <span class="work-tag t-terra">Heist</span>
-          <span class="work-tag t-ink">Cybercrime</span>
-        </div>
-      </li>
-
-      <li class="radar-item">
-        <a class="radar-link" href="https://www.wcjb.com/2026/06/02/sara-ebersole-missing-persons-case-gains-renewed-attention/" target="_blank" rel="noopener">
-          <span class="radar-title">Sara Ebersole missing persons case gains renewed attention</span>
-          <span class="radar-meta">
-            <span class="radar-source">WCJB</span> &middot;
-            <time datetime="2026-06-02">Jun 2, 2026</time>
-          </span>
-          <span class="radar-url">wcjb.com/2026/06/02/sara-ebersole-missing-persons-case-gains-renewed-attention</span>
-        </a>
-        <div class="work-tags radar-tags">
-          <span class="work-tag t-teal">Missing Person</span>
-          <span class="work-tag t-terra">Unsolved</span>
-          <span class="work-tag t-ink">Advocacy</span>
-        </div>
-      </li>
-
-    </ul>
-  </section>
 
   <!-- 4. CYBER INVESTIGATIONS (formerly Field Kit) -->
   <div class="card card-fieldkit">
@@ -305,16 +229,104 @@
   </div>
 
 
+  <!-- 3. ON MY RADAR (link-outs: things I'm paying attention to) -->
+  <!-- To add one: copy an <li class="radar-item">...</li> block, paste it at the top of the list, and change the link, title, source, date and tags. -->
+  <section class="card card-radar" aria-label="On My Radar">
+    <div class="widget-label">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      On My Radar
+    </div>
+    <p class="radar-blurb">News stories I&rsquo;m paying attention to.</p>
+    <ul class="radar-list">
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.wdbo.com/news/local/unidentified-blood-could-help-solve-ashley-olivers-21-year-old-murder/2B777UDQNZFTHO6ALOR3U6HQLQ/" target="_blank" rel="noopener">
+          <span class="radar-title">Unidentified blood could help solve Ashley Oliver&rsquo;s 21-year-old murder</span>
+          <span class="radar-meta">
+            <span class="radar-source">WDBO</span> &middot;
+            <time datetime="2026-11-14">Nov 14, 2026</time>
+          </span>
+          <span class="radar-url">wdbo.com/news/local/unidentified-blood-could-help-solve-ashley-olivers-21-year-old-murder</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">DNA</span>
+          <span class="work-tag t-terra">Cold Case</span>
+          <span class="work-tag t-ink">Homicide</span>
+        </div>
+      </li>
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://news.northeastern.edu/2026/11/13/faa-ground-stop-telecommunications-issue/" target="_blank" rel="noopener">
+          <span class="radar-title">Tech issue grounds all U.S. flights a day after global Microsoft outage</span>
+          <span class="radar-meta">
+            <span class="radar-source">Northeastern Global News</span> &middot;
+            <time datetime="2026-11-13">Nov 13, 2026</time>
+          </span>
+          <span class="radar-url">news.northeastern.edu/2026/11/13/faa-ground-stop-telecommunications-issue</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Outage</span>
+          <span class="work-tag t-terra">International</span>
+          <span class="work-tag t-ink">Global</span>
+        </div>
+      </li>
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.coindesk.com/tech/2026/11/16/bitcoin-miners-were-hijacked-and-their-btc-rewards-redirected-to-an-attacker" target="_blank" rel="noopener">
+          <span class="radar-title">Bitcoin miners were hijacked and their BTC rewards redirected to an attacker</span>
+          <span class="radar-meta">
+            <span class="radar-source">CoinDesk</span> &middot;
+            <time datetime="2026-11-16">Nov 16, 2026</time>
+          </span>
+          <span class="radar-url">coindesk.com/tech/2026/11/16/bitcoin-miners-were-hijacked-and-their-btc-rewards-redirected-to-an-attacker</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Crypto</span>
+          <span class="work-tag t-terra">Heist</span>
+          <span class="work-tag t-ink">Cybercrime</span>
+        </div>
+      </li>
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.wcjb.com/2026/06/02/sara-ebersole-missing-persons-case-gains-renewed-attention/" target="_blank" rel="noopener">
+          <span class="radar-title">Sara Ebersole missing persons case gains renewed attention</span>
+          <span class="radar-meta">
+            <span class="radar-source">WCJB</span> &middot;
+            <time datetime="2026-06-02">Jun 2, 2026</time>
+          </span>
+          <span class="radar-url">wcjb.com/2026/06/02/sara-ebersole-missing-persons-case-gains-renewed-attention</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Missing Person</span>
+          <span class="work-tag t-terra">Unsolved</span>
+          <span class="work-tag t-ink">Advocacy</span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
 </main>
 
 <footer>© 2026 oh golly britta &nbsp;·&nbsp; look closer · build bolder &nbsp;·&nbsp; made with ♡, terracotta &amp; a healthy suspicion of default settings</footer>
 
 <script>
-/* ── HERO CAROUSEL (auto-rotate KEPT; slide 1 = Intelligence & Investigations) ── */
+/* ── HERO CAROUSEL (auto-rotate KEPT; slide 1 = Public Awareness) ── */
 (function() {
   var INTERVAL = 22000;
   var slides = [
-    /* slide 1: Intelligence & Investigations (leads; formerly slide 3) */
+    /* slide 1: Public Awareness. Sources: ILO/Walk Free/IOM Global Estimates of Modern Slavery (2022); ILO Profits and Poverty (2024) */
+    {
+      img:     '/img/operation-usone-hero.jpg',
+      bgPosition: 'center 40%',
+      tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
+      tagText: 'Public Awareness',
+      h1:      '50 million people.<br>Hidden in <em>plain sight.</em>',
+      p:       'An estimated 50 million people live in modern slavery, including 3.3 million children in forced labor. Forced labor generates $236 billion in illegal profits every year. Learn the signs. Look closer.',
+      primary: { label: 'Learn the signs', href: 'https://www.dhs.gov/blue-campaign/indicators-human-trafficking' },
+      secondary: { label: 'Report a tip', href: 'https://humantraffickinghotline.org/en' },
+    },
+    /* slide 2: Intelligence & Investigations */
     {
       img:     '/img/develop-img.jpg',
       tagSvg:  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',

@@ -279,9 +279,58 @@ body::after {
   padding: 5px 11px;
 }
 
+/* ── 3. ON MY RADAR (link-outs under the carousel) ── */
+.card-radar {
+  grid-column: 1/13; grid-row: 3/4;
+  background: var(--cream);
+  padding: var(--pad-md) var(--pad-lg);
+}
+.card-radar .widget-label { color: var(--terra); }
+.radar-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+.radar-item {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid rgba(44,26,14,.1);
+  min-width: 0;
+  transition: border-color .2s, transform .2s;
+}
+.radar-item:hover { border-color: rgba(193,101,74,.45); transform: translateY(-2px); }
+.radar-link { display: block; text-decoration: none; color: inherit; }
+.radar-title {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 17px; font-weight: 700; line-height: 1.25;
+  color: var(--ink);
+}
+.radar-link:hover .radar-title { color: var(--terra-dark); }
+.radar-meta {
+  display: block; margin-top: 6px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(44,26,14,.55);
+}
+.radar-source { color: var(--teal-dark); }
+.radar-url {
+  display: block; margin-top: 3px;
+  font-size: 11.5px; color: rgba(44,26,14,.45);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.radar-tags { margin-top: 10px; }
+.radar-tags .work-tag { font-size: 9.5px; padding: 3px 10px; }
+.radar-item:hover .t-terra { background: var(--terra); color: var(--cream); }
+.radar-item:hover .t-teal  { background: var(--teal-dark); color: var(--cream); }
+.radar-item:hover .t-ink   { background: rgba(44,26,14,.55); color: var(--cream); }
+
 /* ── 4. FIELD KIT (cyber / OSINT — replaces Continued Ed slot) ── */
 .card-fieldkit {
-  grid-column: 1/13; grid-row: 3/4;
+  grid-column: 1/7; grid-row: 4/5;
   background: var(--ink-2);
   padding: var(--pad-md) var(--pad-lg);
   min-height: 200px;
@@ -382,7 +431,7 @@ body::after {
 
 /* ── 5. ELSEWHERE (merged IG + X social strip) ── */
 .card-elsewhere {
-  grid-column: 8/13; grid-row: 4/5;
+  grid-column: 7/13; grid-row: 4/5;
   background: var(--teal);
   padding: var(--pad-md) var(--pad-lg); min-height: 200px;
   display: flex; flex-direction: column; justify-content: space-between;
@@ -485,7 +534,7 @@ body::after {
 
 /* ── 7. WORK ── */
 .card-work {
-  grid-column: 1/8; grid-row: 4/5;
+  grid-column: 1/13; grid-row: 5/6;
   background: var(--cream);
   padding: var(--pad-lg); min-height: 190px;
   display: flex; flex-direction: column; justify-content: space-between;
@@ -579,15 +628,15 @@ footer {
   .card-hero { min-height: 500px; grid-column: 1/9; grid-row: 1/3; }
   .card-avatar { grid-column: 9/13; grid-row: 1/2; }
   .card-elsewhere { grid-column: 7/13; grid-row: 4/5; }
-  .card-fieldkit { grid-column: 1/13; grid-row: 3/4; }
+  .card-fieldkit { grid-column: 1/7; grid-row: 4/5; }
   .card-about { grid-column: 9/13; grid-row: 2/3; }
-  .card-work { grid-column: 1/7; grid-row: 4/5; }
+  .card-work { grid-column: 1/13; grid-row: 5/6; }
   .hero-content h1 { font-size: clamp(38px, 5.2vw, 58px); }
 }
 @media (max-width: 860px) {
   .bento { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 14px; }
   .card-hero, .card-elsewhere, .card-fieldkit, .card-about,
-  .card-work, .card-avatar {
+  .card-work, .card-avatar, .card-radar {
     grid-column: span 2; grid-row: auto;
   }
   .card-avatar { min-height: auto; padding: 22px; }
@@ -598,7 +647,7 @@ footer {
 @media (max-width: 620px) {
   .bento { grid-template-columns: minmax(0, 1fr); }
   .card-hero, .card-elsewhere, .card-fieldkit, .card-about,
-  .card-work, .card-avatar { grid-column: span 1; }
+  .card-work, .card-avatar, .card-radar { grid-column: span 1; }
   .card-hero { min-height: 420px; }
 }
 

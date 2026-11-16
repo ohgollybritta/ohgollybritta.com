@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn the Signs of Human Trafficking | Oh golly, Britta!</title>
+<meta name="description" content="Warning signs of human trafficking, U.S. hotline data, and how to report a tip safely.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css?v=7">
+<link rel="stylesheet" href="/css/nav.css?v=3">
+<style>
+  .signs-page { max-width: 1100px; margin: 0 auto; padding: 28px 22px 56px; }
+
+  .signs-hero {
+    position: relative; overflow: hidden;
+    background: var(--ink-2); color: var(--cream);
+    border-radius: var(--radius);
+    padding: 48px var(--pad-lg) 40px;
+  }
+  .signs-hero img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 40%; opacity: .32;
+  }
+  .signs-hero > *:not(img) { position: relative; z-index: 1; }
+  .signs-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    background: rgba(245,237,228,.12); border: 1px solid rgba(245,237,228,.22);
+    padding: 6px 14px; border-radius: 100px;
+  }
+  .signs-hero h1 {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(44px, 6.5vw, 80px); line-height: .95; letter-spacing: -.025em;
+    margin: 22px 0 16px;
+  }
+  .signs-hero h1 em { color: var(--teal-light); font-style: italic; font-weight: 400; }
+  .signs-hero p { max-width: 620px; font-size: 17px; line-height: 1.6; color: rgba(245,237,228,.82); }
+
+  .signs-stats {
+    display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px;
+    margin-top: 14px;
+  }
+  .signs-stat {
+    background: var(--terra-dark); color: var(--cream);
+    border-radius: var(--radius); padding: var(--pad-md);
+  }
+  .signs-stat strong {
+    display: block; font-family: 'Fraunces', serif; font-weight: 800;
+    font-size: clamp(34px, 4vw, 48px); line-height: 1; letter-spacing: -.02em;
+  }
+  .signs-stat span { display: block; margin-top: 8px; font-size: 14px; line-height: 1.45; color: rgba(245,237,228,.82); }
+  .signs-note { font-size: 12.5px; color: rgba(44,26,14,.6); margin: 10px 4px 0; line-height: 1.5; }
+
+  .signs-label {
+    font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--terra); margin: 44px 4px 14px;
+  }
+  .signs-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  .signs-card {
+    background: var(--cream); border-radius: var(--radius); padding: var(--pad-md) var(--pad-lg);
+  }
+  .signs-card h2 {
+    font-family: 'Fraunces', serif; font-size: 24px; font-weight: 800; line-height: 1.1;
+    color: var(--ink); margin-bottom: 14px;
+  }
+  .signs-card h2 em { color: var(--teal-dark); font-style: italic; font-weight: 500; }
+  .signs-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .signs-card li {
+    position: relative; padding-left: 20px;
+    font-size: 15px; line-height: 1.5; color: rgba(44,26,14,.85);
+  }
+  .signs-card li::before {
+    content: ''; position: absolute; left: 0; top: .55em;
+    width: 8px; height: 8px; border-radius: 50%; background: var(--terra);
+  }
+  .moms-card { background: var(--paper); border: 1.5px solid rgba(61,154,139,.35); }
+  .moms-list { display: grid !important; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 28px !important; }
+  .moms-list li::before { background: var(--teal) !important; }
+  .moms-list strong { color: var(--ink); }
+  .moms-list a { color: var(--teal-dark); }
+  .signs-caution {
+    margin-top: 14px; padding: 18px var(--pad-lg);
+    border-radius: var(--r-lg); border: 1.5px dashed rgba(193,101,74,.5);
+    font-size: 15px; line-height: 1.55; color: rgba(44,26,14,.85);
+  }
+
+  .signs-report { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+  .report-card {
+    border-radius: var(--radius); padding: var(--pad-md);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .report-card.urgent { background: var(--ink-2); color: var(--cream); }
+  .report-card.hotline { background: var(--teal); color: var(--cream); }
+  .report-card.tip { background: var(--cream); color: var(--ink); }
+  .report-card .rc-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .75; }
+  .report-card .rc-big { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 800; line-height: 1.05; }
+  .report-card .rc-big a { color: inherit; text-decoration: none; }
+  .report-card .rc-big a:hover { text-decoration: underline; }
+  .report-card p { font-size: 14px; line-height: 1.5; opacity: .88; }
+
+  .signs-sources { margin-top: 40px; font-size: 12.5px; line-height: 1.6; color: rgba(44,26,14,.6); max-width: 760px; }
+  .signs-sources a { color: var(--terra-dark); }
+
+  @media (max-width: 860px) {
+    .signs-grid, .signs-report, .moms-list { grid-template-columns: minmax(0,1fr) !important; }
+    .signs-stats { grid-template-columns: minmax(0,1fr); }
+    .signs-page { padding: 16px 14px 48px; }
+    .signs-hero { padding: 36px 24px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://www.instagram.com/ohgollybritta" aria-label="Instagram" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://github.com/ohgollybritta" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.twitch.tv/ohgollybritta" aria-label="Twitch" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="signs-page">
+
+  <section class="signs-hero" aria-labelledby="signs-title">
+    <img src="/img/operation-usone-hero.jpg" alt="">
+    <span class="signs-eyebrow">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      Public Awareness
+    </span>
+    <h1 id="signs-title">Learn the <em>signs.</em></h1>
+    <p>Trafficking rarely looks like the movies. It hides in ordinary places: hotels, spas, farms, homes and phones. These are the warning signs worth a closer look.</p>
+  </section>
+
+  <div class="signs-stats" aria-label="U.S. National Human Trafficking Hotline, 2025">
+    <div class="signs-stat"><strong>15,085</strong><span>trafficking cases identified by the U.S. National Human Trafficking Hotline in 2025</span></div>
+    <div class="signs-stat"><strong>21,457</strong><span>victims involved in those cases</span></div>
+    <div class="signs-stat"><strong>2,221</strong><span>of those victims were minors, among cases where age was known</span></div>
+  </div>
+  <p class="signs-note">These numbers count only the situations someone reported to the hotline. The real scale is larger.</p>
+
+  <div class="signs-label">What to look for</div>
+  <div class="signs-grid">
+    <div class="signs-card">
+      <h2>Isolation &amp; <em>control</em></h2>
+      <ul>
+        <li>Seems cut off from family, friends, community groups or a place of worship.</li>
+        <li>Is often with someone who speaks for them or decides where they go and who they talk to.</li>
+        <li>Appears to have been coached on what to say.</li>
+        <li>Can&rsquo;t come and go freely, or lives or works behind unusual security.</li>
+      </ul>
+    </div>
+    <div class="signs-card">
+      <h2>Physical &amp; <em>emotional</em></h2>
+      <ul>
+        <li>Has bruises or injuries in various stages of healing.</li>
+        <li>Shows signs of being denied food, water, sleep or medical care.</li>
+        <li>Is fearful, timid or submissive.</li>
+        <li>Seems disoriented or confused, or has had a sudden, dramatic change in behavior.</li>
+      </ul>
+    </div>
+    <div class="signs-card">
+      <h2>Living &amp; <em>working</em></h2>
+      <ul>
+        <li>Lives in unsuitable or overcrowded conditions.</li>
+        <li>Has few personal possessions and no stable place to live.</li>
+      </ul>
+    </div>
+    <div class="signs-card">
+      <h2>Children &amp; <em>teens</em></h2>
+      <ul>
+        <li>Has suddenly stopped going to school.</li>
+        <li>Has gifts, gift cards, money or a phone they can&rsquo;t explain, or is secretive about who they talk to online.</li>
+        <li>Is involved in commercial sex in any way. Under U.S. federal law, any minor in commercial sex is a trafficking victim.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="signs-caution">No single sign proves trafficking, and not every situation shows every sign. Don&rsquo;t confront a suspected trafficker or let a possible victim know you&rsquo;re suspicious. Your safety and theirs come first. Report what you saw and let law enforcement investigate.</div>
+
+
+  <div class="signs-label">For moms</div>
+  <div class="signs-card moms-card">
+    <h2>Protecting <em>kids &amp; teens</em></h2>
+    <ul class="moms-list">
+      <li><strong>Talk early and often.</strong> Explain what grooming looks like: flattery, gifts, secrets and slow pressure from someone who seems to &ldquo;get&rdquo; them.</li>
+      <li><strong>Make it safe to tell you.</strong> Promise they won&rsquo;t lose their phone or get in trouble for telling you someone made them uncomfortable.</li>
+      <li><strong>Know their apps and games.</strong> Predators reach kids on social media, messaging apps and gaming platforms, then push them to private chats or texting.</li>
+      <li><strong>Name the lures.</strong> Offers of gift cards, money, rides, food or a place to stay are common ways strangers hook kids.</li>
+      <li><strong>Remind them people pretend.</strong> Someone online may lie about their age or who they are, even with real-looking photos.</li>
+      <li><strong>Lock down accounts.</strong> Keep profiles private, review followers together and turn off location sharing.</li>
+      <li><strong>Boys are targets too.</strong> Financial sextortion, where a stranger demands money over a photo, most often targets teenage boys.</li>
+      <li><strong>If it happens, stay calm.</strong> Don&rsquo;t pay and don&rsquo;t delete the messages. Block the person, then report to NCMEC&rsquo;s <a href="https://report.cybertip.org" target="_blank" rel="noopener">CyberTipline</a> and local police. NCMEC&rsquo;s <a href="https://takeitdown.ncmec.org" target="_blank" rel="noopener">Take It Down</a> can help remove images.</li>
+    </ul>
+  </div>
+
+  <div class="signs-label">How to report</div>
+  <div class="signs-report">
+    <div class="report-card urgent">
+      <span class="rc-label">Immediate danger</span>
+      <span class="rc-big"><a href="tel:911">Call 911</a></span>
+      <p>If someone is in danger right now, call 911 first.</p>
+    </div>
+    <div class="report-card hotline">
+      <span class="rc-label">National Human Trafficking Hotline</span>
+      <span class="rc-big"><a href="tel:18883737888">1-888-373-7888</a></span>
+      <p>Text HELP or INFO to <a href="sms:233733" style="color:inherit">233733</a>. TTY: 711. Free, confidential and open 24/7. <a href="https://humantraffickinghotline.org/en" target="_blank" rel="noopener" style="color:inherit">humantraffickinghotline.org</a></p>
+    </div>
+    <div class="report-card tip">
+      <span class="rc-label">Report criminal activity</span>
+      <span class="rc-big"><a href="tel:18663472423">1-866-347-2423</a></span>
+      <p>Homeland Security Investigations tip line, open 24/7. For information about a missing child, call 1-800-THE-LOST.</p>
+    </div>
+  </div>
+
+  <p class="signs-sources">Sources: warning signs adapted from the <a href="https://www.dhs.gov/blue-campaign/indicators-human-trafficking" target="_blank" rel="noopener">U.S. Department of Homeland Security Blue Campaign</a>. Tips for parents adapted from the National Center for Missing &amp; Exploited Children on <a href="https://www.missingkids.org/theissues/onlineenticement" target="_blank" rel="noopener">online enticement</a> and <a href="https://www.missingkids.org/theissues/sextortion" target="_blank" rel="noopener">sextortion</a>. 2025 figures from the <a href="https://humantraffickinghotline.org/en/statistics" target="_blank" rel="noopener">National Human Trafficking Hotline statistics</a>, which reflect only situations reported to the hotline.</p>
+
+</main>
+
+<footer>&copy; 2026 oh golly britta &nbsp;&middot;&nbsp; look closer &middot; build bolder &nbsp;&middot;&nbsp; made with &hearts;, terracotta &amp; a healthy suspicion of default settings</footer>
+
+<script>
+/* ── MOBILE NAV ── */
+(function() {
+  var btn  = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    menu.classList.toggle('is-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

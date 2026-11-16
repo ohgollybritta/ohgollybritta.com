@@ -27,6 +27,12 @@
   .wk-card.teal { background: var(--teal); color: var(--cream); }
   .wk-card.terra { background: var(--terra-dark); color: var(--cream); }
   .wk-card.salmon { background: #E4AE9C; }
+  .wk-card.photo { background: var(--ink); color: var(--cream); }
+  .wk-card.photo img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; opacity: .4; transition: opacity .4s ease, transform .6s ease; }
+  .wk-card.photo:hover img.bg { opacity: .5; transform: scale(1.03); }
+  .wk-card.photo > *:not(img) { position: relative; z-index: 1; }
+  .wk-card.photo h2 em { color: var(--teal-light); }
+  .wk-card.photo .wk-cta { color: var(--cream); }
   .wk-meta { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .7; }
   .wk-card h2 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 800; line-height: 1.1; }
   .wk-card h2 em { font-style: italic; font-weight: 500; color: var(--teal-dark); }
@@ -150,7 +156,8 @@
     <div class="wk-opsec">Organization, methods and casework withheld for operational security.</div>
   </div>
 
-  <a class="card wk-card cream is-link wk-third-b" href="/operation-usone.html">
+  <a class="card wk-card photo is-link wk-third-b" href="/operation-usone.html">
+    <img class="bg" src="/img/operation-usone-hero.jpg" alt="">
     <span class="wk-meta">Python &middot; Linux &middot; Active development</span>
     <h2>Operation <em>US-One</em></h2>
     <p>An OSINT collection and analysis program that turns public sources into structured output for analyst review and law enforcement referral.</p>
@@ -189,7 +196,7 @@
     </div>
   </div>
 
-  <div class="card wk-card cream wk-full">
+  <div class="card wk-card salmon wk-full">
     <span class="wk-meta">Research papers</span>
     <a class="paper" href="https://www.researchgate.net/publication/414188757_Identification_as_Protection_A_Pre-Arrest_Diversion_Protocol_for_Victim-Offenders_in_Commercial-Sex_Enforcement_Criminology_and_Public_Policy" target="_blank" rel="noopener">
       <strong>Identification as Protection: A Pre-Arrest Diversion Protocol for Victim-Offenders in Commercial-Sex Enforcement</strong>

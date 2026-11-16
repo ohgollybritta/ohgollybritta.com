@@ -282,7 +282,7 @@ body::after {
 /* ── 3. ON MY RADAR (link-outs under the carousel) ── */
 .card-radar {
   grid-column: 1/13; grid-row: 3/4;
-  background: #EA9A80; /* salmon from the middle of the avatar background */
+  background: #E4AE9C; /* salmon from the middle of the avatar background */
   padding: var(--pad-md) var(--pad-lg);
 }
 .card-radar .widget-label { color: rgba(44,26,14,.78); }

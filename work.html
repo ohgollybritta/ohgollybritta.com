@@ -77,11 +77,16 @@
   .wk-archive:hover { border-color: var(--terra); }
   .wk-archive .wk-cta { margin-top: 0; }
 
+  .bento .card-work { grid-column: 1 / 13; grid-row: auto; }
+  .wk-numbers a { color: var(--terra-dark); }
+
   @media (max-width: 860px) {
+    .bento .card-work { grid-column: span 2; }
     .wk-hero, .wk-contact, .wk-third-a, .wk-third-b, .wk-third-c, .wk-half-a, .wk-half-b, .wk-full { grid-column: span 2; }
     .wk-hero { min-height: 360px; }
   }
   @media (max-width: 620px) {
+    .bento .card-work { grid-column: span 1; }
     .wk-hero, .wk-contact, .wk-third-a, .wk-third-b, .wk-third-c, .wk-half-a, .wk-half-b, .wk-full { grid-column: span 1; }
   }
 </style>
@@ -138,9 +143,7 @@
     </div>
   </div>
 
-  <h2 class="wk-head">Cyber <em>investigations</em></h2>
-
-  <div class="card wk-card dark wk-third-a">
+  <div class="card wk-card terra wk-third-a">
     <span class="wk-meta">Current role &middot; Jul 2025 &ndash; Present</span>
     <h2>OSINT <em>Analyst</em></h2>
     <p>Open-source intelligence for an anti-trafficking nonprofit, supporting victim identification and case development for law enforcement handoff.</p>
@@ -161,8 +164,6 @@
     <span class="wk-cta">Open the watch &rarr;</span>
   </a>
 
-  <h2 class="wk-head">Awareness &amp; <em>resources</em></h2>
-
   <a class="card wk-card teal is-link wk-third-a" href="/signs.html">
     <span class="wk-meta">Public awareness</span>
     <h2>Learn the <em>signs</em></h2>
@@ -177,7 +178,7 @@
     <span class="wk-cta">Start the training &rarr;</span>
   </a>
 
-  <div class="card wk-card dark wk-third-c">
+  <div class="card wk-card cream wk-third-c">
     <span class="wk-meta">Report a tip</span>
     <h2>Who to <em>call</em></h2>
     <div class="wk-numbers">
@@ -187,8 +188,6 @@
       <span>Child exploitation: <a href="https://report.cybertip.org" target="_blank" rel="noopener">NCMEC CyberTipline</a></span>
     </div>
   </div>
-
-  <h2 class="wk-head">Research &amp; <em>credentials</em></h2>
 
   <div class="card wk-card cream wk-half-a">
     <span class="wk-meta">Published research</span>
@@ -214,9 +213,23 @@
     </ul>
   </div>
 
-  <a class="card wk-card wk-archive is-link wk-full" href="/design.html">
-    <span><strong>Design archive.</strong> Brand identities, print and web work from my years as a designer.</span>
-    <span class="wk-cta">View the archive &rarr;</span>
+  <a class="card card-work is-link" href="/design.html">
+    <div class="work-header">
+      <div>
+        <div class="work-eyebrow">Design Work</div>
+        <div class="work-heading">Brands built by<br>looking closer first.</div>
+      </div>
+      <img class="work-avatar" src="/img/ogblogo100x80.png" alt="Britta's Critter" title="Britta's Critter">
+    </div>
+    <div>
+      <div class="work-tags">
+        <span class="work-tag t-terra">Brand Identity</span>
+        <span class="work-tag t-teal">Print &amp; Collateral</span>
+        <span class="work-tag t-ink">Typography</span>
+        <span class="work-tag t-terra">Web Design</span>
+      </div>
+      <span class="work-cta">View portfolio →</span>
+    </div>
   </a>
 
 </main>

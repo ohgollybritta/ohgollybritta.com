@@ -13,70 +13,76 @@
 <link rel="stylesheet" href="/css/styles.css?v=7">
 <link rel="stylesheet" href="/css/nav.css?v=3">
 <style>
-  .inv-page { max-width: 1100px; margin: 0 auto; padding: 28px 22px 56px; }
-  .inv-hero { position: relative; overflow: hidden; background: var(--ink-2); color: var(--cream); border-radius: var(--radius); padding: 48px var(--pad-lg) 40px; }
-  .inv-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .28; }
-  .inv-hero > *:not(img) { position: relative; z-index: 1; }
-  .inv-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: rgba(245,237,228,.12); border: 1px solid rgba(245,237,228,.22); padding: 6px 14px; border-radius: 100px; }
-  .inv-hero h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(44px, 6.5vw, 80px); line-height: .95; letter-spacing: -.025em; margin: 22px 0 16px; }
-  .inv-hero h1 em { color: var(--teal-light); font-style: italic; font-weight: 400; }
-  .inv-hero p { max-width: 640px; font-size: 17px; line-height: 1.6; color: rgba(245,237,228,.82); }
-  .inv-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
-  .inv-tags span { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 11px; border-radius: 100px; border: 1.5px solid rgba(91,184,168,.7); color: var(--teal-light); }
+  .bento { padding-top: 20px; }
+  .wk-head {
+    grid-column: 1 / -1;
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(28px, 3vw, 38px); letter-spacing: -.02em; line-height: 1.05;
+    color: var(--ink); margin: 26px 6px 0;
+  }
+  .wk-head em { font-style: italic; font-weight: 400; color: var(--teal-dark); }
+  .wk-card { padding: var(--pad-md) var(--pad-lg); display: flex; flex-direction: column; gap: 10px; color: var(--ink); text-decoration: none; min-height: 220px; }
+  .wk-card.dark { background: var(--ink-2); color: var(--cream); border: 1px solid rgba(91,184,168,.15); }
+  .wk-card.cream { background: var(--cream); }
+  .wk-card.teal { background: var(--teal); color: var(--cream); }
+  .wk-card.terra { background: var(--terra-dark); color: var(--cream); }
+  .wk-card.salmon { background: #E4AE9C; }
+  .wk-meta { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .7; }
+  .wk-card h2 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 800; line-height: 1.1; }
+  .wk-card h2 em { font-style: italic; font-weight: 500; color: var(--teal-dark); }
+  .wk-card.dark h2 em { color: var(--teal-light); }
+  .wk-card.teal h2 em, .wk-card.terra h2 em { color: var(--cream); opacity: .85; }
+  .wk-card p { font-size: 15px; line-height: 1.55; opacity: .9; }
+  .wk-cta { margin-top: auto; font-size: 13px; font-weight: 700; letter-spacing: .03em; color: var(--terra-dark); }
+  .wk-card.dark .wk-cta, .wk-card.teal .wk-cta, .wk-card.terra .wk-cta { color: var(--cream); }
+  .wk-opsec { font-size: 12.5px; line-height: 1.5; padding: 8px 12px; border-radius: var(--r-md); border: 1px dashed rgba(245,237,228,.3); color: rgba(245,237,228,.72); margin-top: auto; }
 
-  .inv-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--terra); margin: 44px 4px 14px; }
-  .inv-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
-  .inv-card { background: var(--cream); border-radius: var(--radius); padding: var(--pad-md) var(--pad-lg); display: flex; flex-direction: column; gap: 10px; color: var(--ink); text-decoration: none; }
-  a.inv-card { transition: transform .3s var(--ease-spring), box-shadow .3s ease; }
-  a.inv-card:hover { transform: translateY(-4px); box-shadow: 0 20px 52px rgba(44,26,14,.14); }
-  .inv-card.dark { background: var(--ink-2); color: var(--cream); border: 1px solid rgba(91,184,168,.15); }
-  .inv-card.teal { background: var(--teal); color: var(--cream); }
-  .inv-meta { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .65; }
-  .inv-card h2 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 800; line-height: 1.1; }
-  .inv-card h2 em { font-style: italic; font-weight: 500; color: var(--teal-dark); }
-  .inv-card.dark h2 em { color: var(--teal-light); }
-  .inv-card p { font-size: 15px; line-height: 1.55; opacity: .88; }
-  .inv-card .inv-cta { margin-top: auto; font-size: 13px; font-weight: 700; letter-spacing: .03em; color: var(--terra); }
-  .inv-card.dark .inv-cta, .inv-card.teal .inv-cta { color: var(--cream); }
-  .inv-opsec { font-size: 13px; line-height: 1.5; padding: 10px 14px; border-radius: var(--r-md); border: 1px dashed rgba(245,237,228,.3); color: rgba(245,237,228,.75); }
-  .inv-wide { grid-column: 1 / -1; }
+  .wk-hero { grid-column: 1 / 9; background: var(--ink); color: var(--cream); padding: var(--pad-lg); min-height: 400px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .wk-hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; }
+  .wk-hero > *:not(img) { position: relative; z-index: 1; }
+  .wk-hero h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(44px, 5.6vw, 72px); line-height: .95; letter-spacing: -.025em; margin-bottom: 14px; }
+  .wk-hero h1 em { color: var(--teal-light); font-style: italic; font-weight: 400; }
+  .wk-hero p { max-width: 560px; font-size: 16.5px; line-height: 1.6; color: rgba(245,237,228,.82); }
+  .wk-hero .hero-tag { position: absolute; top: 20px; left: 20px; }
+  .wk-contact { grid-column: 9 / 13; justify-content: space-between; }
+  .wk-contact h2 { font-size: 30px; }
+  .wk-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .wk-btn { display: inline-flex; padding: 11px 18px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+  .wk-btn.primary { background: var(--cream); color: var(--terra-dark); }
+  .wk-btn.secondary { border: 1.5px solid rgba(245,237,228,.55); color: var(--cream); }
 
-  .paper { display: block; text-decoration: none; padding: 14px 0; border-top: 1px solid rgba(44,26,14,.1); }
+  .wk-third-a { grid-column: 1 / 5; }
+  .wk-third-b { grid-column: 5 / 9; }
+  .wk-third-c { grid-column: 9 / 13; }
+  .wk-half-a { grid-column: 1 / 7; }
+  .wk-half-b { grid-column: 7 / 13; }
+  .wk-full { grid-column: 1 / 13; }
+
+  .wk-numbers { display: flex; flex-direction: column; gap: 7px; font-size: 14.5px; line-height: 1.4; }
+  .wk-numbers a { color: inherit; font-weight: 700; text-decoration: none; }
+  .wk-numbers a:hover { text-decoration: underline; }
+
+  .paper { display: block; text-decoration: none; padding: 12px 0; border-top: 1px solid rgba(44,26,14,.1); }
   .paper:first-of-type { border-top: 0; padding-top: 0; }
   .paper strong { display: block; font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; line-height: 1.3; color: var(--terra-dark); }
   .paper span { display: block; margin-top: 4px; font-size: 12.5px; color: rgba(44,26,14,.6); }
   .paper:hover strong { text-decoration: underline; }
 
-  .cred-list { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 28px; }
-  .cred-list li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.45; }
-  .cred-list li::before { content: ''; position: absolute; left: 0; top: .5em; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
-  .cred-list strong { display: block; color: var(--ink); }
-  .cred-list span { display: block; font-size: 13px; color: rgba(44,26,14,.6); margin-top: 2px; }
+  .cred-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .cred-list li { font-size: 14.5px; line-height: 1.4; }
+  .cred-list strong { display: block; }
+  .cred-list span { display: block; font-size: 12.5px; opacity: .72; margin-top: 1px; }
 
-  .inv-close { margin-top: 14px; background: var(--terra-dark); color: var(--cream); border-radius: var(--radius); padding: var(--pad-md) var(--pad-lg); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
-  .inv-close h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 800; line-height: 1.1; }
-  .inv-close h2 em { font-style: italic; font-weight: 500; color: var(--cream); opacity: .85; }
-  .inv-btns { display: flex; flex-wrap: wrap; gap: 10px; }
-  .inv-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
-  .inv-btn.primary { background: var(--cream); color: var(--terra-dark); }
-  .inv-btn.secondary { border: 1.5px solid rgba(245,237,228,.55); color: var(--cream); }
-
-  .inv-section-intro { margin: -6px 4px 14px; font-size: 15px; color: rgba(44,26,14,.7); max-width: 640px; line-height: 1.5; }
-  .inv-section-title { font-family: 'Fraunces', serif; font-size: clamp(30px, 3.4vw, 40px); font-weight: 900; letter-spacing: -.02em; color: var(--ink); margin: 56px 4px 6px; line-height: 1.05; }
-  .inv-section-title em { font-style: italic; font-weight: 400; color: var(--teal-dark); }
-  .inv-sub { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--terra); margin: 22px 4px 10px; }
-  .inv-numbers { display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
-  .inv-numbers a { color: inherit; font-weight: 700; text-decoration: none; }
-  .inv-numbers a:hover { text-decoration: underline; }
-  .inv-archive { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 18px var(--pad-lg); border-radius: var(--r-lg); border: 1.5px dashed rgba(44,26,14,.25); color: rgba(44,26,14,.75); font-size: 15px; text-decoration: none; }
-  .inv-archive strong { color: var(--ink); }
-  .inv-archive .inv-cta { font-size: 13px; font-weight: 700; color: var(--terra); }
-  .inv-archive:hover { border-color: var(--terra); }
+  .wk-archive { background: transparent; border: 1.5px dashed rgba(44,26,14,.25); min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  .wk-archive:hover { border-color: var(--terra); }
+  .wk-archive .wk-cta { margin-top: 0; }
 
   @media (max-width: 860px) {
-    .inv-grid, .cred-list { grid-template-columns: minmax(0,1fr); }
-    .inv-page { padding: 16px 14px 48px; }
-    .inv-hero { padding: 36px 24px 32px; }
+    .wk-hero, .wk-contact, .wk-third-a, .wk-third-b, .wk-third-c, .wk-half-a, .wk-half-b, .wk-full { grid-column: span 2; }
+    .wk-hero { min-height: 360px; }
+  }
+  @media (max-width: 620px) {
+    .wk-hero, .wk-contact, .wk-third-a, .wk-third-b, .wk-third-c, .wk-half-a, .wk-half-b, .wk-full { grid-column: span 1; }
   }
 </style>
 </head>
@@ -112,73 +118,81 @@
   </div>
 </nav>
 
-<main class="inv-page">
+<main class="bento">
 
-  <section class="inv-hero" aria-labelledby="inv-title">
-    <img src="/img/osint-map.jpg" alt="">
-    <span class="inv-eyebrow">
+  <div class="card wk-hero">
+    <img class="bg" src="/img/osint-map.jpg" alt="">
+    <div class="hero-tag">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      The Work
-    </span>
-    <h1 id="inv-title">Built to find <em>them.</em></h1>
+      <span class="hero-tag-text">The Work</span>
+    </div>
+    <h1>Built to find <em>them.</em></h1>
     <p>Open-source intelligence, crypto tracing and research in support of victim identification and case development for law enforcement, focused on the Eastern Seaboard and the U.S. 1 corridor.</p>
-    <div class="inv-tags" aria-label="Disciplines">
-      <span>OSINT</span><span>Anti-Trafficking</span><span>Crypto Investigations</span><span>Counter-Terrorism</span><span>Victim Identification</span>
+  </div>
+
+  <div class="card wk-card terra wk-contact">
+    <span class="wk-meta">Get in touch</span>
+    <h2>Working a case on the <em>Eastern Seaboard?</em></h2>
+    <div class="wk-btns">
+      <a class="wk-btn primary" href="/contact.html">Contact</a>
+      <a class="wk-btn secondary" href="/signs.html">Learn the signs</a>
     </div>
-  </section>
+  </div>
 
-  <h2 class="inv-section-title" id="investigations">Cyber <em>investigations</em></h2>
-  <p class="inv-section-intro">The analysis, and the tools I build to make it faster.</p>
+  <h2 class="wk-head">Cyber <em>investigations</em></h2>
 
-  <div class="inv-card dark">
-    <span class="inv-meta">Current role &middot; Anti-Trafficking Nonprofit &middot; Jul 2025 &ndash; Present &middot; Remote</span>
+  <div class="card wk-card dark wk-third-a">
+    <span class="wk-meta">Current role &middot; Jul 2025 &ndash; Present</span>
     <h2>OSINT <em>Analyst</em></h2>
-    <p>Open-source intelligence analysis in support of victim identification and case development for law enforcement handoff. Focus areas include online commercial escort advertisement analysis, pattern-of-life research, geographic and temporal correlation, and structured intelligence products built from open sources.</p>
-    <div class="inv-opsec">Specific organization, methodologies and casework are withheld for operational security.</div>
+    <p>Open-source intelligence for an anti-trafficking nonprofit, supporting victim identification and case development for law enforcement handoff.</p>
+    <div class="wk-opsec">Organization, methods and casework withheld for operational security.</div>
   </div>
 
-  <div class="inv-sub">Tools</div>
-  <div class="inv-grid">
-    <a class="inv-card dark" href="/operation-usone.html">
-      <span class="inv-meta">Python &middot; Linux &middot; Active development</span>
-      <h2>Operation <em>US-One</em></h2>
-      <p>An OSINT collection and analysis program for anti-trafficking intelligence work. It turns public-source collection into structured output ready for analyst review and, where appropriate, referral to law enforcement. It is also the research foundation for my graduate capstone.</p>
-      <span class="inv-cta">See the program &rarr;</span>
-    </a>
-    <a class="inv-card teal" href="/missing.html">
-      <span class="inv-meta">NCMEC feed &middot; Florida</span>
-      <h2>Missing Children <em style="color:var(--cream)">Watch</em></h2>
-      <p>A working resource that pulls active missing children cases in Florida from the National Center for Missing &amp; Exploited Children, with corridor cases flagged for review.</p>
-      <span class="inv-cta">Open the watch &rarr;</span>
-    </a>
-  </div>
+  <a class="card wk-card cream is-link wk-third-b" href="/operation-usone.html">
+    <span class="wk-meta">Python &middot; Linux &middot; Active development</span>
+    <h2>Operation <em>US-One</em></h2>
+    <p>An OSINT collection and analysis program that turns public sources into structured output for analyst review and law enforcement referral.</p>
+    <span class="wk-cta">See the program &rarr;</span>
+  </a>
 
-  <h2 class="inv-section-title" id="awareness">Awareness &amp; <em>resources</em></h2>
-  <p class="inv-section-intro">What everyone can watch for, and where to send what they see.</p>
+  <a class="card wk-card teal is-link wk-third-c" href="/missing.html">
+    <span class="wk-meta">NCMEC feed &middot; Florida</span>
+    <h2>Missing Children <em>Watch</em></h2>
+    <p>Active missing children cases in Florida from the National Center for Missing &amp; Exploited Children, with corridor cases flagged for review.</p>
+    <span class="wk-cta">Open the watch &rarr;</span>
+  </a>
 
-  <div class="inv-grid">
-    <a class="inv-card teal" href="/signs.html">
-      <span class="inv-meta">Public awareness</span>
-      <h2>Learn the <em style="color:var(--cream)">signs</em></h2>
-      <p>Warning signs of human trafficking, 2025 U.S. hotline numbers, and tips for moms on protecting kids and teens online and off.</p>
-      <span class="inv-cta">Read the guide &rarr;</span>
-    </a>
-    <div class="inv-card dark">
-      <span class="inv-meta">Report a tip</span>
-      <h2>Who to <em>call</em></h2>
-      <div class="inv-numbers">
-        <span>Immediate danger: <a href="tel:911">911</a></span>
-        <span>National Human Trafficking Hotline: <a href="tel:18883737888">1-888-373-7888</a>, or text <a href="sms:233733">233733</a></span>
-        <span>Homeland Security Investigations tip line: <a href="tel:18663472423">1-866-347-2423</a></span>
-        <span>Child exploitation online: <a href="https://report.cybertip.org" target="_blank" rel="noopener">NCMEC CyberTipline</a></span>
-      </div>
+  <h2 class="wk-head">Awareness &amp; <em>resources</em></h2>
+
+  <a class="card wk-card teal is-link wk-third-a" href="/signs.html">
+    <span class="wk-meta">Public awareness</span>
+    <h2>Learn the <em>signs</em></h2>
+    <p>Warning signs of human trafficking, 2025 U.S. hotline numbers, and tips for moms on protecting kids and teens.</p>
+    <span class="wk-cta">Read the guide &rarr;</span>
+  </a>
+
+  <a class="card wk-card salmon is-link wk-third-b" href="https://www.onwatch.org" target="_blank" rel="noopener">
+    <span class="wk-meta">Free training &middot; OnWatch&trade;</span>
+    <h2>Get <em>trained</em></h2>
+    <p>A free, survivor-led introductory course for the public on spotting, reporting and preventing sex trafficking.</p>
+    <span class="wk-cta">Start the training &rarr;</span>
+  </a>
+
+  <div class="card wk-card dark wk-third-c">
+    <span class="wk-meta">Report a tip</span>
+    <h2>Who to <em>call</em></h2>
+    <div class="wk-numbers">
+      <span>Immediate danger: <a href="tel:911">911</a></span>
+      <span>Trafficking Hotline: <a href="tel:18883737888">1-888-373-7888</a> or text <a href="sms:233733">233733</a></span>
+      <span>HSI tip line: <a href="tel:18663472423">1-866-347-2423</a></span>
+      <span>Child exploitation: <a href="https://report.cybertip.org" target="_blank" rel="noopener">NCMEC CyberTipline</a></span>
     </div>
   </div>
 
-  <h2 class="inv-section-title" id="research">Research &amp; <em>credentials</em></h2>
-  <p class="inv-section-intro">Published work, certifications and training.</p>
+  <h2 class="wk-head">Research &amp; <em>credentials</em></h2>
 
-  <div class="inv-card">
+  <div class="card wk-card cream wk-half-a">
+    <span class="wk-meta">Published research</span>
     <a class="paper" href="https://www.researchgate.net/publication/414188757_Identification_as_Protection_A_Pre-Arrest_Diversion_Protocol_for_Victim-Offenders_in_Commercial-Sex_Enforcement_Criminology_and_Public_Policy" target="_blank" rel="noopener">
       <strong>Identification as Protection: A Pre-Arrest Diversion Protocol for Victim-Offenders in Commercial-Sex Enforcement</strong>
       <span>Public Policy &middot; 2026 &middot; ResearchGate</span>
@@ -189,28 +203,21 @@
     </a>
   </div>
 
-  <div class="inv-card" style="margin-top:14px">
+  <div class="card wk-card terra wk-half-b">
+    <span class="wk-meta">Credentials &amp; training</span>
     <ul class="cred-list">
       <li><strong>Certified Cryptocurrency Investigator (CCI)</strong><span>Blockchain Intelligence Group &middot; Jul 2026</span></li>
-      <li><strong>M.S. Criminal Justice &amp; Counter-Terrorism</strong><span>Southern New Hampshire University &middot; In progress &middot; Electives in forensic psychology &amp; intelligence</span></li>
+      <li><strong>M.S. Criminal Justice &amp; Counter-Terrorism</strong><span>Southern New Hampshire University &middot; In progress</span></li>
       <li><strong>Anti-Trafficking Open Source Intelligence</strong><span>Guardian Group &middot; Jul 2025</span></li>
       <li><strong>Digital Forensics Essentials (DFE)</strong><span>EC-Council &middot; May 2025</span></li>
       <li><strong>Linux Commands &amp; Shell Scripting</strong><span>IBM &middot; Jul 2025</span></li>
-      <li><strong>Fairfax County Criminal Justice Academy, Session 91</strong><span>Police recruit and Recruit Squad Leader &middot; Nov 2025 &ndash; Jan 2026 &middot; DOJ background cleared</span></li>
+      <li><strong>Fairfax County Criminal Justice Academy, Session 91</strong><span>Recruit Squad Leader &middot; Nov 2025 &ndash; Jan 2026 &middot; DOJ background cleared</span></li>
     </ul>
   </div>
 
-  <div class="inv-close">
-    <h2>Working a case on the <em>Eastern Seaboard?</em></h2>
-    <div class="inv-btns">
-      <a class="inv-btn primary" href="/contact.html">Get in touch</a>
-      <a class="inv-btn secondary" href="/signs.html">Learn the signs</a>
-    </div>
-  </div>
-
-  <a class="inv-archive" href="/design.html">
+  <a class="card wk-card wk-archive is-link wk-full" href="/design.html">
     <span><strong>Design archive.</strong> Brand identities, print and web work from my years as a designer.</span>
-    <span class="inv-cta">View the archive &rarr;</span>
+    <span class="wk-cta">View the archive &rarr;</span>
   </a>
 
 </main>

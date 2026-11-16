@@ -83,16 +83,17 @@
   .wk-archive:hover { border-color: var(--terra); }
   .wk-archive .wk-cta { margin-top: 0; }
 
-  .bento .card-work { grid-column: 1 / 13; grid-row: auto; }
+  .bento .card-work { grid-column: 1 / 8; grid-row: auto; }
+  .wk-projects { grid-column: 8 / 13; }
   .wk-numbers a { color: var(--terra-dark); }
 
   @media (max-width: 860px) {
-    .bento .card-work { grid-column: span 2; }
+    .bento .card-work, .wk-projects { grid-column: span 2; }
     .wk-hero, .wk-contact, .wk-third-a, .wk-third-b, .wk-third-c, .wk-half-a, .wk-half-b, .wk-full { grid-column: span 2; }
     .wk-hero { min-height: 360px; }
   }
   @media (max-width: 620px) {
-    .bento .card-work { grid-column: span 1; }
+    .bento .card-work, .wk-projects { grid-column: span 1; }
     .wk-hero, .wk-contact, .wk-third-a, .wk-third-b, .wk-third-c, .wk-half-a, .wk-half-b, .wk-full { grid-column: span 1; }
   }
 </style>
@@ -153,7 +154,6 @@
     <span class="wk-meta">Current role &middot; Jul 2025 &ndash; Present</span>
     <h2>OSINT <em>Analyst</em></h2>
     <p>Open-source intelligence for an anti-trafficking nonprofit, supporting victim identification and case development for law enforcement handoff.</p>
-    <div class="wk-opsec">Organization, methods and casework withheld for operational security.</div>
   </div>
 
   <a class="card wk-card photo is-link wk-third-b" href="/operation-usone.html">
@@ -180,7 +180,7 @@
 
   <a class="card wk-card salmon is-link wk-third-b" href="https://www.onwatch.org" target="_blank" rel="noopener">
     <span class="wk-meta">Free training &middot; OnWatch&trade;</span>
-    <h2>Get <em>trained</em></h2>
+    <h2>Be <em>on watch</em></h2>
     <p>A free, survivor-led introductory course for the public on spotting, reporting and preventing sex trafficking.</p>
     <span class="wk-cta">Start the training &rarr;</span>
   </a>
@@ -226,6 +226,13 @@
       </div>
       <span class="work-cta">View portfolio →</span>
     </div>
+  </a>
+
+  <a class="card wk-card cream is-link wk-projects" href="/projects.html">
+    <span class="wk-meta">Beyond the brief</span>
+    <h2>Assorted <em>projects</em></h2>
+    <p>Side quests in research, heritage, programming and storytelling, from a local voice assistant to Revolutionary War genealogy.</p>
+    <span class="wk-cta">See the projects &rarr;</span>
   </a>
 
 </main>

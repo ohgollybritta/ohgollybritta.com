@@ -67,7 +67,7 @@
           Learn the signs
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="https://humantraffickinghotline.org/en" class="hero-btn secondary">Report a tip</a>
+        <a href="#" class="hero-btn secondary" style="display:none"></a>
       </div>
     </div>
     <div class="dot-row" role="tablist" aria-label="Hero slides">
@@ -322,7 +322,6 @@
       h1:      '21,457 victims.<br>Hidden in <em>plain sight.</em>',
       p:       'Of the reported cases in 2025, the U.S. National Human Trafficking Hotline identified 15,085 trafficking cases involving 21,457 victims. Learn the signs. Look closer.',
       primary: { label: 'Learn the signs', href: '/signs.html' },
-      secondary: { label: 'Report a tip', href: 'https://humantraffickinghotline.org/en' },
     },
     /* slide 2: Intelligence & Investigations */
     {
@@ -387,8 +386,13 @@
       btnPrimary.firstChild.nodeValue = s.primary.label + ' ';
     }
     if (btnSecondary) {
-      btnSecondary.setAttribute('href', s.secondary.href);
-      btnSecondary.textContent = s.secondary.label;
+      if (s.secondary) {
+        btnSecondary.setAttribute('href', s.secondary.href);
+        btnSecondary.textContent = s.secondary.label;
+        btnSecondary.style.display = '';
+      } else {
+        btnSecondary.style.display = 'none';
+      }
     }
   }
   function updateDots(idx) {

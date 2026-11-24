@@ -55,6 +55,10 @@
   .mt-watch .hero-btn { align-self: flex-start; }
 
   .mt-full { grid-column: 1 / 13; }
+  .mt-half-a { grid-column: 1 / 7; }
+  .mt-half-b { grid-column: 7 / 13; }
+  .mt-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .mt.salmon li::before { background: var(--terra-dark); }
   .mt-left { grid-column: 1 / 9; }
   .mt-right { grid-column: 9 / 13; }
   .mt-story { overflow: hidden; }
@@ -86,13 +90,13 @@
   @media (prefers-reduced-motion: reduce) { .mt-polaroids.armed .mt-polaroid { opacity: 1; animation: none !important; } .mt-polaroid::after { animation: none !important; } }
 
   @media (max-width: 860px) {
-    .mt.mt-main, .mt-watch, .mt-full, .mt-left, .mt-right { grid-column: span 2; }
+    .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 2; }
     .mt.mt-story.has-photos { display: flex; align-items: stretch; }
     .mt.mt-deep { grid-template-columns: minmax(0, 1fr); gap: 20px; }
     .mt-art { height: 320px; }
   }
   @media (max-width: 620px) {
-    .mt.mt-main, .mt-watch, .mt-full, .mt-left, .mt-right { grid-column: span 1; }
+    .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 1; }
     .mt-main-body { flex-direction: column; align-items: stretch; }
     .mt-two { grid-template-columns: minmax(0, 1fr); }
     .mt-ep img { width: 118px; }
@@ -179,9 +183,9 @@
 
   <section class="card mt teal mt-full mt-deep" aria-labelledby="dd-title">
     <div class="mt-deep-head">
-      <span class="mt-meta">My adopted manatee</span>
-      <h2 id="dd-title">Meet <em>Deep Dent</em></h2>
-      <p>The real manatee who inspired Barnaby. I adopted him through Save the Manatee Club.</p>
+      <a class="mt-meta" style="color:inherit" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
+      <h2 id="dd-title">Adopt your own <em>manatee</em></h2>
+      <p>I adopted Deep Dent, the real manatee who inspired Barnaby, through Save the Manatee Club. You can adopt one too.</p>
       <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
     </div>
     <div class="mt-deep-text">
@@ -190,6 +194,29 @@
       <p>He&rsquo;s a little bit shy. When researchers paddle out for the morning count, he&rsquo;ll sometimes slip to the far bank to dodge the canoe. He also has wanderlust: he has skipped five winters at Blue Spring, three in a row, and turned up as far south as the Riviera Beach power plant in Palm Beach County.</p>
     </div>
   </section>
+
+  <div class="card mt salmon mt-half-a">
+    <span class="mt-meta">Temperament</span>
+    <h2>Easygoing by <em>nature</em></h2>
+    <ul class="mt-list">
+      <li>They spend up to eight hours a day grazing on seagrass and water plants, and rest anywhere from 2 to 12 hours a day.</li>
+      <li>They&rsquo;re semi-social, just as likely to be alone as in company. Small groups come and go, with no leader and no real herd.</li>
+      <li>A calf may stay with its mother for up to two years.</li>
+      <li>They&rsquo;re slow-moving, but can reach 15 miles per hour in short bursts.</li>
+    </ul>
+  </div>
+
+  <div class="card mt cream mt-half-b">
+    <span class="mt-meta">Threats</span>
+    <h2>What they&rsquo;re <em>up against</em></h2>
+    <ul class="mt-list">
+      <li><strong>Boats.</strong> Collisions injure and kill manatees, and some survivors carry the scars.</li>
+      <li><strong>Cold.</strong> They can&rsquo;t tolerate water below 68&deg;F for long. Cold stress can make them very sick, so warm springs matter.</li>
+      <li><strong>Habitat loss.</strong> They need places to feed, rest and stay warm.</li>
+      <li><strong>Pollution and algae blooms.</strong> Florida&rsquo;s park service names both as threats.</li>
+      <li><strong>Litter and fishing line.</strong> Entangled manatees need trained rescuers.</li>
+    </ul>
+  </div>
 
   <div class="card mt cream mt-left">
     <span class="mt-meta">Manatee manners</span>

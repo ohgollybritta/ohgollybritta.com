@@ -34,21 +34,21 @@
   .mt li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.5; }
   .mt li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
 
-  .mt.mt-main { grid-column: 1 / 9; padding: 0; gap: 0; overflow: hidden; }
-  .mt-art { position: relative; height: 400px; flex: 1 0 auto; background: #23463F; }
+  .mt.mt-main { grid-column: 1 / 9; gap: 28px; }
+  .mt-art { grid-column: 1 / 13; position: relative; min-height: 480px; overflow: hidden; background: #23463F; }
   .mt-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%; }
   .mt-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,44,39,.88), rgba(20,44,39,0) 65%); }
-  .mt-art h1 { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 24px; z-index: 1; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(40px, 5.2vw, 72px); line-height: .98; letter-spacing: -.025em; color: var(--cream); }
+  .mt-art h1 { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 24px; z-index: 1; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(42px, 7vw, 96px); line-height: .98; letter-spacing: -.025em; color: var(--cream); }
   .mt-art h1 em { color: #F0C9BB; font-style: italic; font-weight: 400; }
-  .mt-main-body { padding: var(--pad-lg); display: flex; gap: 28px; align-items: center; }
+  .mt-main-body { display: flex; gap: 28px; align-items: center; }
   .mt-main-text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
   .mt-main h2 { font-size: clamp(32px, 3.4vw, 46px); }
   .mt-main-body .mt-polaroid { width: 230px; margin: 0; }
 
   .mt-watch { grid-column: 9 / 13; justify-content: space-between; }
-  .mt-eps { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; gap: 12px; }
-  .mt-ep { display: flex; gap: 14px; align-items: center; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.4; }
-  .mt-ep img { flex: none; width: 150px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; }
+  .mt-eps { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+  .mt-ep { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.4; }
+  .mt-ep img { flex: none; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; }
   .mt-ep span { display: flex; flex-direction: column; gap: 3px; }
   .mt-ep strong { font-family: 'Fraunces', serif; font-size: 15.5px; line-height: 1.2; }
   .mt-ep:hover strong { text-decoration: underline; }
@@ -61,12 +61,15 @@
   .mt.salmon li::before { background: var(--terra-dark); }
   .mt-left { grid-column: 1 / 9; }
   .mt-right { grid-column: 9 / 13; }
-  .mt-story { overflow: hidden; }
-  .mt-story-text { display: flex; flex-direction: column; gap: 14px; max-width: 820px; }
-  .mt-story h2, .mt-deep h2 { font-size: clamp(34px, 4vw, 52px); }
-  .mt.mt-story.has-photos { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: center; }
-  .mt.mt-deep { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 36px; }
-  .mt-deep-head, .mt-deep-text { display: flex; flex-direction: column; gap: 14px; }
+  .mt-story { display: flex; flex-direction: column; gap: 14px; }
+  .mt-story h3:not(:first-child) { margin-top: 14px; }
+  .mt-story h3 { font-family: 'Fraunces', serif; font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; line-height: 1.1; }
+  .mt-story h3 em { font-style: italic; font-weight: 500; }
+  .mt-adopt h2 { font-size: clamp(32px, 3.4vw, 46px); }
+  .mt.mt-adopt { flex-direction: row; align-items: center; justify-content: space-between; gap: 36px; }
+  .mt-adopt .mt-meta { display: inline-block; margin-bottom: 8px; color: inherit; }
+  .mt-adopt p { max-width: 420px; }
+  .mt.mt-adopt .mt-btn.hero-btn { align-self: center; flex: none; }
   .mt-btn.hero-btn.primary { align-self: flex-start; background: var(--cream); color: var(--terra-dark); border-color: var(--cream); }
   .mt-btn.hero-btn.primary.mt-btn-teal { color: var(--teal-dark); }
   .mt-two { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
@@ -80,6 +83,7 @@
   .mt-polaroid { position: relative; width: 170px; margin: 0 -10px; padding: 10px 10px 34px; background: #FFFDF8; box-shadow: 0 8px 22px rgba(44,26,14,.28); transform: rotate(var(--r, 0deg)); transition: transform .25s ease; }
   .mt-polaroid:hover, .mt-polaroid:focus-within { transform: rotate(0) scale(1.06); z-index: 2; }
   .mt-polaroid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .mt-soon { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; padding: 14px; text-align: center; background: linear-gradient(160deg, #DDE9E4, #B9D3CB); color: #23463F; font-size: 12px; font-weight: 600; line-height: 1.35; }
   .mt-polaroid figcaption { position: absolute; left: 8px; right: 8px; bottom: 9px; text-align: center; font: italic 500 13px/1.1 'Fraunces', serif; color: var(--ink); }
   .mt-polaroid::after { content: ''; position: absolute; inset: 10px 10px 34px; background: #fff; opacity: 0; pointer-events: none; }
   .mt-polaroids.armed .mt-polaroid { opacity: 0; }
@@ -90,19 +94,18 @@
   @media (prefers-reduced-motion: reduce) { .mt-polaroids.armed .mt-polaroid { opacity: 1; animation: none !important; } .mt-polaroid::after { animation: none !important; } }
 
   @media (max-width: 860px) {
-    .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 2; }
-    .mt.mt-story.has-photos { display: flex; align-items: stretch; }
-    .mt.mt-deep { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-    .mt-art { height: 320px; }
+    .mt-art, .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 2; }
+    .mt.mt-adopt { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .mt.mt-adopt .mt-btn.hero-btn { align-self: flex-start; }
+    .mt-art { min-height: 360px; }
+    .mt-eps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 620px) {
-    .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 1; }
+    .mt-art, .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 1; }
     .mt-main-body { flex-direction: column; align-items: stretch; }
     .mt-two { grid-template-columns: minmax(0, 1fr); }
-    .mt-ep img { width: 118px; }
     .mt-polaroid { width: 44%; }
     .mt { padding: 26px 24px; }
-    .mt-main-body { padding: 26px 24px; }
     .mt-art h1 { left: 24px; right: 24px; }
   }
 </style>
@@ -141,19 +144,33 @@
 
 <main class="bento">
 
-  <section class="card mt terra mt-main" aria-labelledby="manatee-title">
-    <div class="mt-art">
+  <section class="card mt-art" aria-labelledby="manatee-title">
       <img src="/img/mossbottom-card.jpg" alt="Barnaby&rsquo;s cabin at dusk: a woodstove, a worn leather armchair, a family portrait of manatees and a jon boat waiting on the river.">
       <h1 id="manatee-title"><em>Welcome to</em> Mossbottom</h1>
-    </div>
+  </section>
+
+  <section class="card mt terra mt-main" aria-labelledby="barnaby-title">
     <div class="mt-main-body">
       <div class="mt-main-text">
         <span class="mt-meta">On the houseboat</span>
-        <h2>Meet <em>Barnaby</em></h2>
+        <h2 id="barnaby-title">Meet <em>Barnaby</em></h2>
         <p>Mossbottom is a sleepy little swamp town tucked beneath the cypress trees and Spanish moss. Barnaby, a gentle manatee in a mustard cardigan, lives there on a little houseboat with a crackling woodstove, a record player and a jon boat tied up outside. His family&rsquo;s old portrait keeps watch from the wall. He has a good book and nowhere to be.</p>
         <p>Whiskers, his cat, keeps lookout from the bow and naps by the fire. Tuck, the cutest turtle on the river, moves surprisingly fast for cantaloupe. And if you watch the boat long enough, Rupert the rabbit peeks out to see what&rsquo;s biting.</p>
       </div>
       <div class="mt-polaroids" data-photos="barnaby" hidden></div>
+    </div>
+    <div class="mt-story">
+      <h3>Why I <em>slow down</em></h3>
+      <p>This is a passion project for me because I grew up active on the St. Johns River. My dad had a boat, and we always looked out for the safety of our manatee friends.</p>
+      <p>I&rsquo;ve also always loved going fast. Car, boat, jet ski, it doesn&rsquo;t matter. So picture me at five, stuck in a really long no wake zone, impatient to go fast again. That&rsquo;s when my dad explained what the signs were for: they protected the manatees.</p>
+      <p>He was right. Florida declared the whole state a manatee refuge and sanctuary in 1978, and that law is what lets the state set slow zones, including stretches of the St. Johns. Going slow gives the boater more time to see a manatee, gives the manatee more time to move, and helps make injuries less severe if they do meet. A 2007 review by state biologists tied about one in four documented manatee deaths in Florida to boats.</p>
+      <p>Visiting Blue Spring in February to see them was a highlight of growing up in Florida. The park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023. Today I&rsquo;m an adoptive parent to one of them.</p>
+      <div class="mt-polaroids" data-photos="story" hidden></div>
+      <h3>Who inspired <em>Barnaby</em></h3>
+      <p>His name is Deep Dent, and I adopted him through Save the Manatee Club. Barnaby is inspired by him.</p>
+      <p>He was already grown when he first turned up at Blue Spring State Park, near Orange City, in the winter of 1979. The spring stays 72&deg;F all year, warm when the St. Johns runs cold, and he has come back for many winters since. Last winter he logged 16 visits and left on February 7, 2026, the first of the Club&rsquo;s adoptees to go.</p>
+      <p>A propeller left a deep dent in his tail, which is how he got his name. He has a similar one on his head, and in the summer of 2010 he came away with another in his lower back and lost a section of his tail. Those scars are how researchers know him on sight.</p>
+      <p>He&rsquo;s a little bit shy. When researchers paddle out for the morning count, he&rsquo;ll sometimes slip to the far bank to dodge the canoe. He also has wanderlust: he has skipped five winters at Blue Spring, three in a row, and turned up as far south as the Riviera Beach power plant in Palm Beach County.</p>
     </div>
   </section>
 
@@ -161,38 +178,22 @@
     <span class="mt-meta">Pull up a chair</span>
     <h2>Stay as long as <em>you like</em></h2>
     <div class="mt-eps">
-      <a class="mt-ep" href="https://www.youtube.com/watch?v=piFLZLRGcTU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/piFLZLRGcTU/mqdefault.jpg" alt="" width="320" height="180"><span><strong>Winter Evening by the Woodstove</strong>8 hours of slow jazz</span></a>
-      <a class="mt-ep" href="https://www.youtube.com/watch?v=UBdOYbFz5I0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UBdOYbFz5I0/mqdefault.jpg" alt="" width="320" height="180"><span><strong>Gone Fishing with Barnaby &amp; Whiskers</strong>4 hours of slow jazz</span></a>
-      <a class="mt-ep" href="https://www.youtube.com/watch?v=ewq0y0I03cs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ewq0y0I03cs/mqdefault.jpg" alt="" width="320" height="180"><span><strong>Autumn Evening by the Woodstove</strong>8 hours of slow jazz</span></a>
-      <a class="mt-ep" href="https://www.youtube.com/watch?v=wX4QpKsGjak" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wX4QpKsGjak/mqdefault.jpg" alt="" width="320" height="180"><span><strong>Halloween Night on the Houseboat</strong>4 hours of slow jazz</span></a>
+      <a class="mt-ep" href="https://www.youtube.com/watch?v=piFLZLRGcTU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/piFLZLRGcTU/maxresdefault.jpg" alt="" width="1280" height="720"><span><strong>Winter Evening by the Woodstove</strong>8 hours of slow jazz</span></a>
+      <a class="mt-ep" href="https://www.youtube.com/watch?v=UBdOYbFz5I0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UBdOYbFz5I0/maxresdefault.jpg" alt="" width="1280" height="720"><span><strong>Gone Fishing with Barnaby &amp; Whiskers</strong>4 hours of slow jazz</span></a>
+      <a class="mt-ep" href="https://www.youtube.com/watch?v=ewq0y0I03cs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ewq0y0I03cs/maxresdefault.jpg" alt="" width="1280" height="720"><span><strong>Autumn Evening by the Woodstove</strong>8 hours of slow jazz</span></a>
+      <a class="mt-ep" href="https://www.youtube.com/watch?v=wX4QpKsGjak" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wX4QpKsGjak/maxresdefault.jpg" alt="" width="1280" height="720"><span><strong>Halloween Night on the Houseboat</strong>4 hours of slow jazz</span></a>
     </div>
+    <p>A new video comes out every season.</p>
     <a class="hero-btn primary" href="https://www.youtube.com/@mossbottom" target="_blank" rel="noopener">Watch on YouTube</a>
   </div>
 
-  <section class="card mt salmon mt-full mt-story" aria-labelledby="story-title">
-    <div class="mt-story-text">
-      <span class="mt-meta">The backstory</span>
-      <h2 id="story-title">Why I <em>slow down</em></h2>
-      <p>This is a passion project for me because I grew up active on the St. Johns River. My dad had a boat, and we always looked out for the safety of our manatee friends.</p>
-      <p>I&rsquo;ve also always loved going fast. Car, boat, jet ski, it doesn&rsquo;t matter. So picture me at five, stuck in a really long no wake zone, impatient to go fast again. That&rsquo;s when my dad explained what the signs were for: they protected the manatees.</p>
-      <p>He was right. Florida declared the whole state a manatee refuge and sanctuary in 1978, and that law is what lets the state set slow zones, including stretches of the St. Johns. Going slow gives the boater more time to see a manatee, gives the manatee more time to move, and helps make injuries less severe if they do meet. A 2007 review by state biologists tied about one in four documented manatee deaths in Florida to boats.</p>
-      <p>Visiting Blue Spring in February to see them was a highlight of growing up in Florida. The park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023. Today I&rsquo;m an adoptive parent to one of them.</p>
+  <section class="card mt teal mt-full mt-adopt" aria-labelledby="adopt-title">
+    <div>
+      <a class="mt-meta" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
+      <h2 id="adopt-title">Adopt your own <em>manatee</em></h2>
     </div>
-    <div class="mt-polaroids" data-photos="story" hidden></div>
-  </section>
-
-  <section class="card mt teal mt-full mt-deep" aria-labelledby="dd-title">
-    <div class="mt-deep-head">
-      <a class="mt-meta" style="color:inherit" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
-      <h2 id="dd-title">Adopt your own <em>manatee</em></h2>
-      <p>I adopted Deep Dent, the real manatee who inspired Barnaby, through Save the Manatee Club. You can adopt one too.</p>
-      <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
-    </div>
-    <div class="mt-deep-text">
-      <p>Deep Dent was already grown when he first turned up at Blue Spring State Park, near Orange City, in the winter of 1979. The spring stays 72&deg;F all year, warm when the St. Johns runs cold, and he has come back for many winters since. Last winter he logged 16 visits and left on February 7, 2026, the first of the Club&rsquo;s adoptees to go.</p>
-      <p>A propeller left a deep dent in his tail, which is how he got his name. He has a similar one on his head, and in the summer of 2010 he came away with another in his lower back and lost a section of his tail. Those scars are how researchers know him on sight.</p>
-      <p>He&rsquo;s a little bit shy. When researchers paddle out for the morning count, he&rsquo;ll sometimes slip to the far bank to dodge the canoe. He also has wanderlust: he has skipped five winters at Blue Spring, three in a row, and turned up as far south as the Riviera Beach power plant in Palm Beach County.</p>
-    </div>
+    <p>Save the Manatee Club&rsquo;s Adopt-A-Manatee program lets you pick a real Florida manatee and get to know its story.</p>
+    <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
   </section>
 
   <div class="card mt salmon mt-half-a">
@@ -265,12 +266,18 @@
 </script>
 <script>
 /* Polaroids. Add one line per photo, under the box it belongs in:
-   { src: '/img/manatees/jetski.jpg', alt: 'what the photo shows', caption: 'short caption' }, */
+   { src: '/img/manatees/jetski.jpg', alt: 'what the photo shows', caption: 'short caption' },
+   Leave out src to show a "photo coming soon" placeholder. */
 (function() {
   var PHOTOS = {
     barnaby: [
+      { caption: 'Me & Barnaby' }
     ],
     story: [
+      { caption: 'Jet ski days' },
+      { caption: 'Manatee friends' },
+      { caption: 'Jet ski days' },
+      { caption: 'Manatee friends' }
     ]
   };
   var tilt = [-6, 4, -3, 6, -4, 3];
@@ -279,11 +286,12 @@
     var list = PHOTOS[box.getAttribute('data-photos')] || [];
     if (!list.length) return;
     list.forEach(function(p, i) {
-      var f = document.createElement('figure'), im = document.createElement('img');
+      var f = document.createElement('figure'), im = document.createElement(p.src ? 'img' : 'div');
       f.className = 'mt-polaroid';
       f.style.setProperty('--r', tilt[(i + (list.length === 1 ? 1 : 0)) % tilt.length] + 'deg');
       f.style.setProperty('--i', i);
-      im.src = p.src; im.alt = p.alt || '';
+      if (p.src) { im.src = p.src; im.alt = p.alt || ''; }
+      else { im.className = 'mt-soon'; im.textContent = 'Photo coming soon'; }
       f.appendChild(im);
       if (p.caption) { var c = document.createElement('figcaption'); c.textContent = p.caption; f.appendChild(c); }
       box.appendChild(f);

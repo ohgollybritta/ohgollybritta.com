@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manatees &amp; Mossbottom | Oh golly, Britta!</title>
+<meta name="description" content="From Barnaby&rsquo;s Mossbottom to Florida&rsquo;s real manatees: gentle facts, manatee manners and who to call for one in trouble.">
+<link rel="canonical" href="https://ohgollybritta.com/manatees">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Manatees &amp; Mossbottom">
+<meta property="og:description" content="From Barnaby&rsquo;s Mossbottom to Florida&rsquo;s real manatees: gentle facts, manatee manners and who to call for one in trouble.">
+<meta property="og:url" content="https://ohgollybritta.com/manatees">
+<meta property="og:image" content="https://ohgollybritta.com/img/mossbottom-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css?v=7">
+<link rel="stylesheet" href="/css/nav.css?v=3">
+<style>
+  .bento { padding-top: 20px; }
+  .mt { padding: var(--pad-md) var(--pad-lg); display: flex; flex-direction: column; gap: 10px; color: var(--ink); }
+  .mt.cream { background: var(--cream); }
+  .mt.salmon { background: #E4AE9C; }
+  .mt.teal { background: var(--teal-dark); color: var(--cream); }
+  .mt.terra { background: var(--terra-dark); color: var(--cream); }
+  .mt-meta { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+  .mt h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 800; line-height: 1.1; }
+  .mt h2 em { font-style: italic; font-weight: 500; }
+  .mt.cream h2 em { color: var(--teal-dark); }
+  .mt p { font-size: 15px; line-height: 1.55; }
+  .mt ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .mt li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.5; }
+  .mt li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+  .mt.teal li::before, .mt.terra li::before { background: var(--cream); }
+  .mt.salmon li::before { background: var(--terra-dark); }
+
+  .mt-hero { grid-column: 1 / 9; background: #23463F; color: var(--cream); padding: var(--pad-lg); min-height: 430px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .mt-hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; opacity: .42; }
+  .mt-hero > *:not(img) { position: relative; z-index: 1; }
+  .mt-hero .hero-tag { position: absolute; top: 20px; left: 20px; }
+  .mt-hero h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(46px, 5.8vw, 78px); line-height: .98; letter-spacing: -.025em; margin-bottom: 14px; }
+  .mt-hero h1 em { color: #F0C9BB; font-style: italic; font-weight: 400; }
+  .mt-hero p { max-width: 520px; font-size: 17px; line-height: 1.6; color: var(--cream); }
+
+  .mt-barnaby { grid-column: 9 / 13; justify-content: center; gap: 14px; }
+  .mt-barnaby h2 { font-size: clamp(32px, 3.2vw, 42px); }
+  .mt-btn.hero-btn.primary { align-self: flex-start; margin-top: 6px; background: var(--cream); color: var(--terra-dark); }
+  .mt-stat strong { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(34px, 3.4vw, 46px); line-height: 1; letter-spacing: -.02em; }
+  .mt-third-a { grid-column: 1 / 5; }
+  .mt-third-b { grid-column: 5 / 9; }
+  .mt-third-c { grid-column: 9 / 13; }
+  .mt-half-a { grid-column: 1 / 7; }
+  .mt-half-b { grid-column: 7 / 13; }
+  .mt-wide { grid-column: 1 / 8; }
+  .mt-narrow { grid-column: 8 / 13; }
+  .mt-full { grid-column: 1 / 13; }
+  .mt-big { font-family: 'Fraunces', serif; font-size: clamp(34px, 3.6vw, 48px); font-weight: 800; line-height: 1.05; }
+  .mt-big a { color: inherit; text-decoration: none; }
+  .mt-big a:hover { text-decoration: underline; }
+  .mt-sources { font-size: 12.5px; line-height: 1.6; color: rgba(44,26,14,.75); padding: 8px 4px 0; }
+  .mt-sources a { color: var(--terra-dark); }
+
+  @media (max-width: 860px) {
+    .mt-hero, .mt-barnaby, .mt-half-a, .mt-half-b, .mt-wide, .mt-narrow, .mt-full, .mt-third-c { grid-column: span 2; }
+    .mt-third-a, .mt-third-b { grid-column: span 1; }
+    .mt-hero { min-height: 360px; }
+  }
+  @media (max-width: 620px) {
+    .mt-hero, .mt-barnaby, .mt-half-a, .mt-half-b, .mt-wide, .mt-narrow, .mt-full, .mt-third-a, .mt-third-b, .mt-third-c { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="/work.html">Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/index.html" class="nav-brand"><img src="/img/ogblogo100x80.png" alt="" aria-hidden="true" class="nav-logo">oh golly britta</a>
+  <div class="nav-icons">
+    <a href="https://www.instagram.com/ohgollybritta" aria-label="Instagram" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://github.com/ohgollybritta" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.twitch.tv/ohgollybritta" aria-label="Twitch" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+    </a>
+  </div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="bento">
+
+  <section class="card mt-hero" aria-labelledby="manatee-title">
+    <img class="bg" src="/img/mossbottom-card.jpg" alt="">
+    <div class="hero-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+      <span class="hero-tag-text">Manatees</span>
+    </div>
+    <h1 id="manatee-title">Gentle giants.<br><em>Go slow.</em></h1>
+    <p>Barnaby is make-believe. Florida&rsquo;s manatees are very real, and they need a little room on the river.</p>
+  </section>
+
+  <div class="card mt terra mt-barnaby">
+    <span class="mt-meta">Mossbottom</span>
+    <h2>Meet <em>Barnaby</em></h2>
+    <p>A gentle manatee in a mustard cardigan, drifting through slow days on his little houseboat in a sleepy Old Florida river town. Storybook scenes and original slow jazz, made for reading, working or simply slowing down.</p>
+    <a class="hero-btn primary mt-btn" href="https://www.youtube.com/@mossbottom" target="_blank" rel="noopener">Watch on YouTube</a>
+  </div>
+
+  <div class="card mt cream mt-third-a mt-stat">
+    <strong>1,000 lb</strong>
+    <p>Roughly what an adult weighs, at 9 to 10 feet long. Some pass 3,500 pounds.</p>
+  </div>
+  <div class="card mt salmon mt-third-b mt-stat">
+    <strong>8 hours</strong>
+    <p>How long they can graze in a day, on seagrasses and other water plants.</p>
+  </div>
+  <div class="card mt cream mt-third-c mt-stat">
+    <strong>68&deg;F</strong>
+    <p>When the water drops below this, they head for springs and other warm water.</p>
+  </div>
+
+  <div class="card mt teal mt-half-a">
+    <span class="mt-meta">Manatee manners</span>
+    <h2>Admire from <em>a distance</em></h2>
+    <ul>
+      <li>Give them plenty of space. Binoculars are a good way to get closer.</li>
+      <li>Never feed, chase or disturb one. They&rsquo;re a protected species, and it&rsquo;s against the law.</li>
+      <li>Leave resting manatees be, especially in winter. One that flees a warm spring can end up in dangerously cold water.</li>
+      <li>See a tag near the tail? Leave it on. Researchers are keeping an eye on that one.</li>
+    </ul>
+  </div>
+
+  <div class="card mt salmon mt-half-b">
+    <span class="mt-meta">On the water</span>
+    <h2>Look for <em>footprints</em></h2>
+    <ul>
+      <li>Watch for snouts, backs, tails and smooth circles on the surface. Those circles are manatee footprints.</li>
+      <li>Obey posted manatee zones and slow down. Boat strikes are a major threat.</li>
+      <li>Wear polarized glasses and pick someone to be the lookout.</li>
+      <li>Steer around seagrass and shallow areas, and recycle old fishing line.</li>
+    </ul>
+  </div>
+
+  <div class="card mt terra mt-wide">
+    <span class="mt-meta">FWC Wildlife Alert Hotline</span>
+    <h2>See one that needs help?</h2>
+    <span class="mt-big"><a href="tel:18884043922">888-404-3922</a></span>
+    <p>Call about a sick, injured, orphaned, tangled or dead manatee in Florida. Note the exact location, the nearest boat ramp, its size and whether it has a tag. Take photos or video, and don&rsquo;t try to handle it yourself.</p>
+  </div>
+
+  <div class="card mt cream mt-narrow">
+    <span class="mt-meta">Little wonders</span>
+    <h2>Built <em>different</em></h2>
+    <ul>
+      <li>They&rsquo;re distant relatives of the elephant.</li>
+      <li>They can&rsquo;t turn their heads sideways, so they turn their whole body.</li>
+      <li>Their teeth never stop being replaced, from back to front.</li>
+    </ul>
+  </div>
+
+  <p class="mt-sources mt-full">Sources: Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a> and <a href="https://myfwc.com/research/manatee/information/support/contact/" target="_blank" rel="noopener">reporting a manatee in distress</a>. <a href="/projects.html">Back to Projects</a></p>
+
+</main>
+
+<footer>&copy; 2026 oh golly britta &nbsp;&middot;&nbsp; look closer &middot; build bolder &nbsp;&middot;&nbsp; made with &hearts;, terracotta &amp; a healthy suspicion of default settings</footer>
+
+<script>
+/* ── MOBILE NAV ── */
+(function() {
+  var btn  = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    menu.classList.toggle('is-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -34,18 +34,25 @@
   .mt li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.5; }
   .mt li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
 
-  .mt.mt-main { grid-column: 1 / 9; gap: 28px; }
+  .mt.mt-main { grid-column: 1 / 9; grid-row: 2 / 4; gap: 28px; }
   .mt-art { grid-column: 1 / 13; position: relative; min-height: 480px; overflow: hidden; background: #23463F; }
   .mt-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%; }
-  .mt-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,44,39,.88), rgba(20,44,39,0) 65%); }
-  .mt-art h1 { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 24px; z-index: 1; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(42px, 7vw, 96px); line-height: .98; letter-spacing: -.025em; color: var(--cream); }
+  .mt-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,44,39,.94) 12%, rgba(20,44,39,0) 78%); }
+  .mt-art h1 { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 122px; z-index: 1; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(42px, 7vw, 96px); line-height: .98; letter-spacing: -.025em; color: var(--cream); }
   .mt-art h1 em { color: #F0C9BB; font-style: italic; font-weight: 400; }
+  .mt-intro { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 28px; z-index: 1; max-width: 640px; font-size: 17px; line-height: 1.55; color: var(--cream); }
   .mt-main-body { display: flex; gap: 28px; align-items: center; }
   .mt-main-text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
   .mt-main h2 { font-size: clamp(32px, 3.4vw, 46px); }
   .mt-main-body .mt-polaroid { width: 230px; margin: 0; }
 
-  .mt-watch { grid-column: 9 / 13; justify-content: space-between; }
+  .mt-watch { grid-column: 9 / 13; grid-row: 2; justify-content: space-between; }
+  .mt-law { grid-column: 9 / 13; grid-row: 3; }
+  .mt-law dl { display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; }
+  .mt-law dt { margin-top: 8px; font-weight: 700; }
+  .mt-law dt:first-child { margin-top: 0; }
+  .mt-law a { color: inherit; }
+  .mt-law dd { margin: 0; }
   .mt-eps { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
   .mt-ep { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.4; }
   .mt-ep img { flex: none; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; }
@@ -59,23 +66,19 @@
   .mt-half-b { grid-column: 7 / 13; }
   .mt-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .mt.salmon li::before { background: var(--terra-dark); }
-  .mt-left { grid-column: 1 / 9; }
-  .mt-right { grid-column: 9 / 13; }
   .mt-story { display: flex; flex-direction: column; gap: 14px; }
   .mt-story h3:not(:first-child) { margin-top: 14px; }
   .mt-story h3 { font-family: 'Fraunces', serif; font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; line-height: 1.1; }
+  .mt-story p a { color: inherit; }
   .mt-story h3 em { font-style: italic; font-weight: 500; }
   .mt-adopt h2 { font-size: clamp(32px, 3.4vw, 46px); }
   .mt.mt-adopt { flex-direction: row; align-items: center; justify-content: space-between; gap: 36px; }
-  .mt-adopt .mt-meta { display: inline-block; margin-bottom: 8px; color: inherit; }
-  .mt-adopt p { max-width: 420px; }
   .mt.mt-adopt .mt-btn.hero-btn { align-self: center; flex: none; }
+  .mt-adopt .mt-meta { display: inline-block; text-decoration: none; margin-bottom: 8px; color: inherit; }
+  .mt-adopt p { max-width: 420px; }
   .mt-btn.hero-btn.primary { align-self: flex-start; background: var(--cream); color: var(--terra-dark); border-color: var(--cream); }
   .mt-btn.hero-btn.primary.mt-btn-teal { color: var(--teal-dark); }
   .mt-two { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
-  .mt-big { font-family: 'Fraunces', serif; font-size: clamp(30px, 3vw, 42px); font-weight: 800; line-height: 1.05; }
-  .mt-big a { color: inherit; text-decoration: none; }
-  .mt-big a:hover { text-decoration: underline; }
   .mt-sources { font-size: 12.5px; line-height: 1.6; color: rgba(44,26,14,.75); padding: 8px 4px 0; }
   .mt-sources a { color: var(--terra-dark); }
 
@@ -94,19 +97,21 @@
   @media (prefers-reduced-motion: reduce) { .mt-polaroids.armed .mt-polaroid { opacity: 1; animation: none !important; } .mt-polaroid::after { animation: none !important; } }
 
   @media (max-width: 860px) {
-    .mt-art, .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 2; }
+    .mt-art, .mt.mt-main, .mt-watch, .mt-law, .mt-full, .mt-half-a, .mt-half-b { grid-column: span 2; grid-row: auto; }
     .mt.mt-adopt { flex-direction: column; align-items: flex-start; gap: 18px; }
     .mt.mt-adopt .mt-btn.hero-btn { align-self: flex-start; }
     .mt-art { min-height: 360px; }
     .mt-eps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 620px) {
-    .mt-art, .mt.mt-main, .mt-watch, .mt-full, .mt-half-a, .mt-half-b, .mt-left, .mt-right { grid-column: span 1; }
+    .mt-art, .mt.mt-main, .mt-watch, .mt-law, .mt-full, .mt-half-a, .mt-half-b { grid-column: span 1; }
     .mt-main-body { flex-direction: column; align-items: stretch; }
     .mt-two { grid-template-columns: minmax(0, 1fr); }
     .mt-polaroid { width: 44%; }
     .mt { padding: 26px 24px; }
-    .mt-art h1 { left: 24px; right: 24px; }
+    .mt-art { min-height: 520px; }
+    .mt-art h1 { left: 24px; right: 24px; bottom: 218px; }
+    .mt-intro { left: 24px; right: 24px; bottom: 24px; }
   }
 </style>
 </head>
@@ -147,6 +152,7 @@
   <section class="card mt-art" aria-labelledby="manatee-title">
       <img src="/img/mossbottom-card.jpg" alt="Barnaby&rsquo;s cabin at dusk: a woodstove, a worn leather armchair, a family portrait of manatees and a jon boat waiting on the river.">
       <h1 id="manatee-title"><em>Welcome to</em> Mossbottom</h1>
+    <p class="mt-intro">An ambient YouTube channel set in a storybook Old Florida river town, where the porch lights stay on and somebody&rsquo;s always got a record playing. Gentle creatures. Slow jazz. Nowhere to be.</p>
   </section>
 
   <section class="card mt terra mt-main" aria-labelledby="barnaby-title">
@@ -154,23 +160,31 @@
       <div class="mt-main-text">
         <span class="mt-meta">On the houseboat</span>
         <h2 id="barnaby-title">Meet <em>Barnaby</em></h2>
-        <p>Mossbottom is a sleepy little swamp town tucked beneath the cypress trees and Spanish moss. Barnaby, a gentle manatee in a mustard cardigan, lives there on a little houseboat with a crackling woodstove, a record player and a jon boat tied up outside. His family&rsquo;s old portrait keeps watch from the wall. He has a good book and nowhere to be.</p>
-        <p>Whiskers, his cat, keeps lookout from the bow and naps by the fire. Tuck, the cutest turtle on the river, moves surprisingly fast for cantaloupe. And if you watch the boat long enough, Rupert the rabbit peeks out to see what&rsquo;s biting.</p>
+        <p>Barnaby is a gentle gray manatee, once a mapmaker, who lives on a faded teal houseboat with Whiskers, his little black cat. He&rsquo;s never without his mustard cardigan. His mother made it for him.</p>
+        <p>Her name was Dottie. She and his father, Claude, were river sweethearts, and every winter of their lives they floated to Blue Spring side by side. They raised Barnaby on slow mornings, old jazz records and the patience to let the one that got away go.</p>
+        <p>Then one winter, on the way to the spring, a boat came through the manatee zone far too fast. Dottie was lost.</p>
       </div>
       <div class="mt-polaroids" data-photos="barnaby" hidden></div>
     </div>
     <div class="mt-story">
+      <p>Claude survived, with scars across his back that he never talks about. He still lives at Blue Spring, quiet and a little gruff. Barnaby visits him every winter. Claude barely says a word, but he always saves Barnaby the warmest spot in the spring.</p>
+      <p>Look for the portrait by the woodstove in the videos. Two grown manatees, side by side, and little Barnaby in front, each parent holding one of his flippers. It&rsquo;s the last one of him with his entire family, and it&rsquo;s how he keeps them both close. It&rsquo;s also why he putters along at idle speed and waves every boater down to a crawl.</p>
       <h3>Why I <em>slow down</em></h3>
-      <p>This is a passion project for me because I grew up active on the St. Johns River. My dad had a boat, and we always looked out for the safety of our manatee friends.</p>
-      <p>I&rsquo;ve also always loved going fast. Car, boat, jet ski, it doesn&rsquo;t matter. So picture me at five, stuck in a really long no wake zone, impatient to go fast again. That&rsquo;s when my dad explained what the signs were for: they protected the manatees.</p>
-      <p>He was right. Florida declared the whole state a manatee refuge and sanctuary in 1978, and that law is what lets the state set slow zones, including stretches of the St. Johns. Going slow gives the boater more time to see a manatee, gives the manatee more time to move, and helps make injuries less severe if they do meet. A 2007 review by state biologists tied about one in four documented manatee deaths in Florida to boats.</p>
-      <p>Visiting Blue Spring in February to see them was a highlight of growing up in Florida. The park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023. Today I&rsquo;m an adoptive parent to one of them.</p>
+      <p>Once there was a girl who grew up on the St. Johns River, and all she ever wanted was to go fast. By car, by boat, by anything with a motor, as long as the wind was loud.</p>
+      <p>But there was one long, long stretch of river where her father always eased the boat down to a whisper. No wake, said the signs, and on and on they crept, while the girl fidgeted and sighed and waited for the fast part.</p>
+      <p>So her father told her the secret of the slow water. Somewhere beneath them, big and gentle and in no hurry at all, were the manatees. The signs were there to keep them safe.</p>
+      <p>After that, she kept a lookout. And every February, when the river ran cold, she went to the spring where the water stays warm, and there they were, all her quiet neighbors, waiting out the winter.</p>
+      <p>The girl grew up. She still loves to go fast. But she never forgot the slow water, and one day she built a little town there and called it Mossbottom.</p>
+      <p>The slow water is real. Florida became a manatee refuge and sanctuary by law in 1978, and that law is why there are slow zones on the St. Johns today. Going slow gives a boater more time to see a manatee and gives the manatee more time to move. At Blue Spring, the park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023.</p>
       <div class="mt-polaroids" data-photos="story" hidden></div>
       <h3>Who inspired <em>Barnaby</em></h3>
       <p>His name is Deep Dent, and I adopted him through Save the Manatee Club. Barnaby is inspired by him.</p>
       <p>He was already grown when he first turned up at Blue Spring State Park, near Orange City, in the winter of 1979. The spring stays 72&deg;F all year, warm when the St. Johns runs cold, and he has come back for many winters since. Last winter he logged 16 visits and left on February 7, 2026, the first of the Club&rsquo;s adoptees to go.</p>
       <p>A propeller left a deep dent in his tail, which is how he got his name. He has a similar one on his head, and in the summer of 2010 he came away with another in his lower back and lost a section of his tail. Those scars are how researchers know him on sight.</p>
       <p>He&rsquo;s a little bit shy. When researchers paddle out for the morning count, he&rsquo;ll sometimes slip to the far bank to dodge the canoe. He also has wanderlust: he has skipped five winters at Blue Spring, three in a row, and turned up as far south as the Riviera Beach power plant in Palm Beach County.</p>
+      <h3>What&rsquo;s <em>next?</em></h3>
+      <p>A children&rsquo;s book is in the works. <em>Why Barnaby Went to School</em> brings the whole river together, from Whiskers and Rupert to Tuck, the oldest soul in Mossbottom. A later story will bring in Claude and Dottie, to teach kids about manatees and safe boating.</p>
+      <p>I&rsquo;m also taking part in the <a href="https://savethemanatee.org/save-the-manatee-5k/" target="_blank" rel="noopener">Save the Manatee 5K</a>. And if the YouTube channel ever makes revenue, a major share of the proceeds will go toward manatee preservation.</p>
     </div>
   </section>
 
@@ -187,13 +201,21 @@
     <a class="hero-btn primary" href="https://www.youtube.com/@mossbottom" target="_blank" rel="noopener">Watch on YouTube</a>
   </div>
 
-  <section class="card mt teal mt-full mt-adopt" aria-labelledby="adopt-title">
-    <div>
-      <a class="mt-meta" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
-      <h2 id="adopt-title">Adopt your own <em>manatee</em></h2>
-    </div>
-    <p>Save the Manatee Club&rsquo;s Adopt-A-Manatee program lets you pick a real Florida manatee and get to know its story.</p>
-    <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
+  <section class="card mt teal mt-law" aria-labelledby="law-title">
+    <span class="mt-meta">Florida Statutes</span>
+    <h2 id="law-title">The law <em>on their side</em></h2>
+    <dl>
+      <dt><a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2431.html" target="_blank" rel="noopener">&sect; 379.2431(2), Fla. Stat.</a></dt>
+      <dd>Florida Manatee Sanctuary Act. (b) makes the state a refuge and sanctuary. (d) makes it unlawful to intentionally or negligently annoy, molest, harass, disturb, injure, capture, hunt or kill a manatee. (g)8. calls for boat-speed rules at Blue Springs Run and connecting St. Johns waters within one mile.</dd>
+      <dt><a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2431.html" target="_blank" rel="noopener">&sect; 379.2431(2)(r)&ndash;(s)</a></dt>
+      <dd>Violations are generally a misdemeanor. Exceeding a posted speed limit is a civil infraction.</dd>
+      <dt><a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0327%2FSections%2F0327.73.html" target="_blank" rel="noopener">&sect; 327.73(1)(k)2.</a></dt>
+      <dd>Boating citations for manatee speed limits.</dd>
+      <dt><a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.407.html" target="_blank" rel="noopener">&sect; 379.407(1), (2)(e)9.</a></dt>
+      <dd>Penalties, plus an added $100 per manatee or part taken, harvested or possessed.</dd>
+      <dt><a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2291.html" target="_blank" rel="noopener">&sect; 379.2291(6)</a></dt>
+      <dd>Endangered and Threatened Species Act: recovery goals for manatees.</dd>
+    </dl>
   </section>
 
   <div class="card mt salmon mt-half-a">
@@ -219,7 +241,7 @@
     </ul>
   </div>
 
-  <div class="card mt cream mt-left">
+  <div class="card mt cream mt-full">
     <span class="mt-meta">Manatee manners</span>
     <h2>Admire from <em>a distance</em></h2>
     <ul class="mt-two">
@@ -230,14 +252,16 @@
     </ul>
   </div>
 
-  <div class="card mt terra mt-right">
-    <span class="mt-meta">FWC Wildlife Alert Hotline</span>
-    <h2>See one that needs help?</h2>
-    <span class="mt-big"><a href="tel:18884043922">888-404-3922</a></span>
-    <p>Note the exact location, the nearest boat ramp and its size. Take photos or video, and don&rsquo;t try to handle it yourself.</p>
-  </div>
+  <section class="card mt teal mt-full mt-adopt" aria-labelledby="adopt-title">
+    <div>
+      <a class="mt-meta" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
+      <h2 id="adopt-title">Adopt your own <em>manatee</em></h2>
+    </div>
+    <p>Save the Manatee Club&rsquo;s Adopt-A-Manatee program lets you pick a real Florida manatee and get to know its story.</p>
+    <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
+  </section>
 
-  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns zone rule</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a> and <a href="https://myfwc.com/research/manatee/information/support/contact/" target="_blank" rel="noopener">reporting a manatee in distress</a>. <a href="/projects.html">Back to Projects</a></p>
+  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns zone rule</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a> and <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club. <a href="/projects.html">Back to Projects</a></p>
 
 </main>
 
@@ -271,13 +295,13 @@
 (function() {
   var PHOTOS = {
     barnaby: [
-      { caption: 'Me & Barnaby' }
+      { src: '/img/britta-and-barnaby.jpg', alt: 'Storybook painting of Britta in gold aviator sunglasses hugging Barnaby the manatee in his mustard cardigan, beside his teal houseboat.', caption: 'Me & Barnaby' }
     ],
     story: [
       { caption: 'Jet ski days' },
       { caption: 'Manatee friends' },
-      { caption: 'Jet ski days' },
-      { caption: 'Manatee friends' }
+      { src: '/img/resume-normal-safe-operation.jpg', alt: 'A great blue heron standing on a river sign that reads Resume Normal Safe Operation.', caption: 'The fast part' },
+      { caption: 'Deep Dent', href: 'https://savethemanatee.org/adopt-a-manatee/deep-dent/', soon: 'See his photo at Save the Manatee Club' }
     ]
   };
   var tilt = [-6, 4, -3, 6, -4, 3];
@@ -286,12 +310,12 @@
     var list = PHOTOS[box.getAttribute('data-photos')] || [];
     if (!list.length) return;
     list.forEach(function(p, i) {
-      var f = document.createElement('figure'), im = document.createElement(p.src ? 'img' : 'div');
+      var f = document.createElement('figure'), im = document.createElement(p.src ? 'img' : (p.href ? 'a' : 'div'));
       f.className = 'mt-polaroid';
       f.style.setProperty('--r', tilt[(i + (list.length === 1 ? 1 : 0)) % tilt.length] + 'deg');
       f.style.setProperty('--i', i);
       if (p.src) { im.src = p.src; im.alt = p.alt || ''; }
-      else { im.className = 'mt-soon'; im.textContent = 'Photo coming soon'; }
+      else { im.className = 'mt-soon'; im.textContent = p.soon || 'Photo coming soon'; if (p.href) { im.href = p.href; im.target = '_blank'; im.rel = 'noopener'; } }
       f.appendChild(im);
       if (p.caption) { var c = document.createElement('figcaption'); c.textContent = p.caption; f.appendChild(c); }
       box.appendChild(f);

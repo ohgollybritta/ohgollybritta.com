@@ -69,9 +69,15 @@
   .mt-adopt p { max-width: 520px; }
   .mt-btn.hero-btn.primary { align-self: flex-start; background: var(--cream); color: var(--terra-dark); border-color: var(--cream); }
   .mt-btn.hero-btn.primary.mt-btn-teal { color: var(--teal-dark); }
-  .mt-two { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
+  .mt.mt-manners { padding: 64px 56px; gap: 18px; }
+  .mt-manners h2 { font-size: clamp(40px, 5.2vw, 72px); line-height: 1; letter-spacing: -.02em; }
+  .mt-manners h2 em { color: #F0C9BB; }
+  .mt-manners ul { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 56px; margin-top: 22px; }
+  .mt.mt-manners li { padding: 20px 0 0; border-top: 2px solid rgba(245,237,228,.45); font-size: 19px; line-height: 1.5; }
+  .mt.mt-manners li::before { content: none; }
+  .mt-manners li strong { display: block; margin-bottom: 8px; font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.05; }
   .mt-lead.mt-lead { font-size: clamp(18px, 1.7vw, 22px); line-height: 1.5; }
-  .mt.mt-threats { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 56px; align-items: center; padding: 72px 56px; }
+  .mt.mt-threats { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; align-items: center; padding: 72px 56px; }
   .mt-photos { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .mt-threats-text { display: flex; flex-direction: column; gap: 16px; }
   .mt-threats h2 { font-size: clamp(40px, 5.6vw, 78px); line-height: 1.02; letter-spacing: -.02em; }
@@ -110,6 +116,7 @@
   .mt-three .mt-polaroid::after { inset: 14px 14px 46px; }
   .mt-three figcaption { bottom: 15px; font-size: 16px; }
   .mt-sources { font-size: 12.5px; line-height: 1.6; color: rgba(44,26,14,.75); padding: 8px 4px 0; }
+  .mt-back { display: inline-block; margin-top: 12px; }
   .mt-sources a { color: var(--terra-dark); }
 
   .mt-polaroids:not([hidden]) { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 12px 0; }
@@ -138,8 +145,11 @@
   @media (max-width: 620px) {
     .mt-art, .mt.mt-main, .mt-watch, .mt.mt-temper, .mt.mt-adopt, .mt-full { grid-column: span 1; }
     .mt-main-body { flex-direction: column; align-items: stretch; }
-    .mt-two, .mt-photos { grid-template-columns: minmax(0, 1fr); }
+    .mt-manners ul, .mt-photos { grid-template-columns: minmax(0, 1fr); }
     .mt.mt-threats { padding: 30px 24px; }
+    .mt.mt-manners { padding: 36px 24px; }
+    .mt-manners ul { gap: 24px; }
+    .mt.mt-manners li { font-size: 17px; }
     .mt-threats dd { font-size: 16.5px; }
     .mt-polaroid { width: 44%; }
     .mt-left-pol.mt-left-pol:not([hidden]) { float: none; padding: 4px 0 20px; }
@@ -270,24 +280,24 @@
   </section>
 
   <section class="card mt salmon mt-full mt-threats" aria-labelledby="threats-title">
-    <div class="mt-polaroids mt-big" data-photos="threats" hidden></div>
     <div class="mt-threats-text">
-      <span class="mt-meta">Threats to their safety</span>
+      <span class="mt-meta">Human threats to their safety</span>
       <h2 id="threats-title">They have no <em>natural predators.</em></h2>
-      <p class="mt-lead">Nothing in the wild hunts a manatee. In 2025, Florida still lost 632 of them.</p>
+      <p class="mt-lead">Nothing in the wild hunts a manatee. Florida still lost 632 of them in 2025. Not every death traces back to people, but these threats do.</p>
       <dl>
         <dt>Boats</dt>
-        <dd>Collisions caused 98 of those deaths, a quarter of the manatees examined, and the state calls that a minimum. Another 33 were pulled from the water alive with boat wounds.</dd>
+        <dd>Collisions caused at least 98 of those deaths, a quarter of the manatees examined. Another 33 were pulled from the water alive with boat wounds.</dd>
         <dt>Hunger</dt>
-        <dd>When the seagrass died back on Florida&rsquo;s east coast, manatees starved. From December 2020 through April 2022, 1,255 were found dead there.</dd>
-        <dt>Cold</dt>
-        <dd>They carry only about an inch of fat. Too long in water below 68&deg;F and their bodies begin to shut down, so a warm spring can mean the whole winter.</dd>
-        <dt>Dirty water</dt>
-        <dd>Pollution and algae blooms foul the water they live in and the plants they live on. In 2025, a red tide bloom was one of the biggest factors in their deaths.</dd>
+        <dd>Poor water quality helped wipe out the seagrass in the Indian River Lagoon, and manatees on the east coast starved. From December 2020 through April 2022, 1,255 were found dead there.</dd>
+        <dt>Crowding</dt>
+        <dd>They carry only about an inch of fat. When people disturb them at a warm spring, they can flee into water cold enough to kill them.</dd>
+        <dt>Pollution and lost habitat</dt>
+        <dd>Fouled water and shrinking habitat take away the places they feed, rest and stay warm.</dd>
         <dt>What we leave behind</dt>
         <dd>Fishing line, nets, hooks and litter wrap, cut and choke.</dd>
       </dl>
     </div>
+    <div class="mt-polaroids mt-big" data-photos="threats" hidden></div>
     <div class="mt-photos">
       <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
       <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
@@ -295,16 +305,16 @@
     </div>
   </section>
 
-  <div class="card mt cream mt-full">
-    <span class="mt-meta">Manatee manners</span>
-    <h2>Admire from <em>a distance</em></h2>
-    <ul class="mt-two">
-      <li>Give them space. Never feed, chase or disturb one. They&rsquo;re a protected species, and it&rsquo;s against the law.</li>
-      <li>Obey posted manatee zones. &ldquo;Idle speed, no wake&rdquo; means only fast enough to steer and keep moving.</li>
-      <li>Watch for snouts, backs, tails and smooth circles on the surface. Those are manatee footprints.</li>
-      <li>Wear polarized glasses, steer around seagrass and shallows, and recycle old fishing line.</li>
+  <section class="card mt terra mt-full mt-manners" aria-labelledby="manners-title">
+    <span class="mt-meta">On the water</span>
+    <h2 id="manners-title">Manners <em>for manatees</em></h2>
+    <ul>
+      <li><strong>Give them room.</strong>Never feed, chase or disturb one. They&rsquo;re a protected species, and it&rsquo;s against the law.</li>
+      <li><strong>Obey the zone.</strong>&ldquo;Idle speed, no wake&rdquo; means only fast enough to steer and keep moving.</li>
+      <li><strong>Read the water.</strong>Watch for snouts, backs, tails and smooth circles on the surface. Those are manatee footprints.</li>
+      <li><strong>Come prepared.</strong>Wear polarized glasses, steer around seagrass and shallows, and recycle old fishing line.</li>
     </ul>
-  </div>
+  </section>
 
   <section class="card mt teal mt-full mt-adopt" aria-labelledby="adopt-title">
     <div>
@@ -315,7 +325,7 @@
     <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
   </section>
 
-  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>, its <a href="https://www.savethemanatee.org/jimmy-buffett/" target="_blank" rel="noopener">Jimmy Buffett tribute</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns manatee zone rule</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68D-24-018" target="_blank" rel="noopener">the rule on the sign</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/statistics/mortality/2025/review/" target="_blank" rel="noopener">2025 mortality</a> and the <a href="https://myfwc.com/research/manatee/rescue-mortality-response/ume/" target="_blank" rel="noopener">east coast die-off</a>. Temperament: Save the Manatee Club on <a href="https://savethemanatee.org/manatee-moms-nurturing-the-next-generation/" target="_blank" rel="noopener">manatee moms</a>, <a href="https://savethemanatee.org/manatee-vocalizations-and-sounds/" target="_blank" rel="noopener">sounds</a> and <a href="https://savethemanatee.org/manatees/manatee-faq/" target="_blank" rel="noopener">FAQ</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club. <a href="/projects.html">Back to Projects</a></p>
+  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>, its <a href="https://www.savethemanatee.org/jimmy-buffett/" target="_blank" rel="noopener">Jimmy Buffett tribute</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns manatee zone rule</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68D-24-018" target="_blank" rel="noopener">the rule on the sign</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/statistics/mortality/2025/review/" target="_blank" rel="noopener">2025 mortality</a>, the <a href="https://myfwc.com/research/manatee/rescue-mortality-response/ume/" target="_blank" rel="noopener">east coast die-off</a> and <a href="https://myfwc.com/news/all-news/manatee-mortality-1221/" target="_blank" rel="noopener">its cause</a>. Temperament: Save the Manatee Club on <a href="https://savethemanatee.org/manatee-moms-nurturing-the-next-generation/" target="_blank" rel="noopener">manatee moms</a>, <a href="https://savethemanatee.org/manatee-vocalizations-and-sounds/" target="_blank" rel="noopener">sounds</a> and <a href="https://savethemanatee.org/manatees/manatee-faq/" target="_blank" rel="noopener">FAQ</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club.<br><a class="mt-back" href="/projects.html">Back to Projects</a></p>
 
 </main>
 

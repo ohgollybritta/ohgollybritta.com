@@ -93,15 +93,18 @@
   .mt-stories h3 { font-family: 'Fraunces', serif; font-weight: 800; font-size: 23px; line-height: 1.15; margin-bottom: 8px; }
   .mt-photo { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; border-radius: 18px; background: linear-gradient(160deg, #DDE9E4, #B9D3CB); color: #23463F; font-size: 14px; font-weight: 600; overflow: hidden; }
   .mt-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .mt-next { margin-top: 22px; padding-top: 30px; border-top: 1px solid rgba(245,237,228,.35); display: flex; flex-direction: column; gap: 14px; }
+  .mt-next { margin-top: 22px; padding-top: 30px; border-top: 1px solid rgba(245,237,228,.35); display: flow-root; }
+  .mt-next > p { margin-top: 14px; }
+  .mt-hammock { float: right; width: 300px; height: auto; margin: 4px 0 18px 28px; border-radius: 18px; }
   .mt-next h3 { margin: 0 !important; font-size: clamp(32px, 3.4vw, 46px); }
   .mt.mt-main .mt-open { font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(20px, 1.9vw, 25px); line-height: 1.4; }
   .mt-why { display: flow-root; }
   .mt-why > p { margin-top: 14px; }
+  .mt-why .mt-clear { clear: left; }
   .mt-left-pol.mt-left-pol:not([hidden]) { float: left; padding: 4px 30px 18px 4px; }
-  .mt-left-pol .mt-polaroid { width: 330px; margin: 0; padding: 14px 14px 78px; }
+  .mt-left-pol .mt-polaroid { width: 350px; margin: 0; padding: 14px 14px 78px; }
   .mt-left-pol .mt-polaroid::after { inset: 14px 14px 78px; }
-  .mt-left-pol figcaption { left: 18px; right: 18px; bottom: 16px; font-size: 15px; line-height: 1.3; }
+  .mt-left-pol figcaption { left: 18px; right: 18px; bottom: 31px; white-space: pre-line; font-size: 15px; line-height: 1.3; }
   .mt-three.mt-three:not([hidden]) { flex-wrap: nowrap; gap: 0; padding: 22px 0; }
   .mt-three .mt-polaroid { flex: 1 1 0; width: auto; margin: 0 -4px; padding: 14px 14px 46px; }
   .mt-three .mt-polaroid::after { inset: 14px 14px 46px; }
@@ -143,6 +146,7 @@
     .mt-left-pol .mt-polaroid { width: min(100%, 290px); }
     .mt-three.mt-three:not([hidden]) { flex-direction: column; align-items: center; gap: 18px; }
     .mt-three .mt-polaroid { flex: none; width: 82%; }
+    .mt-hammock { float: none; display: block; width: 100%; margin: 16px 0 4px; }
     .mt { padding: 26px 24px; }
     .mt-art { min-height: 520px; }
     .mt-art h1 { left: 24px; right: 24px; bottom: 218px; }
@@ -187,7 +191,7 @@
   <section class="card mt-art" aria-labelledby="manatee-title">
       <img src="/img/mossbottom-card.jpg" alt="Barnaby&rsquo;s cabin at dusk: a woodstove, a worn leather armchair, a family portrait of manatees and a jon boat waiting on the river.">
       <h1 id="manatee-title"><em>Welcome to</em> Mossbottom</h1>
-    <p class="mt-intro">An ambient YouTube channel set in a storybook Old Florida river town, where the porch lights stay on and somebody&rsquo;s always got a record playing. Gentle creatures. Slow jazz. Nowhere to be.</p>
+    <p class="mt-intro">An ambient YouTube channel set in a storybook Old Florida river town, where the porch lights stay on and somebody&rsquo;s always got a record playing. Gentle creatures. Slow jazz and a little bit of bluegrass. Nowhere to be.</p>
   </section>
 
   <section class="card mt terra mt-main" aria-labelledby="barnaby-title">
@@ -208,13 +212,11 @@
       <div class="mt-why">
       <div class="mt-polaroids mt-left-pol" data-photos="sign" hidden></div>
       <h3>Why I <em>slow down</em></h3>
-      <p>Once there was a girl who grew up on the St. Johns River, and all she ever wanted was to go fast. By car, by boat, by anything with a motor, as long as the wind was loud.</p>
-      <p>But there was one long, long stretch of river where her father always eased the boat down to a whisper. No wake, said the signs, and on and on they crept, while the girl fidgeted and sighed and waited for the fast part.</p>
-      <p>So her father told her the secret of the slow water. Somewhere beneath them, big and gentle and in no hurry at all, were the manatees. The signs were there to keep them safe.</p>
-      <p>After that, she kept a lookout. And every February, when the river ran cold, she went to the spring where the water stays warm, and there they were, all her quiet neighbors, waiting out the winter.</p>
-      <p>The girl grew up. She still loves to go fast. But she never forgot the slow water, and one day she built a little town there and called it Mossbottom.</p>
-      <p>The slow water is real, and it&rsquo;s the law. Florida&rsquo;s Manatee Sanctuary Act, <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2431.html" target="_blank" rel="noopener">&sect; 379.2431(2), Fla. Stat.</a>, makes the whole state a refuge and sanctuary. Paragraph (d) makes it unlawful to intentionally or negligently annoy, molest, harass, disturb, injure or kill a manatee. Paragraph (g)8. calls for boat-speed rules at Blue Springs Run and the connecting waters of the St. Johns within a mile. Violations are generally a misdemeanor under paragraph (s) and <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.407.html" target="_blank" rel="noopener">&sect; 379.407(1)</a>, and going over a posted limit is a civil infraction under <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0327%2FSections%2F0327.73.html" target="_blank" rel="noopener">&sect; 327.73(1)(k)2.</a></p>
-      <p>Those quiet neighbors have company now. At Blue Spring, the park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023.</p>
+      <p>I grew up active on the St. Johns River. My dad had a boat, and I have always loved going fast: car, boat, jet ski, it makes no difference. What I did not love was a no wake zone.</p>
+      <p>At five, I was in the middle of a very long one, impatient to pick up speed again, when my dad explained what the zones were for. They protected the manatees. We always looked out for their safety, and that day I understood why.</p>
+      <p>Visiting Blue Spring in February to see them became a highlight of growing up in Florida. I still love to go fast. I also know exactly where to slow down.</p>
+      <p class="mt-clear">Those zones have the law behind them. Florida&rsquo;s Manatee Sanctuary Act, <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2431.html" target="_blank" rel="noopener">&sect; 379.2431(2), Fla. Stat.</a>, makes the whole state a refuge and sanctuary. Paragraph (d) makes it unlawful to intentionally or negligently annoy, molest, harass, disturb, injure or kill a manatee. Paragraph (g)8. calls for boat-speed rules at Blue Springs Run and the connecting waters of the St. Johns within a mile. Violations are generally a misdemeanor under paragraph (s) and <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.407.html" target="_blank" rel="noopener">&sect; 379.407(1)</a>, and going over a posted limit is a civil infraction under <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0327%2FSections%2F0327.73.html" target="_blank" rel="noopener">&sect; 327.73(1)(k)2.</a></p>
+      <p>At Blue Spring, the park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023.</p>
       </div>
       <div class="mt-polaroids mt-three" data-photos="story" hidden></div>
       <h3>Who inspired <em>Barnaby</em></h3>
@@ -224,8 +226,10 @@
       <p>He&rsquo;s a little bit shy. When researchers paddle out for the morning count, he&rsquo;ll sometimes slip to the far bank to dodge the canoe. He also has wanderlust: he has skipped five winters at Blue Spring, three in a row, and turned up as far south as the Riviera Beach power plant in Palm Beach County.</p>
       <div class="mt-next">
       <h3>Around the <em>next bend</em></h3>
+      <img class="mt-hammock" src="/img/barnaby-hammock.jpg" width="960" height="1200" loading="lazy" alt="Barnaby asleep in a hammock on the houseboat deck at night, a book open on his belly, a lantern glowing and fireflies drifting over the river.">
       <p class="mt-open">Follow the river a little farther and you&rsquo;ll hear a school bell ringing through the cypress.</p>
-      <p>That&rsquo;s where the children&rsquo;s book begins. In <em>Why Barnaby Went to School</em>, Professor Plume is at the front of the room, Rupert has big opinions about snacks, and Tuck is right on time. His own time.</p>
+      <p>That&rsquo;s where the children&rsquo;s book begins. In <em>Why Barnaby Went to School</em>, we meet Barnaby&rsquo;s other friends. Professor Plume, a great egret in wire-rimmed spectacles, is at the front of the room. Rupert, a rabbit with a mohawk and big opinions about snacks, is her most reluctant pupil. Tuck, the old box turtle, keeps the library and is always on time. His own time.</p>
+      <p>Miss Rosetta, a roseate spoonbill in pearls, is the town dressmaker. Miles, a gentle alligator in a straw hat, builds the docks. Nurse Ruby, a sandhill crane, is the river nurse, and you&rsquo;ll run into Ranger Otis, a river otter, and Captain Eustis, a barred owl who once navigated the world. Whiskers is there too, of course. She never says a word.</p>
       <p>But it isn&rsquo;t only a story about why school matters. It&rsquo;s about why <em>knowing</em> matters. What a propeller can do. Why a sign is posted. What one tangle of fishing line can cost a neighbor who can&rsquo;t ask for help. The animals can&rsquo;t read the signs, so somebody has to, and a child who learns that may grow up to be the one who eases back on the throttle.</p>
       <p>Farther down the river, Claude and Dottie will have a story of their own.</p>
       <p>Until then, I&rsquo;m lacing up for the <a href="https://savethemanatee.org/save-the-manatee-5k/" target="_blank" rel="noopener">Save the Manatee 5K</a>. Look toward the houseboat and you might catch somebody in a mustard cardigan, waving from the porch.</p>
@@ -345,7 +349,7 @@
 (function() {
   var PHOTOS = {
     sign: [
-      { src: '/img/resume-normal-safe-operation.jpg', alt: 'A great blue heron standing on a river sign that reads Resume Normal Safe Operation.', caption: 'Where the slow water ends. Rule 68D-24.018, Fla. Admin. Code, St. Johns River' }
+      { src: '/img/resume-normal-safe-operation.jpg', alt: 'A great blue heron standing on a river sign that reads Resume Normal Safe Operation.', caption: 'Where the zone ends.\nRule 68D-24.018, F.A.C., St. Johns River' }
     ],
     threats: [
       { caption: 'Go slow' }

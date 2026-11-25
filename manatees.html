@@ -41,6 +41,7 @@
   .mt-art h1 { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 122px; z-index: 1; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(42px, 7vw, 96px); line-height: .98; letter-spacing: -.025em; color: var(--cream); }
   .mt-art h1 em { color: #F0C9BB; font-style: italic; font-weight: 400; }
   .mt-intro { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 28px; z-index: 1; max-width: 640px; font-size: 17px; line-height: 1.55; color: var(--cream); }
+  .mt-sub.hero-btn { position: absolute; right: var(--pad-lg); bottom: 32px; z-index: 2; }
   .mt-main-body { display: flex; gap: 28px; align-items: center; }
   .mt-main-text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
   .mt-main h2 { font-size: clamp(32px, 3.4vw, 46px); }
@@ -149,6 +150,8 @@
     .mt.mt-adopt { flex-direction: column; align-items: flex-start; gap: 18px; }
     .mt.mt-adopt .mt-btn.hero-btn { align-self: flex-start; }
     .mt-art { min-height: 360px; }
+    .mt-intro { right: 240px; }
+    .mt-art h1 { bottom: 150px; }
     .mt.mt-threats { grid-template-columns: minmax(0, 1fr); gap: 28px; }
     .mt.mt-threats { padding: 36px 32px; }
     .mt-also { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -175,9 +178,10 @@
     .mt-cast img { width: auto; max-width: none; height: 210px; }
     .mt-hammock { float: none; display: block; width: 100%; margin: 16px 0 4px; }
     .mt { padding: 26px 24px; }
-    .mt-art { min-height: 520px; }
-    .mt-art h1 { left: 24px; right: 24px; bottom: 218px; }
-    .mt-intro { left: 24px; right: 24px; bottom: 24px; }
+    .mt-art { min-height: 580px; }
+    .mt-sub.hero-btn { right: 24px; bottom: 24px; }
+    .mt-art h1 { left: 24px; right: 24px; bottom: 286px; }
+    .mt-intro { left: 24px; right: 24px; bottom: 88px; }
   }
 </style>
 </head>
@@ -219,6 +223,10 @@
       <img src="/img/mossbottom-card.jpg" alt="Barnaby&rsquo;s cabin at dusk: a woodstove, a worn leather armchair, a family portrait of manatees and a jon boat waiting on the river.">
       <h1 id="manatee-title"><em>Welcome to</em> Mossbottom</h1>
     <p class="mt-intro">An ambient YouTube channel set in a storybook Old Florida river town, where the porch lights stay on and somebody&rsquo;s always got a record playing. Gentle creatures. Slow jazz and a little bit of bluegrass. Nowhere to be.</p>
+    <a class="hero-btn primary mt-sub" href="https://www.youtube.com/@mossbottom?sub_confirmation=1" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v10H3V11zM7 11l4-8a2.5 2.5 0 0 1 2.5 2.5V9H20a1.8 1.8 0 0 1 1.8 2.1l-1.4 8A2.2 2.2 0 0 1 18.2 21H7"/></svg>
+      Like &amp; subscribe
+    </a>
   </section>
 
   <section class="card mt terra mt-main" aria-labelledby="barnaby-title">

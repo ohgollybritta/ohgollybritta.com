@@ -49,8 +49,8 @@
   .mt-main-body .mt-polaroid::after { inset: 14px 14px auto; }
   .mt-main-body .mt-polaroid figcaption { margin-top: 11px; font-size: 17px; }
 
-  .mt-watch { grid-column: 9 / 13; grid-row: 2; justify-content: space-between; }
-  .mt-eps { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+  .mt-watch { grid-column: 9 / 13; grid-row: 2; align-self: start; justify-content: flex-start; }
+  .mt-eps { display: flex; flex-direction: column; gap: 18px; }
   .mt-ep { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.4; }
   .mt-ep img { flex: none; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; }
   .mt-ep span { display: flex; flex-direction: column; gap: 3px; }
@@ -101,7 +101,17 @@
   .mt-polaroids.mt-big .mt-polaroid::after { inset: 18px 18px auto; }
   .mt-polaroids.mt-big .mt-polaroid figcaption { margin-top: 14px; font-size: 16px; line-height: 1.35; }
   .mt-polaroids.mt-big .mt-soon { font-size: 16px; }
-  .mt.mt-temper { grid-column: 9 / 13; grid-row: 3; gap: 20px; }
+  .mt.mt-temper { grid-column: 9 / 13; grid-row: 3; gap: 24px; }
+  @media (min-width: 1141px) {
+    .bento { grid-template-rows: auto auto 1fr; }
+    .mt.mt-temper .mt-stories p { font-size: 17px; line-height: 1.6; }
+    .mt.mt-temper .mt-stories { gap: 24px; }
+    .mt-temper > .mt-photo:not(:last-child) { aspect-ratio: 1 / 1; }
+  }
+  @media (min-width: 861px) and (max-width: 1140px) {
+    .mt.mt-main, .card.mt-watch, .mt.mt-temper { grid-column: 1 / 13; grid-row: auto; }
+    .mt-watch .mt-eps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
   .mt-temper .mt-lead.mt-lead { font-size: 17px; }
   .mt-temper h3 { font-size: 20px !important; margin-bottom: 5px !important; }
   .mt-temper .mt-stories { gap: 16px; }
@@ -251,11 +261,11 @@
     </div>
     <div class="mt-story">
       <p>Claude survived, with scars across his back that he never talks about. He still lives at Blue Spring, quiet and a little gruff. Barnaby visits him every winter. Claude barely says a word, but he always saves Barnaby the warmest spot in the spring.</p>
-      <p>Look for the portrait by the woodstove in the videos. Two grown manatees, side by side, and little Barnaby in front, each parent holding one of his flippers. It&rsquo;s the last one of him with his entire family, and it&rsquo;s how he keeps them both close. It&rsquo;s also why he putters along at idle speed and waves every boater down to a crawl.</p>
+      <p>On the wall by the woodstove hangs the last picture of the three of them, brown as an old photograph except for the pink in their cheeks. Dottie has one flipper, Claude has the other, and little Barnaby stands between them in a tiny cable-knit cardigan. It&rsquo;s how he keeps them close. It&rsquo;s why his jon boat never leaves idle speed, and why he waves every boater down to a crawl.</p>
       <div class="mt-why">
       <h3>Raised on <em>the same river</em></h3>
-      <p>Florida&rsquo;s manatees are West Indian manatees. The species ranges from the southern United States through the Caribbean and Central America to northern South America, and ours are a subspecies of their own, the Florida manatee. In warm months they wander: up the coast to Georgia and the Carolinas, west to Louisiana, and a few as far as Texas or Massachusetts.</p>
-      <p>Winter brings them back. For all their size, they carry relatively little body fat, and they can&rsquo;t tolerate water below 68 degrees for long. So before the coldest months, they migrate to Florida&rsquo;s warm water, returning to the same refuges year after year. One of them is Blue Spring, 72 degrees all year, on the St. Johns.</p>
+      <p>The manatees I grew up with are well traveled. They&rsquo;re West Indian manatees, a species found from the southern United States through the Caribbean to northern South America, and Florida has its own branch of the family. In the warm months, some head up the coast to Georgia and the Carolinas, others go west to Louisiana, and a few have made it as far as Texas and Massachusetts.</p>
+      <p>Winter always brings them back. For their size, they carry very little body fat, and they can&rsquo;t stay in water below 68 degrees for long. So before the worst of the cold, they make their way to Florida&rsquo;s warm water, often to the very same places year after year. One of those places is Blue Spring, on the St. Johns, where the water stays 72 degrees.</p>
       <div class="mt-polaroids mt-left-pol" data-photos="sign" hidden></div>
       <p>I grew up active on that same river. My dad had a boat, and I have always loved going fast: car, boat, jet ski, it makes no difference. What I did not love was a no wake zone.</p>
       <p>At five, I was in the middle of a very long one, impatient to pick up speed again, when my dad explained what the zones were for: protecting the manatees. We always looked out for their safety, and that day I understood why. From then on, I was looking for them, too.</p>

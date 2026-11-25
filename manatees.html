@@ -77,18 +77,22 @@
   .mt.mt-manners li::before { content: none; }
   .mt-manners li strong { display: block; margin-bottom: 8px; font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.05; }
   .mt-lead.mt-lead { font-size: clamp(18px, 1.7vw, 22px); line-height: 1.5; }
-  .mt.mt-threats { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; align-items: center; padding: 72px 56px; }
+  .mt.mt-threats { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px 56px; align-items: start; padding: 40px 56px 56px; }
   .mt-photos { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .mt-threats-text { display: flex; flex-direction: column; gap: 16px; }
   .mt-threats h2 { font-size: clamp(40px, 5.6vw, 78px); line-height: 1.02; letter-spacing: -.02em; }
   .mt-temper h2 { font-size: clamp(30px, 2.9vw, 40px); line-height: 1.05; letter-spacing: -.015em; }
   .mt-threats h2 em { color: var(--terra-dark); }
-  .mt-threats dl { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
-  .mt-threats dt { font-family: 'Fraunces', serif; font-weight: 800; font-size: 24px; line-height: 1.2; margin-top: 14px; }
-  .mt-threats dd { margin: 0; font-size: 18px; line-height: 1.55; }
+  .mt-num { display: flex; align-items: center; gap: 22px; margin-top: 10px; }
+  .mt-num strong { flex: none; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(88px, 11vw, 160px); line-height: .85; letter-spacing: -.04em; color: var(--terra-dark); }
+  .mt-num span { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(21px, 2.1vw, 29px); line-height: 1.2; }
+  .mt.mt-threats .mt-boats { font-size: clamp(18px, 1.65vw, 22px); line-height: 1.5; }
+  .mt-also { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 28px; padding-top: 26px; border-top: 2px solid rgba(168,82,58,.35); }
+  .mt-also dt { font-family: 'Fraunces', serif; font-weight: 800; font-size: 19px; margin-bottom: 4px; }
+  .mt-also dd { margin: 0; font-size: 14.5px; line-height: 1.5; }
   .mt-polaroids.mt-big .mt-polaroid { width: min(100%, 520px); margin: 0; padding: 18px 18px 22px; }
   .mt-polaroids.mt-big .mt-polaroid::after { inset: 18px 18px auto; }
-  .mt-polaroids.mt-big figcaption { margin-top: 14px; font-size: 22px; }
+  .mt-polaroids.mt-big .mt-polaroid figcaption { margin-top: 14px; font-size: 16px; line-height: 1.35; }
   .mt-polaroids.mt-big .mt-soon { font-size: 16px; }
   .mt.mt-temper { grid-column: 9 / 13; grid-row: 3; gap: 20px; }
   .mt-temper .mt-lead.mt-lead { font-size: 17px; }
@@ -140,6 +144,7 @@
     .mt-art { min-height: 360px; }
     .mt.mt-threats { grid-template-columns: minmax(0, 1fr); gap: 28px; }
     .mt.mt-threats { padding: 36px 32px; }
+    .mt-also { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .mt-eps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
   }
   @media (max-width: 620px) {
@@ -150,7 +155,8 @@
     .mt.mt-manners { padding: 36px 24px; }
     .mt-manners ul { gap: 24px; }
     .mt.mt-manners li { font-size: 17px; }
-    .mt-threats dd { font-size: 16.5px; }
+    .mt-also { grid-template-columns: minmax(0, 1fr); }
+    .mt-num { flex-direction: column; align-items: flex-start; gap: 12px; }
     .mt-polaroid { width: 44%; }
     .mt-left-pol.mt-left-pol:not([hidden]) { float: none; padding: 4px 0 20px; }
     .mt-left-pol .mt-polaroid { width: min(100%, 290px); }
@@ -277,23 +283,20 @@
 
   <section class="card mt salmon mt-full mt-threats" aria-labelledby="threats-title">
     <div class="mt-threats-text">
-      <span class="mt-meta">Human threats to their safety</span>
+      <span class="mt-meta">The human threat</span>
       <h2 id="threats-title">They have no <em>natural predators.</em></h2>
-      <p class="mt-lead">Nothing in the wild hunts a manatee. Florida still lost 632 of them in 2025. Not every death traces back to people, but these threats do.</p>
-      <dl>
-        <dt>Boats</dt>
-        <dd>Collisions caused at least 98 of those deaths, a quarter of the manatees examined. Another 33 were pulled from the water alive with boat wounds.</dd>
-        <dt>Hunger</dt>
-        <dd>Poor water quality helped wipe out the seagrass in the Indian River Lagoon, and manatees on the east coast starved. From December 2020 through April 2022, 1,255 were found dead there.</dd>
-        <dt>Crowding</dt>
-        <dd>They carry only about an inch of fat. When people disturb them at a warm spring, they can flee into water cold enough to kill them.</dd>
-        <dt>Pollution and lost habitat</dt>
-        <dd>Fouled water and shrinking habitat take away the places they feed, rest and stay warm.</dd>
-        <dt>What we leave behind</dt>
-        <dd>Fishing line, nets, hooks and litter wrap, cut and choke.</dd>
-      </dl>
+      <p class="mt-lead">Nothing in the wild hunts a manatee. The danger is a propeller.</p>
+      <p class="mt-num"><strong>4%</strong><span>of the adult manatees in a ten-year state study had no scars from a boat.</span></p>
+      <p class="mt-boats">One in four carried the marks of ten or more strikes. In 2025, collisions caused at least 98 deaths, a quarter of the manatees examined, and a record 33 were rescued alive with boat wounds.</p>
+      <p class="mt-boats">Deep Dent&rsquo;s scars are how researchers know him on sight. A boat is how Barnaby lost his mother.</p>
     </div>
     <div class="mt-polaroids mt-big" data-photos="threats" hidden></div>
+    <dl class="mt-also">
+      <div><dt>Hunger</dt><dd>Poor water quality helped wipe out seagrass in the Indian River Lagoon. From December 2020 through April 2022, 1,255 manatees were found dead on the east coast.</dd></div>
+      <div><dt>Crowding</dt><dd>Disturbed at a warm spring, they can flee into water cold enough to kill them.</dd></div>
+      <div><dt>Lost habitat</dt><dd>Fouled water and shrinking habitat take away the places they feed, rest and stay warm.</dd></div>
+      <div><dt>Litter</dt><dd>Fishing line, crab trap line, nets and hooks wrap, cut and choke.</dd></div>
+    </dl>
     <div class="mt-photos">
       <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
       <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
@@ -321,7 +324,7 @@
     <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
   </section>
 
-  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>, its <a href="https://www.savethemanatee.org/jimmy-buffett/" target="_blank" rel="noopener">Jimmy Buffett tribute</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns manatee zone rule</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68D-24-018" target="_blank" rel="noopener">the rule on the sign</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/statistics/mortality/2025/review/" target="_blank" rel="noopener">2025 mortality</a>, the <a href="https://myfwc.com/research/manatee/rescue-mortality-response/ume/" target="_blank" rel="noopener">east coast die-off</a> and <a href="https://myfwc.com/news/all-news/manatee-mortality-1221/" target="_blank" rel="noopener">its cause</a>. Temperament: Save the Manatee Club on <a href="https://savethemanatee.org/manatee-moms-nurturing-the-next-generation/" target="_blank" rel="noopener">manatee moms</a>, <a href="https://savethemanatee.org/manatee-vocalizations-and-sounds/" target="_blank" rel="noopener">sounds</a> and <a href="https://savethemanatee.org/manatees/manatee-faq/" target="_blank" rel="noopener">FAQ</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club.<br><a class="mt-back" href="/projects.html">Back to Projects</a></p>
+  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>, its <a href="https://www.savethemanatee.org/jimmy-buffett/" target="_blank" rel="noopener">Jimmy Buffett tribute</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns manatee zone rule</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68D-24-018" target="_blank" rel="noopener">the rule on the sign</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/statistics/mortality/2025/review/" target="_blank" rel="noopener">2025 mortality</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/publication/" target="_blank" rel="noopener">boat scars</a>, the <a href="https://myfwc.com/research/manatee/rescue-mortality-response/ume/" target="_blank" rel="noopener">east coast die-off</a> and <a href="https://myfwc.com/news/all-news/manatee-mortality-1221/" target="_blank" rel="noopener">its cause</a>. Rescue photo and story: <a href="https://mission.cmaquarium.org/news/oldsmar-manatee-rescued-released-amputated-flipper/" target="_blank" rel="noopener">Clearwater Marine Aquarium</a>. Temperament: Save the Manatee Club on <a href="https://savethemanatee.org/manatee-moms-nurturing-the-next-generation/" target="_blank" rel="noopener">manatee moms</a>, <a href="https://savethemanatee.org/manatee-vocalizations-and-sounds/" target="_blank" rel="noopener">sounds</a> and <a href="https://savethemanatee.org/manatees/manatee-faq/" target="_blank" rel="noopener">FAQ</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club.<br><a class="mt-back" href="/projects.html">Back to Projects</a></p>
 
 </main>
 
@@ -358,7 +361,7 @@
       { src: '/img/resume-normal-safe-operation.jpg', alt: 'A great blue heron standing on a river sign that reads Resume Normal Safe Operation.', caption: 'Where the zone ends.\nRule 68D-24.018, F.A.C., St. Johns River' }
     ],
     threats: [
-      { caption: 'Go slow' }
+      { href: 'https://mission.cmaquarium.org/news/oldsmar-manatee-rescued-released-amputated-flipper/', soon: 'See the photo at Clearwater Marine Aquarium', caption: 'Rescued from crab trap line, Oldsmar, 2017.\nPhoto: Andy Garrett, MMPL, via Clearwater Marine Aquarium' }
     ],
     barnaby: [
       { src: '/img/britta-and-barnaby.jpg', alt: 'Storybook painting of Britta in gold aviator sunglasses hugging Barnaby the manatee in his mustard cardigan, beside his teal houseboat.', caption: 'Me & Barnaby' }

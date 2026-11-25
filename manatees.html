@@ -115,7 +115,8 @@
   .mt-cast > div { overflow: hidden; border-radius: 18px; background: #FBF3E4; }
   .mt-cast img { display: block; width: 100%; height: auto; }
   .mt-cast figcaption { margin-top: 10px; text-align: center; text-wrap: balance; font: italic 500 15px/1.35 'Fraunces', serif; }
-  .mt-temper > .mt-photo:last-child { flex: 1 0 auto; aspect-ratio: auto; min-height: 230px; }
+  .mt-temper > .mt-photo:last-child { position: relative; flex: 1 0 auto; aspect-ratio: auto; min-height: 380px; }
+  .mt-temper > .mt-photo:last-child img { position: absolute; inset: 0; object-position: 60% 45%; }
   .mt-why { display: flow-root; }
   .mt-why > p { margin-top: 14px; }
   .mt-why .mt-clear { clear: left; }
@@ -303,7 +304,7 @@
       <div><h3>Curious, and not shy about it</h3><p>At Blue Spring, some will follow the alligators around while the alligators try to get away. In the water they roll, swim upside down and turn somersaults.</p></div>
       <div><h3>Built for peace</h3><p>No biting teeth, only molars for grinding plants. They rest 2 to 12 hours a day, and on a long dive the heart slows to about 30 beats a minute.</p></div>
     </div>
-    <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
+    <div class="mt-photo"><img src="/img/barnaby-dozing.jpg" width="960" height="1192" loading="lazy" alt="Barnaby asleep in his armchair by the woodstove while it rains, with Whiskers curled up on the quilt in his lap."></div>
   </section>
 
   <section class="card mt salmon mt-full mt-threats" aria-labelledby="threats-title">

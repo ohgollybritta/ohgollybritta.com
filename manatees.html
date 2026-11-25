@@ -59,6 +59,10 @@
   .mt-watch .hero-btn { align-self: flex-start; }
 
   .mt-full { grid-column: 1 / 13; }
+  .card-radar.mt-full { grid-row: auto; }
+  .card-radar.mt-full .radar-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1000px) { .card-radar.mt-full .radar-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .card-radar.mt-full .radar-list { grid-template-columns: minmax(0, 1fr); } }
   .mt.salmon li::before { background: var(--terra-dark); }
   .mt-story { display: flex; flex-direction: column; gap: 14px; }
   .mt-story h3:not(:first-child) { margin-top: 14px; }
@@ -334,6 +338,78 @@
       <li><strong>Obey the zone.</strong>&ldquo;Idle speed, no wake&rdquo; means only fast enough to steer and keep moving.</li>
       <li><strong>Read the water.</strong>Watch for snouts, backs, tails and smooth circles on the surface. Those are manatee footprints.</li>
       <li><strong>Come prepared.</strong>Wear polarized glasses, steer around seagrass and shallows, and recycle old fishing line.</li>
+    </ul>
+  </section>
+
+  <!-- To add one: copy an <li class="radar-item">...</li> block, paste it at the top of the list, and change the link, title, source, date and tags. -->
+  <section class="card card-radar mt-full" aria-label="On My Radar">
+    <div class="widget-label">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      On My Radar
+    </div>
+    <p class="radar-blurb">Manatee stories I&rsquo;m paying attention to.</p>
+    <ul class="radar-list">
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.gulfcoastnewsnow.com/article/manatee-rescue-boat-injury-marina-seaworld-florida/74523237" target="_blank" rel="noopener">
+          <span class="radar-title">Manatee with boat injuries rescued at Charlotte County marina, taken to SeaWorld for rehab</span>
+          <span class="radar-meta">
+            <span class="radar-source">Gulf Coast News</span> &middot;
+            <time datetime="2026-11-24">Nov 24, 2026</time>
+          </span>
+          <span class="radar-url">gulfcoastnewsnow.com/article/manatee-rescue-boat-injury-marina-seaworld-florida</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Rescue</span>
+          <span class="work-tag t-terra">Boat Strike</span>
+        </div>
+      </li>
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.wftv.com/news/local/manatee-season-begins-blue-spring-state-park/3Z3GPM4HUBDC5NNGN6XAOCAB6I/" target="_blank" rel="noopener">
+          <span class="radar-title">Manatee season begins at Blue Spring State Park</span>
+          <span class="radar-meta">
+            <span class="radar-source">WFTV</span> &middot;
+            <time datetime="2026-11-15">Nov 15, 2026</time>
+          </span>
+          <span class="radar-url">wftv.com/news/local/manatee-season-begins-blue-spring-state-park</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Blue Spring</span>
+          <span class="work-tag t-terra">Winter Count</span>
+        </div>
+      </li>
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.wftv.com/news/local/florida-manatees-begin-seasonal-migration-warmer-waters/MTTIRCLNZJH4LJK7TYOHNTQ5EA/" target="_blank" rel="noopener">
+          <span class="radar-title">Florida manatees begin seasonal migration to warmer waters</span>
+          <span class="radar-meta">
+            <span class="radar-source">WFTV</span> &middot;
+            <time datetime="2026-11-13">Nov 13, 2026</time>
+          </span>
+          <span class="radar-url">wftv.com/news/local/florida-manatees-begin-seasonal-migration-warmer-waters</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Migration</span>
+          <span class="work-tag t-terra">Boating Safety</span>
+        </div>
+      </li>
+
+      <li class="radar-item">
+        <a class="radar-link" href="https://www.columbuszoo.org/news/four-manatees-head-florida-final-stages-rehabilitation-six-more-arrive-ohio-zoos-care" target="_blank" rel="noopener">
+          <span class="radar-title">Four manatees head to Florida for final stages of rehabilitation as six more arrive at Ohio zoos for care</span>
+          <span class="radar-meta">
+            <span class="radar-source">Columbus Zoo</span> &middot;
+            <time datetime="2026-10-14">Oct 14, 2026</time>
+          </span>
+          <span class="radar-url">columbuszoo.org/news/four-manatees-head-florida-final-stages-rehabilitation-six-more-arrive-ohio-zoos-care</span>
+        </a>
+        <div class="work-tags radar-tags">
+          <span class="work-tag t-teal">Rehabilitation</span>
+          <span class="work-tag t-terra">Coming Home</span>
+        </div>
+      </li>
+
     </ul>
   </section>
 

@@ -108,6 +108,12 @@
     .mt.mt-temper .mt-stories { gap: 24px; }
     .mt-temper > .mt-photo:not(:last-child) { aspect-ratio: 1 / 1; }
   }
+  @media (min-width: 1141px) and (max-width: 1260px) {
+    .mt.mt-temper .mt-stories p, .mt.mt-temper .mt-lead.mt-lead { font-size: 18.5px; line-height: 1.65; }
+  }
+  @media (min-width: 1300px) {
+    .mt-temper > .mt-photo:not(:last-child) { aspect-ratio: 4 / 3; }
+  }
   @media (min-width: 861px) and (max-width: 1140px) {
     .mt.mt-main, .card.mt-watch, .mt.mt-temper { grid-column: 1 / 13; grid-row: auto; }
     .mt-watch .mt-eps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -122,22 +128,21 @@
   .mt-photo img { width: 100%; height: 100%; object-fit: cover; }
   .mt-next { margin-top: 22px; padding-top: 30px; border-top: 1px solid rgba(245,237,228,.35); display: flow-root; }
   .mt-next > p { margin-top: 14px; }
-  .mt-hammock { float: right; width: 300px; aspect-ratio: 4 / 5; overflow: hidden; margin: 4px 0 18px 28px; border-radius: 18px; }
-  .mt-hammock img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.32); transform-origin: 50% 62%; }
   .mt-next h3 { margin: 0 !important; font-size: clamp(32px, 3.4vw, 46px); }
   .mt-book { font-family: 'Fraunces', serif; font-style: italic; font-weight: 700; font-size: 1.22em; color: #A8E6DA; }
-  .mt-cast { clear: both; margin: 0; padding-top: 26px; }
+  .mt-cast { margin: 0; padding: 18px 0 8px; }
   .mt-cast > div { overflow: hidden; border-radius: 18px; background: #FBF3E4; }
   .mt-cast img { display: block; width: 100%; height: auto; }
   .mt-cast figcaption { margin-top: 10px; text-align: center; text-wrap: balance; font: italic 500 15px/1.35 'Fraunces', serif; }
   .mt-temper > .mt-photo:last-child { position: relative; flex: 1 0 auto; aspect-ratio: auto; min-height: 380px; }
-  .mt-temper > .mt-photo:last-child img { position: absolute; inset: 0; object-position: 60% 45%; }
+  .mt-temper > .mt-photo:last-child img { position: absolute; inset: 0; object-position: 14% 50%; }
   .mt-why { display: flow-root; }
   .mt-why > p { margin-top: 14px; }
   .mt-why .mt-clear { clear: left; }
   .mt.mt-main .mt-next p.mt-give { clear: both; margin-top: 0; padding-top: 18px; font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(26px, 2.7vw, 36px); line-height: 1.22; letter-spacing: -.01em; text-wrap: balance; }
+  .mt-club { color: #A8E6DA; }
   .mt-give small { display: block; margin-bottom: 8px; font: 400 17px/1.65 'DM Sans', sans-serif; letter-spacing: 0; }
-  .mt-left-pol.mt-left-pol:not([hidden]) { float: left; padding: 30px 30px 18px 4px; }
+  .mt-left-pol.mt-left-pol:not([hidden]) { float: left; padding: 30px 30px 52px 4px; }
   .mt-left-pol .mt-polaroid { width: 350px; margin: 0; padding: 14px 14px 18px; }
   .mt-left-pol .mt-polaroid::after { inset: 14px 14px auto; }
   .mt-left-pol .mt-polaroid figcaption { margin-top: 10px; font-size: 15px; line-height: 1.3; }
@@ -196,7 +201,6 @@
     .mt-three .mt-polaroid { flex: none; width: 82%; }
     .mt-cast > div { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .mt-cast img { width: auto; max-width: none; height: 210px; }
-    .mt-hammock { float: none; display: block; width: 100%; margin: 16px 0 4px; }
     .mt { padding: 26px 24px; }
     .mt-art { min-height: 660px; }
     .mt-sub.hero-btn { right: 24px; bottom: 24px; }
@@ -272,7 +276,7 @@
       <p>I grew up active on that same river. My dad had a boat, and I have always loved going fast: car, boat, jet ski, it makes no difference. What I did not love was a no wake zone.</p>
       <p>At five, I was in the middle of a very long one, impatient to pick up speed again, when my dad explained what the zones were for: protecting the manatees. We always looked out for their safety, and that day I understood why. From then on, I was looking for them, too.</p>
       <p>Visiting Blue Spring in February to see them became a highlight of growing up in Florida. I still love to go fast. I also know exactly where to slow down.</p>
-      <p class="mt-clear">Those zones have the law behind them. Florida&rsquo;s Manatee Sanctuary Act, <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2431.html" target="_blank" rel="noopener">&sect; 379.2431(2), Fla. Stat.</a>, makes the whole state a refuge and sanctuary. Paragraph (d) makes it unlawful to intentionally or negligently annoy, molest, harass, disturb, injure or kill a manatee. Paragraph (g)8. calls for boat-speed rules at Blue Springs Run and the connecting waters of the St. Johns within a mile. Violations are generally a misdemeanor under paragraph (s) and <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.407.html" target="_blank" rel="noopener">&sect; 379.407(1)</a>, and going over a posted limit is a civil infraction under <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0327%2FSections%2F0327.73.html" target="_blank" rel="noopener">&sect; 327.73(1)(k)2.</a></p>
+      <p class="mt-clear">My dad had the law on his side. Florida&rsquo;s Manatee Sanctuary Act, <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.2431.html" target="_blank" rel="noopener">&sect; 379.2431(2), Fla. Stat.</a>, makes the whole state a refuge and sanctuary. Paragraph (d) makes it unlawful to intentionally or negligently annoy, molest, harass, disturb, injure or kill a manatee. Paragraph (g)8. calls for boat-speed rules at Blue Springs Run and the connecting waters of the St. Johns within a mile. Violations are generally a misdemeanor under paragraph (s) and <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0379%2FSections%2F0379.407.html" target="_blank" rel="noopener">&sect; 379.407(1)</a>, and going over a posted limit is a civil infraction under <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0300-0399%2F0327%2FSections%2F0327.73.html" target="_blank" rel="noopener">&sect; 327.73(1)(k)2.</a></p>
       <p>At Blue Spring, the park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023.</p>
       </div>
       <div class="mt-polaroids mt-three" data-photos="story" hidden></div>
@@ -283,14 +287,13 @@
       <p>He is shy, known to slip to the far bank when the research canoe comes through, and he answers to no one&rsquo;s schedule. He has skipped five winters at Blue Spring, three of them in a row. During at least one, photo identification placed him at the Riviera Beach power plant in Palm Beach County, on the Atlantic coast. Scarred, quiet and still going his own way.</p>
       <div class="mt-next">
       <h3>Around the <em>next bend</em></h3>
-      <div class="mt-hammock"><img src="/img/barnaby-hammock.jpg" width="960" height="1200" loading="lazy" alt="Barnaby asleep in a hammock on the houseboat deck at night, a book open on his belly, a lantern glowing and fireflies drifting over the river."></div>
-      <p>A children&rsquo;s book is in the works. The working title is <strong class="mt-book">Barnaby and the Slow Water</strong>, and it&rsquo;s where we meet Barnaby&rsquo;s other friends: Rupert, Professor Plume, Miss Rosetta, Miles, Tuck and the rest of the river. It begins with why school matters and grows into why being informed matters, because the dangers animals face are easier to prevent once you understand them.</p>
-      <p>Until then, I&rsquo;m participating in the annual <a href="https://savethemanatee.org/save-the-manatee-5k/" target="_blank" rel="noopener">Save the Manatee 5K</a>.</p>
-      <p class="mt-give"><small>If the YouTube channel ever makes revenue,</small> major proceeds will be donated directly to Jimmy Buffett&rsquo;s <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>.</p>
       <figure class="mt-cast">
         <div tabindex="0" role="group" aria-label="Concept art of Barnaby&rsquo;s friends"><img src="/img/mossbottom-friends.jpg" width="1800" height="543" loading="lazy" alt="Lineup of characters: Whiskers the black cat, Rupert the white rabbit, Miles the alligator in a straw hat, Barnaby, Professor Plume the egret, Nurse Ruby the crane, Miss Rosetta the spoonbill in pearls and Tuck the box turtle with a pocket watch."></div>
         <figcaption>Meet the friends: Whiskers, Rupert, Miles, Barnaby, Professor Plume, Nurse Ruby, Miss Rosetta and Tuck</figcaption>
       </figure>
+      <p>A children&rsquo;s book is in the works. The working title is <strong class="mt-book">Barnaby and the Slow Water</strong>, and it&rsquo;s where we meet Barnaby&rsquo;s other friends: Rupert, Professor Plume, Miss Rosetta, Miles, Tuck and the rest of the river. It begins with why school matters and grows into why being informed matters, because the dangers animals face are easier to prevent once you understand them.</p>
+      <p>Until then, I&rsquo;m participating in the annual <a href="https://savethemanatee.org/save-the-manatee-5k/" target="_blank" rel="noopener">Save the Manatee 5K</a>.</p>
+      <p class="mt-give"><small>If the YouTube channel ever makes revenue,</small> major proceeds will be donated directly to <span class="mt-club">Jimmy Buffett&rsquo;s <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a></span>.</p>
       </div>
     </div>
   </section>
@@ -323,7 +326,7 @@
       <div><h3>Curious, and not shy about it</h3><p>At Blue Spring, some will follow the alligators around while the alligators try to get away. In the water they roll, swim upside down and turn somersaults.</p></div>
       <div><h3>Built for peace</h3><p>No biting teeth, only molars for grinding plants. They rest 2 to 12 hours a day, and on a long dive the heart slows to about 30 beats a minute.</p></div>
     </div>
-    <div class="mt-photo"><img src="/img/barnaby-dozing.jpg" width="960" height="1192" loading="lazy" alt="Barnaby asleep in his armchair by the woodstove while it rains, with Whiskers curled up on the quilt in his lap."></div>
+    <div class="mt-photo"><img src="/img/barnaby-hammock.jpg" width="960" height="1200" loading="lazy" alt="Barnaby asleep in a hammock on the houseboat deck at night, a book open on his belly, a lantern glowing and fireflies drifting over the river."></div>
   </section>
 
   <section class="card mt salmon mt-full mt-threats" aria-labelledby="threats-title">

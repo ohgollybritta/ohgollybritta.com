@@ -164,6 +164,7 @@
   .mt-yt { display: block; width: 100%; aspect-ratio: 1; border: 0; background: #DDE9E4; }
   .mt-soon { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; padding: 14px; text-align: center; background: linear-gradient(160deg, #DDE9E4, #B9D3CB); color: #23463F; font-size: 12px; font-weight: 600; line-height: 1.35; }
   .mt-polaroid figcaption { margin-top: 9px; text-align: center; font: italic 500 13px/1.25 'Fraunces', serif; color: var(--ink); white-space: pre-line; }
+  .mt-sub-cap { display: block; margin-top: 3px; font-style: italic; font-weight: 400; font-size: .86em; }
   .mt-pbtn { display: block; width: fit-content; margin: 10px auto 0; padding: 7px 14px; border-radius: 100px; background: var(--teal-dark); color: #FFFDF8; font: 700 11px/1.2 'DM Sans', sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
   .mt-pbtn:hover, .mt-pbtn:focus-visible { background: var(--terra-dark); }
   .mt-polaroid::after { content: ''; position: absolute; inset: 10px 10px auto; aspect-ratio: 1; background: #fff; opacity: 0; pointer-events: none; }
@@ -482,7 +483,7 @@
     threats: [
 { src: '/img/claude-blue-spring.jpg', alt: 'Storybook painting of Claude, an older gray manatee with three propeller scars across his back, resting at Blue Spring beside a basket of unfinished mustard knitting.', caption: 'Barnaby\u2019s dad, Claude, at Blue Spring.\nHe never talks about the scars.' }    ],
     barnaby: [
-      { src: '/img/britta-and-barnaby.jpg', alt: 'Storybook painting of Britta in gold aviator sunglasses hugging Barnaby the manatee in his mustard cardigan, beside his teal houseboat.', caption: 'Me & Barnaby' }
+      { src: '/img/britta-and-barnaby.jpg', alt: 'Storybook painting of Britta in gold aviator sunglasses hugging Barnaby the manatee in his mustard cardigan, beside his teal houseboat.', caption: '@ohgollybritta & Barnaby', sub: 'The star of Mossbottom' }
     ],
     story: [
       { src: '/img/jet-ski-days.jpg', alt: 'Storybook painting of Britta at 14 racing a jet ski on the St. Johns River, hair streaming, with a tall rooster tail behind.', caption: 'My jet ski days\non the St. Johns River' },
@@ -505,6 +506,7 @@
       else { im.className = 'mt-soon'; im.textContent = p.soon || 'Photo coming soon'; if (p.href) { im.href = p.href; im.target = '_blank'; im.rel = 'noopener'; } }
       f.appendChild(im);
       if (p.caption) { var c = document.createElement('figcaption'); c.textContent = p.caption; f.appendChild(c); }
+      if (p.sub && c) { var sb = document.createElement('em'); sb.className = 'mt-sub-cap'; sb.textContent = p.sub; c.appendChild(sb); }
       if (p.credit && f.querySelector('figcaption')) { var cr = document.createElement('small'); cr.textContent = p.credit; f.querySelector('figcaption').appendChild(cr); }
       if (p.btn) { var b = document.createElement('a'); b.className = 'mt-pbtn'; b.textContent = p.btn; b.href = p.btnHref; b.target = '_blank'; b.rel = 'noopener'; f.appendChild(b); }
       if (p.tryImg) { var t = new Image(); t.alt = p.alt || ''; t.onload = function() { im.replaceWith(t); if (cr && p.imgCredit) cr.textContent = p.imgCredit; }; t.src = p.tryImg; }

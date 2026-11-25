@@ -16,9 +16,7 @@
 .rp-img-center40 { object-position: center 40%; }
 
 /* ── Card heights ── */
-.rp-hero-card { height: 460px; }
 .rp-mid-card  { height: 220px; }
-.rp-sage-hero { height: 520px; } /* slightly taller — it's THE hero */
 
 /* ── Section-label stagger on this page ── */
 .bento .section-label:nth-of-type(1) { animation-delay: .3s; }
@@ -76,19 +74,43 @@
   transform: translateX(3px);
 }
 
-/* ── Stronger text-legibility overlay for project-page hero cards ──
-   Pushes the bottom of the card dark enough for cream text to read over
-   any underlying image (the US-One map, in particular, needed this). */
-.rp-hero-card .work-overlay,
-.rp-sage-hero .work-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(20, 15, 12, .92) 0%,
-    rgba(20, 15, 12, .78) 22%,
-    rgba(20, 15, 12, .48) 48%,
-    rgba(20, 15, 12, .18) 72%,
-    transparent 100%
-  );
+/* ── Project cards: clear picture on top, text on a light panel below ── */
+.card-work-item.rp-hero-card,
+.card-work-item.rp-sage-hero {
+  display: flex; flex-direction: column;
+  height: auto;
+  background: var(--cream);
+}
+.rp-hero-card > img,
+.rp-sage-hero > img {
+  position: static;
+  flex: none;
+  width: 100%; height: 340px;
+  object-fit: cover;
+  opacity: 1; filter: none;
+}
+.rp-sage-hero > img { height: 440px; }
+.rp-hero-card .work-item-content,
+.rp-sage-hero .work-item-content {
+  position: relative; z-index: 1;
+  flex: 1;
+  background: var(--cream);
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 24px 28px 28px;
+}
+.rp-hero-card .work-item-cat,
+.rp-sage-hero .work-item-cat { color: var(--terra-dark); }
+.rp-hero-card .work-item-title,
+.rp-sage-hero .work-item-title { color: var(--ink); font-size: 24px; margin-bottom: 8px; }
+.rp-hero-card .work-item-desc,
+.rp-sage-hero .work-item-desc { color: rgba(44, 26, 14, .78); font-size: 14px; line-height: 1.55; margin-bottom: 14px; max-width: 72ch; }
+.rp-sage-hero .work-item-desc { max-width: 110ch; }
+.rp-hero-card .work-item-tag,
+.rp-sage-hero .work-item-tag {
+  margin-top: auto;
+  background: transparent;
+  color: var(--teal-dark);
+  border: 1.5px solid var(--teal-dark);
 }
 
 /* ── Past-projects "coming-soon" card ── */
@@ -161,7 +183,7 @@
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--teal-light);
+  color: #000;
 }
 .rp-ad-title {
   font-family: 'Fraunces', serif;
@@ -215,7 +237,7 @@
 
 /* ── Responsive ── */
 @media (max-width: 860px) {
-  .rp-hero-card { height: 340px; }
-  .rp-sage-hero { height: 380px; }
+  .rp-hero-card > img { height: 250px; }
+  .rp-sage-hero > img { height: 280px; }
   .rp-mid-card  { height: auto; min-height: 280px; }
 }

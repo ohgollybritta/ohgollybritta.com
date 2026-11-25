@@ -35,7 +35,7 @@
   .mt li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
 
   .mt.mt-main { grid-column: 1 / 9; grid-row: 2 / 4; gap: 28px; }
-  .mt-art { grid-column: 1 / 13; position: relative; min-height: 480px; overflow: hidden; background: #23463F; }
+  .mt-art { grid-column: 1 / 13; position: relative; min-height: 640px; overflow: hidden; background: #23463F; }
   .mt-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%; }
   .mt-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,44,39,.94) 12%, rgba(20,44,39,0) 78%); }
   .mt-art h1 { position: absolute; left: var(--pad-lg); right: var(--pad-lg); bottom: 122px; z-index: 1; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(42px, 7vw, 96px); line-height: .98; letter-spacing: -.025em; color: var(--cream); }
@@ -152,7 +152,7 @@
     .mt-art, .mt.mt-main, .mt-watch, .mt.mt-temper, .mt.mt-adopt, .mt-full { grid-column: span 2; grid-row: auto; }
     .mt.mt-adopt { flex-direction: column; align-items: flex-start; gap: 18px; }
     .mt.mt-adopt .mt-btn.hero-btn { align-self: flex-start; }
-    .mt-art { min-height: 360px; }
+    .mt-art { min-height: 500px; }
     .mt-intro { right: 240px; }
     .mt-art h1 { bottom: 150px; }
     .mt.mt-threats { grid-template-columns: minmax(0, 1fr); gap: 28px; }
@@ -181,7 +181,7 @@
     .mt-cast img { width: auto; max-width: none; height: 210px; }
     .mt-hammock { float: none; display: block; width: 100%; margin: 16px 0 4px; }
     .mt { padding: 26px 24px; }
-    .mt-art { min-height: 580px; }
+    .mt-art { min-height: 660px; }
     .mt-sub.hero-btn { right: 24px; bottom: 24px; }
     .mt-art h1 { left: 24px; right: 24px; bottom: 286px; }
     .mt-intro { left: 24px; right: 24px; bottom: 88px; }
@@ -324,11 +324,6 @@
       <div><dt>Entanglement</dt><dd>Crab trap line can wrap around a flipper and cut it away.</dd></div>
       <div><dt>Litter</dt><dd>Fishing line, nets, hooks and trash wrap, cut and choke.</dd></div>
     </dl>
-    <div class="mt-photos">
-      <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
-      <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
-      <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
-    </div>
   </section>
 
   <section class="card mt terra mt-full mt-manners" aria-labelledby="manners-title">
@@ -388,13 +383,13 @@
       { src: '/img/resume-normal-safe-operation.jpg', alt: 'A great blue heron standing on a river sign that reads Resume Normal Safe Operation.', caption: 'Where the zone ends.\nRule 68D-24.018, F.A.C., St. Johns River' }
     ],
     threats: [
-{ src: '/img/claude-blue-spring.jpg', alt: 'Storybook painting of Claude, an older gray manatee with three propeller scars across his back, resting at Blue Spring beside a basket of unfinished mustard knitting.', caption: 'Claude at Blue Spring.\nHe never talks about the scars.' }    ],
+{ src: '/img/claude-blue-spring.jpg', alt: 'Storybook painting of Claude, an older gray manatee with three propeller scars across his back, resting at Blue Spring beside a basket of unfinished mustard knitting.', caption: 'Barnaby\u2019s dad, Claude, at Blue Spring.\nHe never talks about the scars.' }    ],
     barnaby: [
       { src: '/img/britta-and-barnaby.jpg', alt: 'Storybook painting of Britta in gold aviator sunglasses hugging Barnaby the manatee in his mustard cardigan, beside his teal houseboat.', caption: 'Me & Barnaby' }
     ],
     story: [
-      { caption: 'Jet ski days' },
-      { caption: 'Manatee friends' },
+      { src: '/img/jet-ski-days.jpg', alt: 'Storybook painting of Britta at 14 racing a jet ski across a Florida lake, hair streaming, with a tall rooster tail behind.', caption: 'Jet ski days' },
+      { src: '/img/save-the-manatee-5k.jpg', alt: 'Storybook painting of Britta running along the river and waving to Barnaby on his houseboat porch while three manatees float in the water.', caption: 'Save the Manatee 5K' },
       { yt: 'E3xv3CtXJVU', title: 'Manatee adoptee Deep Dent, from Save the Manatee Club', tryImg: '/img/deep-dent.jpg', alt: 'Deep Dent, an adult manatee, swimming at Blue Spring.', caption: 'My adoptive manatee,\nDeep Dent', credit: 'Video: Save the Manatee Club', imgCredit: 'Photo: Save the Manatee Club' }
     ]
   };

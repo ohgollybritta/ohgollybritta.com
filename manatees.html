@@ -44,7 +44,9 @@
   .mt-main-body { display: flex; gap: 28px; align-items: center; }
   .mt-main-text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
   .mt-main h2 { font-size: clamp(32px, 3.4vw, 46px); }
-  .mt-main-body .mt-polaroid { width: 230px; margin: 0; }
+  .mt-main-body .mt-polaroid { width: 340px; margin: 0; padding: 14px 14px 18px; }
+  .mt-main-body .mt-polaroid::after { inset: 14px 14px auto; }
+  .mt-main-body .mt-polaroid figcaption { margin-top: 11px; font-size: 17px; }
 
   .mt-watch { grid-column: 9 / 13; grid-row: 2; justify-content: space-between; }
   .mt-eps { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
@@ -87,7 +89,7 @@
   .mt-num strong { flex: none; font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(88px, 11vw, 160px); line-height: .85; letter-spacing: -.04em; color: var(--terra-dark); }
   .mt-num span { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(21px, 2.1vw, 29px); line-height: 1.2; }
   .mt.mt-threats .mt-boats { font-size: clamp(18px, 1.65vw, 22px); line-height: 1.5; }
-  .mt-also { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 28px; padding-top: 26px; border-top: 2px solid rgba(168,82,58,.35); }
+  .mt-also { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; padding-top: 26px; border-top: 2px solid rgba(168,82,58,.35); }
   .mt-also dt { font-family: 'Fraunces', serif; font-weight: 800; font-size: 19px; margin-bottom: 4px; }
   .mt-also dd { margin: 0; font-size: 14.5px; line-height: 1.5; }
   .mt-polaroids.mt-big .mt-polaroid { width: min(100%, 520px); margin: 0; padding: 18px 18px 22px; }
@@ -159,6 +161,7 @@
     .mt-num { flex-direction: column; align-items: flex-start; gap: 12px; }
     .mt-polaroid { width: 44%; }
     .mt-left-pol.mt-left-pol:not([hidden]) { float: none; padding: 4px 0 20px; }
+    .mt-main-body .mt-polaroid { width: min(100%, 290px); }
     .mt-left-pol .mt-polaroid { width: min(100%, 290px); }
     .mt-left-pol .mt-polaroid figcaption { font-size: 13px; }
     .mt-three.mt-three:not([hidden]) { flex-direction: column; align-items: center; gap: 18px; }
@@ -295,7 +298,8 @@
       <div><dt>Hunger</dt><dd>Poor water quality helped wipe out seagrass in the Indian River Lagoon. From December 2020 through April 2022, 1,255 manatees were found dead on the east coast.</dd></div>
       <div><dt>Crowding</dt><dd>Disturbed at a warm spring, they can flee into water cold enough to kill them.</dd></div>
       <div><dt>Lost habitat</dt><dd>Fouled water and shrinking habitat take away the places they feed, rest and stay warm.</dd></div>
-      <div><dt>Litter</dt><dd>Fishing line, crab trap line, nets and hooks wrap, cut and choke.</dd></div>
+      <div><dt>Entanglement</dt><dd>Crab trap line can wrap a flipper and cut it away. The manatee rescued in Oldsmar lost hers, and was released the same day.</dd></div>
+      <div><dt>Litter</dt><dd>Fishing line, nets, hooks and trash wrap, cut and choke.</dd></div>
     </dl>
     <div class="mt-photos">
       <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>

@@ -66,13 +66,13 @@
   .mt-story p a { color: inherit; }
   .mt-story h3 em { font-style: italic; font-weight: 500; }
   .mt-adopt h2 { font-size: clamp(32px, 3.4vw, 46px); }
-  .mt.mt-adopt { flex-direction: row; align-items: center; justify-content: space-between; gap: 36px; }
+  .mt.mt-adopt { padding-top: 22px; padding-bottom: 26px; flex-direction: row; align-items: center; justify-content: space-between; gap: 36px; }
   .mt.mt-adopt .mt-btn.hero-btn { align-self: center; flex: none; }
   .mt-adopt .mt-meta { display: inline-block; text-decoration: none; margin-bottom: 8px; color: inherit; }
   .mt-adopt p { max-width: 520px; }
   .mt-btn.hero-btn.primary { align-self: flex-start; background: var(--cream); color: var(--terra-dark); border-color: var(--cream); }
   .mt-btn.hero-btn.primary.mt-btn-teal { color: var(--teal-dark); }
-  .mt.mt-manners { padding: 64px 56px; gap: 18px; }
+  .mt.mt-manners { padding: 34px 56px 48px; gap: 12px; }
   .mt-manners h2 { font-size: clamp(40px, 5.2vw, 72px); line-height: 1; letter-spacing: -.02em; }
   .mt-manners h2 em { color: #F0C9BB; }
   .mt-manners ul { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 56px; margin-top: 22px; }
@@ -135,6 +135,7 @@
   .mt-polaroid { position: relative; width: 170px; margin: 0 -10px; padding: 10px 10px 14px; background: #FFFDF8; box-shadow: 0 8px 22px rgba(44,26,14,.28); transform: rotate(var(--r, 0deg)); transition: transform .25s ease; }
   .mt-polaroid:hover, .mt-polaroid:focus-within { transform: rotate(0) scale(1.06); z-index: 2; }
   .mt-polaroid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .mt-polaroid figcaption small { display: block; margin-top: 3px; font: 500 11px/1.3 'DM Sans', sans-serif; opacity: .75; }
   .mt-soon { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; padding: 14px; text-align: center; background: linear-gradient(160deg, #DDE9E4, #B9D3CB); color: #23463F; font-size: 12px; font-weight: 600; line-height: 1.35; }
   .mt-polaroid figcaption { margin-top: 9px; text-align: center; font: italic 500 13px/1.25 'Fraunces', serif; color: var(--ink); white-space: pre-line; }
   .mt-polaroid::after { content: ''; position: absolute; inset: 10px 10px auto; aspect-ratio: 1; background: #fff; opacity: 0; pointer-events: none; }
@@ -162,7 +163,7 @@
     .mt-main-body { flex-direction: column; align-items: stretch; }
     .mt-manners ul, .mt-photos { grid-template-columns: minmax(0, 1fr); }
     .mt.mt-threats { padding: 30px 24px; }
-    .mt.mt-manners { padding: 36px 24px; }
+    .mt.mt-manners { padding: 26px 24px 32px; }
     .mt-manners ul { gap: 24px; }
     .mt.mt-manners li { font-size: 17px; }
     .mt-also { grid-template-columns: minmax(0, 1fr); }
@@ -254,16 +255,16 @@
       <p>At Blue Spring, the park counted about 36 manatees when research began in the 1970s, and more than 700 in 2023.</p>
       </div>
       <div class="mt-polaroids mt-three" data-photos="story" hidden></div>
-      <h3>Who inspired <em>Barnaby</em></h3>
-      <p>His name is Deep Dent, and I adopted him through Save the Manatee Club. Barnaby is inspired by him.</p>
-      <p>He was already grown when he first turned up at Blue Spring State Park, near Orange City, in the winter of 1979. The spring stays 72&deg;F all year, warm when the St. Johns runs cold, and he has come back for many winters since. Last winter he logged 16 visits and left on February 7, 2026, the first of the Club&rsquo;s adoptees to go.</p>
-      <p>A propeller left a deep dent in his tail, which is how he got his name. He has a similar one on his head, and in the summer of 2010 he came away with another in his lower back and lost a section of his tail. Those scars are how researchers know him on sight.</p>
-      <p>He&rsquo;s a little bit shy. When researchers paddle out for the morning count, he&rsquo;ll sometimes slip to the far bank to dodge the canoe. He also has wanderlust: he has skipped five winters at Blue Spring, three in a row, and turned up as far south as the Riviera Beach power plant in Palm Beach County.</p>
+      <h3>The manatee <em>behind Barnaby</em></h3>
+      <p>Barnaby has a real-life counterpart. His name is Deep Dent, and I adopted him through Save the Manatee Club.</p>
+      <p>He was already grown when he first appeared at Blue Spring State Park in the winter of 1979, and he has returned for many winters since. Last season he logged 16 visits and left on February 7, 2026, the first of the Club&rsquo;s adoptees to go.</p>
+      <p>His name is his evidence. A propeller left a deep dent in his tail. He carries a similar one on his head, and in the summer of 2010 he came away with a third in his lower back and lost a section of his tail. Researchers identify him by those scars.</p>
+      <p>He is shy, known to slip to the far bank when the research canoe comes through, and he answers to no one&rsquo;s schedule. He has skipped five winters at Blue Spring, three of them in a row, and was traced as far south as Riviera Beach. Scarred, quiet and still going his own way.</p>
       <div class="mt-next">
       <h3>Around the <em>next bend</em></h3>
       <img class="mt-hammock" src="/img/barnaby-hammock.jpg" width="960" height="1200" loading="lazy" alt="Barnaby asleep in a hammock on the houseboat deck at night, a book open on his belly, a lantern glowing and fireflies drifting over the river.">
       <p>A children&rsquo;s book is in the works. The working title is <strong class="mt-book">Barnaby and the Slow Water</strong>, and it&rsquo;s where we meet Barnaby&rsquo;s other friends: Rupert, Professor Plume, Miss Rosetta, Miles, Tuck and the rest of the river. It begins with why school matters and grows into why being informed matters, because the dangers animals face are easier to prevent once you understand them.</p>
-      <p>Until then, I&rsquo;m taking part in the <a href="https://savethemanatee.org/save-the-manatee-5k/" target="_blank" rel="noopener">Save the Manatee 5K</a>.</p>
+      <p>Until then, I&rsquo;m participating in the annual <a href="https://savethemanatee.org/save-the-manatee-5k/" target="_blank" rel="noopener">Save the Manatee 5K</a>.</p>
       <p>If the YouTube channel ever makes revenue, major proceeds will be donated directly to Jimmy Buffett&rsquo;s <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>.</p>
       <figure class="mt-cast">
         <div tabindex="0" role="group" aria-label="Concept art of Barnaby&rsquo;s friends"><img src="/img/mossbottom-friends.jpg" width="1800" height="543" loading="lazy" alt="Lineup of characters: Whiskers the black cat, Rupert the white rabbit, Miles the alligator in a straw hat, Barnaby, Professor Plume the egret, Nurse Ruby the crane, Miss Rosetta the spoonbill in pearls and Tuck the box turtle with a pocket watch."></div>
@@ -287,9 +288,9 @@
 
   <section class="card mt cream mt-temper" aria-labelledby="temper-title">
         <span class="mt-meta">Temperament</span>
-        <h2 id="temper-title">If you were lost, she would <em>call until she found you.</em></h2>
-        <p class="mt-lead">When a manatee mother and her calf are separated, one or both of them will call, over and over, until they reunite. That&rsquo;s who we&rsquo;re slowing down for.</p>
-    <div class="mt-photo" role="img" aria-label="Photo coming soon">Photo coming soon</div>
+        <h2 id="temper-title">They call until they <em>find each other.</em></h2>
+        <p class="mt-lead">When a manatee mother and her calf are separated, one or both will call, over and over, until they reunite.</p>
+    <div class="mt-photo"><img src="/img/barnaby-family.jpg" width="1000" height="820" loading="lazy" alt="Storybook portrait of Claude and Dottie, two smiling manatees, with little Barnaby in a tiny cardigan between them."></div>
     <div class="mt-stories">
       <div><h3>She knows your voice</h3><p>Young calves make a high squeak that is unique to each one. A mother can pick out her own calf&rsquo;s call, even in water too murky to see through.</p></div>
       <div><h3>Two years at her side</h3><p>A calf starts nursing within hours of being born and may nurse for up to two years. She teaches it where to eat, where to rest and how to find the warm water.</p></div>
@@ -318,7 +319,7 @@
       <div><dt>Hunger</dt><dd>Poor water quality helped wipe out seagrass in the Indian River Lagoon. From December 2020 through April 2022, 1,255 manatees were found dead on the east coast.</dd></div>
       <div><dt>Crowding</dt><dd>Disturbed at a warm spring, they can flee into water cold enough to kill them.</dd></div>
       <div><dt>Lost habitat</dt><dd>Fouled water and shrinking habitat take away the places they feed, rest and stay warm.</dd></div>
-      <div><dt>Entanglement</dt><dd>Crab trap line can wrap a flipper and cut it away. The manatee rescued in Oldsmar lost hers, and was released the same day.</dd></div>
+      <div><dt>Entanglement</dt><dd>Crab trap line can wrap around a flipper and cut it away.</dd></div>
       <div><dt>Litter</dt><dd>Fishing line, nets, hooks and trash wrap, cut and choke.</dd></div>
     </dl>
     <div class="mt-photos">
@@ -348,7 +349,7 @@
     <a class="hero-btn primary mt-btn mt-btn-teal" href="https://savethemanatee.org/how-to-help/adopt-a-manatee/" target="_blank" rel="noopener">Adopt a manatee</a>
   </section>
 
-  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>, its <a href="https://www.savethemanatee.org/jimmy-buffett/" target="_blank" rel="noopener">Jimmy Buffett tribute</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns manatee zone rule</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68D-24-018" target="_blank" rel="noopener">the rule on the sign</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/statistics/mortality/2025/review/" target="_blank" rel="noopener">2025 mortality</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/publication/" target="_blank" rel="noopener">boat scars</a>, the <a href="https://myfwc.com/research/manatee/rescue-mortality-response/ume/" target="_blank" rel="noopener">east coast die-off</a> and <a href="https://myfwc.com/news/all-news/manatee-mortality-1221/" target="_blank" rel="noopener">its cause</a>. Rescue photo and story: <a href="https://mission.cmaquarium.org/news/oldsmar-manatee-rescued-released-amputated-flipper/" target="_blank" rel="noopener">Clearwater Marine Aquarium</a>. Temperament: Save the Manatee Club on <a href="https://savethemanatee.org/manatee-moms-nurturing-the-next-generation/" target="_blank" rel="noopener">manatee moms</a>, <a href="https://savethemanatee.org/manatee-vocalizations-and-sounds/" target="_blank" rel="noopener">sounds</a> and <a href="https://savethemanatee.org/manatees/manatee-faq/" target="_blank" rel="noopener">FAQ</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club.<br><a class="mt-back" href="/projects.html">Back to Projects</a></p>
+  <p class="mt-sources mt-full">Sources: Deep Dent&rsquo;s official biography from <a href="https://savethemanatee.org" target="_blank" rel="noopener">Save the Manatee Club</a>, its <a href="https://www.savethemanatee.org/jimmy-buffett/" target="_blank" rel="noopener">Jimmy Buffett tribute</a> and its <a href="https://savethemanatee.org/another-season-ends/" target="_blank" rel="noopener">2025&ndash;26 season report</a>. Manatee zones: <a href="https://savethemanatee.org/manatee-zones-more-than-just-signs/" target="_blank" rel="noopener">Save the Manatee Club</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68C-22-012" target="_blank" rel="noopener">Florida&rsquo;s St. Johns manatee zone rule</a>, <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-68D-24-018" target="_blank" rel="noopener">the rule on the sign</a> and <a href="https://doi.org/10.3354/esr00056" target="_blank" rel="noopener">Calleson &amp; Frohlich, 2007</a>. Blue Spring: <a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/manatees-blue-spring-state-park" target="_blank" rel="noopener">Florida State Parks</a>. Florida Fish and Wildlife Conservation Commission on <a href="https://myfwc.com/education/wildlife/manatee/facts-and-information/" target="_blank" rel="noopener">manatee facts</a>, <a href="https://myfwc.com/news/all-news/manatee-awareness-1126/" target="_blank" rel="noopener">manatee awareness</a>, <a href="https://myfwc.com/wildlifehabitats/wildlife/manatee/myfwccomhow-to-help/" target="_blank" rel="noopener">how to help</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/statistics/mortality/2025/review/" target="_blank" rel="noopener">2025 mortality</a>, <a href="https://myfwc.com/research/manatee/rescue-mortality-response/publication/" target="_blank" rel="noopener">boat scars</a>, the <a href="https://myfwc.com/research/manatee/rescue-mortality-response/ume/" target="_blank" rel="noopener">east coast die-off</a> and <a href="https://myfwc.com/news/all-news/manatee-mortality-1221/" target="_blank" rel="noopener">its cause</a>. Temperament: Save the Manatee Club on <a href="https://savethemanatee.org/manatee-moms-nurturing-the-next-generation/" target="_blank" rel="noopener">manatee moms</a>, <a href="https://savethemanatee.org/manatee-vocalizations-and-sounds/" target="_blank" rel="noopener">sounds</a> and <a href="https://savethemanatee.org/manatees/manatee-faq/" target="_blank" rel="noopener">FAQ</a>. Mossbottom is independent and not affiliated with, sponsored by or endorsed by Save the Manatee Club.<br><a class="mt-back" href="/projects.html">Back to Projects</a></p>
 
 </main>
 
@@ -385,15 +386,14 @@
       { src: '/img/resume-normal-safe-operation.jpg', alt: 'A great blue heron standing on a river sign that reads Resume Normal Safe Operation.', caption: 'Where the zone ends.\nRule 68D-24.018, F.A.C., St. Johns River' }
     ],
     threats: [
-      { href: 'https://mission.cmaquarium.org/news/oldsmar-manatee-rescued-released-amputated-flipper/', soon: 'See the photo at Clearwater Marine Aquarium', caption: 'Rescued from crab trap line, Oldsmar, 2017.\nPhoto: Andy Garrett, MMPL, via Clearwater Marine Aquarium' }
-    ],
+{ src: '/img/claude-blue-spring.jpg', alt: 'Storybook painting of Claude, an older gray manatee with three propeller scars across his back, resting at Blue Spring beside a basket of unfinished mustard knitting.', caption: 'Claude at Blue Spring.\nHe never talks about the scars.' }    ],
     barnaby: [
       { src: '/img/britta-and-barnaby.jpg', alt: 'Storybook painting of Britta in gold aviator sunglasses hugging Barnaby the manatee in his mustard cardigan, beside his teal houseboat.', caption: 'Me & Barnaby' }
     ],
     story: [
       { caption: 'Jet ski days' },
       { caption: 'Manatee friends' },
-      { caption: 'Deep Dent', href: 'https://savethemanatee.org/adopt-a-manatee/deep-dent/', soon: 'See his photo at Save the Manatee Club' }
+      { tryImg: '/img/deep-dent.jpg', alt: 'Deep Dent, an adult manatee, swimming at Blue Spring.', caption: 'My adoptive manatee,\nDeep Dent', credit: 'Photo: Save the Manatee Club', href: 'https://savethemanatee.org/adopt-a-manatee/deep-dent/', soon: 'See his photo at Save the Manatee Club' }
     ]
   };
   var tilt = [-6, 4, -3, 6, -4, 3];
@@ -410,6 +410,8 @@
       else { im.className = 'mt-soon'; im.textContent = p.soon || 'Photo coming soon'; if (p.href) { im.href = p.href; im.target = '_blank'; im.rel = 'noopener'; } }
       f.appendChild(im);
       if (p.caption) { var c = document.createElement('figcaption'); c.textContent = p.caption; f.appendChild(c); }
+      if (p.credit && f.querySelector('figcaption')) { var cr = document.createElement('small'); cr.textContent = p.credit; f.querySelector('figcaption').appendChild(cr); }
+      if (p.tryImg) { var t = new Image(); t.alt = p.alt || ''; t.onload = function() { im.replaceWith(t); }; t.src = p.tryImg; }
       box.appendChild(f);
     });
     box.hidden = false;
